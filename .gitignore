@@ -1,0 +1,15 @@
+*.aux
+*.log
+*.pdf
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.lof
+*.lot
+*.toc
+*.sublime-project
+*.sublime-workspace
+*.fdb_latexmk
+*.orig
+*.loa

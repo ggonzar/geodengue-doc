@@ -1,0 +1,77 @@
+\documentclass[final,fmstyle]{./util/ucathesis}
+% La opcion 'final' muestra los graficos, para generar una version sin los graficos utiliza la opcion 'draft'
+
+% paquetes recomendados
+%\usepackage[chapter]{theorems}
+%\usepackage{symbols}
+%\usepackage{url}
+\usepackage{amsmath,amsthm}
+
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
+\addbibresource{referencias.bib}
+
+
+% custom commands
+\newcommand{\foreign}[1]{{\it #1}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\algsetup{indent=2em}
+
+% \setcounter{tocdepth}{3}
+
+% datos de la tesis
+\title{Modelo predictivo de focos de dengue aplicado a Sistemas de informaci\'0n geogr\'afica}
+\author{Maximiliano B\'{a}ez Gonz\'{a}lez y Roberto Ba\~{n}uelos}
+\degree{Inform\'{a}tica}
+
+\advisor{WProf. MSc.}{Guillermo Gonz\'{a}lez}
+
+%\newtheorem{definicion}{Definicin}
+%\numberwithin{algorithm}{chapter}
+
+\logosource{./graphics/logo.jpg}
+\institution{Universidad Nacional de Asunci\'{o}n}
+\faculty{Facultad Polit\'{e}cnica}
+\address{San Lorenzo - Paraguay}
+
+\begin{document}
+
+\maketitle     % esto hace las portadas
+
+% Agradecimientos
+%\include{agradecimientos}
+
+% los siguientes comandos producen 'indices.
+
+% Tabla de contenidos
+\tableofcontents
+% Lista de figuras
+\listoffigures
+% Lista de tablas
+\listoftables
+% Lista de algoritmos
+\listofalgorithms
+%\include{acronimos}
+%\include{simbolos}
+
+\mainmatter  % inician los capitulos de la tesis
+
+% incluye aqui los capitulos (un archivo .tex por capitulo)
+\include{introduccion/Intro}
+\include{antecedentes/Antecedentes}
+\include{tecnologias/main}
+\include{problema/main}
+\include{solucion/main}
+
+\appendix   % inician los apendices de tu tesis
+
+% los cap'itulos que incluyas a partir de aqu'i aparecen
+% como ap'endices
+
+% estos comandos generan la bilbiograf'ia
+\printbibliography
+
+\end{document}
