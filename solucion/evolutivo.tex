@@ -1,0 +1,89 @@
+%!TEX root = ../tesis.tex
+\section{Proceso Evolutivo}
+\label{sec:solucion-evolutivo}
+El proceso de evolución de las muestras consiste en un proceso, en el cual las muestras obtenidas mediante los dispositivos de ovipostura  son expuestas a un conjunto de variaciones en un periodo de tiempo. Las variaciones que, principalmente, afectan a las muestras son :
+
+\begin{itemize}
+    \item \em Las variaciones del clima en dicho periodo \rm: Se someten las muestras obtenidas a las distintas variaciones climáticas ocurridas en el periodo de tiempo seleccionado para el estudio.
+    \item \em La naturaleza del mosquito \rm: Cada elemento de la muestra, es sometido a cambios considerando la naturaleza del mosquito. Los aspectos que se tienen en cuenta son su ciclo de vida del mosquito, ciclo reproductivo y el desplazamiento.
+\end{itemize}
+Todo lo que tenga que ver con un análisis evolutivo(proyección) en un periodo de tiempo, se va tratar diferente. Se va tener en cuenta las variaciones del clima en dicho periodo. se debe hacer evolucionar las larvitrampas por cada día del periodo estudiado.
+
+\subsection{Afirmaciones}
+
+\begin{itemize}
+    \item La población contiene a todos los mosquitos (macho, hembra) en cualquiera de sus estados(huevo,larvas, pupa, adulto).
+    \item La población inicial está compuesta por el conjunto de mediciones de los dispositivos de ovipostura.
+    \item La salida final a interpolar van a ser larvas, salida complementaria es el resto de la población.
+    \item Un mosquito de la población tiene los siguientes atributos :
+        \begin{itemize}
+            \item Sexo : Macho o hembra
+            \item Edad : cantidad de días que lleva vivo el mosquito.
+            \item Estado : Huevo, Larva, Pupa, Adulto..
+            \item Ubicación : coordenadas longitud y latitud
+            \item Dispositivo de origen : el código del dispositivo de ovipostura de origen.
+            \item Expectativa de vida : es un valor numérico que varía de acuerdo a las condiciones climáticas a las que es sometido el mosquito.
+        \end{itemize}
+   \item Periodo es el intervalo de tiempo al que será sometido la población inicial a evolución.
+\end{itemize}
+
+
+\subsection{Descripción de los pasos del pseudo código (ver tabla)}
+
+1- Se itera sobre cada día contemplado dentro del periodo de estudio.
+De dichos días se conocen distintas propiedas como la temperatura máxima,
+media, y mínima. Además se conoce el nivel de humedad y si hubo o no
+lluvias.
+
+2- Se procesa cada mosquito dentro de la población. La población está
+compuesta por el total de mosquitos registrados mediante el conteo de
+larvitrampas.
+
+3- A cada mosquito de la poblacion se le hace desarrollar en el día.
+En otras palabras; aplicar las condiciones del día actual al mosquito. Dicho
+proceso funciona como modelo de simulación de la vida de un mosquito
+dada las condiciones del día actual. Para poder realizar
+correctamente el proceso evolutivo es necesario tener en cuenta la
+ubicación del mosquito, su estado actual (en que fase de desarrollo se
+encuentra y cual es su espectativa de sobrevivencia) y su tiempo de vida
+(edad actual).
+
+4- En este paso se verifica si la expectativa de vida del mosquito ha
+disminuido a 0. Lo que implica que el mosquito está muerto sea cual sea
+su estado. Esto puede darse en un día muy frío o muy caluroso o por un proceso
+selección natural.
+
+5- En el caso de que el mosquito haya muerto se lo excluye de la
+población de estudio
+
+6- En caso contrario, se establece una serie de heurísticas de reproducción
+para dar lugar a nuevos individuos. En el caso de que en la población exista
+al menos 1 hembra y 1 macho adulto en proximidad. Datos sobre la tendencia
+de ovipostura y cantidad de huevos que una hembra deposita se suman al
+análisis para lograr mayor precisión
+
+7- Se realiza una operación que en donde se utilizan variables
+georeferenciadas de acuerdo a la posición del mosquito para estimar
+la posibilidad de que encuentre criadero fértil para depositar sus huevos
+
+8- Se aplica la operación de poner huevos si se aplica para el mosquito actual
+
+9- Se añaden a la población los nuevos mosquitos. (el valor de la variable
+huevos puede ser NULL)
+
+
+
+\begin{lstlisting}[caption=Pseudocódigo del proceso evolutivo, label=a_label,  float=t]
+for (dia in Periodo) {
+    for( mosquito in Poblacion){
+        mosquito.desarrollar(dia)
+        if(mosquito.es_viejo() or mosquito.esta_muerto()){
+            Poblacion.remove(mosquito)
+        }else if(mosquito.se_reproduce(dia)){
+            mosquito.buscar_criaderos(dia)
+            var huevos = mosquito.poner_huevos(dia)
+            Poblacion.add(huevos)
+        }
+    }
+}
+\end{lstlisting}

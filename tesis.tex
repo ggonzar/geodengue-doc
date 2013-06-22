@@ -12,6 +12,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
 \usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
+\usepackage{listings}
 \addbibresource{referencias.bib}
 
 
@@ -23,11 +24,11 @@
 % \setcounter{tocdepth}{3}
 
 % datos de la tesis
-\title{Modelo predictivo de focos de dengue aplicado a Sistemas de informaci\'0n geogr\'afica}
+\title{Modelo predictivo de focos de dengue aplicado a Sistemas de informaci\'on geogr\'afica}
 \author{Maximiliano B\'{a}ez Gonz\'{a}lez y Roberto Ba\~{n}uelos}
 \degree{Inform\'{a}tica}
 
-\advisor{WProf. MSc.}{Guillermo Gonz\'{a}lez}
+\advisor{Prof. MSc.}{Guillermo Gonz\'{a}lez}
 
 %\newtheorem{definicion}{Definicin}
 %\numberwithin{algorithm}{chapter}
@@ -38,7 +39,15 @@
 \address{San Lorenzo - Paraguay}
 
 \begin{document}
-
+\lstset{
+language=java,
+basicstyle=\small\sffamily,
+numbers=left,
+numberstyle=\tiny,
+frame=tb,
+columns=fullflexible,
+showstringspaces=false
+}
 \maketitle     % esto hace las portadas
 
 % Agradecimientos
