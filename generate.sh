@@ -4,7 +4,7 @@ NAME=tesis
 
 #~ Function que sirve para eliminar los archivos temporales
 clean(){
-    rm -r *.synctex.gz
+    find . -type f -name "*.synctex.gz" -exec rm -f {} \;
     find . -type f -name "*.aux" -exec rm -f {} \;
     find . -type f -name "*.log" -exec rm -f {} \;
     find . -type f -name "*.bbl" -exec rm -f {} \;
