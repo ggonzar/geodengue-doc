@@ -4,10 +4,12 @@ NAME=tesis
 
 #~ Function que sirve para eliminar los archivos temporales
 clean(){
+    find . -type f -name "*-blx.bib" -exec rm -f {} \;
     find . -type f -name "*.synctex.gz" -exec rm -f {} \;
     find . -type f -name "*.aux" -exec rm -f {} \;
     find . -type f -name "*.log" -exec rm -f {} \;
     find . -type f -name "*.bbl" -exec rm -f {} \;
+    find . -type f -name "*.lot" -exec rm -f {} \;
     find . -type f -name "*.blg" -exec rm -f {} \;
     find . -type f -name "*.bcf" -exec rm -f {} \;
     find . -type f -name "*.run.xml" -exec rm -f {} \;
