@@ -1,0 +1,124 @@
+\section{Proceso Evolutivo}
+
+
+\textbf{Definición 1.} \em Instante \em : Se utiliza el término instante
+    para representar a una estrucutra de datos compleja compuesta por
+    datos climáticos correspondientes a periodos de tiempos individuales
+    $t_{i}$ y otras propiedades complementarias.
+
+
+\textbf{Definición 2.}\em Peridodo \em : Un periodo es una estrucutra de
+    datos que representa a un conjunto de instantes $t_{i}$. El periodo
+    $T$ \addsymbol{symbol:P} se define como una colección de $N$ instantes
+    $t_{i}$, donde $N$ es el tamaño del periodo de estudio.
+
+    \begin{align*}
+        T = t_1,t_2,t_t,\ldots,t_N , & & 1 \leq i \leq N
+    \end{align*}
+
+
+\textbf{Definición 3.} \em Estado \em : Se utliza el término estado
+    para representar las etapas del ciclo de desarrollo del \em Aedes Aegypti\em.
+    \begin{align*}
+        \tau = [huevo, larva, pupa, adulto]
+    \end{align*}
+
+\textbf{Definición 3.} \em Indiviuduo\em : Se utliza el término individuo
+    para representar la unidad del \em Aedes Aegypti \em cualesquiera de sus
+    estados, en forma de una estrucutra de datos compleja compuesta de
+    propiedades como su madurez y espectativa de vida.
+
+\textbf{Definición 4.} \em Población\em : La población $P$ es una estuctura
+    de datos que representa a un grupo de individuos $p_{i}$. Se define como
+    una colección de $M$ individuos $p_{i}$, en donde $M$ es el tamaño de
+    la población.
+
+    \begin{align*}
+        P = p_1,p_2,p_t,\ldots,p_M,  & & 1 \leq i \leq M
+    \end{align*}
+
+
+El proceso evolutivo consiste en somenter los datos, de las muestras obtneidas
+mediante la utilización de dispositivos de ovipostura, a las multiples
+variaciones climáticas y las caracteristicas biológicas del inividuo.
+
+Cada $p_{i}$ que pertenzca a $P$ es sometido a las variaciones climáticas de
+cada $t_{i}$ que pertenezca a $T$ siempre y cuando $p_{i}$ aún forme parte
+de la población $P$.
+
+\section{Madurez y mortalidad}
+\subsection{Madurez}
+Para cada $p_{i}$ existe asociado un atributo madurez \addsymbol{symbol:mIi} es
+un valor numérico(entre 0 y 100) que varía de acuerdo a las condiciones
+climáticas a las que es sometido el mosquito. Cuando la madurez es igual
+a 100 el mosquito ya se encuentra listo para un cambio de estado.
+
+\begin{equation}
+\eta (t_{i}, p_{j}) = \left\{
+  \begin{array}{l l}
+    0 & \quad \forall i = 0 \\
+    \eta (t_{i-1}, p_{j}) + \frac{1}{\omega(t_{i}) * 24} & \quad \forall i \neq 0
+  \end{array} \right.
+\end{equation}
+
+Cambio de estado
+
+\begin{equation}
+\tau_{k} (t_{i}, p_{j}) = \left\{
+  \begin{array}{l l}
+    \tau_{k+1} & \quad \forall  \eta(t_{i}, p_{j}) = 100 \\
+    \tau_{k} & \quad \text{en caso contrario}
+  \end{array} \right.
+\end{equation}
+
+
+
+\subsection{Mortalidad}
+La mortalidad y supervivencia de los individuos se encuentra expresada
+mediante la variable de expectativa de vida. La expectativa de vida es
+un valor numérico que indica la vitalidad del individuos, esta varía de
+acuerdo a las condiciones climáticas a las que es sometido el individuos
+durante el proceso evolutivo.
+
+\begin{equation}
+\xi (t_{i}, p_{j}) = \left\{
+  \begin{array}{l l}
+    100 & \quad \forall i = 0 \\
+    \xi (t_{i-1}, p_{j}) - \frac{1}{\upsilon(t_{i}) * 24} & \quad \forall i \neq 0
+  \end{array} \right.
+\end{equation}
+
+El valor de $\xi (t_{i}, p_{j})$ representa el porcentaje de vitalidad del
+inidividuo $p_{j}$ luego de ser somenetido a las variaciones del instante
+$t_{i}$ perteneciente al periodo $T$ de estudio. La espectativa de vida
+para cada individuo $p_{j} \in P$, en el isntante $t_{0}$ se describe como
+$\xi (t_{0}, p_{j})= 100$. A medida que $p_{j}$ sea sometido a varios
+$t_{i}$ la espectativa de vida irá disminuyendo, si $\xi (t_{i}, p_{j})= 0$ el
+idividuo se ha quedado sin espectativa de vida, por lo que se debe proceder
+a eliminar $p_{j}$ de $P$ mediante el proceso de reducción de la población
+$\theta (t_{i}, p_{j})$.
+
+\begin{equation}
+\theta (t_{i}, p_{j}) = \left\{
+  \begin{array}{l l}
+    p_{j} = null & \quad \xi(t_{i}, p_{j}) == 0 \\
+    p_{j} & \quad \text{en caso contrario}
+  \end{array} \right.
+\end{equation}
+
+
+\section{esta maduro}
+\section{pone huevos}
+\begin{equation}
+f(T_{i}) = \left\{
+  \begin{array}{l l}
+    \text{poner huevos}(T_{i}) & \quad \text{si $estado$ es  Adulto}\\
+    false & \quad \text{en caso contrario}
+  \end{array} \right.
+\end{equation}
+
+\section{para el adulto}
+\section{vuelo}
+\section{reproducción}
+\section{poner huevos}
+\section{buscar alimentos}
