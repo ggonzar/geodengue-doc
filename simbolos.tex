@@ -1,0 +1,27 @@
+\newpage
+\chapter*{Lista de Simbolos\hfill}
+\addcontentsline{toc}{chapter}{Lista de Simbolos}
+\begin{tabbing}
+% YOU NEED TO ADD THE FIRST ONE MANUALLY TO ADJUST THE TABBING AND SPACES
+$n$~~~~~\=\parbox{5in}{Vector size\dotfill \pageref{symbol:nml}}\\
+%ADD THE REST OF SYMBOLS WITH THE HELP OF MACRO
+
+%% se añaden nuevos simbolos con el macro \newsymbol y se hace referecnia
+% al simbolo utilizando \addsymbol{symbol:LABEL}
+
+\newsymbol T : {datos climáticos}{symbol:T}
+\newsymbol t_{i} : {datos climáticos en el instante i}{symbol:ti}
+\newsymbol P : {Población}{symbol:P}
+\newsymbol p_i : {El i-esimo individuo de la población}{symbol:Ii}
+\newsymbol \eta(t_i, p_i): {función de madurez}{symbol:madurez}
+\newsymbol \xi(t_i, p_i): {función de espectativa de vida}{symbol:espectativa-vida}
+\newsymbol \theta (t_{i}, p_{j}): {función de reducción}{symbol:esta-muerto}
+
+\newsymbol N: {tamaño del periodo}{symbol:N}
+\newsymbol M: {tamaño de la población}{symbol:M}
+
+\newsymbol \mathbf{\omega}: {Matriz de madurez}{symbol:mat-madurez}
+\newsymbol \mathbf{\upsilon}: {Matriz de espectativa de vida}{symbol:mat-espectativa}
+
+% ALWAYS KEEP THE FOLLOWING LINE
+\end{tabbing}

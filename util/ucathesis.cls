@@ -14,7 +14,7 @@
 \usepackage{algorithmic}
 
 \bibliographystyle{unsrt} % Numeros ordenados por entrada
-%%\bibliographystyle{alpha} % Nombre y año 
+%%\bibliographystyle{alpha} % Nombre y año
 
 \DeclareOption{draft}{ \@isdrafttrue  \PassOptionsToClass{draft}{report} }
 \DeclareOption{final}{ \@isdraftfalse \PassOptionsToClass{final}{report} }
@@ -227,10 +227,10 @@
   \begin{titlepage}%
   \begin{center}
     \vspace{1.5\@line}\textbf{\large\MakeUppercase{\@institution}}\par
-	%\vspace{1.5\@line}\textbf{\large\MakeUppercase{\@nameinstitution}}\par
+    %\vspace{1.5\@line}\textbf{\large\MakeUppercase{\@nameinstitution}}\par
     \vspace{\@line}\textbf{\large\@faculty}\par
     %\textbf{\large\@department}\par
-	%%\vspace{2\@line}\includegraphics{logo.png}\par
+    %%\vspace{2\@line}\includegraphics{logo.png}\par
     \vspace{2\@line}\includegraphics{\@logosource}\par
     \vspace{0.5\@line}\textsc{\Large``\@title''}\par
     \vspace{0.5\@line}
@@ -241,7 +241,7 @@
       \textsc{para obtener el título de \@grade}\par
       \textsc{en \@degree}\par
       \vfill\textsc{\@advisorname}\par\vspace{4pt}
-	  \textsc{\@advisortitle\ \@advisor}\par\vspace{4pt}
+      \textsc{\@advisortitle\ \@advisor}\par\vspace{4pt}
     \end{singlespace}
     \vfill\textrm{\@address. \hfill \@monthyear}
   \end{center}

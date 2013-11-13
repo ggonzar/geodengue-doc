@@ -11,10 +11,24 @@
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
+\usepackage{enumerate}
 \usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
 \usepackage{listings}
+% para la lista de simbolos
+\usepackage{array} %for vertical thick lines in tables
+\usepackage{multirow} %multirow tables
+\usepackage{nicefrac} %for fractions like 1/4
+%referencias
 \addbibresource{referencias.bib}
+%Package list ends here
 
+% Macro for 'List of Symbols', 'List of Notations' etc...
+\def\listofsymbols{
+    \input{simbolos}
+    \clearpage{}
+}
+\def\newsymbol #1: #2#3{$#1$ \> \parbox{5in}{#2 \dotfill \pageref{#3}}\\}
+\def\addsymbol#1{\label{#1}}
 
 % custom commands
 \newcommand{\foreign}[1]{{\it #1}}
@@ -64,7 +78,8 @@
 % Lista de algoritmos
 \listofalgorithms
 %\include{acronimos}
-%\include{simbolos}
+\listofsymbols
+
 
 \mainmatter  % inician los capitulos de la tesis
 
