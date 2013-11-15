@@ -1,5 +1,7 @@
 \section{Proceso Evolutivo}
 
+Se debe explicar lo básico y dar una idea de que se busca y como funciona.
+
 
 \textbf{Definición 1.} \em Instante \em : Se utiliza el término instante
     para representar a una estrucutra de datos compleja compuesta por
@@ -23,7 +25,10 @@
         \tau = [huevo, larva, pupa, adulto]
     \end{align*}
 
-\textbf{Definición 3.} \em Indiviuduo\em : Se utliza el término individuo
+\textbf{Definición 4.} \em Sexo \em : Representa el sexo del \em Aedes
+    Aegypti\em. Los valores posibles son $MACHO$ y $HEMBRA$.
+
+\textbf{Definición 4.} \em Indiviuduo\em : Se utliza el término individuo
     para representar la unidad del \em Aedes Aegypti \em cualesquiera de sus
     estados, en forma de una estrucutra de datos compleja compuesta de
     propiedades como su madurez y espectativa de vida.
@@ -42,11 +47,21 @@ El proceso evolutivo consiste en somenter los datos, de las muestras obtneidas
 mediante la utilización de dispositivos de ovipostura, a las multiples
 variaciones climáticas y las caracteristicas biológicas del inividuo.
 
+\section{Consideraciones}
+hablar de las consideraciones
+
 Cada $p_{i}$ que pertenzca a $P$ es sometido a las variaciones climáticas de
 cada $t_{i}$ que pertenezca a $T$ siempre y cuando $p_{i}$ aún forme parte
 de la población $P$.
 
-\section{Madurez y mortalidad}
+\section{Operadores básicos}
+Durante el proceso evolutivo para cada individuo $p_{j}$ exiten un conjuto
+de operadores básicos que son aplicables a todos los individuos sin importar
+el sexo y el estado $\tau_{k}$ en el que se encuentre.
+
+hablar de las tablas y la zonificación
+
+
 \subsection{Madurez}
 Para cada $p_{i}$ existe asociado un atributo madurez \addsymbol{symbol:mIi} es
 un valor numérico(entre 0 y 100) que varía de acuerdo a las condiciones
@@ -61,7 +76,7 @@ a 100 el mosquito ya se encuentra listo para un cambio de estado.
   \end{array} \right.
 \end{equation}
 
-Cambio de estado
+\subsection{Cambio de estado}
 
 \begin{equation}
 \tau_{k} (t_{i}, p_{j}) = \left\{
@@ -70,7 +85,6 @@ Cambio de estado
     \tau_{k} & \quad \text{en caso contrario}
   \end{array} \right.
 \end{equation}
-
 
 
 \subsection{Mortalidad}
@@ -106,19 +120,45 @@ $\theta (t_{i}, p_{j})$.
   \end{array} \right.
 \end{equation}
 
+\section{Operadores complementarios}
+Las etapas inmaduras del \em Aedes Aegigyti\em son principalmente acuaticas
+y estaticas, por lo que todas cuentan con caracteristicas similares, no
+así la etapa adulto del mosquito que cuenta con ciertas caracteristicas
+que divergen mucho del comportamiento básico definido. Debido este
+comportamiento especifico todos los $p_{j}$ que se encuentren en el estado
+\em Adulto \em cuentan con un conjuto de operadores complementarios que
+tienen por objetivo, con ayuda de los operaodres básicos, describir el
+comportamiento del mosquito en su estado adulto.
 
-\section{esta maduro}
-\section{pone huevos}
+\subsection{Vuelo y búsqueda de alimentos}
+Exiten diferencias, en cuanto alimentación y vuelo, entre los adultos
+machos y hembras. Los rondan en grupos pequeños o solitariamente,
+principalmente atraídos por los mismos huéspedes vertebrados que las hembras.
+
+Las hembras se alimentan principalmente de sangre, que extraen de cualquier
+vertebrado, por sus hábitos domésticos muestran marcada predilección por
+la del hombre\cite{ThironIzcazaJ2003}. En cuanto a los machos sus partes
+bucales no son aptas para chupar sangre, por lo que se alimentan de
+carbohidratos de cualquier fuente accesible como frutos o néctar de flores
+que satisface sus requerimientos energéticos.
+
+Vuelan en sentido contrario al viento
+
+Por lo general, la hembra de Ae. aegypti no se desplaza más allá de
+5,000 m de distancia de radio de vuelo en toda su vida, permanece
+físicamente en donde emergió, siempre y cuando no halla algún factor
+que la perturbe o no disponga de huéspedes, sitios de reposo y de
+postura.
+
+
+distancia a recorrer
 \begin{equation}
-f(T_{i}) = \left\{
-  \begin{array}{l l}
-    \text{poner huevos}(T_{i}) & \quad \text{si $estado$ es  Adulto}\\
-    false & \quad \text{en caso contrario}
-  \end{array} \right.
+ D (t_{i}) = \sqrt{{(\sin(\alpha(t_{i})) * 2000 - S(t_{i}))}^{2}
+  + {(\cos(\alpha(t_{i})) * 2000} ^{2} }
 \end{equation}
+desplazamiento del individuo
 
-\section{para el adulto}
-\section{vuelo}
-\section{reproducción}
-\section{poner huevos}
-\section{buscar alimentos}
+
+\subsection{Reproducción y postura de huevos}
+
+
