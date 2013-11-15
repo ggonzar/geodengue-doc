@@ -36,19 +36,15 @@ Se debe explicar lo básico y dar una idea de que se busca y como funciona.
 \textbf{Definición 4.} \em Población\em : La población $P$ es una estuctura
     de datos que representa a un grupo de individuos $p_{i}$. Se define como
     una colección de $M$ individuos $p_{i}$, en donde $M$ es el tamaño de
-    la población.
+    la población. Contiene a todos los individuos si importar el sexo  y el
+    estado en que $\tau_{k}$ en el que se encuentren.
 
     \begin{align*}
         P = p_1,p_2,p_t,\ldots,p_M,  & & 1 \leq i \leq M
     \end{align*}
 
-
-El proceso evolutivo consiste en somenter los datos, de las muestras obtneidas
-mediante la utilización de dispositivos de ovipostura, a las multiples
-variaciones climáticas y las caracteristicas biológicas del inividuo.
-
-\section{Consideraciones}
-hablar de las consideraciones
+La población inical se genera a partir de los valores obtenidos mediante
+las mediciones o muestreos realizados con dispositivos de ovipostura.
 
 Cada $p_{i}$ que pertenzca a $P$ es sometido a las variaciones climáticas de
 cada $t_{i}$ que pertenezca a $T$ siempre y cuando $p_{i}$ aún forme parte
@@ -135,6 +131,19 @@ Exiten diferencias, en cuanto alimentación y vuelo, entre los adultos
 machos y hembras. Los rondan en grupos pequeños o solitariamente,
 principalmente atraídos por los mismos huéspedes vertebrados que las hembras.
 
+Los mosquito tienen la particularidad de que vuelan en sentido contrario
+al la dirección al viento y a una velocidad máxima $VMAX$ de $2 km/h$ según lo
+mencionado en \cite{web-site:speedAnimals}.
+
+La distancia $D(t_{i})$ recorrida por el individuo en un instante $t_{i}$
+depende de la dirección del viento representada por $\alpha(t_{i}$, la
+velocidad del viento $S(t_{i})$
+
+\begin{equation}
+ D (t_{i}) = \sqrt{{(\sin(\alpha(t_{i})) * VMAX  - S(t_{i}))}^{2}
+  + {(\cos(\alpha(t_{i})) * VMAX} ^{2} }
+\end{equation}
+
 Las hembras se alimentan principalmente de sangre, que extraen de cualquier
 vertebrado, por sus hábitos domésticos muestran marcada predilección por
 la del hombre\cite{ThironIzcazaJ2003}. En cuanto a los machos sus partes
@@ -142,23 +151,4 @@ bucales no son aptas para chupar sangre, por lo que se alimentan de
 carbohidratos de cualquier fuente accesible como frutos o néctar de flores
 que satisface sus requerimientos energéticos.
 
-Vuelan en sentido contrario al viento
-
-Por lo general, la hembra de Ae. aegypti no se desplaza más allá de
-5,000 m de distancia de radio de vuelo en toda su vida, permanece
-físicamente en donde emergió, siempre y cuando no halla algún factor
-que la perturbe o no disponga de huéspedes, sitios de reposo y de
-postura.
-
-
-distancia a recorrer
-\begin{equation}
- D (t_{i}) = \sqrt{{(\sin(\alpha(t_{i})) * 2000 - S(t_{i}))}^{2}
-  + {(\cos(\alpha(t_{i})) * 2000} ^{2} }
-\end{equation}
-desplazamiento del individuo
-
-
 \subsection{Reproducción y postura de huevos}
-
-
