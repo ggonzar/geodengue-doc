@@ -9,12 +9,18 @@ $n$~~~~~\=\parbox{5in}{Vector size\dotfill \pageref{symbol:nml}}\\
 %% se añaden nuevos simbolos con el macro \newsymbol y se hace referecnia
 % al simbolo utilizando \addsymbol{symbol:LABEL}
 
-\newsymbol T : {datos climáticos}{symbol:T}
+\newsymbol T : {Periodo de tiempo}{symbol:T}
 \newsymbol t_{i} : {datos climáticos en el instante i}{symbol:ti}
 \newsymbol P : {Población}{symbol:P}
 \newsymbol p_i : {El i-esimo individuo de la población}{symbol:Ii}
+%atributos de p_i
+\newsymbol \eta(p_i): {Madurez del individuo $p_{i}$}{symbol:ma-pj}
+\newsymbol \xi(p_i): {Expectativa de vida de $p_{j}$}{symbol:ex-pj}
+\newsymbol \tau(p_i): {Estado de vida de $p_{j}$}{symbol:estado-pj}
+\newsymbol S(p_i): {Sexo de $p_{j}$}{symbol:sexo-pj}
+%operadores básicos
 \newsymbol \eta(t_i, p_i): {función de madurez}{symbol:madurez}
-\newsymbol \xi(t_i, p_i): {función de espectativa de vida}{symbol:espectativa-vida}
+\newsymbol \xi(t_i, p_i): {función de expectativa de vida}{symbol:espectativa-vida}
 \newsymbol \theta (t_{i}, p_{j}): {función de reducción}{symbol:esta-muerto}
 
 \newsymbol N: {tamaño del periodo}{symbol:N}
