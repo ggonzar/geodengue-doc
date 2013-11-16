@@ -32,6 +32,12 @@ build(){
 if [ -n "$1" ] && [ "$1" = "clean" ]
 then
     clean
+elif [ -n "$1" ]
+then
+    NAME=$1
+    echo $NAME
+    clean
+    build
 else
     clean
     build
