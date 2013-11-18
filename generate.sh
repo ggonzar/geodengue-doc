@@ -38,7 +38,9 @@ then
     echo $NAME
     clean
     build
+    clean
 else
     clean
     build
+    clean
 fi
