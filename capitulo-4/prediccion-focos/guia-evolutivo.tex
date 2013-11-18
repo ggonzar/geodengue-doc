@@ -71,7 +71,15 @@ $p_{j}$ de la población, que son utilizados por $PE(t_{i},p_{j})$ para modifica
 individuo.
 
 \subsubsection{Zonificación}
+Los datos con los que cuenta $t_{i}$ corresponden a datos climáticos de la ciudad en la que se encuentra la
+$P$, de esta forma todos los $p_{j}$ comparten las características de $t_{i}$. Si bien todos los individuos
+comparten la mismas características de $t_{i}$, el nivel de impacto,de $t_{i}$, en cada uno de ellos, no
+necesariamente será el mismo para todos, debido a que el entorno en el que se encuentra cada $p_{j}$ es 
+distinto. Cada entorno puede contar con factores que lo hagan apto para el buen desarrollo de los individuos
+como, así también con otros que causen una alta mortalidad.
 
+La zonificación surge ante necesidad de dividir el espacio de estudio de una forma más granular, para identificar
+a los individuos que pertenecen a zonas aptas y los que no. 
 
 
 \subsubsection{Madurez y cambio de estado}
@@ -84,7 +92,7 @@ que es sometido a $t_{i}$.
 \eta (t_{i}, p_{j}) = \left\{
   \begin{array}{l l}
     \eta (p_{j}) = 0 & \quad \forall i = 0 \\
-    \eta (p_{j}) + \frac{1}{\omega(t_{i}) * 24} & \quad \forall i \neq 0
+    \eta (p_{j}) + \frac{1}{\omega(t_{i}, p_{j}) * 24} & \quad \forall i \neq 0
   \end{array} \right.
 \end{equation}
 
@@ -103,7 +111,7 @@ a las condiciones climáticas a las que es sometido el individuos durante el pro
 \xi (t_{i}, p_{j}) = \left\{
   \begin{array}{l l}
     100 & \quad \forall i = 0 \\
-    \xi (t_{i-1}, p_{j}) - \frac{1}{\upsilon(t_{i}) * 24} & \quad \forall i \neq 0
+    \xi (t_{i-1}, p_{j}) - \frac{1}{\upsilon(t_{i}, p_{j}) * 24} & \quad \forall i \neq 0
   \end{array} \right.
 \end{equation}
 
