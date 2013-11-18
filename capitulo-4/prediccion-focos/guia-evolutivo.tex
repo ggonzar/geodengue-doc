@@ -33,7 +33,6 @@ Sean:
 
     \item[$\eta (p_{j})$] \addsymbol{symbol:ma-pj} variable numérica asignada a $p_{j}$ para representar el nivel
     de madurez. Su valor varía entre 0 y 100.
-    de madurez de $p_{i}$.
     
     \item[$\xi (p_{j})$] \addsymbol{symbol:ex-pj} variable numérica asignada a $p_{j}$ para representar la
     expectativa de vida. Su valor varía entre 0 y 100.
@@ -52,7 +51,7 @@ Sean:
     
 \end{description}
 
-Podemos definir $PE$ como una función dependiente, necesariamente, de $p_{j}$ y $t_{i}$. Donde esta encargada 
+Podemos definir $PE$ como una función dependiente, necesariamente, de $p_{j}$ y $t_{i}$. Donde esta se encarga
 de modificar las propiedades como $\xi(p_{j})$, $\eta(p_{j})$ y $\tau(p_{j})$ de cada individuo $p_{j}$ que sea
 sometido a sometido a las variaciones climáticas definidas en $t_{i}$, teniendo en  cuenta las características
 biológicas de $p_{i}$ para cada $S(p_{j})$.
@@ -65,45 +64,40 @@ PE (t_{i}, p_{j}) = p_{j}' & & \forall t_{i} \in T\\
 Donde $p_{j}'$ denota al j-esmimo individuo de la población $p_{j}$, luego de ser sometido a $PE$ para modificar
 sus propiedades.  
 
-\section{Operadores básicos}
+\subsection{Operadores básicos}
 
 Durante el proceso evolutivo existen un conjunto de operadores básicos que son aplicables a todos los individuos
 $p_{j}$ de la población, que son utilizados por $PE(t_{i},p_{j})$ para modificar las características del 
 individuo.
 
-\subsection{Zonificación}
+\subsubsection{Zonificación}
 
 
-\subsection{Madurez}
-Para cada $p_{i}$ existe asociado un atributo madurez es un valor numérico(entre 0 y 100) que varía de acuerdo a
-las condiciones climáticas a las que es sometido el mosquito. Cuando la madurez es igual a 100 el mosquito ya se
-encuentra listo para un cambio de estado.
+
+\subsubsection{Madurez y cambio de estado}
+La madurez $\eta (p_{j})$ de un individuo $p_{j}$, que se encuentra en un estado $\tau_{k}$, indica el nivel de
+proximidad al siguiente estado $\tau_{k+1}$. Se encuentra representada por un número que varía entre
+cero y cien, la función $\eta (t_{i}, p_{j})$, que se encarga de incrementar el nivel de madurez de $p{j}$
+que es sometido a $t_{i}$.
 
 \begin{equation}
 \eta (t_{i}, p_{j}) = \left\{
   \begin{array}{l l}
-    0 & \quad \forall i = 0 \\
-    \eta (t_{i-1}, p_{j}) + \frac{1}{\omega(t_{i}) * 24} & \quad \forall i \neq 0
+    \eta (p_{j}) = 0 & \quad \forall i = 0 \\
+    \eta (p_{j}) + \frac{1}{\omega(t_{i}) * 24} & \quad \forall i \neq 0
   \end{array} \right.
 \end{equation}
 
-\subsection{Cambio de estado}
+Cuando $\eta(p_{i})$ del individuo $p_{j}$ alcanza su máximo valor, cien, el individuo ya se encuentra listo para
+pasar del estado $\tau_{k}$ al siguiente estado $\tau_{k+1}$, a este proceso se lo denomina como cambio de estado.
 
-\begin{equation}
-\tau_{k} (t_{i}, p_{j}) = \left\{
-  \begin{array}{l l}
-    \tau_{k+1} & \quad \forall  \eta(t_{i}, p_{j}) = 100 \\
-    \tau_{k} & \quad \text{en caso contrario}
-  \end{array} \right.
-\end{equation}
+La velocidad con la que incrementa el valor de $\eta(p_{j})$ depende de las condiciones a las condiciones
+descritas  por $t_{i}$ y las características de la zona en la que se encuentra $p_{j}$.
 
-
-\subsection{Mortalidad}
-La mortalidad y supervivencia de los individuos se encuentra expresada
-mediante la variable de expectativa de vida. La expectativa de vida es
-un valor numérico que indica la vitalidad del individuos, esta varía de
-acuerdo a las condiciones climáticas a las que es sometido el individuos
-durante el proceso evolutivo.
+\subsubsection{Mortalidad}
+La mortalidad y supervivencia de los individuos se encuentra expresada mediante la variable de expectativa de
+vida. La expectativa de vida es un valor numérico que indica la vitalidad del individuos, esta varía de acuerdo
+a las condiciones climáticas a las que es sometido el individuos durante el proceso evolutivo.
 
 \begin{equation}
 \xi (t_{i}, p_{j}) = \left\{
@@ -131,7 +125,7 @@ $\theta (t_{i}, p_{j})$.
   \end{array} \right.
 \end{equation}
 
-\section{Operadores complementarios}
+\subsection{Operadores complementarios}
 Las etapas inmaduras del \em Aedes Aegigyti\em son principalmente acuáticas
 y estaticas, por lo que todas cuentan con características similares, no
 así la etapa adulto del mosquito que cuenta con ciertas características
@@ -141,7 +135,7 @@ comportamiento especifico todos los $p_{j}$ que se encuentren en el estado
 tienen por objetivo, con ayuda de los operadores básicos, describir el
 comportamiento del mosquito en su estado adulto.
 
-\subsection{Vuelo y búsqueda de alimentos}
+\subsubsection{Vuelo y búsqueda de alimentos}
 Existen diferencias, en cuanto alimentación y vuelo, entre los adultos
 machos y hembras. Los rondan en grupos pequeños o solitariamente,
 principalmente atraídos por los mismos huéspedes vertebrados que las hembras.
@@ -166,4 +160,4 @@ bucales no son aptas para chupar sangre, por lo que se alimentan de
 carbohidratos de cualquier fuente accesible como frutos o néctar de flores
 que satisface sus requerimientos energéticos.
 
-\subsection{Reproducción y postura de huevos}
+\subsubsection{Reproducción y postura de huevos}
