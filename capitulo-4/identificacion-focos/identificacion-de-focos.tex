@@ -1,0 +1,39 @@
+%!TEX root = ../tesis.tex
+\section{Identificación de focos de la enfermedad}
+La identificación de focos de la enfermedad del dengue es el proceso que a apartir de un conjunto de muestras recolectadas de dispositivos de ovipostura genera información geoespacial que permite determinar las zonas con mayor densidad poblacional del mosquito \textit{Aedes Aegipty}. Esto permite obtener información sobre la situación actual de la propagación del vector de la enfermedad y la posibilidad de realizar medidas correctivas y preventivas en las zonas más afectadas.
+\subsection{Definición del problema}
+El problema consiste encontrar un método para transformar un conjunto de valores de entradas que representan cantidad de larvas del mosquito \textit{Aedes Aegipty} a información geoespacial susceptible a análisis.
+
+Sean:
+%lista de definiciones de las variables básicas
+\begin{description}[style=multiline,leftmargin=1.5cm]
+    \item[$z_{i}$] Valor númerico que representa la cantidad de individuos contabilizados en el dispositivo de ovipostura $d_{i}$.
+    
+    \item[($x_{i},y_{i}$)] Par de valores que representan un punto y que sirven para georeferenciar a un dispositivo de control.  
+    
+    \item[$d_{i}$] define a una muestra (dispositivo de control), que tiene asociado un valor $z_{i}$ y una ubicación representado por ($x_{i},y_{i}$).
+
+    \item[$D$] Conjunto de muestras $d_{i}$ sobre las cuales se realiza el estudio.
+        \begin{align*}
+            D = d_1,d_2,d_3,\ldots,d_N
+        \end{align*}
+
+\end{description}
+
+\subsection{Solución propuesta}
+El modelo solución para este problema se constituye de 4 partes fundamentales:
+\begin{enumerate}[style=multiline,leftmargin=1.5cm]
+    \item Establecimiento de puntos de control. Como primer paso es necesario fabricar los dispositivos de ovipostura (puntos de control, muestras) y distribuirlos en la zona o región que se desea analizazr. En el capítulo 5 se describe la estratégia implementada como mejor opción para la distribución de puntos de control. Además en el Anexo A se describe con detallada precisión la fabricación de los dispositivos de control; materiales, procedimiento, costos y recursos humanos necesarios
+    
+    \item Conteo. Una vez depositado el conjunto de muestras es necesario hacer un seguimiento para realizar el conteo de larvas que habitan en el dispositivo de control. Este conteo puede llevarse a cabo a los 7 días luego de que el dispositivo de ovipostura fue depositado. Es importante resaltar que un número mayor a 7 días podría significar que potenciales mosquitos hayan podido escapar del dispositivo de control por eso es necesario realizar el conteo antes de los 7 días o al séptimo día inclusive y luego vaciar el recipiente para volver a utilizarlo. 
+    
+    \item Procesamiento. El paso 3 y 4 constituyen básicamente el registro, procesamiento y análisis de los datos obtenidos de los conteos realizados. Ej: De un conjunto $D$ de 150 muestras, debemos tener 150 valores $z_{i}$ que representen los valores de la cantidad de larvas encontradas en cada dispositivo $d_{i}$. Al conjunto de valores $z_{i}$ se aplica un algoritmo de interpolación espacial que se encarga de generar una matriz de valores a partir de los datos de entrada. Este conjunto de valores contenidos en la matriz es utilizado para generar un mapa térmico que representa la propagación y distribución de las larvas en el contexto geoespacial.
+
+    \item Análisis. El potencial analítico que provee la información generada es amplio y diverso. La primera alternativa de análisis y la más intuitiva es la identificación de los focos de la enfermedad. Además de ser el objetivo principal de la solución propuesta es una de las alternativas de mayor importancia ya que la identificación de focos de la enfermedad permite :
+\begin{itemize}
+\item Vizualizar el estado actual y la distribución poblacional del mosquito \textit{Aedes Aegipty}.
+\item Realizar planes preventivos sobre zonas o regiones más afectadas.
+\item Implementar estratégias de fumigación y limpieza según zonas más afectadas.
+\item Otros.
+\end{itemize}
+\end{enumerate}
