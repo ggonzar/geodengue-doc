@@ -25,6 +25,7 @@ sudo apt-get install texlive-latex-extra
 ##Capítulo 2. Sistemas de Información Geográfica
 * Introducción
 * Estructuras de datos de los Sistemas de Información Geográfica
+* Sistemas de Información Geográfica Web
 * Análisis espacial con SIG
 * Métodos de interpolación
 * Técnicas gráficas de representación
