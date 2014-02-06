@@ -1,2 +1,86 @@
 \section{Modelo y estructura de datos}
 \label{sec:cap2-modelo-estructura-datos}
+
+A lo largo del tiempo, el hombre ha tratado de representar la superficie terrestre y los objetos que esta alberga.
+Los primeros mapas tenían como objetivo, servir de apoyo para la navegación, indicando los rumbos a seguir para
+desplazarse de un puerto a otro. Se caracterizaban por brindar exactitud en los rumbos y las distancias existente 
+entre los puertos, no así por su exactitud en la representación de las tierras.
+
+Con el trascurrir del tiempo ya no era suficiente con llegar de un puerto a otro, surgiendo así la necesidad de mejorar
+la medición de las distancias y superficies sobre los nuevos territorios para conseguir un mejor dominio 
+sobre estos. Además se fueron incluyendo diversos elementos como recursos y factores ambientales de la superficie
+terrestre para mejorar la visión de la distribución de los fenómenos naturales y asentamientos humanos sobre 
+la superficie terrestre.
+
+Durante el siglo XVII, cartógrafos especializados como Mercator demostraron que no sólo el uso de un sistema de
+proyección matemático y un ajustado sistema de coordenadas mejoraba la fiabilidad de las medidas y la localización de
+las áreas de tierra, sino que el registro de fenómenos espaciales a través de un modelo convenido de distribución de
+fenómenos naturales y asentamientos humanos era de un valor incalculable para la navegación, para la búsqueda de rutas
+y en la estrategia militar \cite{jaualPenha2005}.
+
+\subsection{Coordenadas geográficas}
+El sistema de coordenadas natural de un esferoide, y por tanto de un datum, es el de coordenadas angulares
+(latitud y longitud) que suele denominarse de coordenadas geográficas (figura ??). Para definir latitud y
+longitud, debemos identificar el eje de rotación terrestre. El plano perpendicular al eje de rotación que corta la
+Tierra atravesándola por su centro define el Ecuador en su intersección con el esferoide. El resto de las lineas
+de intersección con la superficie terrestre de los infinitos planos perpendiculares al eje de rotación definen los
+diferentes paralelos o lineas de latitud constante. Finalmente, los meridianos pueden definirse como las lineas
+de intersección con la superficie terrestre de los infinitos planos que contienen al eje de rotación. Paralelos y
+meridianos se cruzan siempre en ángulo recto.
+
+\subsection{Proyecciones}
+El proceso de transformar las coordenadas geográficas del esferoide en coordenadas planas para representar una
+parte de la superficie del elipsoide en dos dimensiones se conoce como proyección y es el campo de estudio
+tradicional de la ciencia cartográfica. La aparición de los SIG y la posibilidad de combinar información de
+diferentes mapas con diferentes proyecciones ha incrementado la relevancia de la cartografía más allá de la
+mera confección de mapas.
+El problema fundamental a la hora de abordar una proyección es que no existe modo alguno de representar en un
+plano toda la superficie del elipsoide sin deformarla, el objetivo va a ser minimizar, en la medida de los posible,
+estas deformaciones. Puesto que el efecto de la esfericidad de la superficie terrestre es proporcional al tamaño
+del área representada ( y en consecuencia a la escala), estos problemas sólo se plantean al cartografiar zonas
+amplias. Cuando se trata de cartografiar zonas pequeñas, por ejemplo una ciudad, la distorsión es despreciable
+por lo que se suelen utilizar coordenadas planas, relativas a un origen de coordenadas arbitrario y medidas sobre
+el terreno. A estas representaciones se les llama planos en lugar de mapas.
+
+
+\subsection{Elementos de representación cartográfica}
+A cada entidad espacial se puede asociar diversas variables (binomiales, cualitativas, ordinales o cuantitativas).
+Por ejemplo, a una carretera se puede asociar su anchura, categoría o flujo de vehículos; a un municipio pobla-
+ción, renta, etc.; a un pozo la cantidad de agua extraída al año, el nivel del agua o su composición. Normalmente
+al representar una entidad se representará también alguna de las variables asociadas a ella.
+El conjunto de ciencias involucradas en la producción de mapas (Geodesia, Cartografía, Geografía, Geología,
+Ecología, etc.) han desarrollado un amplio conjunto de técnicas para cartografiar los hechos de la superficie
+terrestre.
+\begin{itemize}
+
+\item Isolineas. Son lineas que unen puntos con igual valor, sirven por tanto para cartografiar variables cuan-
+titativas. Un buen ejemplo son las curvas de nivel del mapa topográfico o las isobaras de los mapas del
+tiempo.
+
+\item Coropletas. Areas con valor comprendido entre dos umbrales y pintadas con un color homogeneo. Per-
+miten representar variables cuantitativas de un modo más simplificado.
+
+\item Símbolos para indicar la presencia de entidades de un modo puntual. Pueden repesentarse utilizando di-
+ferentes símbolos o colores para representar una variable cualitativa (por ejemplo el partido gobernante),
+o diferentes tamaños para representar variables cuantitativas (por ejemplo el número de habitantes).
+
+\item Lineas que simbolizan entidades, naturales o artificiales, de forma lineal (carreteras, ríos). Pueden utili-
+zarse diferentes anchuras de linea, diferentes colores o diferentes tipos de linea para representar propie-
+dades como la anchura de los ríos o categorías de vías de comunicación.
+
+\item Poligonos representan objetos poligonales que, por su tamaño, pueden ser representados como tales
+(siempre dependiendo de la escala del mapa) o porciones homogeneas del terreno en relación a una
+variable cualitativa (tipo de roca). Pueden utilizarse diferentes colores o tramas para representar variables
+cualitativas o cuantitativas, por ejemplo en un mapa de municipios se puede representar la población
+municipal mediante sombreados.
+\end{itemize}
+
+En catografía, suele distinguirse entre mapas topográficos, considerados de propósito general, y mapas temá-
+ticos (geológicos, vegetación, etc.) que reflejan un sólo aspecto de la realidad. Los mapas, especialmente los
+topográficos (figura ??), tratan de reflejar el máximo número de elementos potencialmente interesantes para el
+usuario, evitando llegar a confundirle por exceso de información. Una de las estrategias empleadas para ello
+es eliminar parte de la información (por ejemplo una curva de nivel que cruza una población) confiando en
+que la capacidad de nuestro cerebro para reconstruir objetos a partir de información parcial. Esta estrategia se
+denomina generalización.
+De este modo un mapa deja en ocasiones de ser un modelo de la superficie terrestre para ser una representación
+visual que incluye información variada y no totalmente estructurada.
