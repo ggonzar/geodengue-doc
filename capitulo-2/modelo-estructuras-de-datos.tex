@@ -16,19 +16,37 @@ Durante el siglo XVII, cartógrafos especializados como Mercator demostraron que
 proyección matemático y un ajustado sistema de coordenadas mejoraba la fiabilidad de las medidas y la localización de
 las áreas de tierra, sino que el registro de fenómenos espaciales a través de un modelo convenido de distribución de
 fenómenos naturales y asentamientos humanos era de un valor incalculable para la navegación, para la búsqueda de rutas
-y en la estrategia militar \cite{jaualPenha2005}.
+y en la estrategia militar \cite{llopis2006sistemas}.
 
 \subsection{Coordenadas geográficas}
-El sistema de coordenadas natural de un esferoide, y por tanto de un datum, es el de coordenadas angulares
-(latitud y longitud) que suele denominarse de coordenadas geográficas (figura ??). Para definir latitud y
-longitud, debemos identificar el eje de rotación terrestre. El plano perpendicular al eje de rotación que corta la
-Tierra atravesándola por su centro define el Ecuador en su intersección con el esferoide. El resto de las lineas
-de intersección con la superficie terrestre de los infinitos planos perpendiculares al eje de rotación definen los
-diferentes paralelos o lineas de latitud constante. Finalmente, los meridianos pueden definirse como las lineas
-de intersección con la superficie terrestre de los infinitos planos que contienen al eje de rotación. Paralelos y
-meridianos se cruzan siempre en ángulo recto.
+Las coordenadas geográficas son un sistema de referencia que utilizan coordenadas angulares (latitud y longitud) 
+cuyo fin es el de determinar los ángulos laterales de la superficie terrestre. La latitud es el ángulo que existe
+entre un punto cualquiera y el Ecuador, medida sobre el meridiano que pasa por dicho punto. La longitud mide el ángulo 
+a lo largo del ecuador desde cualquier punto de la Tierra.
+
+Para la representación de objetos puntuales en una superficie, se utilizan las coordenadas X e Y que caracterizan la 
+planimetría y una coordenada Z que representa la altimertría del objeto en cuestión. 
 
 \subsection{Proyecciones}
+
+La cartografía estudia los sistemas de proyección para establecer una
+correspondencia matemática entre los puntos del elipsoide y sus transformados en un
+plano. Al conjunto de métodos se le llaman proyecciones cartográficas. Existen
+diversos tipos de proyecciones, y una de ellas es la proyección cilíndrica. Esta consiste
+en colocar un cilindro tangente a la Tierra por el ecuador. Se proyectan los puntos de la
+Tierra sobre el cilindro y posteriormente desarrollamos el cilindro. Según se coloque el
+cilindro tenemos a su vez varias proyecciones. Un caso es la proyección cilíndrica
+transversa de Mercator y dentro de este tipo tenemos la proyección transversa de
+Mercator. Esta proyección constituye la base de la Proyección UTM (Universal
+Transversa de Mercator).
+En la proyección UTM, la Tierra esta dividida en 60 partes o Husos, es decir en
+60 partes iguales de 6 grados cada una, que se empiezan a contar y dividir a partir del
+meridiano cero o de Greenwich. En ella los valores de coordenadas Y están tomados
+considerando el cero en el eje del Ecuador, y el valor de las coordenadas X, se toman
+a partir de la meridiana central de cada huso. Pero para que no haya valores negativos
+se le suma un valor de 500.000 par el valor de origen en las X.
+
+
 El proceso de transformar las coordenadas geográficas del esferoide en coordenadas planas para representar una
 parte de la superficie del elipsoide en dos dimensiones se conoce como proyección y es el campo de estudio
 tradicional de la ciencia cartográfica. La aparición de los SIG y la posibilidad de combinar información de
