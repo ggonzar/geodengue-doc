@@ -15,13 +15,13 @@ El resultado de la interpolación espacial depende de un algoritmo
 computacional o una ecuación matemática en la cual se emplean los datos
 de los puntos de control[1].
 
-\section{Métodos de interpolación locales}
+\subsection{Métodos de interpolación locales}
 Los método locales, utilizan la interpolación utilizando la información
 de los puntos más cercanos. Asumen autocorrelación espacial y estiman los
 valores de Z como una media ponderada de los valores de un conjunto de
 puntos de muestreo cercanos[2].
 
-\subsection{Polígonos de Voronoi}
+\subsubsection{Polígonos de Voronoi}
 Es uno de los métodos de interpolación más simples, simples basado en la
 distancia euclidiana. Se crean al unir los puntos entre sí, trazando las
 mediatrices de los segmento de unión. Las intersecciones de estas mediatrices
@@ -37,7 +37,7 @@ sea equidistante a los puntos vecinos y designando su área de influencia, como 
     \item Telefonía móvil.
 \end{itemize}
 
-\subsection{Ponderación de la inversa de la distancia (IDW)}
+\subsubsection{Ponderación de la inversa de la distancia (IDW)}
 Estima los puntos del modelo realizando una asignación de pesos a los datos
 del entorno en función inversa a la distancia que los separa del punto en
 cuestión. De esta forma, se acepta  que  los puntos más próximos al centroide
@@ -56,7 +56,7 @@ interpolación[2]. En consecuencia no se van a interpolar correctamente
 máximos o mínimos locales y además los puntos de muestreo aparecen en el
 mapa final como máximos y mínimos locales erróneos.
 
-\subsection{Kriging}
+\subsubsection{Kriging}
 El Kriging es un método geoestadístico de interpolación espacial de carácter
 global, exacto y estocástico. La idea básica de este método corresponde a
 la noción de dependencia espacial, según la cual las muestras cercanas
@@ -70,7 +70,7 @@ menos parcialmente mediante funciones de correlación espacial(la variación
 espacial de los valores de z puede deducirse de los valores circundantes
 de acuerdo con unas funciones homogéneas en toda el área) [4].
 
-\subsection{Tipos de Kriging}
+\subsubsection{Tipos de Kriging}
 Kriging simples
 Asume que las medias locales son relativamente constantes y de valor muy
 semejante a la media de la población que es conocida. La media de la
@@ -81,7 +81,7 @@ Las medias locales no son necesariamente próximas de la media de la población,
 usándose apenas los puntos vecinos para la estimación. Es el método más
 ampliamente utilizado en los problemas ambientales.
 
-\subsection{Semivarianza y semivariograma}
+\subsubsection{Semivarianza y semivariograma}
 El método de Kriging utiliza diversas teorías explayadas en la estadística.
 Una semivarianza es la medida del grado de dependencia espacial entre dos
 muestras. La magnitud de la semivarianza entre dos puntos depende de la
