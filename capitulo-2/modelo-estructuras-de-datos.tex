@@ -23,48 +23,28 @@ Las coordenadas geográficas son un sistema de referencia que utilizan coordenad
 cuyo fin es el de determinar los ángulos laterales de la superficie terrestre. La latitud es el ángulo que existe
 entre un punto cualquiera y el Ecuador, medida sobre el meridiano que pasa por dicho punto. La longitud mide el ángulo 
 a lo largo del ecuador desde cualquier punto de la Tierra.
-
 Para la representación de objetos puntuales en una superficie, se utilizan las coordenadas X e Y que caracterizan la 
 planimetría y una coordenada Z que representa la altimertría del objeto en cuestión. 
 
 \subsection{Proyecciones}
+Se denomina proyecciones cartográficas o proyecciones geográficas al conjunto de métodos utilizados para establecer
+una correspondencia matemática entre los puntos de la superficie curva de la tierra y sus transformaciones en una
+superficie plana. 
 
-La cartografía estudia los sistemas de proyección para establecer una
-correspondencia matemática entre los puntos del elipsoide y sus transformados en un
-plano. Al conjunto de métodos se le llaman proyecciones cartográficas. Existen
-diversos tipos de proyecciones, y una de ellas es la proyección cilíndrica. Esta consiste
-en colocar un cilindro tangente a la Tierra por el ecuador. Se proyectan los puntos de la
-Tierra sobre el cilindro y posteriormente desarrollamos el cilindro. Según se coloque el
-cilindro tenemos a su vez varias proyecciones. Un caso es la proyección cilíndrica
-transversa de Mercator y dentro de este tipo tenemos la proyección transversa de
-Mercator. Esta proyección constituye la base de la Proyección UTM (Universal
-Transversa de Mercator).
-En la proyección UTM, la Tierra esta dividida en 60 partes o Husos, es decir en
-60 partes iguales de 6 grados cada una, que se empiezan a contar y dividir a partir del
-meridiano cero o de Greenwich. En ella los valores de coordenadas Y están tomados
-considerando el cero en el eje del Ecuador, y el valor de las coordenadas X, se toman
-a partir de la meridiana central de cada huso. Pero para que no haya valores negativos
-se le suma un valor de 500.000 par el valor de origen en las X.
+El problema principal a la hora de realizar una proyección es que no existe forma de representar un una superficie
+plana toda la superficie curva, de la tierra, sin deformarla. Teniendo en cuenta que la curvatura de la superficie terrestre
+es proporcional al tamaño del área representada, esta deformación solo es relevante para zonas muy amplias. Si el área
+representada es pequeña, como ciudad, la deformación o distorsión es despreciable por lo que comúnmente son utilizadas
+coordenadas planas, relativas a un origen de coordenadas arbitrario y medidas sobre el terreno.
 
-
-El proceso de transformar las coordenadas geográficas del esferoide en coordenadas planas para representar una
-parte de la superficie del elipsoide en dos dimensiones se conoce como proyección y es el campo de estudio
-tradicional de la ciencia cartográfica. La aparición de los SIG y la posibilidad de combinar información de
-diferentes mapas con diferentes proyecciones ha incrementado la relevancia de la cartografía más allá de la
-mera confección de mapas.
-El problema fundamental a la hora de abordar una proyección es que no existe modo alguno de representar en un
-plano toda la superficie del elipsoide sin deformarla, el objetivo va a ser minimizar, en la medida de los posible,
-estas deformaciones. Puesto que el efecto de la esfericidad de la superficie terrestre es proporcional al tamaño
-del área representada ( y en consecuencia a la escala), estos problemas sólo se plantean al cartografiar zonas
-amplias. Cuando se trata de cartografiar zonas pequeñas, por ejemplo una ciudad, la distorsión es despreciable
-por lo que se suelen utilizar coordenadas planas, relativas a un origen de coordenadas arbitrario y medidas sobre
-el terreno. A estas representaciones se les llama planos en lugar de mapas.
-
+Con la aparición y difusión de los SIG, el conjunto de herramientas que ofrece dio paso a posibilidad
+de combinar información de diferentes mapas con diferentes proyecciones, esto ha incrementado la relevancia de la cartografía 
+más allá de la simple confección de mapas.
 
 \subsection{Elementos de representación cartográfica}
 A cada entidad espacial se puede asociar diversas variables (binomiales, cualitativas, ordinales o cuantitativas).
-Por ejemplo, a una carretera se puede asociar su anchura, categoría o flujo de vehículos; a un municipio pobla-
-ción, renta, etc.; a un pozo la cantidad de agua extraída al año, el nivel del agua o su composición. Normalmente
+Por ejemplo, a una carretera se puede asociar su anchura, categoría o flujo de vehículos; a un municipio población, 
+renta, etc.; a un pozo la cantidad de agua extraída al año, el nivel del agua o su composición. Normalmente
 al representar una entidad se representará también alguna de las variables asociadas a ella.
 El conjunto de ciencias involucradas en la producción de mapas (Geodesia, Cartografía, Geografía, Geología,
 Ecología, etc.) han desarrollado un amplio conjunto de técnicas para cartografiar los hechos de la superficie
