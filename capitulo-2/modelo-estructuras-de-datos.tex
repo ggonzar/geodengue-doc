@@ -23,6 +23,7 @@ Las coordenadas geográficas son un sistema de referencia que utilizan coordenad
 cuyo fin es el de determinar los ángulos laterales de la superficie terrestre. La latitud es el ángulo que existe
 entre un punto cualquiera y el Ecuador, medida sobre el meridiano que pasa por dicho punto. La longitud mide el ángulo 
 a lo largo del ecuador desde cualquier punto de la Tierra.
+
 Para la representación de objetos puntuales en una superficie, se utilizan las coordenadas X e Y que caracterizan la 
 planimetría y una coordenada Z que representa la altimertría del objeto en cuestión. 
 
@@ -42,43 +43,64 @@ de combinar información de diferentes mapas con diferentes proyecciones, esto h
 más allá de la simple confección de mapas.
 
 \subsection{Elementos de representación cartográfica}
-A cada entidad espacial se puede asociar diversas variables (binomiales, cualitativas, ordinales o cuantitativas).
-Por ejemplo, a una carretera se puede asociar su anchura, categoría o flujo de vehículos; a un municipio población, 
-renta, etc.; a un pozo la cantidad de agua extraída al año, el nivel del agua o su composición. Normalmente
-al representar una entidad se representará también alguna de las variables asociadas a ella.
-El conjunto de ciencias involucradas en la producción de mapas (Geodesia, Cartografía, Geografía, Geología,
-Ecología, etc.) han desarrollado un amplio conjunto de técnicas para cartografiar los hechos de la superficie
+Para representar un objeto cualquiera o un fenómeno geográfico en un mapa es fundamental conocer las características 
+de este dato que contempla los tres aspectos siguientes: dimensiones, nivel de medida y distribución. El análisis de las 
+características de los elementos permite elegir la simbología más adecuada para representar los fenómenos geográficos.
+
+A cada entidad espacial se puede asociar diversas variables han desarrollado un amplio conjunto de técnicas para cartografiar
+los hechos de la superficie
 terrestre.
+
+\subsubsection{Dimensiones}
+Por su extensión, los fenómenos que se representan en un mapa pueden clasificarse como puntuales, lineales, poligonales 
+o espacio-temporales.
+
 \begin{itemize}
+    \item Fenómenos puntuales : indican la presencia de entidades de un modo puntual. Pueden representarse utilizando 
+    diferentes símbolos o colores para una variable cualitativa, o diferentes tamaños para variables cuantitativas.
+    
+    \item Fenómenos lineales : simbolizan entidades, naturales o artificiales, de forma lineal conformadas a partir de
+    la unión de varios puntos. Pueden utilizarse diferentes anchuras de linea, diferentes colores o diferentes tipos de
+    linea para representar propiedades como la anchura de los ríos o categorías de vías de comunicación.
+    
+    \item Fenómenos Poligonales : La información puede ser bidimensional o tridimensional, que, por su tamaño, pueden 
+    ser representados como polígonos o porciones homogéneas del terreno en relación a una variable cualitativa. 
+    Pueden utilizarse diferentes colores o tramas para representar variables cualitativas o cuantitativas.
 
-\item Isolineas. Son lineas que unen puntos con igual valor, sirven por tanto para cartografiar variables cuan-
-titativas. Un buen ejemplo son las curvas de nivel del mapa topográfico o las isobaras de los mapas del
-tiempo.
-
-\item Coropletas. Areas con valor comprendido entre dos umbrales y pintadas con un color homogeneo. Per-
-miten representar variables cuantitativas de un modo más simplificado.
-
-\item Símbolos para indicar la presencia de entidades de un modo puntual. Pueden repesentarse utilizando di-
-ferentes símbolos o colores para representar una variable cualitativa (por ejemplo el partido gobernante),
-o diferentes tamaños para representar variables cuantitativas (por ejemplo el número de habitantes).
-
-\item Lineas que simbolizan entidades, naturales o artificiales, de forma lineal (carreteras, ríos). Pueden utili-
-zarse diferentes anchuras de linea, diferentes colores o diferentes tipos de linea para representar propie-
-dades como la anchura de los ríos o categorías de vías de comunicación.
-
-\item Poligonos representan objetos poligonales que, por su tamaño, pueden ser representados como tales
-(siempre dependiendo de la escala del mapa) o porciones homogeneas del terreno en relación a una
-variable cualitativa (tipo de roca). Pueden utilizarse diferentes colores o tramas para representar variables
-cualitativas o cuantitativas, por ejemplo en un mapa de municipios se puede representar la población
-municipal mediante sombreados.
+    \item Fenómenos espacio-temporales : La información depende del movimiento del fenómeno con respecto al paso del
+    tiempo (migraciones de aves, expansión de una civilización,etc.).
 \end{itemize}
 
-En catografía, suele distinguirse entre mapas topográficos, considerados de propósito general, y mapas temá-
-ticos (geológicos, vegetación, etc.) que reflejan un sólo aspecto de la realidad. Los mapas, especialmente los
-topográficos (figura ??), tratan de reflejar el máximo número de elementos potencialmente interesantes para el
-usuario, evitando llegar a confundirle por exceso de información. Una de las estrategias empleadas para ello
-es eliminar parte de la información (por ejemplo una curva de nivel que cruza una población) confiando en
-que la capacidad de nuestro cerebro para reconstruir objetos a partir de información parcial. Esta estrategia se
-denomina generalización.
-De este modo un mapa deja en ocasiones de ser un modelo de la superficie terrestre para ser una representación
-visual que incluye información variada y no totalmente estructurada.
+\subsubsection{Nivel de medida}
+Los elementos de la naturaleza se miden con el fin de clasificarlos y compararlos; lo que no siempre implica una
+magnitud cuantitativa, ya que puede ser cualitativa u jerárquica. En orden creciente de precisión tenemos:
+\begin{itemize}
+    \item Escala nominal : asigna una característica no numérica a un fenómeno, por lo que sólo se pueden hacer 
+    comparaciones de tipo cualitativo. Por ejemplo, un mapa de cuencas hidrográficas, un mapa de suelos. 
+    Este es el nivel más elemental de medida, pues no informa acerca de la cantidad o el orden.
+    
+    \item Escala ordinal : establece una cierta jerarquía no mensurable o no cuantificable entre los diferentes
+    elementos. Por ejemplo, un mapa en el que aparecen núcleos de población, cuyos símbolos están jerarquizados
+    según el número de habitantes sin especificar cantidad.
+    
+    \item Escala cuantitativa o de intervalo : La escala cuantitativa o de intervalo asigna una característica 
+    numérica a un fenómeno geográfico. Por ejemplo, en un mapa de temperaturas medias los intervalos son valores 
+    numéricos (expresados en grados Celsius o Fahrenheit). Es necesario emplear algún tipo de unidad convencional.
+\end{itemize}
+
+\subsubsection{Distribución}
+La ocurrencia de un fenómeno sobre una superficie terrestre puede darse a lo largo y ancho de toda ella, o de forma 
+discontinua, dándose el fenómeno en alguna localización del territorio. Los fenómenos en cuestión son :
+
+\begin{itemize}
+    \item Fenómenos continuos :  son los que tienen presencia en todos los puntos del territorio objeto de 
+    representación, aunque sólo se tengan medidas de algunos puntos significativos. Por ejemplo: la temperatura,
+    altitud sobre en nivel del mar, niveles de contaminación atmosférica,densidad poblacional, etc.
+    
+    \item Fenómenos discretos : son los que tiene presencia en algunos puntos del territorio objeto de 
+    representación. Un ejemplo son los datos de población, dado que se localizan en determinadas áreas y 
+    no en todos los puntos del territorio. Algunos fenómenos discretos pueden transformarse en continuos mediante 
+    la aplicación de una relación. Por ejemplo, el número de habitantes de una provincia (fenómeno discreto) pasa a 
+    ser un fenómeno continuo cuando se habla de densidad de población: la relación se aplica dividiendo el número 
+    de habitantes por la superficie de la provincia en km^2
+\end{itemize}
