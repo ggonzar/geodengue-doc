@@ -36,11 +36,11 @@ sudo apt-get install texlive-latex-extra
 * Características biológicas de Aedes aegypti
 * Factores ecológicos y productividad de Aedes aegypti
 * Métodos de muestreo de la abundancia poblacional
-* Dengue en paraguay
+* Dengue en Paraguay
 * Distribución geográfica
 * Salud pública
 
-##Capítulo 4. Problematica y Solución propuesta.
+##Capítulo 4. Problemática y Solución propuesta.
 * Introducción
 * Proceso Identificación de focos de Riesgo
 * Proceso Evolutivo
@@ -52,7 +52,7 @@ sudo apt-get install texlive-latex-extra
 * Diseño y Arquitectura
 * Conteo de larvas mediante procesamiento digital de imágenes
 * Estructuras de datos y algoritmos utilizados
-* Tecnologias y herramientas utlizadas
+* Tecnologías y herramientas utilizadas
 * representación de los datos
 
 
