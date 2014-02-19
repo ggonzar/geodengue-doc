@@ -1,5 +1,7 @@
-##Capítulo 5. Descripción de los algoritmos y modelos utilizados.
-* Aplicación móvil de recolección de datos
-* Algoritmo P.D.I para conteo de larvas
-* Algoritmo de interpolación
-* Algoritmo de Simulación
+##Capítulo 5. GeoDengue
+* Introducción
+* Diseño y Arquitectura
+* Conteo de larvas mediante procesamiento digital de imágenes
+* Estructuras de datos y algoritmos utilizados
+* Tecnologías y herramientas utilizadas
+* representación de los datos
