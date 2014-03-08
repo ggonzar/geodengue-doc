@@ -28,7 +28,7 @@ punto de entrada (el criterio de Delauny genera, tanto como le es posible, triá
 ley ser utilizado para crear objetos TIN). Luego, el proceso ajusta una superficie plana a cada triángulo, de
 manera tal que el total de la superficie está modelada como una colección de facetas trianguladas planas.
 
-\subsubsection{Ponderación de la inversa de la distancia (IDW)}
+\subsection{Ponderación de la inversa de la distancia (IDW)}
 Estima los puntos del modelo realizando una asignación de pesos a los datos del entorno en función inversa a la
 distancia que los separa del punto en cuestión. De esta forma, se acepta que los puntos más próximos al centroide
 intervienen de manera más relevante en la obtención del valor definitivo de Z para ese punto.
@@ -37,7 +37,7 @@ La elección del exponente de ponderación(p) determina la contribución de los 
 problema, cuanto mayor es p, más contribuyen los puntos próximos. Es necesario contar con muchos puntos para la
 interpolación.
 
-\subsubsection{Kriging}
+\subsection{Kriging}
 El Kriging es un método geoestadístico de interpolación espacial de carácter global, exacto y estocástico. La 
 idea básica de este método corresponde a la noción de dependencia espacial, según la cual las muestras cercanas
 tienen mayor similitud entre sí que las más apartadas\cite{NINO2011}.
