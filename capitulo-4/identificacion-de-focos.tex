@@ -1,6 +1,17 @@
 %!TEX root = ../tesis.tex
-\section{Identificación de focos de la enfermedad}
-La identificación de focos de la enfermedad del dengue es el proceso que a apartir de un conjunto de muestras recolectadas de dispositivos de ovipostura genera información geoespacial que permite determinar las zonas con mayor densidad poblacional del mosquito \textit{Aedes Aegipty}. Esto permite obtener información sobre la situación actual de la propagación del vector de la enfermedad y la posibilidad de realizar medidas correctivas y preventivas en las zonas más afectadas.
+\section{Identificación de focos de infestación}
+
+El proceso de identificación de focos de infestación, consiste en utilizar un conjunto de puntos con valores
+conocidos, denominados puntos de control, obtenidos mediante los dispositivos  de ovipostura para generar
+información geoespacial que permite determinar las zonas con mayor densidad poblacional de \textit{Aedes Aegipty}.El
+objetivo principal es analizar la situación actual y la propagación del vector de la enfermedad y para aplicar
+medidas correctivas en las zonas más afectadas y preventivas en las zonas aledañas.
+
+En \cite{NINO2011} se define la metodología de vigilancia y localización de los focos de infestación del 
+\textit{Aedes Aegipty} mediante la utilización de larvitrampas y técnicas de interpolación espacial, las 
+cuales permiten estimar la abundancia vectorial de forma continua en el espacio a partir del conteo de individuos
+colectados en el área de estudio. 
+
 \subsection{Definición del problema}
 El problema consiste encontrar un método para transformar un conjunto de valores de entradas que representan cantidad de larvas del mosquito \textit{Aedes Aegipty} a información geoespacial susceptible a análisis.
 
@@ -22,8 +33,13 @@ Sean:
 
 \subsection{Solución propuesta}
 El modelo solución para este problema se constituye de 4 partes fundamentales:
+
 \begin{enumerate}[style=multiline,leftmargin=1.5cm]
-    \item Establecimiento de puntos de control. Como primer paso es necesario fabricar los dispositivos de ovipostura (puntos de control, muestras) y distribuirlos en la zona o región que se desea analizazr. En el capítulo 5 se describe la estratégia implementada como mejor opción para la distribución de puntos de control. Además en el Anexo A se describe con detallada precisión la fabricación de los dispositivos de control; materiales, procedimiento, costos y recursos humanos necesarios
+    \item Establecimiento de puntos de control. Como primer paso es necesario fabricar los dispositivos de
+     ovipostura (puntos de control, muestras) y distribuirlos en la zona o región que se desea analizazr. En el
+     capítulo 5 se describe la estratégia implementada como mejor opción para la distribución de puntos de control.
+     Además en el Anexo A se describe con detallada precisión la fabricación de los dispositivos de control;
+     materiales, procedimiento, costos y recursos humanos necesarios
     
     \item Conteo. Una vez depositado el conjunto de muestras es necesario hacer un seguimiento para realizar el conteo de larvas que habitan en el dispositivo de control. Este conteo puede llevarse a cabo a los 7 días luego de que el dispositivo de ovipostura fue depositado. Es importante resaltar que un número mayor a 7 días podría significar que potenciales mosquitos hayan podido escapar del dispositivo de control por eso es necesario realizar el conteo antes de los 7 días o al séptimo día inclusive y luego vaciar el recipiente para volver a utilizarlo. 
     
