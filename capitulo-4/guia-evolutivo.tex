@@ -1,20 +1,22 @@
 \section{Proceso Evolutivo}
-El proceso evolutivo, es el encargado de realizar los cambios o transformaciones
-de forma gradual de los individuos de la población inicial, sometiéndolos a
-variaciones climáticas durante un periodo de tiempo. Mediante este proceso se 
-busca reproducir el comportamiento, del mosquito transmisor del dengue \textit{Aedes Aegigty}, 
-ante las variaciones climáticas a las que se encuentran sometidos, de forma a
-generar la suficiente información para realizar los análisis correspondientes.
+
+Definimos un proceso evolutivo, para describir el conjunto de transformaciones o cambios, a través del tiempo, 
+a lo que es sometido un antepasado común para generar nuevos descendientes y diversificar la población. Mediante 
+este proceso se  busca reproducir el comportamiento, del mosquito transmisor del dengue \textit{Aedes Aegigty},
+ante las variaciones climáticas a las que se encuentran sometidos, simulando las variaciones correspondientes a 
+sus características biológicas, de forma a generar la suficiente información para realizar los análisis
+correspondientes.
 
 \subsection{Definición del problema}
 
 El problema puede ser definido como, la necesidad de encontrar una función $PE$ que permita someter a los
-individuos a ciertas variaciones climáticas teniendo en cuenta sus características biológicas.
+individuos a ciertas variaciones climáticas teniendo en cuenta sus características biológicas descriptas en la 
+sección \ref{sec:caracteristicas-biologicas}.
 
 Sean:
 %lista de definiciones de las variables básicas
 \begin{description}[style=multiline,leftmargin=1.5cm]
-    \item[$t_{i}$] utilizada para representarel instante de tiempo mediante a una estructura de datos compleja
+    \item[$t_{i}$] utilizada para representar el instante de tiempo mediante a una estructura de datos compleja
     compuesta por datos climáticos y otras propiedades complementarias correspondientes al periodo tiempo
     individual $i$.\addsymbol{symbol:ti}
     
@@ -80,7 +82,6 @@ como, así también con otros que causen una alta mortalidad.
 
 La zonificación surge ante necesidad de dividir el espacio de estudio de una forma más granular, para identificar
 a los individuos que pertenecen a zonas aptas y los que no. 
-
 
 \subsubsection{Madurez y cambio de estado}
 La madurez $\eta (p_{j})$ de un individuo $p_{j}$, que se encuentra en un estado $\tau_{k}$, indica el nivel de
