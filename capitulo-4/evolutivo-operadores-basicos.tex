@@ -1,6 +1,6 @@
 
 \subsection{Operadores básicos}
-
+\label{subsec:operadores-basicos}
 Durante el proceso evolutivo existen un conjunto de operadores básicos que son aplicables a todos los individuos
 $p_{j}$ de la población, que son utilizados por $PE(t_{i},p_{j})$ para modificar las características del 
 individuo.
@@ -10,7 +10,7 @@ En \cite{rueda1990temperature} para describir el efecto de la temperatura en la 
 se utilizó el modelo no lineal de Sharpe \& DeMichele definido en \cite{sharpe1977reaction} para procesos
 poiquilotermos\footnote{La poiquilotermia o ectotermia es un término aplicado a ciertos animales con temperatura
 corporal variable} dependientes de la temperatura. El modelo de Sharpe \& DeMichele con inhibición de alta temperatura
-se encuentra descripto, en \cite{rueda1990temperature}, por la siguiente ecuación.
+se encuentra descripto, en \cite{rueda1990temperature}, por la siguiente ecuación\addsymbol{symbol:sharpe-demichele}.
 
 \begin{equation} \label{eq:sharpe-demichele}
    r(k)  = \cfrac{ RH025 \cfrac{k}{298.15} * 
@@ -30,7 +30,7 @@ del \textit{Aedes Aegypti} (Ver tabla \ref{tab:tasa-desarrollo}).
 \begin{table}
 \begin{minipage}{\paperwidth}
 \begin{tabular}{p{6cm} c c c c c }
-Estado                     & $HA$    & $RH025$   & $TH$   & $HH$      & $R^2$   \\
+Estado                     & $RH025$    & $HA$   & $TH$   & $HH$      & $R^2$   \\
 \hline
 Primer estadio larval      & 0.68007 & 28,033.83 & 304.33 & 72,404.07 & 0.95 \\
 Segundo estadio larval     & 1.24508 & 36,400.55 & 301.78 & 81,383.14 & 0.96 \\
@@ -57,27 +57,35 @@ como, así también con otros que causen una alta mortalidad.
 
 La zonificación surge ante necesidad de dividir el espacio de estudio de una forma más granular, para identificar
 a los individuos que pertenecen a zonas aptas y los que no.
+\begin{equation}
+Z (t_{i}, p_{j}) = t_{i} -  R \cfrac{t_{i}}{u(p_{j})}
+\end{equation}
+
+Donde $Z (t_{i}, p_{j})$ el valor de la temperatura relativa correspondiente a la zona de $p_{j}$, R es el rango
+inferior correspondiente a la zona de $p_{j}$ (Tabla \ref{tab:puntaje-zona}) y $u(p_{i})$ el valor predicho para 
+$p_{i}$ mediante la ecuación \eqref{eq:interpolacion-idw}.
 
 \begin{table}
 \centering
     \label{tab:puntaje-zona}
     \begin{tabular}{p{3cm} p{3cm}}
-        Tipo de zona & Rango\\
+        Tipo de zona & Rango \\
         \hline
-         Optima & 60 < $u(p_{i})$ \\
-        Buena & 60 > $u(p_{i}) \geq 30$ \\
-        Normal & 30 > $u(p_{i}) \geq 20$\\
-        Mala & 20 > $u(p_{i}) \geq 8$\\
-        Pésima & 8 > $u(p_{i}) \geq 0$ \\
+        Óptima & $60 \leq u(p_{i})$ \\
+        Buena  & $30 \leq u(p_{i}) < 60 $  \\
+        Normal & $20 \leq u(p_{i}) < 30$\\
+        Mala   & $8  \leq u(p_{i}) < 20$\\
+        Pésima &  $0 \leq u(p_{i}) < 8 $ \\
     \end{tabular}
-    \caption{División de zonas, donde $u(p_{i})$ se encuentra definida por la ecuación \eqref{eq:interpolacion-idw}}
+    \caption{División de zonas}
 \end{table}
+
 
 \subsubsection{Madurez y cambio de estado}
 La madurez $\eta (p_{j})$ de un individuo $p_{j}$, que se encuentra en un estado $\tau_{k}$, indica el nivel de
 proximidad al siguiente estado $\tau_{k+1}$. Se encuentra representada por un número que varía entre
 cero y cien, la función $\eta (t_{i}, p_{j})$, que se encarga de incrementar el nivel de madurez de $p{j}$
-que es sometido a $t_{i}$.
+que es sometido a $t_{i}$ \addsymbol{symbol:n_ti_pj}.
 
 \begin{equation}
 \eta (t_{i}, p_{j}) = \left\{
@@ -89,7 +97,7 @@ que es sometido a $t_{i}$.
 
 Donde 
 \begin{equation}
-    \omega(t_{i}, p_{j}) = 1/r(t_{i} + 273.15)
+    \omega(t_{i}, p_{j}) = 1/r(Z(t_{i}, p_{j}) + 273.15)
 \end{equation}
 
 Cuando $\eta(p_{i})$ del individuo $p_{j}$ alcanza su máximo valor, cien, el individuo ya se encuentra listo para
@@ -104,7 +112,8 @@ La mortalidad de los individuos depende de la etapa del ciclo de desarrollo en l
 
 \begin{equation}
  \begin{array}{l l}
-    me = 0.01 & \forall T,  278 k \geq T \geq 303 k
+    \upsilon(t_{i}, p_{j}) = 0.01 & \quad \forall T,  278 k \geq T \geq 303 k\\
+              & \quad \forall \tau(p_{j}) = HUEVO 
 \end{array}
 \end{equation}
 
@@ -113,14 +122,30 @@ define como una ecuación dependiente de temperatura. La segunda depende de la d
 larva.
 \begin{equation}
  \begin{array}{l l}
- ml = 0.01 + 0.9725 * exp\bigg[ \frac{-(T - 278)}{2.7035}\bigg] & \forall T, 278 k \geq T \geq 303 k
+\upsilon(t_{i}, p_{j}) = 0.01 + 0.9725 * exp\bigg[ \frac{-(T - 278)}{2.7035}\bigg] &\quad  \forall T, 278 k \geq T \geq 303 k\\
+              & \quad \forall \tau(p_{j}) = LARVA
+ 
+\end{array}
+\end{equation}
+
+En el caso de la pupa \cite{otero2006stochastic}, la mortalidad intrínseca de una pupa se ha considerado como 
+una ecuación dependiente de temperatura. Además de la mortalidad diaria en la fase de pupa, existe una importante 
+mortalidad adicional, solo el 83\% \cite{otero2006stochastic} de las pupas alcanzan la maduración y emergerán como
+mosquitos adultos, por lo tanto, el factor de supervivencia es de 0.83.
+
+\begin{equation}
+ \begin{array}{l l}
+
+  \upsilon(t_{i}, p_{j}) = 0.83 \Bigg[ 0.01 + 0.9725 * exp\bigg( \frac{-(T - 278)}{2.7035}\bigg)\Bigg] &\quad  \forall T, 278 k \geq T \geq 303 k\\
+              & \quad \forall \tau(p_{j}) = PUPA
 \end{array}
 \end{equation}
 
 Para la etapa adulto, \cite{otero2006stochastic} la define como una constante independiente de la temperatura.
 \begin{equation}
  \begin{array}{l l}
-    ma = 0.09 & \forall T, 278 k \geq T \geq 303 k
+    \upsilon(t_{i}, p_{j}) = 0.09 &\quad  \forall T, 278 k \geq T \geq 303 k\\
+              & \quad \forall \tau(p_{j}) = ADULTO
 \end{array}
 \end{equation}
 
@@ -132,7 +157,7 @@ a las condiciones climáticas a las que es sometido el individuos durante el pro
 \xi (t_{i}, p_{j}) = \left\{
   \begin{array}{l l}
     100 & \quad \forall i = 0 \\
-    \xi (t_{i-1}, p_{j}) - \frac{1}{\upsilon(t_{i}, p_{j}) * 24} & \quad \forall i \neq 0
+    \xi (t_{i-1}, p_{j}) - \cfrac{1}{\upsilon(Z(t_{i}, p_{j}),p_{j}) * 24} & \quad \forall i \neq 0
   \end{array} \right.
 \end{equation}
 
@@ -144,7 +169,7 @@ $\xi (t_{0}, p_{j})= 100$. A medida que $p_{j}$ sea sometido a varios
 $t_{i}$ la expectativa de vida irá disminuyendo, si $\xi (t_{i}, p_{j})= 0$ el
 individuo se ha quedado sin expectativa de vida, por lo que se debe proceder
 a eliminar $p_{j}$ de $P$ mediante el proceso de reducción de la población
-$\theta (t_{i}, p_{j})$.
+$\theta (t_{i}, p_{j})$ \addsymbol{symbol:t_ti_pj}.
 
 \begin{equation}
 \theta (t_{i}, p_{j}) = \left\{
