@@ -5,7 +5,6 @@ Durante el proceso evolutivo existen un conjunto de operadores básicos que son 
 $p_{j}$ de la población, que son utilizados por $PE(t_{i},p_{j})$ para modificar las características del 
 individuo.
 
-
 \subsubsection{Tasa de desarrollo}
 En \cite{rueda1990temperature} para describir el efecto de la temperatura en la tasa media de desarrollo,
 se utilizó el modelo no lineal de Sharpe \& DeMichele definido en \cite{sharpe1977reaction} para procesos
@@ -57,8 +56,22 @@ distinto. Cada entorno puede contar con factores que lo hagan apto para el buen 
 como, así también con otros que causen una alta mortalidad.
 
 La zonificación surge ante necesidad de dividir el espacio de estudio de una forma más granular, para identificar
-a los individuos que pertenecen a zonas aptas y los que no. 
+a los individuos que pertenecen a zonas aptas y los que no.
 
+\begin{table}
+\centering
+    \label{tab:puntaje-zona}
+    \begin{tabular}{p{3cm} p{3cm}}
+        Tipo de zona & Rango\\
+        \hline
+         Optima & 60 < $u(p_{i})$ \\
+        Buena & 60 > $u(p_{i}) \geq 30$ \\
+        Normal & 30 > $u(p_{i}) \geq 20$\\
+        Mala & 20 > $u(p_{i}) \geq 8$\\
+        Pésima & 8 > $u(p_{i}) \geq 0$ \\
+    \end{tabular}
+    \caption{División de zonas, donde $u(p_{i})$ se encuentra definida por la ecuación \eqref{eq:interpolacion-idw}}
+\end{table}
 
 \subsubsection{Madurez y cambio de estado}
 La madurez $\eta (p_{j})$ de un individuo $p_{j}$, que se encuentra en un estado $\tau_{k}$, indica el nivel de
@@ -69,9 +82,14 @@ que es sometido a $t_{i}$.
 \begin{equation}
 \eta (t_{i}, p_{j}) = \left\{
   \begin{array}{l l}
-    \eta (p_{j}) = 0 & \quad \forall i = 0 \\
-    \eta (p_{j}) + \frac{1}{\omega(t_{i}, p_{j}) * 24} & \quad \forall i \neq 0
+    \eta (t_{i}, p_{j}) = 0 & \quad \forall i = 0 \\
+    \eta (t_{i-1},p_{j}) + \cfrac{1}{\omega(t_{i}, p_{j}) * 24} & \quad \forall i \neq 0
   \end{array} \right.
+\end{equation}
+
+Donde 
+\begin{equation}
+    \omega(t_{i}, p_{j}) = 1/r(t_{i} + 273.15)
 \end{equation}
 
 Cuando $\eta(p_{i})$ del individuo $p_{j}$ alcanza su máximo valor, cien, el individuo ya se encuentra listo para
@@ -81,6 +99,31 @@ La velocidad con la que incrementa el valor de $\eta(p_{j})$ depende de las cond
 descritas  por $t_{i}$ y las características de la zona en la que se encuentra $p_{j}$.
 
 \subsubsection{Mortalidad}
+La mortalidad de los individuos depende de la etapa del ciclo de desarrollo en la que se encuentren. En 
+\cite{otero2006stochastic} se define la mortalidad de huevos como una constante independiente a la temperatura:
+
+\begin{equation}
+ \begin{array}{l l}
+    me = 0.01 & \forall T,  278 k \geq T \geq 303 k
+\end{array}
+\end{equation}
+
+En el caso de las larvas \cite{otero2006stochastic} define que se encuentra influenciada dos métodos. La primera
+define como una ecuación dependiente de temperatura. La segunda depende de la densidad poblacional del habitad de la
+larva.
+\begin{equation}
+ \begin{array}{l l}
+ ml = 0.01 + 0.9725 * exp\bigg[ \frac{-(T - 278)}{2.7035}\bigg] & \forall T, 278 k \geq T \geq 303 k
+\end{array}
+\end{equation}
+
+Para la etapa adulto, \cite{otero2006stochastic} la define como una constante independiente de la temperatura.
+\begin{equation}
+ \begin{array}{l l}
+    ma = 0.09 & \forall T, 278 k \geq T \geq 303 k
+\end{array}
+\end{equation}
+
 La mortalidad y supervivencia de los individuos se encuentra expresada mediante la variable de expectativa de
 vida. La expectativa de vida es un valor numérico que indica la vitalidad del individuos, esta varía de acuerdo
 a las condiciones climáticas a las que es sometido el individuos durante el proceso evolutivo.
