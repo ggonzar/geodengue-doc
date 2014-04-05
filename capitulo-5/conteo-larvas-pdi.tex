@@ -1,0 +1,67 @@
+\section{Conteo de larvas mediante procesamiento digital de imágenes}
+Llamamos procesamiento digital de imágenes (PDI) al conjunto de técnicas de para alterar o extraer
+información de imágenes digitales. Existe una inmensa cantidad de contenido de imágenes digitales 
+(cámaras de seguridad, fotografías personales, contenido web de blogs, noticias y eventos, etc.). 
+De dicha cantidad de datos en formato de imágenes digitales existe cada vez más mayor necesidad
+de procesarlos para generar el contenido deseado. 
+Una aplicación práctica sería aplicar un filtro visual a una imagen. Existen distintos tipos de 
+filtros gráficos como vintage, por puntos, tipo antigua, poster y otros que mediante un algoritmo 
+PDI puede ser aplicados a una imagen. Como ejemplo; tomar una fotografía actual y aplicar un filtro de foto antigua. Esta aplicación práctica representa el procesamiento para la alteración de imágenes.
+
+La aplicación práctica menos más compleja es el procesamiento de imágenes para la extracción de 
+información. Es más sencillo rotar una imagen que realizar un análisis de cuantas personas se 
+encuentran en dicha imagen. Análogo al proceso de alterar imágenes existen varias técnicas para la
+extracción de información a partir de objetos visuales digitales. Una aplicación práctica sería
+identificar el número de chapa de un vehículo al cual se le tomó una fotografía al infringir una 
+ley de tránsito.
+
+Para este trabajo utilizamos PDI para resolver y automatizar un proceso fundamental para nuestro
+sistema; Realizar el conteo de larvas en un recipiente de ovipostura. El conteo de larvas se realiza 
+de la siguiente manera:
+
+\begin{enumerate}
+    \item Se toma una (o más) fotografía(s) al dispositivo de ovipostura del cual se quiere conocer el 
+    número de larvas.
+    \item Se guarda la fotografía en el servidor para ser analizado.
+    \item Un algoritmo que utiliza técnicas de PDI analiza la imagen y obtiene la cantidad de larvas
+    contenidas en la misma.
+\end{enumerate}
+
+En el modelo propuesto utilizamos el algoritmo de Otsu explicado en la siguiente sección para la
+segmentación mediante umbrales y un algoritmo de no aproximación para la identificación de contornos
+para las imágenes.
+
+\subsection{Método Otsu}
+Dentro de el área de PDI (procesamiento digital de imágenes) existen diferentes métodos de análisis
+de imágenes con distintas características y para distintos fines. Ya sea que necesitemos realizar
+reconocimiento de rostros, formas o figuras, o realizar cualquier tipo de procesamiento con las 
+imágenes existe un método o un conjunto de procesos que cumplen la función que necesitamos.
+
+Uno de los métodos dentro del campo de PDI es el método de Otsu. Este es un método de segmentación por
+umbralización. La umbralización es el proceso de establecer umbrales (valores máximos y mínimos) que se
+aplican al análisis de una imagen. Cada píxel es discriminado según los valores umbrales para determinar
+a qué grupo pertenece. Un ejemplo práctico conceptual sería pasar una imagen en colores a una misma
+imagen en blanco y negro. Para ello necesitamos definir un umbral, un valor que nos determine si 1 píxel
+analizado pertenece al grupo de los ”blancos” o de los ”negros” dependiedo de su color actual. Sí el
+color del píxel es un rojo intenso entonces lo incluimos en el conjunto de los ”negros” y si el color es
+más bien claro, como blanco o gris claro entonces lo agregamos al grupo de los ”blancos”.
+
+Este método lo utilizamos en nuestro trabajo para, a partir de una fotografía de las larvas, hacer un
+traspaso a una imagen a escala de grises, la cual puede ser analizada por un algoritmo de conteo y así
+realizar el conteo de las larvas.
+
+En primer lugar definimos 2 conjuntos. El conjunto de objetos dentro de la imagen(e: las larvas) y el
+fondo(ej: el recipiente con el agua que contiene las larvas). Luego definimos el umbral ”T” que
+determina si un píxel pertenece a un grupo u otro según su nivel de gris ”g”. La función ”f” retorna 1 
+o 0 por cada píxel (par de coordenadas ”x” e ”y”).
+
+\begin{equation}
+f(x, y) =\left\{
+  \begin{array}{l l}
+    1 & \quad g > T\\
+    0 & \quad g \leq T
+  \end{array} \right.
+\end{equation}
+
+Como se observa en la ecuación se analiza simplemente el nivel de gris en cada píxel y se determina si
+forma parte de un objeto de estudio o si forma parte del fondo.
