@@ -1,12 +1,63 @@
-\subsection{Tasa de desarollo}
-Verificar las tasas de desarrollo de los individuos de la población de forma a validar
-si el incremento de la madurez del individuo es correcta. Se debe contar con el tiempo
-promedio de de la duración de cada estado, en días, para compararlos con los promedios
-generales.
+\section{Desarollo y mortalidad}
+En esta sección se realizarán pruebas cuyo objetivo principal es validar el desarrollo y la mortalidad de
+individuos de la población. Se validará si la duración del ciclo de vida y la mortalidad se adecua a los
+promedios definidos por expertos.
 
-\begin{itemize}
-    \item Temperatura constante
-    \item Duración en promedio en cada estado a temperatura constante
-    \item Desviación estándar
-    \item Calcular el error
-\end{itemize}
+\subsection{Duración del ciclo vida}
+Se realiza una comparativa entre, la duración del ciclo de vida, obtenida y la definida por
+\cite{dengueUruguayCap2}, además se calculará el error en días. Con esta prueba se pretende
+validar que la duración de ciclo de vida se encuentre entre los rangos determinados por los 
+expertos mediante observación y experimentación en laboratorios (ver \ref{tab:desarrollo-ciclo-test}).
+
+\begin{table}
+\begin{tabular}{c c c c c }
+Temperatura & Duración del ciclo& Duración promedio & Resultados & Error\\
+\hline
+20  & 10-47  & 26.83 & 0 & 0   \\
+25  & 9-29  & 17.59 & 0 & 0   \\
+30  & 5-16  & 9.75 & 0 & 0   \\
+\end{tabular}
+\caption{ \label{tab:desarrollo-ciclo-test} Comparativa de los resultados obtenidos con los 
+promedios de duración del ciclo indicados en \cite{dengueUruguayCap2}}
+\end{table}
+
+\subsection{Duración de las etapas inmaduras como porcentaje del tiempo ocupado para llegar a adulto}
+En \cite{dengueUruguayCap2} se define la duración promedio de los cuatro estados larvales sucesivos y la
+pupa, expresada como porcentaje del tiempo ocupado por la larva hasta que llega a adulto, son 14.6, 13.9,
+17.5, 33.3 y 20.6, respectivamente. Durante el proceso evolutivo se maneja a la larva como una entidad
+única y no se tiene en cuenta la transición entre sus estadios larvales, por lo que la duración promedio
+de los estados larva y la pupa, expresados como porcentaje del tiempo ocupado por la larva a llegar a
+adulto quedan resumidos como 79.3 y 20.6 (Ver \ref{tab:desarrollo-ciclo-distribucion-test}).
+
+\begin{table}
+\begin{tabular}{c c c c c }
+Cantidad de individuos & Duración del ciclo & Larva & Pupa  & Error\\
+\hline
+-1   & -1 & -1 & -1 & -1   \\
+-1   & -1 & -1 & -1 & -1   \\
+-1   & -1 & -1 & -1 & -1   \\
+\end{tabular}
+\caption{ \label{tab:desarrollo-ciclo-distribucion-test} Duración promedio, en días, de los estados larva
+y la pupa, expresados como porcentaje del tiempo ocupado por la larva a llegar a adulto}
+\end{table}
+
+\subsection{Desarrollo de las etapas inmaduras en distintos contenedores}
+Se realiza una comparativa de la duración promedio del desarrollo de las etapas inmaduras de Ae. aegypti 
+en distintos contenedores de \cite{manrique1998desarrollo} (Ver 
+\ref{tab:desarrollo-ciclo-contenedores-test}).
+
+\begin{table}
+\begin{tabular}{p{5cm} c c c c }
+Contenedor           & Larva & Pupa & Total \\
+\hline
+Neumáticos           & 8.1   & 3.05 & 11.15\\
+Florero              & 12.79 & 1.28 & 14.07\\
+Jarrón               & 14.92 & 2.2  & 17.12\\
+Trampa para hormigas & 15.57 & 1.95 & 17.52\\
+Laboratorio          & 4.74  & 2    & 6.74\\
+Resultados           & -1    & -1   & -1\\
+\end{tabular}
+
+\caption{ \label{tab:desarrollo-ciclo-contenedores-test} Duración promedio en días de las  larvas y pupas
+de Ae. aegypti en neumáticos comparados con mediciones en el laboratorio y en otros contenedores.}
+\end{table}
