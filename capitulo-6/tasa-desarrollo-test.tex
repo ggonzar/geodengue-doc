@@ -4,32 +4,81 @@ individuos de la población. Se validará si la duración del ciclo de vida y la
 promedios definidos por expertos.
 
 \subsection{Duración del ciclo vida}
-Se realiza una comparativa entre, la duración del ciclo de vida, obtenida y la definida por
-\cite{dengueUruguayCap2}, además se calculará el error en días. Con esta prueba se pretende
-validar que la duración de ciclo de vida se encuentre entre los rangos determinados por los 
-expertos mediante observación y experimentación en laboratorios (ver \ref{tab:desarrollo-ciclo-test}).
+Las tasas de desarrollo, supervivencia y en general la duración del ciclo de vida de las distintas
+etapas del Aedes Aegypti, son susceptibles a los efectos de la temperatura. 
+
+Se recolectaron los datos correspondientes a la duración del ciclo de vida de las etapas inmaduras, desde
+la eclosión de huevos  hasta alcanzar el estado adulto, a partir de estos datos se calcula la media y la
+mediana predicha del número de días y se realiza una comparación, a seis temperaturas constantes 
+(15-34 \textcelsius), con los resultados obtenidos en  \cite{rueda1990temperature} bajo condiciones de
+laboratorio.
 
 \begin{table}
-\begin{tabular}{c c c c c }
-Temperatura & Duración del ciclo& Duración promedio & Resultados & Error\\
+\begin{center}
+\begin{tabular}{p{2cm} c c c c c c }
+Estadio de & Temperatura    &   & Media     & Mediana  & Media    & Mediana\\
+desarrollo & \textcelsius   & n & observada & observada& predicha & predicha\\
+
 \hline
-20  & 10-47  & 26.83 & 0 & 0   \\
-25  & 9-29  & 17.59 & 0 & 0   \\
-30  & 5-16  & 9.75 & 0 & 0   \\
+First instar & 15 & 318 & 7.67 (0.14)a  & 7.68  & -1 & -1\\ 
+             & 20 & 337 & 2.67 (0.I1)b  & 2.55  & -1 & -1\\ 
+             & 25 & 284 & 2.74 (0.12)b  & 2.69  & -1 & -1\\ 
+             & 27 & 344 & 0.96 (0.03)c  & 0.98  & -1 & -1\\ 
+             & 30 & 284 & 1.18 (1.07)cd & 1.16  & -1 & -1\\ 
+             & 34 & 254 & 1.42 (0.03)d  & 1.40  & -1 & -1\\ 
+Second instar& 15 & 190 & 8.88 (0.40)a  & 8.19  & -1 & -1\\ 
+             & 20 & 301 & 1.43 (0.I1)b  & 1.45  & -1 & -1\\ 
+             & 25 & 242 & 1.35 (0.05)b  & 1.27  & -1 & -1\\ 
+             & 27 & 291 & 0.77 (0.03)b  & 0.71  & -1 & -1\\ 
+             & 30 & 240 & 0.89 (0.05)b  & 0.86  & -1 & -1\\ 
+             & 34 & 211 & 1.31 (0.04)b  & 1.31  & -1 & -1\\ 
+Thrid  instar& 15 & 93  & 14.97 (0.83)a & 13.92 & -1 & -1\\ 
+             & 20 & 262 & 1.62 (0.05)b  & 1.61  & -1 & -1\\ 
+             & 25 & 172 & 1.37 (0.06)b  & 1.48  & -1 & -1\\ 
+             & 27 & 251 & 0.96 (0.03)b  & 0.99  & -1 & -1\\ 
+             & 30 & 201 & 0.98 (0.03)b  & 0.93  & -1 & -1\\ 
+             & 34 & 167 & 0.84 (0.04)b  & 0.85  & -1 & -1\\ 
+Fourd instar & 15 & 30  & 15.31 (1.22)a & 16.03 & -1 & -1\\ 
+             & 20 & 221 & 3.59 (0.07)b  & 3.45  & -1 & -1\\ 
+             & 25 & 139 & 3.15 (0.06)bc & 3.26  & -1 & -1\\ 
+             & 27 & 207 & 1.78 (0.03)d  & 1.78  & -1 & -1\\ 
+             & 30 & 161 & 1.94 (0.04)cd & 1.91  & -1 & -1\\ 
+             & 34 & 130 & 1.49 (0.05)d  & 1.48  & -1 & -1\\ 
+Pupa         & 15 & 4   & 8.49 (1.13)a  & 8.46  & -1 & -1\\ 
+             & 20 & 162 & 3.11 (0.07)b  & 3.04  & -1 & -1\\ 
+             & 25 & 75  & 3.03 (0.04)b  & 2.98  & -1 & -1\\ 
+             & 27 & 142 & 1.79 (0.03)c  & 1.81  & -1 & -1\\  
+             & 30 & 127 & 1.82 (0.04)c  & 1.79  & -1 & -1\\ 
+             & 34 & 97  & 1.09 (0.03)d  & 1.05  & -1 & -1\\ 
+Total c      & 15 & 4   & 55.33 (3.55)a & 58.31 & -1 & -1\\ 
+             & 20 & 162 & 12.43 (0.19)b & 12.49 & -1 & -1\\ 
+             & 25 & 75  & 11.72 (0.11)b & 11.57 & -1 & -1\\ 
+             & 27 & 142 & 6.36 (0.04)c  & 6.49  & -1 & -1\\ 
+             & 30 & 127 & 6.86 (0.04)c  & 6.89  & -1 & -1\\ 
+             & 34 & 97  & 6.15 (0.05)c  & 6.29  & -1 & -1\\ 
 \end{tabular}
-\caption{ \label{tab:desarrollo-ciclo-test} Comparativa de los resultados obtenidos con los 
-promedios de duración del ciclo indicados en \cite{dengueUruguayCap2}}
+\caption{ \label{tab:desarrollo-ciclo-temp-test} Media, la mediana, mediana predicha y media predicha
+del número de días para el desarrollo de Ae. aegypti desde eclosión de los huevos a la emergencia de
+adultos a seis temperaturas constantes (15-34 \textcelsius) \cite{rueda1990temperature}}
+\end{center}
 \end{table}
 
+
 \subsection{Duración de las etapas inmaduras como porcentaje del tiempo ocupado para llegar a adulto}
+
+Según \cite{manrique1998desarrollo}, se ha reportado que el intervalo de temperatura óptimo para el
+desarrollo de las formas juveniles de Ae. aegypti es entre 25 y 30 C, con una duración aproximada de
+diez días (17) 
+
 En \cite{dengueUruguayCap2} se define la duración promedio de los cuatro estados larvales sucesivos y la
 pupa, expresada como porcentaje del tiempo ocupado por la larva hasta que llega a adulto, son 14.6, 13.9,
 17.5, 33.3 y 20.6, respectivamente. Durante el proceso evolutivo se maneja a la larva como una entidad
 única y no se tiene en cuenta la transición entre sus estadios larvales, por lo que la duración promedio
 de los estados larva y la pupa, expresados como porcentaje del tiempo ocupado por la larva a llegar a
-adulto quedan resumidos como 79.3 y 20.6 (Ver \ref{tab:desarrollo-ciclo-distribucion-test}).
+adulto quedan resumidos como 79.3 y 20.6. (Ver tabla \ref{tab:desarrollo-ciclo-distribucion-test}).
 
 \begin{table}
+\begin{center}
 \begin{tabular}{c c c c c }
 Cantidad de individuos & Duración del ciclo & Larva & Pupa  & Error\\
 \hline
@@ -39,14 +88,16 @@ Cantidad de individuos & Duración del ciclo & Larva & Pupa  & Error\\
 \end{tabular}
 \caption{ \label{tab:desarrollo-ciclo-distribucion-test} Duración promedio, en días, de los estados larva
 y la pupa, expresados como porcentaje del tiempo ocupado por la larva a llegar a adulto}
+\end{center}
 \end{table}
 
 \subsection{Desarrollo de las etapas inmaduras en distintos contenedores}
 Se realiza una comparativa de la duración promedio del desarrollo de las etapas inmaduras de Ae. aegypti 
-en distintos contenedores de \cite{manrique1998desarrollo} (Ver 
+en distintos contenedores de \cite{manrique1998desarrollo} (Ver tabla
 \ref{tab:desarrollo-ciclo-contenedores-test}).
 
 \begin{table}
+\begin{center}
 \begin{tabular}{p{5cm} c c c c }
 Contenedor           & Larva & Pupa & Total \\
 \hline
@@ -60,4 +111,5 @@ Resultados           & -1    & -1   & -1\\
 
 \caption{ \label{tab:desarrollo-ciclo-contenedores-test} Duración promedio en días de las  larvas y pupas
 de Ae. aegypti en neumáticos comparados con mediciones en el laboratorio y en otros contenedores.}
+\end{center}
 \end{table}
