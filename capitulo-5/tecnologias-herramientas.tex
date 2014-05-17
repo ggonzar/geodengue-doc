@@ -1,1 +1,78 @@
 \section{Tecnologías y herramientas utilizadas}
+
+Una vez analizadas las funcionalidades del sistema, se tomo la decisión de implementar la herramienta
+como aplicación web por su orientación a múltiples usuarios y a la localización geográfica de contenidos,
+es decir, que su objetivo está orientada a un uso online cuyo contenido depende de las aportaciones de
+diferentes usuarios. Así también se evita un problema de las aplicaciones standalone, que obligan a que
+se tenga que instalar el software en los equipos cliente, con la consiguiente dificultad de acceso a la
+herramienta. En el caso de las aplicaciones web tan solo se necesita un navegador web para su acceso,
+aunque en este caso ha de ser lo suficientemente reciente para soportar las tecnologías que se emplean.
+
+Las tecnologías utilizadas en el desarrollo de la aplicación fueron <TODO>
+
+para el procesamiento digital de imágenes se utilizó el paquete <TODO> de python
+
+Como servidor de aplicaciones web se utilizó apache, con respecto al almacenamiento de datos, 
+se decidió usar el sistema gestor de bases de datos PostgreSQL , por ser de uso libre y por 
+cuestiones referentes a los datos geográficos ya que dispone de la extensión PostGIS para su manejo.
+
+
+En lo referente a las tecnologías GIS empleadas, puesto que la aplicación ofrecerá la posibilidad 
+de visualizar, consultar y modificar información geográfica, los estándares de OGC con los que trabaja, directa o indirectamente, son GML, WFS, WMS, SLD,
+Filter Encoding y documentos de contexto de mapas (Web Map Context Documents, WMC).
+
+El servidor de información geográfica Geoserver. 
+
+
+El Cliente de información geográfica Mapbuilder. Genera mapas y realiza peticiones, 
+interactuando con el servidor GIS a través de los estándares OGC. Es una Librería que 
+implementa un entorno para crear el contenido de una página web mediante el procesamiento 
+de documentos XML usando la tecnología AJAX.
+
+
+\subsection{GeoServer}
+El proyecto GeoServer en una aplicación Java que integra la versión 1.0 de WFS,
+1.1.1 de WMS y 1.0 de WCS para poder publicar información bien directamente permi-
+tiendo su manipulación, bien en forma de imágenes o mapas. Geoserver tiene en cuenta
+cuatro metas principales en el ámbito de desarrollo, ordenadas por importancia:
+Cumplimiento de los estándares: El proyecto GeoServer intenta promover la estandarización, 
+y soportar tantos estándares como sea posible, para permitir a todos compartir su información 
+geoespacial rápidamente y de una forma interoperable, disminuyendo así las barreras entre 
+proveedores de información geográfica.
+Soporte para diferentes formatos información: Para hacer un producto útil, GeoServer intenta 
+traducir todos los formatos de datos de información geográfica en uno solo. Sin embargo, 
+el soporte para varios formatos de datos es una de las prioridades. Actualmente soporta 
+eficientemente almacenamiento en los formatos shapefile, PostGIS, DB2, Oracle, ArcSDE y, 
+además ofrece servicio para soportes en prueba como MySQL, Vector Product Format Library 
+(VPF), Web Feature Server (WFS) y MapInfo. Y en cuanto a los formatos de salida que Geoserver
+puede generar como respuesta a peticiones WFS-T y WMS se encuentran, entre
+otros:
+• JPEG: Joint Photographic Experts Group, algoritmo de compresión de imágenes con pérdida 
+de información.
+• PNG: Portable Network Graphics, algoritmo de compresión de imágenes sin
+pérdida de información.
+• SVG: Scaleable Vector Graphics, lenguaje para describir gráficos vectoriales
+bidimensionales.
+• GML: Geography Markup Language.
+• PDF: Portable Document Format, formato de almacenamiento de documentos, desarrollado 
+por la empresa Adobe Systems.
+• shapefiles: formato propietario abierto de datos espaciales desarrollado por la compañía ESRI,
+originalmente creado para su producto ArcView GIS, pero actualmente se ha convertido en formato estándar
+de facto por la importancia que los productos ESRI tienen en el mercado SIG. Un Shapefile es un formato
+vectorial de almacenamiento digital donde se guarda la localización de los elementos geográficos y los
+atributos asociados a ellos. El formato carece de capacidad para almacenar información topológica.
+
+• KML/KMZ: Keyhole Markup Language, lenguaje de marcado basado en XML para representar datos geográficos
+en tres dimensiones, desarrollado para ser manejado con Google Earth. 
+
+Fácil de usar: Fácil de instalar, configurar y ejecutar para organizaciones con pocos recursos técnicos. Orientado para organizaciones con experiencia técnica mínima.
+
+Eficiencia: El procesado de información geográfica normalmente requiere muchas cargas computacionales y
+de ancho de banda, GeoServer intenta minimizar ambas. Desde el punto de vista del usuario, GeoServer es
+una herramienta necesaria para mostrar mapas en las paginas web, donde el usuario puede hacer zoom,
+cambiar la vista y hacer operaciones soportadas por los especificaciones WMS y WFS de OGC.
+
+Es usado en conjunto con clientes como MapBuilder, con el objetivo de conectar facil y54
+2. Tecnologías y software GIS eficientement bases de datos geográficas con clientes GIS. 
+El uso de estándares permite combinar la información del GeoServer fácilmente con otra información 
+geográfica
