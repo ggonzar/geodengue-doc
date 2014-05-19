@@ -1,16 +1,29 @@
 
 \subsection{Desarrollo de las etapas inmaduras}
-Se realizó un análisis para determinar la tasa de desarrollo, en días, de los las etapas inmaduras del
-Aedes aegypti en sus fases de larva y pupa, de acuerdo a los resultados obtenidos (Tabla 
-\ref{tab:desarrollo-inmaduras-test}), se obtuvo un promedio general de -1 días para la población que 
-fue sometida a diferentes temperaturas. Los resultados obtenidos son comparados con los resultados de 
-la duración en días descriptos en \cite{BESERRA2006} y en \cite{rueda1990temperature}.
+Para el análisis de la tasa de desarrollo, en días, de las etapas inmaduras,larva y pupa, del Aedes
+aegypti, se utilizó como referencia los resultados obtenidos por \cite{rueda1990temperature} a 6
+temperaturas constantes (15-34\textcelsius).
+
+En la tabla \ref{tab:desarrollo-inmaduras-test} se puede apreciar los resultados obtenidos mediante el
+proceso evolutivo para la población de prueba sometida a las 6 temperaturas constantes. Estos datos son
+comparados con los resultados obtenidos en \cite{rueda1990temperature}. En general se obtuvo un 
+desarrollo de 7,91 días para las etapas inmaduras, se puede observar una diferencia de 0,22 en
+comparación a los 8,13 días para la media predicha y 0,18 para los 8.09 días de la media observada. Los
+autores de \cite{rueda1990temperature} definen como la media predicha, a la tasa de desarrollo obtenida
+mediante el modelo de Sharpe \& DeMichele, cabe resaltar que los parámetros para dicho modelo son los
+mismos utilizados durante el proceso evolutivo.
 
 \begin{table}
     \begin{center}
-        \begin{tabular}{p{2cm} c  c c c c }
+   
+        \caption{ \label{tab:desarrollo-inmaduras-test} Análisis de la tasa de de desarrollo del Aedes 
+         Aegypti desde eclosión de los huevos a la emergencia de adultos a seis temperaturas constantes 
+        (15-34 \textcelsius).}
+        
+        \begin{tabular}{p{3cm} c  c c c r }
+            \hline \\
             Estadio de & Temperatura    & Media     & Mediana  & Media    & Media\\
-            desarrollo & \textcelsius   & observada & observada& esperada & predicha\\
+            desarrollo & \textcelsius   & observada & observada& predicha & obtenida\\
             \hline
             \hline \\
             Larva        & 15           & 46,83 & 45,82 & 42.33 & 43.47\\ 
@@ -27,8 +40,5 @@ la duración en días descriptos en \cite{BESERRA2006} y en \cite{rueda1990tempe
                          & 30           & 1.82  & 1.79  & 1.56 & 1.02\\ 
                          & 34           & 1.09  & 1.05  & 1.08 & 1.02\\ 
         \end{tabular}
-    \caption{ \label{tab:desarrollo-inmaduras-test} Análisis de la tasa de de desarrollo del Aedes 
-    Aegypti desde eclosión de los huevos a la emergencia de adultos a seis temperaturas constantes 
-    (15-34 \textcelsius)}
     \end{center}
 \end{table}
