@@ -1,25 +1,46 @@
 \subsection{Desarrollo de la etapa de huevo}
-Se realizó un análisis para determinar la tasa de desarrollo, en días, de los huevos de Aedes aegypti, 
-de acuerdo a los resultados obtenidos (Tabla \ref{tab:desarrollo-huevo-test}), se obtuvo un promedio
-general de 3.6 días para la población que fue sometida a diferentes 5 temperaturas. Los resultados
-obtenidos son comparados con los resultados de la duración en días descriptos en \cite{BESERRA2006}.
+Para el análisis de la tasa de desarrollo, en días, del huevo de Aedes aegypti, se utilizó como
+referencia los resultados obtenidos por \cite{BESERRA2006} para 5 cepas de Aedes Aegyti, provenientes de
+diferentes poblaciones, a 5 temperaturas constantes (18-34\textcelsius).
+
+En la tabla \ref{tab:desarrollo-huevo-test} se puede apreciar los resultados obtenidos mediante el
+proceso evolutivo para la población de prueba sometida a las 5 temperaturas constantes. Estos datos son
+comparados con los resultados obtenidos en \cite{BESERRA2006} y la tasa de desarrollo esperada obtenida
+mediante el modelo de Sharpe \& DeMichele, definida en la sección \ref{subsec:operadores-basicos}
+mediante la ecuación \eqref{eq:sharpe-demichele}. Se obtuvo un desarrollo de 3.29 días con 
+una diferencia de 0.46 días con la población de Remígio y de 1.09 días con Itaporanga. Los autores de
+\cite{BESERRA2006}, señalan que a 18 \textcelsius, no existe desarrollo embrionario para las poblaciones
+de B. dos Santos, C. Grande y Remígio, por lo que estos resultados no fueron incluidos en el calculo de
+la media general. 
 
 \begin{table}
-    \begin{center}
-        \begin{tabular}{p{5cm} c c c c c c }
-            Población    &18 \textcelsius & 22 \textcelsius & 26 \textcelsius & 30 \textcelsius & 34 \textcelsius & Media General\\
-
-            \hline \\
-            Boqueirão    & 9,3  & 6,5  & 3,9  & 3,3  & 3,5  & 4,3  \\
-            B. dos Santos& --   & 5,9  & 4,3  & 3,7  & 2,9  & 4,2  \\
-            C. Grande    & --   & 5,5  & 3,4  & 4,4  & 3    & 4,07 \\
-            Itaporanga   & 9,2  & 6,2  & 4,7  & 3,1  & 3,5  & 4,38 \\
-            Remígio      & --   & 6    & 4,5  & 2    & 2,5  & 3.75 \\
-            Esperados    & 6.61 & 5,1  & 3.9  & 3.03 & 2.37 & 3.6  \\
-            Resultados   & 6.08 & 5.06 & 3.03 & 3.03 & 2.02 & 3.29 \\
-            
-        \end{tabular}
+    \begin{minipage}{\textwidth}
+        
         \caption{ \label{tab:desarrollo-huevo-test} Análisis de la tasa de desarrollo, en días, de los
          huevos de Aedes aegypti a cinco temperaturas constantes (18-34 \textcelsius).}
-    \end{center}
+         
+        \begin{tabular}{p{5cm} c c c c c c }
+            \hline \\
+            Población    &18 \textcelsius & 22 \textcelsius & 26 \textcelsius & 30 \textcelsius & 34 \textcelsius & Media General\\
+
+            \hline
+            \hline \\
+            Boqueirão        & 9,3 $^{b}$  & 6,5  & 3,9  & 3,3  & 3,5  & 4,3  \\
+            B. dos Santos    & -- $^{a}$   & 5,9  & 4,3  & 3,7  & 2,9  & 4,2  \\
+            C. Grande        & -- $^{a}$   & 5,5  & 3,4  & 4,4  & 3    & 4,07 \\
+            Itaporanga       & 9,2 $^{b}$  & 6,2  & 4,7  & 3,1  & 3,5  & 4,38 \\
+            Remígio          & -- $^{a}$   & 6    & 4,5  & 2    & 2,5  & 3.75 \\
+            Esperados$^{c}$  & 6.61 $^{b}$ & 5,1  & 3.9  & 3.03 & 2.37 & 3.6  \\
+            Resultados$^{d}$ & 6.08 $^{b}$ & 5.06 & 3.03 & 3.03 & 2.02 & 3.29 \\
+            
+        \end{tabular}
+        \footnotetext[1]{No hubo desarrollo embrionario a 18\textcelsius, \cite{BESERRA2006}.}   
+        \footnotetext[2]{Como no hubo desarrollo embrionario en las demas poblaciones a 18\textcelsius,
+        se decidió no incluir estos datos en la media general, sólo representa el promedio para
+        estas poblaciones \cite{BESERRA2006}.}  
+        \footnotetext[3]{Resultados obtenidos por el modelo de Sharpe \& DeMichele.}    
+        \footnotetext[4]{Resultados obtenidos mediante el proceso evolutivo.}
+    \end{minipage}
+
 \end{table}
+
