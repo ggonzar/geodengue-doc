@@ -1,0 +1,32 @@
+
+\subsection{Mortalidad Huevos}
+Para el análisis de la mortalidad de los huevos del Aedes Aegypti, se obtuvo una mortalidad diaria de 1,24 \% 
+en comparación con el 1\%,  definida en \cite{otero2006stochastic}. El error es causado por el operador de 
+redondeo definido por la ecuación  \eqref{eq:operador-redondeo} utilizada para calcular la cantidad, entera, de candidatos para la mortalidad, de huevos pertenecientes a una colonia.
+
+\begin{table}
+    \begin{center}
+   
+        \caption{ \label{tab:mortalidad-huevo-test} Análisis de la tasa de mortalidad del huevo del
+         Aedes Aegypti a nueve temperaturas constantes (18-34 \textcelsius).}
+        
+        \begin{tabular}{p{3cm} c c c c c c }
+                    \hline \\
+                    Temperatura & Huevos Muertos & Total de Huevos & \% Mortalidad\\
+                    \hline
+                    \hline \\
+                    15 \textcelsius & 8448   & 681604  & 1,24\\
+                    20 \textcelsius & 17164  & 1392228  & 1,23\\
+                    22 \textcelsius & 21080  & 1517152  & 1,39\\
+                    24 \textcelsius & 32928  & 2529476  & 1,3\\
+                    25 \textcelsius & 48792  & 3791908  & 1,29\\
+                    26 \textcelsius & 46874  & 3808616  & 1,23\\
+                    27 \textcelsius & 60254  & 4998074  & 1,21\\
+                    30 \textcelsius & 489900 & 39788450 & 1,23\\
+                    34 \textcelsius & 44660  & 3456096  & 1,29\\
+                    \hline 
+                    Total           & 761652 & 61282000 & 1,24\\
+
+        \end{tabular}
+    \end{center}
+\end{table}
