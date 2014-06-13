@@ -1,34 +1,75 @@
 
 \section{Ciclo gonotrófico}
 
-Para el análisis de la tasa de desarrollo, en días, del ciclo gonotrófico de las hembras del Aedes aegypti, se
-tuvo en cuenta 2 tipos de poblaciones $A1$ que corresponden a todas las hembras nulíparas que no han ovipuesto, 
-$A2$ corresponde a las hembras que ya han ovipuesto. En la tabla \ref{tab:ciclo-gonotrofico-test}
-se puede observar una media de 5,03 días para $A1$ y 2,92 días para $A_{2}$.
+Para el análisis de la tasa de desarrollo, en días, del ciclo gonotrófico de las hembras del Aedes
+aegypti, se clasificó la población en hembras núliparas y paridas. En la tabla
+\ref{tab:ciclo-gonotrofico-test} se puede observar una media de 5,03 días para las hembras
+nulíparas y  2,92 días para las paridas para una temperatura aproximada de 25.11 \textcelsius.
 
+Las variaciones en la tempeartura influyen en tiempo de digestión de la sangre y el
+desarrollo de los ovarios, a medida que la temepratura deciende, la digestión y por ende el ciclo
+gonotrófico tomará más tiempo (Figura \ref{fig:ciclo-gonotrofico-temperatura}).
+\cite{edman1987host} observó que hembras nulíparas de Aedes aegypti poseen un proceso de digestión
+es más lento en las hembras paridas y por ende el ciclo gonotrófico de las mismas tiene a ser más
+largo. Existen diversos estudios, que han reportado que el patrón diario de alimentación de los
+mosquitos, varia de acuerdo a las localidades y subespecies. A continuación se mencionaran algunos
+estudios realizados correspondientes a la duración del ciclo  gonotrófíco, con el fin de realizar
+una comparación con los resultados obtenidos.
 
-La duración del ciclo gonotrófico varía de 3 a 5 días dependiendo de la temperatura ambiental y las 
-carateristicas del medio. En \cite{sivanathan2006ecology} la duración de se encuentra acotada entre 
-2.73 a 3 días. Las variaciones en la tempeartura influyen en tiempo de digestión de la sangre y el 
-desarrollo de los ovarios, a medida que la temepratura deciende, la digestión y por ende el ciclo 
-gonotrófico tomará más tiempo. En la figura \ref{} se pude observar la duración del ciclo gonotrófico 
-en relación a temperatura.
+\cite{beltran2001bionomia} determinó que la duración del ciclo gonotrófico del Aedes aegypti,para
+los siguientes municipios de México en, 3 días para Tamazula de Gordiano a una temperatura de 21.5
+\textcelsius, 3 días para Techaluta de Montenegro a  22.8 \textcelsius, 4 días para Tuxpan a 22
+\textcelsius y 5 días para CD Zacoalco de Torres a 22.7 \textcelsius.
+
+En \cite{luevano1993ciclo}, el autor determinó la duración del ciclo gonotrófico de las
+poblaciones naturales de Aedes aegypti en el área metropolitana de Monterrey, Nuevo León. México,
+en cinco dias, a una temperatura promedio de 25.5 \textcelsius.
+
+En \cite{trpis1986dispersal} los autores reportaron una duración del ciclo gonotrófico en kenia a
+nivel rural de, 5 a 7 dias para el primer ciclo (hembras nulíparas) y de 4 a 5 dias para los
+siguintes ciclos (hembras paridas). El método utilizado fue de captura con cebo humano de
+mosquitos de Aedes Aegypti.
+
+Según \cite{sivanathan2006ecology} el ciclo gonotrófico del aAedes aegypti y Aedes albopictus se
+encuentra acotada entre 2.73 a 3 días respectivamente.
+
+Las diferentes condiciones climáticas y la capacidad de adaptación en habitads específicos, del
+Aedes Aegypti, son las responsables de diferencias que se puedan tener entre cepas del mosquito.
+La duración del ciclo gontrófico obtenida, depende de los coeficientes para el modelo de
+maduración enzimática de \cite{sharpe1977reaction} que fue tomado de \cite{otero2006stochastic},
+que segun los autores fue tomado de \cite{focks1993dynamic}.
 
 \begin{table}
+    \begin{minipage}{\textwidth}
     \begin{center}
 
         \caption{ \label{tab:ciclo-gonotrofico-test} Análisis de duración del cliclo gonotrófico
         de la hembra de Aedes Aegypti nueve temperaturas constantes  (18-34 \textcelsius).}
-        \begin{tabular}{p{3cm} c*10 }
+        \begin{tabular}{l *{10}{c} }
             \hline \\
-            Población & 18\textcelsius & 20 \textcelsius & 22 \textcelsius & 24 \textcelsius 
-                      & 25 \textcelsius & 26\textcelsius  & 27 \textcelsius & 30 \textcelsius 
-                      & 34\textcelsius & Media General\\
+            & &  & &  & &  &  &  &  & Media\\
+            Población & 18\textcelsius & 20 \textcelsius & 22 \textcelsius & 24 \textcelsius
+                      & 25 \textcelsius & 26\textcelsius  & 27 \textcelsius & 30 \textcelsius
+                      & 34\textcelsius & General\\
+
             \hline
             \hline \\
-            A1            & 8,97 & 7,4  & 6,13  & 5,08  & 4,63 & 4,22  & 3,85 & 2,94 & 2,06 & 5,03\\
-            A2            & 5,21 & 4,3  & 3,56  & 2,95  & 2,69 & 2,45  & 2,24 & 1,71 & 1,2 & 2,92\\
-            Media         & 7,09 & 5,85 & 4,85  & 4,02  & 3,66 & 3,34  & 3,05 & 2,33 & 1,63 & 3,98\\
+            A1\footnote{Hembras nulíparas que no han ovipuesto.}
+                        & 8,97 & 7,4  & 6,13  & 5,08  & 4,63 & 4,22  & 3,85 & 2,94 & 2,06 & 5,03\\
+            A2\footnote{Hembras que ya han realizado al menos una ovipostura.}
+                        & 5,21 & 4,3  & 3,56  & 2,95  & 2,69 & 2,45  & 2,24 & 1,71 & 1,2 & 2,92\\
+            Media \footnote{Promedio general de la duración del ciclo tanto para A1 como A2}
+                        & 7,09 & 5,85 & 4,85  & 4,02  & 3,66 & 3,34  & 3,05 & 2,33 & 1,63 & 3,98\\
         \end{tabular}
     \end{center}
+    \end{minipage}
 \end{table}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{capitulo-6/graphics/ciclo-gonotrofico-temperatura.png}
+    \caption{\label{fig:ciclo-gonotrofico-temperatura} Tasa de desarrollo, en días, del ciclo gonotrófico
+    de A1 hembras nulíparas, A2 hembras que ya han ovipuesto y la media general a nueve temperaturas
+    constantes (18-34 \textcelsius).}
+\end{figure}
