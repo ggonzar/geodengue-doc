@@ -26,6 +26,7 @@ build(){
     biber $NAME
     pdflatex $NAME
     pdflatex $NAME
+    evince $NAME.pdf&
 }
 
 
