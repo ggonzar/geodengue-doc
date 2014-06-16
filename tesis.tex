@@ -33,11 +33,32 @@
 }
 \def\newsymbol #1: #2#3{$#1$ \> \parbox{5in}{#2 \dotfill \pageref{#3}}\\}
 \def\addsymbol#1{\label{#1}}
-
+% Para las imagenes en grilla
 % custom commands
 \newcommand{\foreign}[1]{{\it #1}}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \algsetup{indent=2em}
+
+\usepackage{amsmath}
+
+\newcounter{eqn}
+\renewcommand*{\theeqn}{\alph{eqn})}
+\newcommand{\num}{\refstepcounter{eqn}\text{\theeqn}\;}
+\newcommand{\initbox}{\setcounter{eqn}{0}}
+
+
+\makeatletter
+\newcommand{\putindeepbox}[2][0.7\baselineskip]{{%
+    \setbox0=\hbox{#2}%
+    \setbox0=\vbox{\noindent\hsize=\wd0\unhbox0}
+    \@tempdima=\dp0
+    \advance\@tempdima by \ht0
+    \advance\@tempdima by -#1\relax
+    \dp0=\@tempdima
+    \ht0=#1\relax
+    \box0
+}}
+\makeatother
 
 % \setcounter{tocdepth}{3}
 
