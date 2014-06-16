@@ -1,15 +1,10 @@
-\subsection{Mortalidad del adulto}
-Como se menciona en la la sección \ref{subsec:mortalidad} la tasa de la mortalidad utilizada fue la definida
-en \cite{otero2006stochastic}, como una constante de valor 0.09 independiente de la temperatura. En la
-tabla \ref{tab:mortalidad-adulto-test} se presentan los resultados obtenidos de la tasa de mortalidad del
-Aedes aegypti a diez temperaturas constantes (18-34 \textcelsius).
-
-Para el análisis de la mortalidad del adulto del Aedes Aegypti, se obtuvo una mortalidad diaria de 11,08\%
-(Tabla \ref{tab:mortalidad-diaria-adulto-test}), un  XX\% de mortalidaliad en 7 días (Tabla
-\ref{tab:mortalidad-semanal-adulto-test}) y un YY\% de mortalidad luego de 30 días, en comparación con el 10\%,
-50\% y el 95\% señalado por los autores de \cite{ThironIzcazaJ2003}, se puede observar un error de 1.03 \%,
-X\% y Y\%  respectivamente. Los errores son causados por el operador de redondeo definido por la ecuación
-\eqref{eq:operador-redondeo} utilizada para calcular la cantidad, entera, de candidatos para la mortalidad, de adultos pertenecientes a una colonía.
+\subsection{Adulto}
+Como se menciona en la la sección \ref{subsec:mortalidad} la tasa de la mortalidad utilizada fue
+la definida en \cite{otero2006stochastic}, como una constante de valor 0.09 independiente de la
+temperatura. En la tabla \ref{tab:mortalidad-diaria-adulto-test} se presentan los resultados
+obtenidos de la tasa de mortalidad del Aedes aegypti a diez temperaturas constantes (18-34
+\textcelsius). En general se  se obtuvo una mortalidad, diaria de $11,08$\% en coparación al 9\%
+definido en \cite{otero2006stochastic} y el 10\% señalado en \cite{ThironIzcazaJ2003}.
 
 
 \begin{table}
@@ -41,60 +36,75 @@ X\% y Y\%  respectivamente. Los errores son causados por el operador de redondeo
     \end{center}
 \end{table}
 
+Los autores \cite{ThironIzcazaJ2003} señalan que la mortalidad de una población de adultos, se encuentra entre el 50\% a los 7 días y un 95\% a los 30 días. En la tabla
+\ref{tab:mortalidad-periodo-adulto-test} se presenta los resultados correspondientes a la mortalidad de los adultos a 7 y 30 días. En general se obtuvo un $54,96$\% a los 7 días y un
+$96,66$\% a los 30 días, en comparación al 50\% y el 95\% señaldados por señalado por los autores
+de \cite{ThironIzcazaJ2003}.
+
+
 \begin{table}
     \begin{center}
-
-        \caption{ \label{tab:mortalidad-semana-adulto-test} Análisis de la tasa de mortalidad del adulto del
-         Aedes Aegypti a diez temperaturas constantes (15-34 \textcelsius).}
+        \caption{ \label{tab:mortalidad-periodo-adulto-test} Análisis de la tasa de mortalidad del
+        adulto del Aedes Aegypti a nueve temperaturas constantes (15-34 \textcelsius) para los
+        periodos de 7 y 30 días.}
 
         \begin{tabular}{p{3cm} c c c c c c }
                     \hline \\
-                    Temperatura & Adultos Muertos & Total de Adultos & \% Mortalidad\\
+                    Temperatura & Total de & Muertos a  & Muertos a   & Mortalidad & Mortalidad\\
+                    Temperatura & adultos  & los 7 días & los 30 días & 7 días(\%) & 30 días(\%)\\
                     \hline
                     \hline \\
-
-                        18\textcelsius & 343 & 615 & 55,77\\
-                        20\textcelsius & 494 & 918 & 53,81\\
-                        22\textcelsius & 613 & 1117 & 54,88\\
-                        24\textcelsius & 709 & 1302 & 54,45\\
-                        25\textcelsius & 715 & 1325 & 53,96\\
-                        26\textcelsius & 717 & 1348 & 53,19\\
-                        27\textcelsius & 711 & 1304 & 54,52\\
-                        30\textcelsius & 760 & 1421 & 53,48\\
-                        34\textcelsius & 635 & 1163 & 54,6\\
-                    \hline
-                    Total           & 5697	10513	54,19\\
+                    18\textcelsius &370  & 177 & 305 & 56,08 & 82,43\\
+                    20\textcelsius &526  & 295 & 508 & 57,89 & 96,58\\
+                    22\textcelsius &672  & 389 & 659 & 54,03 & 98,07\\
+                    24\textcelsius &818  & 442 & 797 & 54,55 & 97,43\\
+                    25\textcelsius &869  & 474 & 846 & 54,67 & 97,35\\
+                    26\textcelsius &900  & 492 & 878 & 55,1 & 97,56\\
+                    27\textcelsius &882  & 486 & 861 & 54,99 & 97,62\\
+                    30\textcelsius &991  & 545 & 962 & 56,72 & 97,07\\
+                    34\textcelsius &744  & 422 & 730 & 56,72 & 98,12\\
+                    Media general   & 6772 & 3722 & 6546 & 54,96 & 96,66\\
 
         \end{tabular}
     \end{center}
 \end{table}
 
 
+Los errores obtenidos se originan duarante el redondeo realizado al aplicar la tasa de
+mortalidad diaria en cada colonia, debido a que el modelo, a la hora de calcular la cantidad de
+adultos a ser eliminados de la colonia a la que pertenecen, solo permite eliminar a un número
+entero de adultos. Si contamos con un grupo 10 de colonias cada una con 6 adultos cada una,
+tenemos un total de 60 adultos.Aplicando la tasa de mortalidad $0,09$ en cada colonia se obtine un
+total de $0,54$, aplicando el operador de redondeo,definido por la ecuación
+\eqref{eq:operador-redondeo}, es de $1$ adulto por colonia. Al eliminar un adulto por colonia, en
+total se eliminarán 10 adultos en comparación al $5,4$ que se obtendría al eliminar $0,54$ adultos
+por colonia. En la  tabla \ref{tab:mortalidad-adulto-error} se presentan los resultados del
+análisis realizado.
+
 \begin{table}
-    \begin{center}
+    \begin{minipage}{\textwidth}
+        \caption{ \label{tab:mortalidad-adulto-error} Análisis de la aplicación de la tasa de
+        mortalidad entera del adulto del Aedes Aegypti.}
 
-        \caption{ \label{tab:mortalidad-mes-adulto-test} Análisis de la tasa de mortalidad del adulto del
-         Aedes Aegypti a diez temperaturas constantes (15-34 \textcelsius).}
-
-        \begin{tabular}{p{3cm} c c c c c c }
+        \begin{tabular}{p{4cm} p{4cm} p{3cm} l }
                     \hline \\
-                    Temperatura & Adultos Muertos & Total de Adultos & \% Mortalidad\\
+                    Colonia & Cantidad de Adultos & Mortalidad$^{a}$ & Mortalidad Entera$^{b}$\\
                     \hline
                     \hline \\
-
-                    15 \textcelsius & 270    & 2216    & 12,18\\
-                    18 \textcelsius & 7099   & 68092   & 10,43\\
-                    20 \textcelsius & 11050  & 99858   & 11,07\\
-                    22 \textcelsius & 14250  & 117775  & 12,1\\
-                    24 \textcelsius & 17708  & 157624  & 11,23\\
-                    25 \textcelsius & 19500  & 175071  & 11,14\\
-                    26 \textcelsius & 30804  & 268608  & 11,47\\
-                    27 \textcelsius & 30957  & 278450  & 11,12\\
-                    30 \textcelsius & 221381 & 2033769 & 10,89\\
-                    34 \textcelsius & 27716  & 235984  & 11,74\\
-                    \hline
-                    Total           & 380735 & 3437447 & 11,08\\
-
+                    1       & 6  & 0,54 & 1\\
+                    2       & 6  & 0,54 & 1\\
+                    3       & 6  & 0,54 & 1\\
+                    4       & 6  & 0,54 & 1\\
+                    5       & 6  & 0,54 & 1\\
+                    6       & 6  & 0,54 & 1\\
+                    7       & 6  & 0,54 & 1\\
+                    8       & 6  & 0,54 & 1\\
+                    9       & 6  & 0,54 & 1\\
+                    10      & 6  & 0,54 & 1\\
+                    Total   & 60 & 5,4  & 10\\
         \end{tabular}
-    \end{center}
+    \footnotetext[1]{Cantidad de adultos a eliminar al aplicar la de mortalidad de 0,09 definida en
+    \cite{otero2006stochastic}.}
+    \footnotetext[2]{Cantidad de audltos a eliminar aplicando el operador de redondeo definido por la ecuación \eqref{eq:operador-redondeo}.}
+    \end{minipage}
 \end{table}
