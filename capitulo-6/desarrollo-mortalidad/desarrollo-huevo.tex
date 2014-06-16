@@ -1,22 +1,12 @@
-\subsection{Desarrollo de la etapa de huevo}
+\subsection{Huevo}
 Para el análisis de la tasa de desarrollo, en días, del huevo de Aedes aegypti, se incluyeron
 los huevos que se desarrollaron completamente para pasar a ser una larva. Con el fin de realizar
-una comparativa con los resultados obtenidos, en la tabla \cite{tab:desarrollo-huevo-test} se
+una comparativa con los resultados obtenidos, en la tabla \ref{tab:desarrollo-huevo-test} se
 utiliza como referencia los resultados obtenidos por \cite{BESERRA2006}, donde se presentan los
 requerimientos térmicos para el desarrollo del aedes aegypti en condiciones naturales, para 5
 cepas de Aedes Aegyti, provenientes de diferentes  poblaciones, a 5 temperaturas constantes
 (18-34\textcelsius).
 
-En la Figura \ref{fig:desarrollo-huevo-baserra2006}, se puede observar una compartiva con los
-valores observados en \cite{BESERRA2006}, la media predicha y la media obtenida. En general se
-obtuvo un desarrollo de $3.29$ días a 4 temperaturas constantes (22, 26, 30, 34 \textcelsius), con
-una diferencia de, $0,97$, $0,87$, $0,87$, $1,15$ y $0,57$ días con la media general de los
-valores observados en \cite{BESERRA2006} para las poblaciones de Boqueirão, B. dos Santos, C.
-Grande, Itaporanga y Remígio respectivamente. Los autores de \cite{BESERRA2006}, señalan que a
-18 \textcelsius, no existe desarrollo embrionario para las poblaciones de B. dos Santos, C. Grande
-y Remígio, por lo que estos resultados no fueron incluidos en el calculo de la media general. En
-relación a la media predicha, que fue obtenida mediante el modelo de \cite{sharpe1977reaction}, se
-obtuvo una diferencia de $0,32$ días con la media obtenida.
 
 \begin{table}
     \begin{minipage}{\textwidth}
@@ -48,6 +38,16 @@ obtuvo una diferencia de $0,32$ días con la media obtenida.
     \end{minipage}
 \end{table}
 
+En la Figura \ref{fig:desarrollo-huevo-baserra2006}, se puede observar una compartiva con los
+valores observados en \cite{BESERRA2006}, la media predicha y la media obtenida. En general se
+obtuvo un desarrollo de $3.29$ días a 4 temperaturas constantes (22, 26, 30, 34 \textcelsius), con
+una diferencia de, $0,97$, $0,87$, $0,87$, $1,15$ y $0,57$ días con la media general de los
+valores observados en \cite{BESERRA2006} para las poblaciones de Boqueirão, B. dos Santos, C.
+Grande, Itaporanga y Remígio respectivamente. Los autores de \cite{BESERRA2006}, señalan que a
+18 \textcelsius, no existe desarrollo embrionario para las poblaciones de B. dos Santos, C. Grande
+y Remígio, por lo que estos resultados no fueron incluidos en el calculo de la media general. En
+relación a la media predicha, que fue obtenida mediante el modelo de \cite{sharpe1977reaction}, se
+obtuvo una diferencia de $0,32$ días con la media obtenida.
 
 \begin{figure}
 \begin{minipage}{\textwidth}
@@ -77,3 +77,78 @@ obtuvo una diferencia de $0,32$ días con la media obtenida.
 
 \end{minipage}
 \end{figure}
+
+%%Analisis de la Motalidad
+En cuanto a la tasa de mortalidad diaria, \cite{otero2006stochastic} la define como una constante
+independiente a la temperatura del 1\%, en la tabla \ref{tab:mortalidad-huevo-test} se presentan
+los porcentajes de mortalidad obtenidos a 9 temperaturas constantes. En genral se obtuvo, un $1,64$
+\% de mortalidad diaria, $98,36$ \% de supervivencia y un error del $0,64$ \% en comparación al 1
+\% esperado.
+
+\begin{table}
+    \begin{minipage}{\textwidth}
+        \caption{ \label{tab:mortalidad-huevo-test} Análisis de la tasa de mortalidad del huevo del
+         Aedes Aegypti a nueve temperaturas constantes (18-34 \textcelsius).}
+
+        \begin{tabular}{p{3cm} p{3cm} p{3cm} c c}
+                    \hline \\
+                    Temperatura&Huevos$^{a}$&Total$^{b}$&Mortalidad$^{c}$&Supervivencia$^{d}$\\
+                    \textcelsius& Muertos   & de Huevos & (\%)           & (\%)\\
+                    \hline
+                    \hline \\
+                    18            & 2618    & 156387   & 1,67 & 98,33\\
+                    20            & 10962   & 659232   & 1,66 & 98,34\\
+                    22            & 19089   & 1148391  & 1,66 & 98,34\\
+                    24            & 53216   & 3228224  & 1,65 & 98,35\\
+                    25            & 108324  & 6570126  & 1,65 & 98,35\\
+                    26            & 126936  & 7753716  & 1,64 & 98,36\\
+                    27            & 157990  & 9649119  & 1,64 & 98,36\\
+                    30            & 611360  & 37347840 & 1,64 & 98,36\\
+                    34            & 185972  & 11433440 & 1,63 & 98,37\\
+                    Media General & 1276467 & 77946475 & 1,64 & 98,36\\
+        \end{tabular}
+        \footnotetext[1]{Total de huevos muertos en cada tempratura.}
+        \footnotetext[2]{Total de huevos generados en cada temperatura}
+        \footnotetext[3]{Tasa de mortalidad porcetual obtenida.}
+        \footnotetext[4]{Tasa de supervivencia porcetual obtenida.}
+    \end{minipage}
+\end{table}
+
+Los errores obtenidos se originan duarante el redondeo realizado al aplicar la tasa de
+mortalidad diaria en cada colonia, debido a que el modelo, a la hora de calcular la cantidad de
+huevos a ser eliminados de la colonia a la que pertenecen, solo permite eliminar a un número entero
+de huevos. Si contamos con un grupo 10 de colonias cada una con 63 huevos, un total de 630 huevos.
+Aplicando la tasa de mortalidad $0,01$ en cada colonia se obtine un total de $0,63$, aplicando el
+operador de redondeo,definido por la ecuación \eqref{eq:operador-redondeo}, es $1$ huevo por
+colonia. Al eliminar un huevo por colonia, en total se eliminarán 10 huevos en comparación al $6,3$
+que se obtendría al eliminar $0,63$ huevos por colonia. En la tabla
+\ref{tab:mortalidad-huevo-error} se presentan los resultados del análisis realizado.
+
+\begin{table}
+    \begin{minipage}{\textwidth}
+        \caption{ \label{tab:mortalidad-huevo-error} Análisis de la aplicación de la tasa de mortalidad entera del huevo del Aedes Aegypti.}
+
+        \begin{tabular}{p{4cm} p{4cm} p{3cm} l }
+                    \hline \\
+                    Colonia & Cantidad de Huevos & Mortalidad$^{a}$ & Mortalidad Entera$^{b}$\\
+                    \hline
+                    \hline \\
+
+                    1       & 63  & 0,63 & 1\\
+                    2       & 63  & 0,63 & 1\\
+                    3       & 63  & 0,63 & 1\\
+                    4       & 63  & 0,63 & 1\\
+                    5       & 63  & 0,63 & 1\\
+                    6       & 63  & 0,63 & 1\\
+                    7       & 63  & 0,63 & 1\\
+                    8       & 63  & 0,63 & 1\\
+                    9       & 63  & 0,63 & 1\\
+                    10      & 63  & 0,63 & 1\\
+                    Media General  & 630 & 6,3 & 10\\
+
+        \end{tabular}
+    \footnotetext[1]{Cantidad de huevos a eliminar al aplicar la de mortalidad de 0,01 definida en
+    \cite{otero2006stochastic}.}
+    \footnotetext[2]{Cantidad de huevos a eliminar aplicando el operador de redondeo definido por la ecuación \eqref{eq:operador-redondeo}.}
+    \end{minipage}
+\end{table}
