@@ -1,10 +1,6 @@
 \documentclass[final,fmstyle]{./util/ucathesis}
-% La opcion 'final' muestra los graficos, para generar una version sin los graficos utiliza la opcion 'draft'
 
 % paquetes recomendados
-%\usepackage[chapter]{theorems}
-%\usepackage{symbols}
-%\usepackage{url}
 \usepackage{amsmath,amsthm}
 \usepackage{textcomp}
 \usepackage[T1]{fontenc}
@@ -13,54 +9,18 @@
 \usepackage{csquotes}
 \usepackage{enumerate}
 \usepackage{enumitem}
-\usepackage[style=authoryear, uniquename=full, sorting=none,backend=biber, natbib=true]{biblatex}
+\usepackage[style=numeric, uniquename=full, sorting=none,backend=biber, natbib=true]{biblatex}
 \usepackage{listings}
 % para la lista de simbolos
 \usepackage{array} %for vertical thick lines in tables
 \usepackage{multirow} %multirow tables
 \usepackage{nicefrac} %for fractions like 1/4
 % para las tablas
-\usepackage{tablefootnote}
-\renewcommand{\thefootnote}{\arabic{footnote}}
+
 %referencias
 \addbibresource{referencias.bib}
-%Package list ends here
-
-% Macro for 'List of Symbols', 'List of Notations' etc...
-\def\listofsymbols{
-    \input{simbolos}
-    \clearpage{}
-}
-\def\newsymbol #1: #2#3{$#1$ \> \parbox{5in}{#2 \dotfill \pageref{#3}}\\}
-\def\addsymbol#1{\label{#1}}
-% Para las imagenes en grilla
-% custom commands
-\newcommand{\foreign}[1]{{\it #1}}
-\DeclareMathOperator*{\argmax}{arg\,max}
-\algsetup{indent=2em}
-
-\usepackage{amsmath}
-
-\newcounter{eqn}
-\renewcommand*{\theeqn}{\alph{eqn})}
-\newcommand{\num}{\refstepcounter{eqn}\text{\theeqn}\;}
-\newcommand{\initbox}{\setcounter{eqn}{0}}
-
-
-\makeatletter
-\newcommand{\putindeepbox}[2][0.7\baselineskip]{{%
-    \setbox0=\hbox{#2}%
-    \setbox0=\vbox{\noindent\hsize=\wd0\unhbox0}
-    \@tempdima=\dp0
-    \advance\@tempdima by \ht0
-    \advance\@tempdima by -#1\relax
-    \dp0=\@tempdima
-    \ht0=#1\relax
-    \box0
-}}
-\makeatother
-
-% \setcounter{tocdepth}{3}
+%se importan las configuraciones custmizdas realizadas.
+\include{./util/custom}
 
 % datos de la tesis
 \title{Modelo predictivo de focos de dengue aplicado a Sistemas de informaci\'on geogr\'afica}
@@ -77,15 +37,7 @@
 \address{San Lorenzo - Paraguay}
 
 \begin{document}
-\lstset{
-    language=java,
-    basicstyle=\small\sffamily,
-    numbers=left,
-    numberstyle=\tiny,
-    frame=tb,
-    columns=fullflexible,
-    showstringspaces=false
-}
+
 \maketitle     % esto hace las portadas
 
 % Agradecimientos
@@ -108,14 +60,14 @@
 \mainmatter  % inician los capitulos de la tesis
 
 % incluye aqui los capitulos (un archivo .tex por capitulo)
-%\include{capitulo-1/capitulo-1}
-%\include{capitulo-2/capitulo-2}
-%\include{capitulo-3/capitulo-3}
-%\include{capitulo-4/capitulo-4}
-%\include{capitulo-5/capitulo-5}
+\include{capitulo-1/capitulo-1}
+\include{capitulo-2/capitulo-2}
+\include{capitulo-3/capitulo-3}
+\include{capitulo-4/capitulo-4}
+\include{capitulo-5/capitulo-5}
 \include{capitulo-6/capitulo-6}
-%\include{capitulo-7/capitulo-7}
-%\include{capitulo-8/capitulo-8}
+\include{capitulo-7/capitulo-7}
+\include{capitulo-8/capitulo-8}
 
 
 
