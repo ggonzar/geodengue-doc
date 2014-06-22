@@ -1,0 +1,42 @@
+\subsection{Tasas de desarrollo}
+\label{subsec:cap4-tasas de desarrollo}
+En el modelo se cuenta con 4 tasas de desarrollos correspondientes a : la eclosión de huevos,
+emergencia a pupas, emergencia a adultos y el ciclo gonotrófico. Estos valores son obtenidos
+mediante el modélo no lineal de \citet{sharpe1977reaction} para procesos poiquilotermos\footnote{
+La poiquilotermia o ectotermia es un término aplicado a ciertos animales con temperatura corporal
+variable}, donde el el proceso de maduración es controlado por una enzima que actúa en un rango de
+temperatura determinado, la enzima se desactiva a las bajas temperaturas, $TL$, y altas $TH$.
+
+\begin{equation} \label{eq:sharpe-demichele}
+   R(k)  = R(298K) *\cfrac{ \cfrac{k}{298K} *
+    exp \Bigg[
+            \cfrac{\Delta H_{A}}{R} \bigg(\cfrac{1}{298K} - \cfrac{1}{k}\bigg)
+        \Bigg]}
+    {1 + exp\Bigg[\cfrac{\Delta H_{H}}{R} \bigg(\cfrac{1}{T_{H}}- \cfrac{1}{k}\bigg)\Bigg] +  exp\Bigg[\cfrac{\Delta H_{L}}{R} \bigg(\cfrac{1}{T_{L}}- \cfrac{1}{k}\bigg)\Bigg]}
+\end{equation}
+
+Donde $R(k)$ representa la tasa de desarrollo media ($dias^{-1}$) para una temperatura $K$,en la
+escala de Kelvin; $T_{H}$ , $T_{L}$ son temperaturas absolutas, en la escala de Kelvin, mientras
+que $H_{A}$, $H_{H}$ y $H_{L}$ son entalpías termodinámicas características del organismo, y $R$,
+igual $1,987202$ $cal/K.mol$, es la constante universal de los gases.
+
+En \citet{schoolfield1981non} se presenta un modelo simplificado con inhibición de altas
+temperaturas, con una única alta temperatura de desactivación. El modelo se encuentra definido
+como :
+
+\begin{equation} \label{eq:schoolfield}
+   R(k)  = R(298K) *\cfrac{ \cfrac{k}{298K} *
+    exp \Bigg[
+            \cfrac{\Delta H_{A}}{R} \bigg(\cfrac{1}{298K} - \cfrac{1}{k}\bigg)
+        \Bigg]}
+    {1 + exp\Bigg[\cfrac{\Delta H_{H}}{R} \bigg(\cfrac{1}{T_{1/2}}- \cfrac{1}{k}\bigg)\Bigg] }
+\end{equation}
+
+Donde $T_{1/2}$ es la temperatura cuando la mitad de la enzima se desactiva, debido a la alta
+temperatura. Los parámetros $R(298K)$, $H_{A}$, $T_{1/2}$, y $H_{H}$ son estimados mediante la
+de regresión no lineal de \citet{wagner1984modeling}. Al igual que \citet{rueda1990temperature} y
+\citet{otero2006stochastic} adoptamos el modelo de \citet{schoolfield1981non}, ya que es lo
+suficientemente flexible para el ajuste de los datos biológicos disponibles
+\citep{otero2006stochastic}. Los parámetros deben calcularse para cada etapa de desarrollo, una
+vez determinados, la ecuación puede utilizarse para calcular tasas de desarrollo a cualquier
+temperatura \citep{rueda1990temperature}.
