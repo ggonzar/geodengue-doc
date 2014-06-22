@@ -1,0 +1,42 @@
+\subsection{Zonificación}
+\label{subsec:cap4-zonificacion}
+Cada entorno puede contar con factores que lo hagan más o menos apto para el desarrollo,
+mortalidad, alimentación y reproducción de individuos. La zonificación surge ante necesidad de
+dividir el espacio de estudio de una forma más granular, para identificar a los individuos que
+pertenecen a zonas aptas y los que no.
+
+Los puntos de control distribuidos en un área de estudio nos permite estimar cuales zonas los
+niveles de riesgo e infestación correspondiente a la abundacia de larvas por litro que se pueden
+observar.
+
+La clasificación de las zonas se realizó teniendo en cuenta los siguientes criterios,
+\begin{itemize}
+    \item Solo el 50 \% de las larvas observadas son hembras.
+    \item La temperatura media utilizada es de 25 \textcelsius.
+    \item La mortalidad díaria natural bajo optimas condiciones es de 0,01 según
+    \eqref{eq:mortalidad-natural-larvas}
+    \item La tasa de desarrollo de la larva hasta su emergencia a adulto es de $11.57$ días
+    \citep{rueda1990temperature}.
+    \item El 32,10 \% de las hembras adultas no ovipone \citep{osoriopontificia}.
+\end{itemize}
+
+En la \tabref{tab:puntaje-zona} se puden observar los rangos definidos para cada tipo de zona, En
+donde $u(x,y)$ es la densidad relativa en un radio de 250 metros, cuyo valor es calculado mediante
+la ecuación \eqref{eq:interpolacion-idw}. El tamaño del radio es un parametro ajustable del
+modelo, mientras más grande sea el tamaño del radio, más puntos serán incluidos para el cálculo,
+lo que gerará que las zonas tiendan a ser similares.
+
+\begin{table}
+\centering
+    \label{tab:puntaje-zona}
+    \begin{tabular}{p{3cm} p{5cm}}
+        Tipo de zona & Rango \\
+        \hline
+        Óptima & $67 \leq u(x,y)$ \\
+        Buena  & $41 \leq u(x,y) < 60 $  \\
+        Normal & $23 \leq u(x,y) < 40$\\
+        Mala   & $11 \leq u(x,y) < 22$\\
+        Pésima &  $0 \leq u(x,y) < 10 $ \\
+    \end{tabular}
+    \caption{Clasificación de las zonas de acuerdo a la densidad de larvas por litro}
+\end{table}
