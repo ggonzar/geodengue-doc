@@ -1,0 +1,65 @@
+\section{Modelos de simulación de la ecología del vector}
+\label{sec:cap4-modelo-simulacion}
+
+La comunidad académica internacional reconoce que, el comportamiento, las tasas de desarrollo, la
+mortalidad y la dispersión geográfica de los vectores transmisores del dengue, se encuentran
+influenciados por las variaciones climáticas y del medio que los rodea.
+
+Según \citet{velez2013hacia} una primera aproximación al entendimiento puede ser adquirida
+mediante el diseño de modelos matemáticos que integren los múltiples factores de riesgo, obtenidos
+como un producto entre factores de amenaza y vulnerabilidad, propios de cada población. Estos
+modelos, cuya principal tarea sería profundizar el entendimiento de las dinámicas de transimsión,
+además pueden actuar como un simulador del comportamiento de los vectores del dengue en diferentes
+escenarios climáticos, entomológicos, sociodemográficos y culturales futuros. En
+\citet{velez2013hacia} los autores señalan, que además de la significativa ganancia en
+conocimiento, los modelos matemáticos podrían, entonces, contribuir a la detección temprana y
+oportuna del momento de ocurrencia y el orden de magnitud de brotes epidémicos, lo cual brindaría
+una importante capacidad de anticipación para la prevención de eventos que generan significativas
+alteraciones en la salud y, en casos serios, la muerte de muchos pacientes en nuestro medio.
+
+La metodología presentada en la \secref{sec:cap4-identificacion-focos} permite generar información
+regionalizada sobre los focos de infestación, mediante la utilización de puntos de control, que
+puede ser combinada con información ambiental, demográfica o epidemiológica, y así obtener modelos
+detallados que tengan la capacidad de monitorear, simular o predecir la transmisión del dengue
+\citet{NINO2011}.
+
+La propuesta de modelo de simulación,presentada en esta sección, consiste en, un conjuto de
+submodelos que buscan estimar la tasa de desarrollo, mortalidad, reporducción y dispersión del
+vector del dengue ante las variaciones climáticas a las que es sometido, con el fin de generar
+información suficiente para contribuir con la detección temparana de posibles brotes
+epidemiologicos.
+
+\subsection{Modelo matemático del ciclo de vida}
+\label{subsec:cap4-modelo-matematico-ciclo-vida}
+El modelo considera un espacio bi-dimensional, con un sistema de coordenadas geográficas $(x,y)$,
+para expresar todas las posiciones sobre el plano, correspondientes a la longitud y latitud. Si
+consideramos a $X_{i}$ como una etapa del ciclo de vida del Aedes Aegypti, correspondiente a una
+población de mosquitos, entonces, $X_{i}(x,y)$ representa a $X_{i}$ en las coordenadas geográficas
+$(x,y)$.
+
+Al igual que en \citet{otero2006stochastic}, consideramos cinco poblaciones diferentes:
+los huevos $H(x,y)$, larvas $L(x,y)$, pupas $P(x,y)$, hembras adultas nulíparas\footnote{Hembras
+que no han ovipuesto.} $AN(x,y)$ y hembras adultas paridas\footnote{Hembras que han ovipuesto al
+menos una vez.} $AP(x,y)$.
+
+La evolución de las poblaciones, $H(x,y)$, $L(x,y)$, $P(x,y)$, $AN(x,y)$ y $AP(x,y)$ , se ven
+afectadas por los siguientes eventos: muerte de huevos, eclosión de huevos, muerte de larvas,
+emergencia de pupas, muerte de pupas, emergencia de adultos, muerte de adultos, ovipostura de
+hembras nulíparas, ovipostura de hembras paridas y dispersión de los adultos (machos y hembras).
+Según \citet{otero2006stochastic} los eventos se producen a tasas que dependen no sólo de valores
+de la población, sino también de la temperatura, que a su vez es una función de tiempo, por lo
+tanto, la dependencia de la temperatura introduce una dependencia del tiempo en las tasas de
+eventos. La evolución es modelada como un proceso interativo diario, en donde la ocurrencia de los
+eventos mencionados anteriormente estan sujetos a las temperaturas $K$ reportadas diariamente en
+un periodo de tiempo $T$.
+
+\input{capitulo-4/tasa-desarrollo.tex}
+\input{capitulo-4/madurez-cambio-estado.tex}
+\input{capitulo-4/mortalidad.tex}
+\input{capitulo-4/ovipostura.tex}
+\input{capitulo-4/dispersion.tex}
+
+
+
+
+
