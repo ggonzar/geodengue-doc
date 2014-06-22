@@ -1,36 +1,24 @@
 %!TEX root = ../tesis.tex
 \section{Identificación de focos de infestación}
+\label{sec:cap4-identificacion-focos}
 
-El proceso de identificación de focos de infestación, consiste en utilizar un conjunto de puntos con valores
-conocidos, denominados puntos de control, obtenidos mediante los dispositivos  de ovipostura para generar
-información geoespacial que permite determinar las zonas con mayor densidad poblacional de \textit{Aedes Aegipty}.El
-objetivo principal es analizar la situación actual y la propagación del vector de la enfermedad y para aplicar
-medidas correctivas en las zonas más afectadas y preventivas en las zonas aledañas.
+En \citet{NINO2011} se ha diseñado una metodología de vigilancia entomológica que localiza focos
+de infestación de A. aegypti, mediante el uso de larvitrampas, para generar información
+regionalizada sobre la abundancia larval y técnicas de interpolación espacial que permiten
+visualizar de forma continua el nivel de infestación vectorial. El uso de larvitrampas permite
+estimar con mayor precisión la abundancia del Aedes aegypti al proporcionar información fidedigna
+sobre el número de ejemplares que habitan en distintos puntos del área de estudio en comparación
+con la presencia o ausencia de larvas en recipientes o viviendas usados en los índices aédicos
+tradicionales \citet{NINO2011}, que fueron presentados en la
+\secref{sec:densidad-vectorial-indices-stegomia}.
 
-En \cite{NINO2011} se define la metodología de vigilancia y localización de los focos de infestación del 
-\textit{Aedes Aegipty} mediante la utilización de larvitrampas y técnicas de interpolación espacial, las 
-cuales permiten estimar la abundancia vectorial de forma continua en el espacio a partir del conteo de individuos
-colectados en el área de estudio. 
-
-Sean las siguientes variables básicas:
-%lista de definiciones de las variables básicas
-\begin{description}[style=multiline,leftmargin=1.5cm]
-
-    \item[($x_{i},y_{i}$)] \addsymbol{symbol:xy_i} Par de valores que representan un punto y que sirven para
-        georeferenciar a un dispositivo de control.  
-
-    \item[$d_{i}$] \addsymbol{symbol:d_i} Define a una muestra (dispositivo de control), que tiene asociado un
-    valor $z_{i}$ y una ubicación representado por ($x_{i},y_{i}$).
-
-    \item[$z_{i}$] \addsymbol{symbol:z_i} Valor numérico que representa la cantidad de individuos contabilizados
-    en el dispositivo de ovipostura $d_{i}$.
-
-    \item[$D$] \addsymbol{symbol:D} Conjunto de muestras $d_{i}$ sobre las cuales se realiza el estudio.
-        \begin{align*}
-            D = d_1,d_2,d_3,\ldots,d_N
-        \end{align*}
-        
-\end{description}
-
-Podemos estimar la abundancia vectorial de $D$ mediante el método de interpolación $I(D, d'_j)$ 
-\addsymbol{symbol:Id_i}, que se encarga de predecir el valor de $z_j$ para cada $d'_j$ desconocido.
+Las larvitrampas, o puntos de control, distribuidas geográficamente permiten, mediante técnicas de
+interpolación espacial, obtener mapas de interpolación donde se puede apreciar los niveles de
+infestación del vector del dengue y el riesgo correspondiente a la abundacia de mosqutios
+observada en el área de estudio. El hecho de contar con esta información regionalizada permitirá
+a las autoridades pertinentes definir y planificar mejor las medidas de prevención y control a
+realizarce para reducir los niveles de infestación en las zonas criticas. Según \citet{NINO2011},
+los mapas de superficie generados con esta metodología indican, con mayor detalle que los índices
+aédicos tradicionales, los lugares específicos donde sería necesario tomar medidas de prevención y
+control de acuerdo al grado de infestación, permitiendo así una mayor racionalización de tiempo y
+recursos.
