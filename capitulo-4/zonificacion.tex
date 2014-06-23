@@ -61,37 +61,3 @@ tuvieron en cuenta los siguientes criterios:
 \end{center}
     \end{minipage}
 \end{table}
-
-
-\subsection{Sitios de reproducción}
-\label{subsec:cap4-sitios de reproduccion}
-Sea $BS$ el número de sitios de reproducción agrupados como una sola. La $BS$ variable ambiental
-determina el tamaño de la población de equilibrio en el modelo determinista
-\citep{otero2006stochastic}. Las diferentes condiciones ambientales deben ser
-representadas por diferentes valores del parámetro de $BS$ \citet{otero2006stochastic}.
-
-Se considera a $BS(x,y)$ como el valor de $BS$, asociado a $(x,y)$, partiendo de las hipotesis
-realizadas en la \secref{subsec:cap4-zonificacion} podemos considerar que el valor de $BS(x,y)$ se
-encuentra influenciado por la densidad $u(x,y)$, de ese modo a medida que $u(x,y)$ varie, lo debe
-hacer el valor de $BS(x,y)$. Para dicha estimación utilizamos la interpolación de Lagrange.
-
-Sea $bs$ la función a interpolar, sean $u_0$, $u_1$,...,$u_m$ las densidades conocidas de $bs$ y
-sean $bs_0$, $bs_1$,...,$bs_m$ los valores que toma la función para dichas densidades, el polinomio interpolador de grado n de Lagrange es un polinomio de la forma :
-
-\begin{equation}
-\label{eq:sitios-reproduccion-x-y}
-    bs(u(x,y)) = \sum_{i=0}^{n} bs_{i} * l_{i}(u(x,y))
-\end{equation}
-
-donde $l_j(u(x,y))$ son los llamados polinomios de Lagrange, que se calculan de este modo:
-
-\begin{equation}
-\label{eq:sitios-reproduccion-x-y}
-    l_{i}(u(x,y)) = \prod_{j \neq i} \cfrac{u(x,y) - u_{j}}{u_{i} - u_{j}}
-\end{equation}
-
-Consideramos un polinomio de grado 3, con los para $u_0$, $u_1$ y $u_2$ igual a $19$, $51$ y $70$,
-correspondientes a zonas del tipo pésima, regular y óptima. Los valores conocidos de las densidades
-$19$, $51$ y $70$ son $bs_{min}$, $bs_{med}$ y $bs_{max}$, estos son parámetros configurables del
-modelo donde $bs_{min}$ representa el menor $BS$ observado, $bs_{max}$ representa el mayor $BS$
-observado y  $bs_{med}$ es el valor medio exitente entre $bs_{max}$ y $bs_{min}$.
