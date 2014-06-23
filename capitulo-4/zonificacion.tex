@@ -1,42 +1,97 @@
 \subsection{Zonificación}
 \label{subsec:cap4-zonificacion}
 Cada entorno puede contar con factores que lo hagan más o menos apto para el desarrollo,
-mortalidad, alimentación y reproducción de individuos. La zonificación surge ante necesidad de
-dividir el espacio de estudio de una forma más granular, para identificar a los individuos que
-pertenecen a zonas aptas y los que no.
+mortalidad, alimentación, disperción, y reproducción de individuos. En esta sección, con el fin de
+simplificar ciertos aspectos muy especificos que se encuentran fuera del alcance de este trabajo,
+realizaremos ciertas hipótesis generales, justificadas para nuestro caso de aplicación, pero puede
+requerir una revisión en el caso general. Estas hipotesis son, los valores observados en un
+conjuto de puntos de control, pertenecientes a una zona, permiten la caracterización de dicha zona como más o menos apta para desarrollo, mortalidad, alimentación, disperción, y reproducción de
+individuos. Tambien consideramos que el tamaño de la zona, y por ende la cantidad de puntos de
+control que pertenecena ella, influye en la caracterización de las zonas.
 
-Los puntos de control distribuidos en un área de estudio nos permite estimar cuales zonas los
-niveles de riesgo e infestación correspondiente a la abundacia de larvas por litro que se pueden
-observar.
+La zonificación surge ante necesidad de dividir el espacio de estudio de una forma más granular,
+para identificar a los individuos que pertenecen a zonas aptas y los que no. Los puntos de control
+distribuidos en un área de estudio nos permite estimar cuales zonas los niveles de riesgo e
+infestación correspondiente a la abundacia de larvas por litro que se pueden observar.
 
-La clasificación de las zonas se realizó teniendo en cuenta los siguientes criterios,
+En la \tabref{tab:cap4-puntaje-zona} se puden observar los rangos definidos para cada tipo de
+zona, en donde $u(x,y)$ es la densidad relativa en un radio, $r$ , donde el valor de la densidad
+realtiva es calculado mediante la ecuación \eqref{eq:interpolacion-idw}. Las límites para las
+zonas fueron determinados clasificando los valores, de las hembras reproductivas en, grupos
+múltiplos de cinco. No se estableció  un límite superior para las zonas óptimas debido a que los
+valores mayores a el mínimo establecido, 70 larvas por litro, pertenecen a la misma categoría.
+
+El tamaño del radio,$r$, es un parametro ajustable del modelo, mientras más grande sea el tamaño
+del radio, más puntos serán incluidos para el cálculo, lo que gerará que las zonas tiendan a ser
+similares.
+Para el calculo de las hembras adultas y reproductivas para la clasificación de las zonas se
+tuvieron en cuenta los siguientes criterios:
+
 \begin{itemize}
     \item Solo el 50 \% de las larvas observadas son hembras.
     \item La temperatura media utilizada es de 25 \textcelsius.
-    \item La mortalidad díaria natural bajo optimas condiciones es de 0,01 según
-    \eqref{eq:mortalidad-natural-larvas}
-    \item La tasa de desarrollo de la larva hasta su emergencia a adulto es de $11.57$ días
-    \citep{rueda1990temperature}.
+    \item La mortalidad díaria natural bajo optimas condiciones,a 25 \textcelsius, es de 0,01
+    según \eqref{eq:mortalidad-natural-larvas}.
+    \item La tasa de desarrollo, a 25 \textcelsius, de la larva hasta su emergencia a adulto es de
+    $11.57$ días \citep{rueda1990temperature}.
     \item El 32,10 \% de las hembras adultas no ovipone \citep{osoriopontificia}.
 \end{itemize}
 
-En la \tabref{tab:puntaje-zona} se puden observar los rangos definidos para cada tipo de zona, En
-donde $u(x,y)$ es la densidad relativa en un radio de 250 metros, cuyo valor es calculado mediante
-la ecuación \eqref{eq:interpolacion-idw}. El tamaño del radio es un parametro ajustable del
-modelo, mientras más grande sea el tamaño del radio, más puntos serán incluidos para el cálculo,
-lo que gerará que las zonas tiendan a ser similares.
 
 \begin{table}
-\centering
-    \label{tab:puntaje-zona}
-    \begin{tabular}{p{3cm} p{5cm}}
-        Tipo de zona & Rango \\
+    \begin{minipage}{\textwidth}
+\begin{center}
+    \caption{\label{tab:cap4-puntaje-zona} Clasificación de las zonas de acuerdo a la densidad de larvas por litro.}
+    \begin{tabular}{p{3cm} c c c c}
+        \\
+                     & Mínimo$^a$ & Máximo$^a$ & Hembras     & Hembras$^c$ \\
+        Tipo de zona & $u(x,y)$   & $u(x,y)$   & Adultas$^b$ & Reproductivas$^c$ \\
         \hline
-        Óptima & $67 \leq u(x,y)$ \\
-        Buena  & $41 \leq u(x,y) < 60 $  \\
-        Normal & $23 \leq u(x,y) < 40$\\
-        Mala   & $11 \leq u(x,y) < 22$\\
-        Pésima &  $0 \leq u(x,y) < 10 $ \\
+        \hline\\
+        Pésima  & 0  & 19 & 8  & 5 \\
+        Mala    & 20 & 35 & 15 & 10\\
+        Regular & 36 & 51 & 22 & 15\\
+        Buena   & 52 & 69 & 30 & 20\\
+        Óptima  & 70 & --$^d$ & --$^d$ & --$^d$\\
     \end{tabular}
-    \caption{Clasificación de las zonas de acuerdo a la densidad de larvas por litro}
+    \footnotetext[1]{Rango mínimo y máximo de $u(x,y)$ permitido para el tipo de zona.}
+    \footnotetext[2]{Cantidad máxima de hembras adultas, al final del periodo de desarrollo.}
+    \footnotetext[3]{Cantidad de hembras adultas con capacidad de oviponer.}
+    \footnotetext[4]{No se estableció un límite superior para las zonas óptimas. }
+\end{center}
+    \end{minipage}
 \end{table}
+
+
+\subsection{Sitios de reproducción}
+\label{subsec:cap4-sitios de reproduccion}
+Sea $BS$ el número de sitios de reproducción agrupados como una sola. La $BS$ variable ambiental
+determina el tamaño de la población de equilibrio en el modelo determinista
+\citep{otero2006stochastic}. Las diferentes condiciones ambientales deben ser
+representadas por diferentes valores del parámetro de $BS$ \citet{otero2006stochastic}.
+
+Se considera a $BS(x,y)$ como el valor de $BS$, asociado a $(x,y)$, partiendo de las hipotesis
+realizadas en la \secref{subsec:cap4-zonificacion} podemos considerar que el valor de $BS(x,y)$ se
+encuentra influenciado por la densidad $u(x,y)$, de ese modo a medida que $u(x,y)$ varie, lo debe
+hacer el valor de $BS(x,y)$. Para dicha estimación utilizamos la interpolación de Lagrange.
+
+Sea $bs$ la función a interpolar, sean $u_0$, $u_1$,...,$u_m$ las densidades conocidas de $bs$ y
+sean $bs_0$, $bs_1$,...,$bs_m$ los valores que toma la función para dichas densidades, el polinomio interpolador de grado n de Lagrange es un polinomio de la forma :
+
+\begin{equation}
+\label{eq:sitios-reproduccion-x-y}
+    bs(u(x,y)) = \sum_{i=0}^{n} bs_{i} * l_{i}(u(x,y))
+\end{equation}
+
+donde $l_j(u(x,y))$ son los llamados polinomios de Lagrange, que se calculan de este modo:
+
+\begin{equation}
+\label{eq:sitios-reproduccion-x-y}
+    l_{i}(u(x,y)) = \prod_{j \neq i} \cfrac{u(x,y) - u_{j}}{u_{i} - u_{j}}
+\end{equation}
+
+Consideramos un polinomio de grado 3, con los para $u_0$, $u_1$ y $u_2$ igual a $19$, $51$ y $70$,
+correspondientes a zonas del tipo pésima, regular y óptima. Los valores conocidos de las densidades
+$19$, $51$ y $70$ son $bs_{min}$, $bs_{med}$ y $bs_{max}$, estos son parámetros configurables del
+modelo donde $bs_{min}$ representa el menor $BS$ observado, $bs_{max}$ representa el mayor $BS$
+observado y  $bs_{med}$ es el valor medio exitente entre $bs_{max}$ y $bs_{min}$.
