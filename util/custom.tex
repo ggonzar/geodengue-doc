@@ -1,4 +1,5 @@
 \usepackage{tablefootnote}
+\usepackage{amssymb}
 \renewcommand{\thefootnote}{\arabic{footnote}}
 % Macro for 'List of Symbols', 'List of Notations' etc...
 \def\listofsymbols{
@@ -11,7 +12,12 @@
 % custom commands
 \newcommand{\foreign}[1]{{\it #1}}
 \DeclareMathOperator*{\argmax}{arg\,max}
-\algsetup{indent=2em}
+%\algsetup{}
+\algsetup{
+    indent=4em,
+    linenosize=\small,
+    linenodelimiter=.
+}
 
 \usepackage{amsmath}
 
@@ -23,6 +29,7 @@
 \newcommand{\figref}[1]{Figura \ref{#1}}
 \newcommand{\tabref}[1]{Tabla \ref{#1}}
 \newcommand{\secref}[1]{sección \ref{#1}}
+\newcommand{\algref}[1]{Algoritmo \ref{#1}}
 
 
 \makeatletter
@@ -37,3 +44,30 @@
     \box0
 }}
 \makeatother
+
+%Traducción al español del paquete algorithmic%
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\listalgorithmname}{Lista de algoritmos}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Salida:}}
+\renewcommand{\algorithmicend}{\textbf{fin}}
+\renewcommand{\algorithmicif}{\textbf{si}}
+\renewcommand{\algorithmicthen}{\textbf{entonces}}
+\renewcommand{\algorithmicelse}{\textbf{si no}}
+\renewcommand{\algorithmicelsif}{\algorithmicelse,\ \algorithmicif}
+\renewcommand{\algorithmicendif}{\algorithmicend\ \algorithmicif}
+\renewcommand{\algorithmicfor}{\textbf{para}}
+\renewcommand{\algorithmicforall}{\textbf{para todo}}
+\renewcommand{\algorithmicdo}{\textbf{hacer}}
+\renewcommand{\algorithmicendfor}{\algorithmicend\ \algorithmicfor}
+\renewcommand{\algorithmicwhile}{\textbf{mientras}}
+\renewcommand{\algorithmicendwhile}{\algorithmicend\ \algorithmicwhile}
+\renewcommand{\algorithmicloop}{\textbf{repetir}}
+\renewcommand{\algorithmicendloop}{\algorithmicend\ \algorithmicloop}
+\renewcommand{\algorithmicrepeat}{\textbf{repetir}}
+\renewcommand{\algorithmicuntil}{\textbf{hasta que}}
+\renewcommand{\algorithmicprint}{\textbf{imprimir}}
+\renewcommand{\algorithmicreturn}{\textbf{retorna}}
+\renewcommand{\algorithmictrue}{\textbf{cierto }}
+\renewcommand{\algorithmicfalse}{\textbf{falso }}
+\renewcommand{\algorithmiccomment}{\textbf{comentario : }}
