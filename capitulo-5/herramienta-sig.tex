@@ -1,2 +1,82 @@
 \section{Descripción funcional}
+GeoDengue es un sistema de información geográfico-sanitaria basado en una arquitectura cliente
+servidor. Esta se presenta efectiva y concretamente todos los requerimientos que describen como el
+software debe comportarse para cumplir con sus finalidades y objetivos. La aplicación se encuentra
+dividida en sub módulos para, la gestión de datos de entrada, el simulador del proceso evolutivo y
+presentación de los datos.
 
+
+\subsection{Gestión de datos de entrada}
+%Muestras
+El sistema requiere principalmente de 2 datos de entrada, los putnos de control y los datos
+climatólogicos correspondientes a el periodo de tiempo para la simulación
+
+El área de estudio se encuentra determinada por una muestra, que representan a un conjunto de
+puntos de control georeferenciados en una zona determinada. Los puntos de control que pertenecen a
+una muestra deben ser establecidos en un mismo instante, siendo así la fecha de instalación y
+fecha de recolección, de los puntos de control de la muestra, iguales.
+
+
+Los puntos de control, como resultado de la medición realizada, permiten obtener la densidad de
+larvas asociada con la información geográfica.
+%Gestión de puntos de control
+\subsection{Simulador del proceso evolutivo}
+
+La simulación del prorceso evolutivo del mosquito del aedes aegypti requiere principalmente los
+puntos de control pertenecientes el área de estudio y los datos climatológiocs del correspondientes
+a dicha área. El proceso evolutivo consta de varios pasos, el desarrollo, la mortalidad,
+la ovipostura y dispersión de los individuos de la población.
+
+El proceso inicia al procesar los puntos de control pertenecientes a la muestra utilizada para el
+estudio. La población inicial se encuentra compuestas por las larvas observadas en la muestra
+utilizada para el estudio. Una vez generada la población inicial se obtienen los datos
+climatológicos correspondientes, desde la fecha de recolección de los puntos de contro, hasta un
+periodo máximo de 30 días. Se establece un periodo máximo debido los serivicios de predicción del
+clima utilizados establecen dicho tope.
+
+\begin{algorithm}
+\caption{Simulación del proceso evolutivo}
+\label{alg:simulador-evolutivo}
+\begin{algorithmic}[1]
+    \REQUIRE $\vec{k}\neq \emptyset \land \vec{m} \neq \emptyset$
+    \ENSURE $\vec{m'}$
+    \FORALL{$k{i} \in \vec{k}$ }
+        \STATE $\vec{huevos} \Leftarrow \emptyset$
+        \FORALL{$m{j} \in \vec{m}$}
+            \STATE $desarrollar(m_{j}, k_{i})$
+            \IF{$regular(m_{j}, k_{i})$}
+                \STATE \COMMENT{Se elimina $m_{j}$ si es un candidato.}
+                \STATE $m_{j} \Leftarrow \varnothing $
+            \ELSIF{$esta\_maduro(m_{j}, k_{i})$}
+                \STATE $ cambiar\_estado(m_{j}) $
+            \ELSIF{$se\_reproduce(m_{j})$}
+                \STATE $\vec{huevos} \Leftarrow \vec{huevos} + oviponer(m_{j})$
+            \ENDIF
+        \ENDFOR
+
+        \IF{$\vec{huevos} \neq \emptyset$}
+            \STATE \COMMENT{Si ovipone se extiende la población}
+            \STATE $\vec{m} \Leftarrow  \vec{m} + \vec{huevos}$
+        \ENDIF
+    \ENDFOR
+    \RETURN $\vec{m}$
+\end{algorithmic}
+\end{algorithm}
+
+El \algref{alg:simulador-evolutivo}, describe al simulador como un proceso iterativo cuyo objetivo
+es simular los efectos de cada $k_{i}$ para cada individuo $m_{j}$ que pertenezca a la población.
+
+
+\begin{algorithm}
+\caption{$desarrollar(m_{j}, k_{i})$}
+\label{alg:desarrollo}
+\begin{algorithmic}[1]
+    \REQUIRE $ k{i} \neq \varnothing \land m{j} \neq \varnothing$
+    \ENSURE $m'_{j}$
+            \STATE $d_{j} \Leftarrow d_{j -1} + R(k_{i})$
+            \IF{$m_{j}\ es\ adulto$}
+            \STATE $volar(m_{j}, k_{i})$
+            \ENDIF
+    \RETURN $m_{j}$
+\end{algorithmic}
+\end{algorithm}
