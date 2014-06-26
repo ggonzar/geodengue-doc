@@ -33,25 +33,25 @@ epidemiologicos.
 \label{subsec:cap4-modelo-matematico-ciclo-vida}
 El modelo considera un espacio bi-dimensional, con un sistema de coordenadas geográficas $(x,y)$,
 para expresar todas las posiciones sobre el plano, correspondientes a la longitud y latitud. Si
-consideramos a $X_{i}$ como una etapa del ciclo de vida del Aedes Aegypti, correspondiente a una
-población de mosquitos, entonces, $X_{i}(x,y)$ representa a $X_{i}$ en las coordenadas geográficas
+consideramos a $m_{i}$ como una etapa del ciclo de vida del Aedes Aegypti, correspondiente a una
+población de mosquitos, entonces, $m_{i}(x,y)$ representa a $m_{i}$ en las coordenadas geográficas
 $(x,y)$.
 
-Al igual que en \citet{otero2006stochastic}, consideramos cinco poblaciones diferentes:
-los huevos $H(x,y)$, larvas $L(x,y)$, pupas $P(x,y)$, hembras adultas nulíparas\footnote{Hembras
-que no han ovipuesto.} $AN(x,y)$ y hembras adultas paridas\footnote{Hembras que han ovipuesto al
-menos una vez.} $AP(x,y)$.
+Consideramos seis poblaciones diferentes: los huevos $H(x,y)$, larvas $L(x,y)$, pupas $P(x,y)$,
+machos adultos $AM(x,y)$, hembras adultas nulíparas\footnote{Hembras que no han ovipuesto.}
+$AN(x,y)$ y hembras adultas paridas\footnote{Hembras que han ovipuesto al menos una vez.} $AP(x,y)$. En algunos procesos se utiliza $A(x, y)$ para representar a toda la población de adultos,
+$AM(x,y)$, $AN(x,y)$ y $AP(x,y)$ correspondientes a $(x, y)$.
 
-La evolución de las poblaciones, $H(x,y)$, $L(x,y)$, $P(x,y)$, $AN(x,y)$ y $AP(x,y)$ , se ven
-afectadas por los siguientes eventos: muerte de huevos, eclosión de huevos, muerte de larvas,
-emergencia de pupas, muerte de pupas, emergencia de adultos, muerte de adultos, ovipostura de
-hembras nulíparas, ovipostura de hembras paridas y dispersión de los adultos (machos y hembras).
+La evolución de las poblaciones, $H(x,y)$, $L(x,y)$, $P(x,y)$, $AM(x,y)$, $AN(x,y)$ y $AP(x,y)$ ,
+se ven afectadas por los siguientes eventos: muerte de huevos, eclosión de huevos, muerte de
+larvas, emergencia de pupas, muerte de pupas, emergencia de adultos, muerte de adultos, ovipostura
+de hembras nulíparas, ovipostura de hembras paridas y dispersión de los adultos (machos y hembras).
 Según \citet{otero2006stochastic} los eventos se producen a tasas que dependen no sólo de valores
 de la población, sino también de la temperatura, que a su vez es una función de tiempo, por lo
 tanto, la dependencia de la temperatura introduce una dependencia del tiempo en las tasas de
 eventos. La evolución es modelada como un proceso interativo diario, en donde la ocurrencia de los
-eventos mencionados anteriormente estan sujetos a las temperaturas $K$ reportadas diariamente en
-un periodo de tiempo $T$.
+eventos mencionados anteriormente estan sujetos a las temperaturas $k_{i}$ reportadas diariamente
+en un periodo de tiempo $\vec{k}$.
 \input{capitulo-4/zonificacion.tex}
 \input{capitulo-4/tasa-desarrollo.tex}
 \input{capitulo-4/madurez-cambio-estado.tex}
@@ -59,8 +59,3 @@ un periodo de tiempo $T$.
 \input{capitulo-4/sitios-reproduccion.tex}
 \input{capitulo-4/ovipostura.tex}
 \input{capitulo-4/dispersion.tex}
-
-
-
-
-
