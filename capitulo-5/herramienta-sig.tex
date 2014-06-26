@@ -49,7 +49,7 @@ clima utilizados establecen dicho tope.
                 \STATE $m_{j} \Leftarrow \varnothing $
             \ELSIF{$esta\_maduro(m_{j}, k_{i})$}
                 \STATE $ cambiar\_estado(m_{j}) $
-            \ELSIF{$se\_reproduce(m_{j})$}
+            \ELSIF{$se\_reproduce(m_{j}, k_{i})$}
                 \STATE $\vec{huevos} \Leftarrow \vec{huevos} + oviponer(m_{j})$
             \ENDIF
         \ENDFOR
@@ -66,17 +66,44 @@ clima utilizados establecen dicho tope.
 El \algref{alg:simulador-evolutivo}, describe al simulador como un proceso iterativo cuyo objetivo
 es simular los efectos de cada $k_{i}$ para cada individuo $m_{j}$ que pertenezca a la población.
 
+El proceso $desarrollar(m_{j}, k_{i})$, es el proceso por el cual se calculan las tasas de
+desarrollo correspondientes para cada $m_{j}$ . Estas son obtenidas medidante el modelo de
+\citet{sharpe1977reaction} presentado en la \secref{subsec:cap4-tasas de desarrollo}.
+
+El desarrollo en las etapas inmaduras (Huevo, Larva y Pupa) es realizado con el fin de simular los
+efectos de $k_{i}$ en la maduración de $m_{j}$. Sin embargo para el adulto, es realizado con el fin
+de simular los efectos de $k_{i}$ en la duración del ciclo gonotrófico de $m_{j}$ y la dispersión
+del vector presentada en la \secref{subsec:cap4-vuelo-dispersion}.
+
 
 \begin{algorithm}
 \caption{$desarrollar(m_{j}, k_{i})$}
 \label{alg:desarrollo}
 \begin{algorithmic}[1]
     \REQUIRE $ k{i} \neq \varnothing \land m{j} \neq \varnothing$
-    \ENSURE $m'_{j}$
+    \ENSURE $d_{j}$
             \STATE $d_{j} \Leftarrow d_{j -1} + R(k_{i})$
             \IF{$m_{j}\ es\ adulto$}
             \STATE $volar(m_{j}, k_{i})$
             \ENDIF
-    \RETURN $m_{j}$
+    \RETURN $d_{j}$
 \end{algorithmic}
 \end{algorithm}
+
+El proceso $regular(m_{j}, k_{i})$ como principal objetivo, determinar la cantidad de individuos
+que deben ser eliminados de la población, debido a la mortalidad diaria y seleccionar los
+candidatos para dicha eliminación. Como se mencionó anteriormente, en la
+\secref{subsec:cap4-mortalidad}, la tasa de mortalidad diaria depende del estado en el que s
+encuentre el inidividuo. La selección de canidatos para la eliminación se realiza de forma
+aleatoria para los individuos que provenientes de una misma colonia $(x, y)$.
+
+
+El proceso $esta\_maduro(m_{j}, k_{i})$ se encarga de validar que individuo haya completado su
+desarrollo, una vez completo se procede a realizar el cambio de estado mediante el proceso
+$cambiar\_estado(m_{j})$. El proceso de maduración y cambio de estado fue presentado previamente
+en la \secref{subsec:cap4-madurez-cambio-estado}.
+
+El proceso $se\_reproduce(m_{j}, k_{i})$, que solo es válido para hembras adultas se encarga de
+validar $m_{j}$ haya completado su ciclo gonotrófico, una vez finalizado debe generar una tanda de
+huevos mediante $oviponer(m_{j}$. La duración del ciclo gonotrófico y la oviposutra fue presentado
+anteriormente en la \secref{subsec:cap4-ciclo-gontrofico-oviposturan}.
