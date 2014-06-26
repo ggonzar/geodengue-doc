@@ -1,0 +1,76 @@
+\section{Simulador del proceso evolutivo}
+La simulación del prorceso evolutivo del mosquito del aedes aegypti requiere principalmente los
+puntos de control pertenecientes el área de estudio y los datos climatológiocs del correspondientes
+a dicha área. El proceso evolutivo consta de varios pasos, el desarrollo, la mortalidad,
+la ovipostura y dispersión de los individuos de la población.
+
+El proceso inicia al procesar los puntos de control pertenecientes a la muestra utilizada para el
+estudio. La población inicial se encuentra compuestas por las larvas observadas en la muestra
+utilizada para el estudio.
+
+La población de estudio, $\vec{m}$, se encuentra compuesta por un conjunto $m_{j}(x,y)$ que representan a los individuos, $h_{j}(x,y)$, $l_{j}(x,y)$, $p_{j}(x,y)$, $am_{j}(x,y)$,
+$an_{j}(x,y)$ y $ap_{j}(x,y)$ que corresponden a las poblaciones de $H(x,y)$, $L(x,y)$, $P(x,y)$,
+$AM(x,y)$, $AN(x,y)$ y $AP(x,y)$ respectivamente. Todos los individuos,$m_{j}(x,y)$, que se
+encuenten en una misma $(x, y)$ pertenencen a una misma colonia.
+
+El periodo de estudio, $\vec{k}$, se ecuentra conformado por un conjuto de temperaturas $k_{i}$
+que representan las temperaturas diarias.
+
+\begin{algorithm}
+\caption{Simulación del proceso evolutivo}
+\label{alg:simulador-evolutivo}
+\begin{algorithmic}[1]
+    \REQUIRE $\vec{k}\neq \emptyset \land \vec{m} \neq \emptyset$
+    \ENSURE $\vec{m'}$
+    \FORALL{$k{i} \in \vec{k}$ }
+        \STATE $\vec{huevos} \Leftarrow \emptyset$
+        \FORALL{$m_{j}(x, y) \in \vec{m}$}
+            \STATE $desarrollar(m_{j}(x, y), k_{i})$
+            \IF{$regular(m_{j}(x, y), k_{i})$}
+                \STATE \COMMENT{Se elimina $m_{j}$ si es un candidato.}
+                \STATE $m_{j}(x, y) \Leftarrow \varnothing $
+            \ELSIF{$esta\_maduro(m_{j}(x, y), k_{i})$}
+                \STATE $ cambiar\_estado(m_{j}(x, y)) $
+            \ELSIF{$se\_reproduce(m_{j}(x, y), k_{i})$}
+                \STATE $\vec{huevos} \Leftarrow \vec{huevos} + oviponer(m_{j}(x, y))$
+            \ENDIF
+        \ENDFOR
+
+        \IF{$\vec{huevos} \neq \emptyset$}
+            \STATE \COMMENT{Si ovipone se extiende la población}
+            \STATE $\vec{m} \Leftarrow  \vec{m} + \vec{huevos}$
+        \ENDIF
+    \ENDFOR
+    \RETURN $\vec{m}$
+\end{algorithmic}
+\end{algorithm}
+
+El \algref{alg:simulador-evolutivo}, describe al simulador como un proceso iterativo cuyo objetivo
+es simular los efectos de cada $k_{i}$ para cada individuo $m_{j}$ que pertenezca a la población.
+
+El proceso $desarrollar(m_{j}, k_{i})$, es el proceso por el cual se calculan las tasas de
+desarrollo correspondientes para cada $m_{j}$ . Estas son obtenidas medidante el modelo de
+\citet{sharpe1977reaction} presentado en la \secref{subsec:cap4-tasas de desarrollo}.
+
+El desarrollo en las etapas inmaduras ($H(x,y)$, $L(x,y)$ y $P(x,y)$) es realizado con el fin de
+simular los efectos de $k_{i}$ en la maduración de $m_{j}$. Sin embargo para los adultos ($AN(x,y)$
+y $AP(x,y)$), es realizado con el fin de simular los efectos de $k_{i}$ en la duración del ciclo
+gonotrófico de $m_{j}$ y la dispersión del vector, presentada en la
+\secref{subsec:cap4-vuelo-dispersion}.
+
+El proceso $regular(m_{j}, k_{i})$ como principal objetivo, determinar la cantidad de individuos
+que deben ser eliminados de la población, debido a la mortalidad diaria y seleccionar los
+candidatos para dicha eliminación. Como se mencionó anteriormente, en la
+\secref{subsec:cap4-mortalidad}, la tasa de mortalidad diaria depende del estado en el que
+encuentre el inidividuo. La selección de canidatos para la eliminación se realiza de forma
+aleatoria para los individuos que provenientes de una misma colonia $(x, y)$.
+
+El proceso $esta\_maduro(m_{j}, k_{i})$ se encarga de validar que individuo haya completado su
+desarrollo, una vez completo se procede a realizar el cambio de estado mediante el proceso
+$cambiar\_estado(m_{j})$. El proceso de maduración y cambio de estado fue presentado previamente
+en la \secref{subsec:cap4-madurez-cambio-estado}.
+
+El proceso $se\_reproduce(m_{j}, k_{i})$, que solo es válido para hembras adultas se encarga de
+validar $m_{j}$ haya completado su ciclo gonotrófico, una vez finalizado debe generar una tanda de
+huevos mediante $oviponer(m_{j}$. La duración del ciclo gonotrófico y la oviposutra fue presentado
+anteriormente en la \secref{subsec:cap4-ciclo-gontrofico-ovipostura}.
