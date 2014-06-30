@@ -1,28 +1,43 @@
-\subsection{Presentación de los datos}
-La herramienta está diseñada para realizar difrentes tipos de analisis estadisticos y geográficos
-para facilitar la información necesaria, para ello se consulta los eventos registrados en la base
-de datos.
+\subsection{Análisis de datos}
+El gran potencial análitico de la información generada por los puntos de control y el simulador
+del proceso evoltuivo, permiten la implementación difrentes tipos de analisis estadisticos y
+geográficos. De forma básica se han implementado la cartografía del vector, la identificación de
+focos y el análisis del ciclo de vída del vector.
 
-El software de tratamiento de datos geográficos obtiene la información de una fuente
-de datos y los combina o transforma para que puedan ser analizados visualmente. El
-resultado puede ser un mapa, una imagen o simplemente información de una región o
-punto geográfico determinado.
+\subsubsection{Cartografía del vector}
+La cartografía del vector, es epleada para represetar geográficamente la distribución espacial
+del vector \citep{vgomesAegis2001}. Esta es obtenida a partir de los puntos de control establecidos
+previamente, donde, cada uno se encuentra asociado a con nivel de criticidad.
 
-Análisis. El potencial analítico que provee la información generada es amplio y diverso. La
-primera alternativa de análisis y la más intuitiva es la identificación de los focos de la
-enfermedad. Además de ser el objetivo principal de la solución propuesta es una de las
-alternativas de mayor importancia ya que la identificación de focos de la enfermedad permite :
-    \begin{itemize}
-        \item Visualizar el estado actual y la distribución poblacional del mosquito \textit{Aedes Aegipty}.
-        \item Realizar planes preventivos sobre zonas o regiones más afectadas.
-        \item Implementar estrategias de fumigación y limpieza según zonas más afectadas.
-        \item Otros.
-    \end{itemize}
 
-Calculo de indices adeicos
-Análisis de tasas de desarrollo
-Análisis de tasas de mortalidad
-Análisis de duración del ciclo gonotrófico
-Análisis de dispersión
-Interpolación espacial para identificación de focos en eventos por simulación.
-Historial de muestreo
+\subsubsection{Identificación de focos de infestación}
+\label{sec:cap5-identificacion-focos}
+El proceso de identificación de focos de infestación fue previamente presentado en la
+\secref{sec:cap4-identificacion-focos}, es el encargado de transformar la información obtenida de
+los puntos de control distribuidos geográficamente, mediante métodos de interpolación, en mapas
+donde se puede apreciar los niveles de riesgo correspondientes.
+
+La selección del método de interpolación se realizó teniendo en cuenta el factor humano en la
+distribución de los puntos de control. En \citet{villatoro2007comparacion} se realiza una
+comparación de los interpoladores IDW y Kriging, donde los autores señalan que el método Kriging
+fue más preciso y eficiente que el IDW, aunque la diferencia entre ambos métodos no fue muy amplia.
+Sin embargo, cuando el distanciamiento, es muy grande, los variogramas no son posibles
+de obtener, entonces el Kriging deja de ser una opción y comparativamente el IDW se perfila como
+el mejor \citep{villatoro2007comparacion}. El método seleccionado finalmente fue el IDW, debido
+que la distribución del los puntos de control no será perfecta, inclusive, en algunas localidades
+la distribución no será de forma uniforme.
+
+\subsubsection{Análisis del ciclo de vida del vector}
+El análisis del ciclo de vida del vector consiste en procesar la información generada durante el
+proceso evolutivo para determinar :
+
+\begin{itemize}
+\item \textit{Duración promedio del ciclo de vida}, determina la duración en días de cada etapa de desarrollo del vector, con esto podemos determinar que tan rápido puede desarrollarse al población.
+
+\item \textit{Tasa de moralidad diaraia} indica el porcentaje de reducción diario de la población.
+
+\item \textit{Duración del ciclo gonotrófico}, calcula la duración pormedio, en días, del ciclo gonotrófico de las hembras adultas nulíparas y páridas.
+
+\item \textit{Rango de dispersión}, indica el radio promedio de vuelo, en metros, del adulto tomando como orígen el lugar donde emergió.
+
+\end{itemize}
