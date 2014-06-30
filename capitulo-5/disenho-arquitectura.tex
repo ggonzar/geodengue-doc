@@ -13,6 +13,9 @@ porcesan las peticiones de la capa de negocios para persistir o recuperar inform
 \caption{\label{fig:arquitectura-completa}Arquitectura de interacción de componentes de GeoDengue.}
 \end{figure}
 
+En la \figref{fig:arquitectura-completa} se pude apreciar los compontes y las interacciones entre
+los mismos.
+
 Se optó por un enfoque web debido a la practicidad de estas aplicaciones, el usuario final solo
 debe contar con un navegador web. Estas deberían funcionar igual independientemente de la versión
 del sistema operativo instalado en el cliente. Las aplicaciones web son catalogadas como
@@ -20,9 +23,12 @@ aplicaciones de bajo consumo, debido a que la mayor parte de la aplicación no s
 nuestro ordenador, y muchas de las tareas de procesamiento que realiza el software no consumen
 recursos nuestros porque se realizan en el servidor.
 
-La capa de presentación se encuentra diseñada como un Single Page Application o SPA (en español
-Aplicación de una sola página). Un SPA es una aplicación que se ejecuta en una única página, donde
-la navegación se realiza mediante cargas parciales, sin recargar el sitio completamente. La
-comunicación con el servidor se realiza mendiante peticiones Ajax, para ello se cuenta con una
-arquitectura basada en servicios REST.
+El Cliente Web se encuentra diseñado como un Single Page Application o SPA (en español Aplicación
+de una sola página). Un SPA es una aplicación que se ejecuta en una única página, donde la
+navegación se realiza mediante cargas parciales, sin recargar el sitio completamente.
 
+La capa de negocios se encuentra acompañada por un servidor de mapas que se encarga de publicar y
+ofrecer datos geoespaciales. La capa de negocios se comuníca con el servidor de mapas para
+publicar los resultados de las operaciones realizadas. El Cliente Web, a su vez, se comunica con
+la capa de negocios, para realizar operaciones de análisis y procesamiento, y con el servidor de
+mapas para obtener los datos geoespaciales publicados.
