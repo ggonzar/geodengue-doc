@@ -4,7 +4,8 @@ aplicación web. En esta sección presentaremos las herramientas y tecnologias e
 desarrollo.
 
 La capa de presentación fue desarrollada puramente en javascript, html y css donde la comunciación
-con la capa de servicios se ecuentra dada por peticiones ajax. Como servidor web se utilizó
+con la capa de servicios se ecuentra dada por peticiones Ajax. Para la visualización e interacción
+como mapas se utilizó OpenLayers. Como servidor web se utilizó
 Apache\footnote{https://httpd.apache.org/} en su versión 2, aunque se podría utilizarce cualquier
 otro servidor web HTTP.
 
@@ -13,16 +14,18 @@ utilizó Flask\footnote{http://flask.pocoo.org/} un framework minimalista para P
 a cabo análisis y procesamientos complejos se utilizó la extensión de Python
 NumPy\footnote{http://www.numpy.org/} que agrega mayor soporte para vectores y matrices,
 constituyendo una biblioteca de funciones matemáticas de alto nivel para operar con esos vectores
-o matrices. Como servidor web se utilizó Apache con su módulo
+o matrices. Para el procesamiento digital de imágenes se utilizó el paquete OpenVc de python. Como
+servidor web se utilizó Apache con su módulo
 mod\_wsgi\footnote{http://www.modwsgi.org/} que proporciona una interfaz compatible con
 WSGI \footnote{WSGI es una especificación para una interfaz simple y universal entre los
 servidores web y aplicaciones web o frameworks para el lenguaje programación Python.}
+
+Como servidor WMS se utiliza GeoServer, que intenta promover la estandarización, y soportar tantos
+estándares como sea posible, para permitir a todos compartir su información geoespacial
+rápidamente y de una forma interoperable, disminuyendo así las barreras entre proveedores de
+información geográfica.
 
 Con respecto al almacenamiento de datos, se decidió utilizar el sistema gestor de bases de datos
 PostgreSQL\footnote{http://www.postgresql.org/}, y para la manipulación de datos geográficos se utilizó PostGIS\footnote{http://postgis.net/} que es módulo que añade soporte de objetos
 geográficos a PostgreSQL.
 
-
-Falta hablar de geoserver como mapserver
-
-Falta hablar de como se obtienen los datos climáticos
