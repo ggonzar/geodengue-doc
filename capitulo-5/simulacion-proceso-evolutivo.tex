@@ -1,1 +1,14 @@
-\subsection{Simulación del proceso evolutivo iniciar proceso}
+\subsection{Simulación del proceso evolutivo}
+La simulación del prorceso evolutivo del mosquito del aedes aegypti, presentado previamente en la
+\secref{sec:cap4-simulador-proceso-evolutivo}, es el encargado de simular los efectos temperatura
+en los siguientes eventos : motalidad de larvas, emergencia de pupas, muerte de pupas, emergencia
+de adultos, muerte de adultos, ovipostura y dispersión de los adultos.
+
+La población inicial es obtenida mediante la cantidad de larvas observadas en los puntos de
+control que corresponden a la muestra utilizada para el estudio. Donde por cada larva observada,
+en un punto de cotrol, se inicializa un individuo. Cada individuo hereda la coordenadas
+geográficas, $(x, y)$, correspondientes punto de control de origen.
+
+Las efectos de la tempratura, $k_{i}$, en cada individuo, $m_{j}$, son registrados mediante un
+proceso que se encarga de almacenar la información correspondiente, de cada $m_{j}$, para su
+posterior análisis.
