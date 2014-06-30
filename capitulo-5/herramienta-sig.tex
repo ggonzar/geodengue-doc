@@ -1,14 +1,18 @@
 \section{Descripción funcional}
-GeoDengue es un sistema de información geográfico-sanitaria basado en una arquitectura cliente
-servidor. Esta se presenta efectiva y concretamente todos los requerimientos que describen como el
-software debe comportarse para cumplir con sus finalidades y objetivos. La aplicación se encuentra
-dividida en sub módulos para, la gestión de datos de entrada, el simulador del proceso evolutivo y
-presentación de los datos.
+En esta sección presentamos los requerimientos del sistema, geográfico-sanitario, y el
+comportamiento que debe apotar con el fin de cumplir sus finalidades y objetivos. El sistema
+encuentra basado en la utilización de métodos de muestreo de la abundancia poblacional como
+principal parámetro para la generación y análisis de la información.
 
-Listar funcionalidades generales.
+La utlización de larvitrampas como puntos de control, permite estimar con mayor precisión la
+abundancia del Aedes aegypti al proporcionar información fidedigna sobre el número de ejemplares
+que habitan en distintos puntos del área de estudio en comparación con la presencia o ausencia de
+larvas en recipientes o viviendas usados en los índices aédicos tradicionales
+\citet{NINO2011}, que fueron presentados en la \secref{sec:densidad-vectorial-indices-stegomia}.
+
+El sistema se encuentra dividido en procesos que tienen como finalidad, la gestión de datos de
+entrada, la simulador del proceso evolutivo y el análisis de los datos.
 
 \input{capitulo-5/muestreo-puntos-control.tex}
 \input{capitulo-5/conteo-larvas.tex}
-\input{capitulo-5/identificacion-de-focos.tex}
 \input{capitulo-5/simulacion-proceso-evolutivo.tex}
-\input{capitulo-5/presentacion-datos.tex}
