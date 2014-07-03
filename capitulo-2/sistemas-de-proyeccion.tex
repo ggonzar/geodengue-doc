@@ -8,26 +8,27 @@ de un valor incalculable para la navegación, para la búsqueda de rutas y en la
 \citep{llopis2006sistemas}.
 
 \subsection{Coordenadas geográficas}
-Las coordenadas geográficas proveen un sistema de referencia que utilizan coordenadas angulares
-(latitud y longitud) cuyo fin es el de determinar los ángulos laterales de la superficie terrestre.
-La latitud es el ángulo que existe entre un punto cualquiera y el Ecuador, medida sobre el
-meridiano que pasa por dicho punto. La longitud mide el ángulo a lo largo del ecuador desde
-cualquier punto de la Tierra.
+Las coordenadas geográficas proveen un sistema de referencia, que se basan en la utilización de
+coordenadas angulares como latitud y longitud. Su objetivo es el de determinar los ángulos
+laterales de la superficie terrestre. Se denomina latitud al ángulo que existe entre un punto
+cualquiera y la línea del Ecuador, medida sobre el meridiano que pasa por dicho punto. La longitud
+mide el ángulo a lo largo de la línea del Ecuador desde cualquier punto de la Tierra.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{capitulo-2/graphics/coordenadas-xyz.jpg}
-\caption{\label{fig:sig-xyz} Represnetación de las coordenadas geográficas $(x,y,z)$.}
+\caption{\label{fig:sig-xyz} Representación de un objeto puntual en un sistema tridimensional
+ $(x,y,z)$.}
 \end{figure}
 
-Para la representación de objetos puntuales en una superficie, se utilizan las coordenadas X e Y
-que caracterizan la planimetría y una coordenada Z que representa la altimertría del objeto en
-cuestión.
+Para la representación de objetos puntuales en una superficie, se utilizan las coordenadas $X$ e
+$Y$ que caracterizan la planimetría y una coordenada $Z$ representa la altimertría del objeto
+puntual en cuestión. En la \figref{fig:sig-xyz} se puede apreciar la representación de un objeto
+puntual en una sistema tridimensional.
 
 \subsection{Proyecciones}
-Se denomina proyecciones cartográficas o proyecciones geográficas al conjunto de métodos
-utilizados para establecer una correspondencia matemática entre los puntos de la superficie curva
-de la tierra y sus transformaciones en una superficie plana.
+Las proyecciones cartográficas o proyecciones geográficas se encuentran descritas por el conjunto
+de métodos utilizados para establecer una correspondencia matemática entre los puntos pertenecientes a la superficie curva de la tierra y sus transformaciones en una superficie plana.
 
 El problema principal a la hora de realizar una proyección es que no existe forma de representar
 un una superficie plana toda la superficie curva, de la tierra, sin deformarla
@@ -41,58 +42,48 @@ posibilidad de combinar información de diferentes mapas con diferentes proyecci
 incrementado la relevancia de la cartografía más allá de la simple confección de mapas
 \citep{llopis2006sistemas}.
 
-
 \subsection{Elementos de representación cartográfica}
-Para representar un objeto cualquiera o un fenómeno geográfico en un mapa es fundamental conocer
-las características de este dato que contempla los tres aspectos siguientes: dimensiones, nivel de
-medida y distribución. El análisis de las características de los elementos permite elegir la
-simbología más adecuada para representar los fenómenos geográficos.
-
-A cada entidad espacial se puede asociar diversas variables han desarrollado un amplio conjunto de
-técnicas para cartografiar los hechos de la superficie terrestre.
+La representación de los objetos, recursos o fenómenos geográficos en una superficie o mapa, se
+debe identificar los rasgos característicos teniendo en cuenta, principalmente, tres aspectos:
+sus dimensiones, el nivel de medida y la distribución. El análisis de las características de estos
+elementos permiten seleccionar, adecuadamente, los símbolos a utilizar para representar los
+fenómenos geográficos correspondientes. A cada entidad espacial puede ser asociada a diversas
+variables, para representar estas entidades como hechos de la superficie terrestre, se han
+desarrollado un amplio conjunto de técnicas para cartografiarlos.
 
 \subsubsection{Dimensiones}
-Por su extensión, los fenómenos que se representan en un mapa pueden clasificarse como puntuales,
-lineales, poligonales o espacio-temporales.
+Teniendo en cuenta sus dimensiones y extensión, los fenómenos geográficos a ser representados en el
+mapa pueden clasificarse en : puntuales, lineales, poligonales y espacio temporales.
 
 \begin{itemize}
-    \item Fenómenos puntuales : indican la presencia de entidades de un modo puntual. Pueden representarse
-    utilizando diferentes símbolos o colores para una variable cualitativa, o diferentes tamaños para variables
-    cuantitativas.
+    \item \textit{Fenómenos puntuales} : indican la presencia de entidades de un modo puntual. Normalmente se utilizan se utilizan símbolos o colores para una variable cualitativa y distintos tamaños para las variables cuantitativas.
 
-    \item Fenómenos lineales : simbolizan entidades, naturales o artificiales, de forma lineal conformadas a
-    partir de la unión de varios puntos. Pueden utilizarse diferentes anchuras de linea, diferentes colores o
-    diferentes tipos de linea para representar propiedades como la anchura de los ríos o categorías de vías de
-    comunicación.
+    \item \textit{Fenómenos lineales} : representan entidades naturales o artificiales de forma lineal, se encuentran conformadas a partir de dos o más fenómenos puntuales. Se pueden variar el ancho de de las líneas para describir la anchura de los elementos, también se utilizan distintos tipos de líneas (continuas y discontinuas) para caracterizar los fenómenos lineales.
 
-    \item Fenómenos Poligonales : La información puede ser bidimensional o tridimensional, que, por su tamaño,
-    pueden ser representados como polígonos o porciones homogéneas del terreno en relación a una variable
-    cualitativa. Pueden utilizarse diferentes colores o tramas para representar variables cualitativas o
-    cuantitativas.
+    \item \textit{Fenómenos Poligonales} : Este fenómeno puede ser descrito por dos tipos de información bidimensional o tridimensional. Teniendo en cuenta el tamaño de los mismos pueden ser representados como polígonos o porciones homogéneas del terreno relacionadas a una variable cualitativa.
 
-    \item Fenómenos espacio-temporales : La información depende del movimiento del fenómeno con respecto al paso
-    del tiempo (migraciones de aves, expansión de una civilización,etc.).
+    \item \textit{Fenómenos espacio-temporales}: Existe una dependencia del fenómeno con respecto al paso del tiempo.
 \end{itemize}
 
 \subsubsection{Nivel de medida}
-Los elementos de la naturaleza se miden con el fin de clasificarlos y compararlos; lo que no
-siempre implica una magnitud cuantitativa, ya que puede ser cualitativa u jerárquica. En orden
-creciente de precisión tenemos:
+
+Los elementos de la naturaleza se miden con el fin de clarificarlos y, posteriormente, compararlos.Esto no necesariamente implica a una magnitud cuantitativa, ya que pueden ser de utilizadas las cualitativas u jerárquicas. Teniendo en cuenta su orden de precisión tenemos las siguientes escalas:
+
 \begin{itemize}
-    \item Escala nominal : asigna una característica no numérica a un fenómeno, por lo que sólo se pueden hacer comparaciones de tipo cualitativo. Por ejemplo, un mapa de cuencas hidrográficas, un mapa de suelos. Este es el nivel más elemental de medida, pues no informa acerca de la cantidad o el orden.
+    \item \textit{Nominal} : Se encarga de asignar una característica, no numérica, al fenómeno de forma que solo se pueden realizar comparaciones cualitativas. Este es el nivel más elemental de medida, pues no informa acerca de la cantidad o el orden.
 
-    \item Escala ordinal : establece una cierta jerarquía no mensurable o no cuantificable entre los diferentes elementos. Por ejemplo, un mapa en el que aparecen núcleos de población, cuyos símbolos están jerarquizados según el número de habitantes sin especificar cantidad.
+    \item \textit{Ordinal} : Se establece una jerarquía no cuantificable entre los diferentes elementos. Por ejemplo, un mapa en el que aparecen núcleos de población, cuyos símbolos están jerarquizados según el número de habitantes sin especificar cantidad.
 
-    \item Escala cuantitativa o de intervalo : La escala cuantitativa o de intervalo asigna una característica numérica a un fenómeno geográfico. Por ejemplo, en un mapa de temperaturas medias los intervalos son valores numéricos (expresados en grados Celsius o Fahrenheit). Es necesario emplear algún tipo de unidad convencional.
+    \item \textit{Cuantitativa} :Asigna una característica numérica a un fenómeno geográfico, normalmente es necesario emplear algún tipo de unidad convencional.
 \end{itemize}
 
 \subsubsection{Distribución}
-La ocurrencia de un fenómeno sobre una superficie terrestre puede darse a lo largo y ancho de toda
-ella, o de forma discontinua, dándose el fenómeno en alguna localización del territorio. Los
-fenómenos en cuestión son :
+La distribución de los fenómenos, o su ocurrencia, puede darse a lo largo y ancho de la superficie
+terrestre que los alberga ya sea de forma continua en una ubicación de la superficie o de forma
+discontinua. Estos fenómenos pueden dividirse, de acuerdo a su distribución, en :
 
 \begin{itemize}
-    \item Fenómenos continuos :  son los que tienen presencia en todos los puntos del territorio objeto de representación, aunque sólo se tengan medidas de algunos puntos significativos. Por ejemplo: la temperatura, altitud sobre en nivel del mar, niveles de contaminación atmosférica,densidad poblacional, etc.
+    \item \textif{Continuos} : Son aquellos que tienen presencia en todos los puntos de la superficie, aunque sólo se cuenten con las medidas de algunos puntos significativos de la superficie. En esta categoría tenemos a la temperatura y la densidad poblacional.
 
-    \item Fenómenos discretos : son los que tiene presencia en algunos puntos del territorio objeto de representación. Un ejemplo son los datos de población, dado que se localizan en determinadas áreas y no en todos los puntos del territorio. Algunos fenómenos discretos pueden transformarse en continuos mediante la aplicación de una relación. Por ejemplo, el número de habitantes de una provincia (fenómeno discreto) pasa a ser un fenómeno continuo cuando se habla de densidad de población: la relación se aplica dividiendo el número de habitantes por la superficie de la provincia en $km^2$
+    \item \textif{Discretos} : son aquellos fenómenos que tiene presencia sólo en algunos puntos de la superficie. Algunos de estos fenómenos discretos pueden transformarse en continuos mediante la aplicación de una relación. Por ejemplo tenemos el fenómeno discreto, número de habitantes de una provincia, para que se transforme en un fenómeno continuo se debe dividir el número de habitantes con el tamaño de la superficie en $km^2$, de esta forma podemos obtener la densidad poblacional que es un fenómeno continuo.
 \end{itemize}
