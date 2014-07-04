@@ -23,9 +23,21 @@ disponen datos.
 \caption{\label{fig:sig-capa-raster} Comparación entre la definición de una capa raster y su representación. }
 \end{figure}
 
-La resolución y la nitidez del la capa raster depende del tamaño de la celda, donde el tamaño esta
-asociado a la cantidad de columnas y filas de la capa raster. Mientras más filas y columnas cuente
-una capa raster, más nítida será la imagen resultante.
+La resolución y la nitidez del la capa raster depende del tamaño de la celda
+(\figref{fig:sig-raster-resolucion}), donde el tamaño esta asociado a la cantidad de columnas y
+filas de la capa raster. Mientras más filas y columnas cuente una capa raster, más nítida será la
+imagen resultante.
+
+\begin{figure}[H]
+\begin{minipage}{\textwidth}
+    \begin{tabular}{c c }
+        \initbox
+        \num\putindeepbox[7pt]{\includegraphics[width=0.4\textwidth]{capitulo-2/graphics/raster-baja-resolucion.png}} &
+        \num\putindeepbox[7pt]{\includegraphics[width=0.4\textwidth]{capitulo-2/graphics/raster-alta-resolucion.png}} \\
+    \end{tabular}
+    \caption{\label{fig:sig-raster-resolucion} Curvas de nivel rasterizadas con tamaño de celda demasiado grande y con un tamaño adecuado (Tomado de \citet{fAlonsoSig2006}).}
+\end{minipage}
+\end{figure}
 
 \subsection{Formato vectorial}
 Los datos vectoriales, se caracterizan por la precisión de localización de los elementos
