@@ -1,80 +1,102 @@
 \section{Representación de los datos }
 \label{sec:cap2-tecnicas-graficas-representacion}
-
-Los objetos del mundo real se pueden describir mediante los fenómenos discretos y continuos. Las variables y
-objetos se muestrean y organizan para lograr una representación adecuada. En un SIG existen básicamente dos
-modelos lógicos que se conocen como formato raster y formato vectorial y que dan lugar a los dos grandes tipos
-de capas de información espacial.
+Los objetos del mundo real se pueden describir mediante los fenómenos discretos y continuos, donde las variables y objetos se muestrean y organizan para lograr una representación adecuada. En un
+SIG existen básicamente dos modelos lógicos que se conocen como formato raster y formato vectorial
+y que dan lugar a los dos grandes tipos de capas de información espacial \citep{fAlonsoSig2006}.
 
 \subsection{Formato raster}
-El formato raster o de retícula se centra en las propiedades del espacio más que en la precisión de la localización. Divide
-el espacio en un conjunto regular de celdillas, cada una de estas celdillas contiene un número que puede ser el identificador
-de un objeto o del valor de una variable.Se trata de un modelo de datos muy adecuado para la representación de variables
-continuas en el espacio.
+El formato raster se centra en las propiedades del espacio más que en la precisión de la
+localización. Divide el espacio en un conjunto regular de celdas, donde cada una contiene un
+número que puede ser el identificador de un objeto o del valor de una variable
+\citep{fAlonsoSig2006}. Se trata de un modelo de datos muy adecuado para la representación de
+variables continuas en el espacio.
 
-Los datos raster se compone de filas y columnas de celdas, cada celda almacena un valor único. Los datos raster pueden ser imágenes
-con un valor de color en cada celda (o píxel de la imagen). Otros valores registrados para cada celda puede ser un valor discreto o
-un valor nulo si no se dispone de datos. Si bien una trama de celdas almacena un valor único, estas pueden ampliarse mediante el
-uso de las bandas del raster para representar los colores RGB (rojo, verde, azul), o una tabla extendida de atributos con una
-fila para cada valor único de celdas. La resolución del conjunto de datos raster es el ancho de la celda en unidades sobre el
-terreno.
+Los datos raster se encuentran definidas como una grilla con un número determinado de filas y
+columnas, donde a celda se le asocia un único valor. Los datos raster pueden ser imágenes, donde
+el valor asociado a cada celda o píxel de la imagen, representa un color. Otros valores
+registrados para cada celda puede ser un valor discreto o un valor nulo para indicar que no se
+disponen datos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{capitulo-2/graphics/representacion-raster.png}
+\caption{\label{fig:sig-capa-raster} Comparación entre la definición de una capa raster y su representación. }
+\end{figure}
+
+La resolución y la nitidez del la capa raster depende del tamaño de la celda, donde el tamaño esta
+asociado a la cantidad de columnas y filas de la capa raster. Mientras más filas y columnas cuente
+una capa raster, más nítida será la imagen resultante.
 
 \subsection{Formato vectorial}
-Los datos vectoriales, se caracterizan por la precisión de localización de los elementos geográficos en el espacio, donde
-los fenómenos a representar son discretos, con límites bien definidos. Generalmente se considera que el formato vectorial
-es más adecuado para la representación de entidades o variables cualitativas y el formato raster para representar superficies.
+Los datos vectoriales, se caracterizan por la precisión de localización de los elementos
+geográficos en el espacio, donde los fenómenos a representar son discretos, con límites bien
+definidos. Generalmente se considera que el formato vectorial es más adecuado para la
+representación de entidades o variables cualitativas y el formato raster para representar
+superficies\citep{fAlonsoSig2006}.
 
-
+Los diferentes objetos, vectoriales, se encuentran representados como puntos, lineas o polígonos
+\citep{fAlonsoSig2006}. De tal forma que para modelar digitalmente las entidades del mundo real se
+utilizan estos tres elementos geométricos.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\textwidth]{capitulo-2/graphics/dimensiones-datos.jpg}
+\includegraphics[width=0.8\textwidth]{capitulo-2/graphics/dimensiones-datos.jpg}
 \caption{\label{fig:sig-xyz} Elementos geométricos utilizados para modelar digitalmente las entidades en un SIG.}
 \end{figure}
 
-Los diferentes objetos se encuentran representados como puntos, lineas o polígonos, donde cada una de estos elementos
-geométricos se encuentra vinculado a una fila en una base de datos que describe sus atributos. De tal forma que para modelar
-digitalmente las entidades del mundo real se utilizan estos tres elementos geométricos.
 \begin{itemize}
-    \item Puntos : se utilizan para las entidades geográficas que pueden ser descriptas por un único punto de referencia. Los
-    puntos transmiten la menor cantidad de información, en los elementos puntuales no puede medirse la distancia. También
-    se pueden utilizar para representar zonas a una escala pequeña.
+    \item \textit{Puntos} : se utilizan para representar las entidades geográficas que pueden ser
+    descritas como un fenómeno puntual. Estos transmiten la menor cantidad de información y su representación es la más simple.
 
-    \item Líneas o polilíneas : las líneas unidimensionales o polilíneas son usadas para rasgos lineales como ríos,
-    caminos, ferrocarriles, rastros, líneas topográficas o curvas de nivel. De igual forma que en las entidades
-    puntuales, en pequeñas escalas pueden ser utilizados para representar polígonos. En los elementos lineales puede
-    medirse la distancia.
+    \item \textit{Líneas o polilíneas} : las líneas unidimensionales o polilíneas son usadas para
+    representar elementos con rasgos lineales como ríos, caminos, ferrocarriles, rastros, líneas
+    topográficas o curvas de nivel.
 
-    \item Polígonos : se utilizan para representar elementos geográficos que cubren un área particular de la superficie de la tierra.
-    Los polígonos transmiten la mayor cantidad de información en archivos con datos vectoriales y en ellos se pueden medir el
-    perímetro y el área.
-
+    \item \textit{Polígonos} : se utilizan para representar elementos geográficos que cubren un
+    área particular de la superficie de la tierra. Los polígonos transmiten mayor cantidad de
+    información y en ellos se pueden medir el perímetro y el área.
 \end{itemize}
 
 \subsection{Ventajas y desventajas de los formatos raster y vectorial}
-El debate acerca de la conveniencia de uno u otro modelo debe basarse en el tipo de estudio o enfoque que se quiera
-hacer, pero también del software y fuentes de datos disponibles.
 
-Está claro que las superficies se representan más eficientemente en formato raster y sólo pueden representarse
-en formato vectorial mediante los modelos híbridos que no resultan adecuados para la realización de posteriores
-análisis ya que todas las operaciones que permite el modelo ráster resultaran mucho más lentas con el modelo
-vectorial.
+El debate acerca de la conveniencia de uno u otro modelo debe basarse en el tipo de estudio o
+enfoque que se quiera hacer, pero también del software y fuentes de datos disponibles
+\citep{fAlonsoSig2006}.
 
-Tradicionalmente se ha considerado que para la representación de los objetos resulta más eficiente la utilización
-de un formato vectorial ya que La estructura de los datos es compacta y almacena los datos sólo de los elementos
-digitalizados por lo que requiere menos memoria para su almacenamiento y tratamiento. Los elementos son representados
-como gráficos vectoriales que no pierden definición si se amplía la escala de visualización. Sin emabargo el formato
-vectorial es más lento, debido a su compleja estructura, que el raster para la utilización de herramientas de análisis
-espacial y consultas acerca de posiciones geográficas concretas.
+El formato raster se considera el más adecuado para representar eficientemente las superficies.
+Estas solo pueden representarse vectorialmente mediante modelos híbridos que no resultan adecuados
+para la realización de posteriores análisis ya que todas las operaciones que permite el modelo
+ráster resultaran mucho más lentas con el modelo vectorial \citep{fAlonsoSig2006}.
+Tradicionalmente se ha considerado que para la representación de los objetos resulta más eficiente
+la utilización de un formato vectorial ya que la estructura de los datos es compacta y almacena
+los datos sólo de los elementos digitalizados por lo que requiere menos memoria para su
+almacenamiento y tratamiento \citep{fAlonsoSig2006}. Los gráficos vectoriales, se caracterizan por
+no perder la definición a media que se aumenta la escala para la visualización.
 
-En el caso de las variables cualitativas estaríamos en un caso intermedio entre los dos anteriores.
-Las ventajas del modelo ráster incluyen la simplicidad, la velocidad en la ejecución de los operadores y que es
-el modelo de datos que utilizan las imágenes de satélite o los modelos digitales de terreno. Entre las desventajas
-del modelo ráster destaca su inexactitud que depende de la resolución de los datos y la gran cantidad de espacio
-que requiere para el almacenamiento de los datos. Este último problema puede compensarse mediante diversos
-sistemas de compresión. Además en muchos casos se confunde precisión y exactitud cuando se trabaja con
-datos vectoriales de modo que la exactitud en las coordenadas del modelo vectorial es más teórica que real.
 
-Hoy en día se pueden codificar las formas en un modelo vectorial y los procesos con un modelo ráster,
-para ello se requieren herramientas eficaces de paso de un formato al otro. Resulta sencillo, finalmente, la
-visualización simultánea de datos en los dos formatos gracias a la capacidad gráfica actual.
+\begin{figure}[H]
+\begin{minipage}{\textwidth}
+    \begin{tabular}{c c }
+        \initbox
+        \num\putindeepbox[7pt]{\includegraphics[width=0.4\textwidth]{capitulo-2/graphics/formato-raster.png}} &
+        \num\putindeepbox[7pt]{\includegraphics[width=0.4\textwidth]{capitulo-2/graphics/formato-vectorial.png}} \\
+    \end{tabular}
+    \caption{\label{fig:sig-raster-vs-vectorial} Representación de una misma superficie, mediante los formatos ráster y vectorial, en un SIG.}
+
+    \footnotetext[1]{Formato Ráster.}
+    \footnotetext[2]{Formtao Vectorial.}
+\end{minipage}
+\end{figure}
+
+
+En general las ventajas del modelo ráster radican en, su simplicidad y la velocidad de ejecución de
+los operadores lo que lo convierte en el modelo a utilizar para la representación de modelos
+digitales de terreno o imágenes satelitales. Por otro lado, entre sus desventajas podemos
+mencionar su inexactitud que depende de la resolución y el tamaño de las celdas, además podemos
+mencionar que se requiere una gran cantidad de espacio para el almacenamiento aunque este problema
+puede compensarse mediante diversos sistemas de compresión.
+
+Hoy en día se pueden codificar las formas en un modelo vectorial y los procesos con un modelo
+ráster, para ello se requieren herramientas eficaces de paso de un formato al otro. Resulta
+sencillo, finalmente, la visualización simultánea de datos en los dos formatos gracias a la
+capacidad gráfica actual \citet{fAlonsoSig2006}.
