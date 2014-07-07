@@ -51,14 +51,15 @@ La forma general de encontrar un valor interpolado $u$ en un punto $x$ basado en
 muestras $u_i = u (x_i)$ para $i = 0,1, ..., N$ utilizando IDW es una función de interpolación:
 
 \begin{equation}\label{eq:interpolacion-idw}
- u(x) = \sum_{i=1}^{N} \frac{w_i(X) * u_{i}}{\sum_{j=1}^{N} w_j(X)}
+ u(x) = \sum_{i=1}^{N} w_i(X) * u_{i}
 \end{equation}
 
 Donde :
 
 \begin{equation}
-w_i(X) =  \frac{1}{d(X, X_i)^p}
+w_i(X) =  \dfrac{d(X, X_i)^{-p}}{\sum_{j=1}^{N} d(X, X_i)^{-p}}
 \end{equation}
+
 
 Siendo $d(X, X_i)$ una función que determina la distancia existente entre $X$ y $X_{i}$, donde $p$
 es el exponente de ponderación. La elección del exponente de ponderación, $p$, determina la
@@ -88,12 +89,30 @@ La medición de la probabilidad, efectuada por los métodos del kriging, hace la
 respecto a los métodos determinísticos para interpolaciones espaciales
 \citep{villatoro2007comparacion}.
 
+Se presenta con un método de interpolación con una expresión general similar a la anterior, IDW,
+con la diferencia básica es que asume que la altitud puede definirse como una variable
+regionalizada.
+
 \begin{equation}\label{eq:interpolacion-kriging}
- u(x) = \sum_{i=1}^{N} \frac{w_i(X) * u_{i}}{\sum_{j=1}^{N} \lambda{j}(X)}
+ u(x) = \sum_{i=1}^{N} \lambda{i}(X) * u_{i}
 \end{equation}
 
-Se presenta con un método de interpolación con una expresión general similar a la anterior (IDW).
-La diferencia básica es que asume que la altitud puede definirse como una variable regionalizada.
-Supone que la variación espacial de la variable a representar puede ser explicada al menos
-parcialmente mediante funciones de correlación espacial(la variación espacial de los valores de z
-puede deducirse de los valores circundantes de acuerdo con unas funciones homogéneas en toda el área).
+Donde $\lambda{i}(x)$ es el peso asignado al valor observado de $u_{i}$ y se puede calcular
+resloviendo la siguiente ecuación :
+
+\begin{equation}\label{eq:interpolacion-peso-kriging}
+\sum_{i=1}^{N} \lambda{i}  * \gamma[d(X_{i}, X_{j})] + m = \gamma[d(X_{0}, X_{i})]
+\end{equation}
+
+Donde $m$ es el multiplicador de Lagrange utilizado para la minimización de las restricciones,
+los subíndices $i$ y $j$ denotan a los puntos muestreados, el subíndice $0$ es el punto de
+estimación, $\lambda$ es el peso dado a cada una de las observaciones y la suma de todos los
+$\lambda$ es igual a uno y $d(X_{0}, X_{i})$ es la distancia entre $X_{i}$ y $X_{0}$ a partir del
+semivariograma \citep{villatoro2007comparacion}:
+
+\begin{equation}\label{eq:interpolacion-semivariograma}
+\gamma[d(X_{i}, X_{0})] = var[z(X_{0} - z(X_{i}))]
+\end{equation}
+
+Esta semivarianza calculada es una medida para determinar la similitud entre observaciones, en
+donde a mayor similitud, menor semivarianza \citep{villatoro2007comparacion}.
