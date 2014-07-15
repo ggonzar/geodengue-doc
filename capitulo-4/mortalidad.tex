@@ -21,7 +21,7 @@ no entera de $n$ queda acumulada para la siguiente iteración.
 
 \subsubsection{Mortalidad de huevos}
 La tasa de mortalidad de los huevos se encuentra definida como una constante, $me = 0.01$,
-$1/\text{días}$, independiente de la temperatura\citep{otero2006stochastic}.
+$1/\text{días}$, independiente de la temperatura \cite{otero2006stochastic}.
 
 \begin{equation}
     M_{H(x,y)} = \rho(me * H(x,y))
@@ -30,9 +30,8 @@ $1/\text{días}$, independiente de la temperatura\citep{otero2006stochastic}.
 Donde $M_{H(x,y)}$ es la cantidad de huevos que deben ser eliminados de la población $H(x,y)$.
 
 \subsubsection{Mortalidad de larvas}
-En \citet{otero2006stochastic} la mortalidad de las larvas, se encuentra dividida en dos
-contribuciones. La primera contribución representa la mortalidad natural bajo óptimas condiciones
-y se encuentra influneciada únicamente de la temperatura. Esta tasa se encuentra definida por :
+La mortalidad de las larvas, según \cite{otero2006stochastic}, se encuentra dividida en dos contribuciones. La primera contribución representa la mortalidad natural bajo óptimas condiciones
+y se encuentra influneciada únicamente de la temperatura \cite{otero2006stochastic}. Esta tasa se encuentra definida por :
 
 \begin{equation}
 \label{eq:mortalidad-natural-larvas}
@@ -41,10 +40,10 @@ y se encuentra influneciada únicamente de la temperatura. Esta tasa se encuentr
 \end{array}
 \end{equation}
 
-La segunda contribución es la mortadiad denso dependiente de las larvas. Este mecanismo de
-regulación puede estar realacionado con procesos concurrentes, como las limitaciones de los
-alimentos, las interacciones químicas, presencia de depredadores especializados en el sitio de
-reproducción y mucho más\citep{otero2006stochastic}. Esta se encuentra definida por :
+La segunda contribución es la mortadiad denso dependiente de las larvas \cite{otero2006stochastic}.
+Este mecanismo de regulación puede estar realacionado con procesos concurrentes, como las
+limitaciones de los alimentos, las interacciones químicas, presencia de depredadores
+especializados en el sitio de reproducción y mucho más \cite{otero2006stochastic}. Esta se encuentra definida por :
 
 \begin{equation}
   \alpha (x,y) = \alpha _{0}/BS(x,y)
@@ -65,7 +64,7 @@ Donde $M_{L(x,y)}$ es la cantidad de larvas que deben ser eliminadas de la pobla
 
 \subsubsection{Mortalidad de las pupas}
 La tasa de mortalidad de las pupas se encuentra definida como una función influneciada únicamente
-de la temperatura. \citep{otero2006stochastic}.
+de la temperatura \cite{otero2006stochastic}.
 
 \begin{equation}
  \begin{array}{l l}
@@ -76,7 +75,7 @@ de la temperatura. \citep{otero2006stochastic}.
 Además de la mortalidad diaria en la fase de pupa, existe una importante mortalidad adicional
 asociada con la emergencia sin éxito de adultos, solo el 83\%  de las pupas alcanzan la maduración
 y emergerán como mosquitos adultos, por lo tanto, el factor de supervivencia es de $ef=0.83$
-\citep{otero2006stochastic}.
+\cite{otero2006stochastic}.
 
 \begin{equation}
     M_{P(x,y)}(k) = \rho(P(x,y) * (mp + (1 - ef) * R(k)))
@@ -86,7 +85,7 @@ Donde $M_{P(x,y)}$ es la cantidad de pupas que deben ser eliminadas de la poblac
 
 \subsubsection{Mortalidad de adultos}
 La tasa de mortalidad de los adultos se encuentra definida como una constante, $ma = 0.09$,
-$1/\text{días}$, independiente de la temperatura\citep{otero2006stochastic}.
+$1/\text{días}$, independiente de la temperatura \cite{otero2006stochastic}.
 
 \begin{equation}
     M_{A(x,y)} = \rho(ma * A(x,y))
