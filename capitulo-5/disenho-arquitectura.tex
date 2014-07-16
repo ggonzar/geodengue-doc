@@ -5,16 +5,15 @@ demandantes, llamados clientes. La primera capa, la de presentación, es la que 
 interactuar con el usuario final, la segunda capa es la de negocios, esta se encarga de procesar
 las solicitudes realizadas por la capa de presentación y definir las reglas que deben aplicase en
 para cada solicitud. Por último, se encuentra la capa de datos, donde se almacenan los datos,
-porcesan las peticiones de la capa de negocios para persistir o recuperar información.
+porcesan las peticiones de la capa de negocios para persistir o recuperar información. En la
+\figref{fig:arquitectura-completa} se pude apreciar los compontes del sistema y las interacciones
+entre los mismos.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{capitulo-5/graphics/arquitectura-completa.png}
+\includegraphics[width=0.8\textwidth]{capitulo-5/graphics/arquitectura-completa.png}
 \caption{\label{fig:arquitectura-completa}Arquitectura de interacción de componentes de GeoDengue.}
 \end{figure}
-
-En la \figref{fig:arquitectura-completa} se pude apreciar los compontes y las interacciones entre
-los mismos.
 
 Se optó por un enfoque web debido a la practicidad de estas aplicaciones, el usuario final solo
 debe contar con un navegador web. Estas deberían funcionar igual independientemente de la versión
@@ -23,8 +22,8 @@ aplicaciones de bajo consumo, debido a que la mayor parte de la aplicación no s
 nuestro ordenador, y muchas de las tareas de procesamiento que realiza el software no consumen
 recursos nuestros porque se realizan en el servidor.
 
-El Cliente Web se encuentra diseñado como un Single Page Application o SPA (en español Aplicación
-de una sola página). Un SPA es una aplicación que se ejecuta en una única página, donde la
+El Cliente Web se encuentra diseñado como una Aplicación de una Sola Página o SPA (por sus siglas
+en ingles Single Page Application), donde la aplicación se ejecuta en una única página, y la
 navegación se realiza mediante cargas parciales, sin recargar el sitio completamente.
 
 La capa de negocios se encuentra acompañada por un servidor de mapas que se encarga de publicar y

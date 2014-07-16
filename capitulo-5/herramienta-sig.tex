@@ -1,17 +1,26 @@
 \section{Descripción funcional}
-En esta sección presentamos los requerimientos del sistema, geográfico-sanitario, y el
-comportamiento que debe apotar con el fin de cumplir sus finalidades y objetivos. El sistema
-encuentra basado en la utilización de métodos de muestreo de la abundancia poblacional como
-principal parámetro para la generación y análisis de la información.
+En esta sección presentamos los requerimientos del sistema, geográfico-sanitaria, y el
+comportamiento que debe adoptar con el fin de cumplir sus finalidades y objetivos. Se encuentra
+dividido en procesos básicos (\figref{fig:cap-5-interaccion-procesos}) que tienen como finalidad,
+la gestión de datos de entrada, la simulación del proceso evolutivo y el análisis de los datos.
 
-La utlización de larvitrampas como puntos de control, permite estimar con mayor precisión la
-abundancia del Aedes aegypti al proporcionar información fidedigna sobre el número de ejemplares
-que habitan en distintos puntos del área de estudio en comparación con la presencia o ausencia de
-larvas en recipientes o viviendas usados en los índices aédicos tradicionales
-\citet{NINO2011}, que fueron presentados en la \secref{sec:densidad-vectorial-indices-stegomia}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{capitulo-5/graphics/interaccion-modulos.png}
+\caption{\label{fig:cap-5-interaccion-procesos}Interacción de procesos básicos del sistema.}
+\end{figure}
 
-El sistema se encuentra dividido en procesos que tienen como finalidad, la gestión de datos de
-entrada, la simulador del proceso evolutivo y el análisis de los datos.
+La gestión de datos de entrada es la encargada de procesar la información obtenida de los puntos
+de control, mediante el muestreo y el conteo de larvas, y registrarlos en la base de datos del
+sistema.
+
+El simulador del proceso evolutivo es el encargado de, a partir de la información obtenida de los
+puntos de control, simular los efectos de las variaciones climáticas en el desarrollo, mortalidad
+y dispersión del vector. Donde, los efectos son registrados en la base de datos del sistema.
+
+El proceso de análisis de datos es el encargado de procesar la información, generada por los
+puntos de control y el simulador del proceso evolutivo, y presentarlos en de forma clara para que
+puedan ser interpretados por el usuario final de forma sencilla.
 
 \input{capitulo-5/muestreo-puntos-control.tex}
 \input{capitulo-5/conteo-larvas.tex}
