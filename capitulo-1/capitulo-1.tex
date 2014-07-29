@@ -1,59 +1,78 @@
 \chapter{Introducción}
+
+El Dengue es una enfermedad viral transmitida por el mosquito del Aedes aegypti, en donde la
+prevención y el control de esta enfermedad requiere de nuevas técnicas de vigilancia. El análisis
+de la distribución espacial del Aedes aegypti cumple un papel importante a la hora de definir,
+planificar y evaluar las acciones a realizar para disminuir las poblaciones de mosquitos.
+
 En este capítulo se presentan los antecedentes y la importancia de este trabajo, así como las
 propuestas que se realizan con el fin de apoyar la lucha preventiva contra el dengue. Conceptos de
-la ecología del vector, método de prevención y sistemas de información geográficos son puntos
+la ecología del vector, métodos de prevención y sistemas de información geográficos son puntos
 vitales de este trabajo por lo que son introducidos brevemente en este capítulo. No obstante, en
-capítulos siguientes, se tratarán todos estos temas serán desglosados detalladamente.
+capítulos siguientes, se tratarán todos estos temas detalladamente.
 
 \section{Justificación y Antecedentes}
+El Aedes aegypti es el principal vector del dengue en América, y afecta a más de 2,500 millones
+de personas viven en zonas en riesgo \cite{world2009dengue, gustavo2006dengue}. Actualmente es
+considerada un problema grave para la salud pública a nivel mundial
+\cite{dengueUruguayCap1, world2009dengue, DIBO2005}, siendo catalogada como ejemplo de una
+enfermedad que puede constituir una emergencia de salud pública de interés internacional con
+implicaciones para la seguridad sanitaria \cite{dengueUruguayCap1, world2009dengue}, debido a la
+necesidad de interrumpir la infección y la rápida propagación de la epidemia más allá de las
+fronteras \cite{world2009dengue}.
 
-El Dengue es una enfermedad viral transmitida por el mosquito Aedes aegypti y representa un
-problema grave para la salud pública a nivel mundial \citep{dengueUruguayCap1, world2009dengue, DIBO2005}. Más de 2 500 millones de personas viven en
-zonas en riesgo de dengue y más de 100 países han informado de la presencia de esta enfermedad en
-su territorio \cite{world2009dengue, gustavo2006dengue}.
+El Paraguay desde el año 2009 es considerado un país endémico, cuyo clima, subtropical, favorece
+la aparición y desarrollo del dengue. Las autoridades sanitarias nacionales llevan a cabo
+acciones para la vigilancia entomológica y de control vectorial para la disminución de las
+poblaciones de mosquitos mediante control químico y el control mecánico. Donde la vigilancia entomológica es realizada con el fin monitorear la densidad vectorial en zonas endémicas y no
+endémicas, mediante técnicas basadas en utilización de indices tradicionales. Actualmente existen
+numerosos métodos e indicadores más prácticos, eficientes y económicos para determinar las
+poblaciones de Aedes aegypti \cite{cenaprece2013}, como larvitrampas y ovitrampas.
 
-Los sistemas de información geográfica (SIG) constituyen un área de rápido desarrollo dentro
-de la informática y ofrecen métodos sumamente innovadores para hacer frente a algunas demandas
-técnicas que constituyen un reto. Un sistema de información geográfica es una integración
-organizada de hardware, software, datos geográficos y personal, diseñado para capturar, almacenar,
-manipular, analizar y visualizar en todas sus formas la información geográficamente referenciada
-con el fin de resolver problemas complejos de planificación y gestión \citep{lopezMarcos2007}.
+Las metodologías de vigilancia entomológica basadas en el uso de larvitrampas y ovitrampas
+permiten generar información regionalizada sobre el estado y la distribución de la población del
+vector. El análisis de la distribución espacial del Aedes aegypti, en los sistemas de información
+georefernciada, permite a las autoridades sanitarias una mejor definición, planificación y
+evaluación de las acciones a realizar para disminuir las poblaciones del vector en las regiones
+con alta densidad vectorial.
 
-Las autoridades sanitarias, en sus tareas de vigilancia en Salud Pública, tienen en los SIG una
-herramienta fundamental para conocer cómo se extiende una enfermedad, estudiar su posible relación
-con un potencial foco de riesgo, o localizar un brote epidémico \citep{vgomesAegis2001}.
+Los sistemas de información geográfica se encuentran definidos como una integración organizada de
+hardware, software, datos geográficos y personal, diseñado para capturar, almacenar, manipular,
+analizar y visualizar en todas sus formas la información geográficamente referenciada con el fin
+de resolver problemas complejos de planificación y gestión \citep{lopezMarcos2007}.
 
-Actualmente el dengue es catalogado como ejemplo de una enfermedad que puede constituir una
-emergencia de salud pública de interés internacional con implicaciones para la seguridad
-sanitaria \citep{dengueUruguayCap1, world2009dengue}, debido a la necesidad de interrumpir la infección y la rápida propagación de la
-epidemia más allá de las fronteras.
+Las autoridades sanitarias, en sus tareas de vigilancia en Salud Pública, tienen en los sistemas
+de información geográfica una herramienta fundamental para conocer cómo se extiende una
+enfermedad, estudiar su posible relación con un potencial foco de riesgo, o localizar un brote
+epidémico \cite{vgomesAegis2001}.
 
-Debido a una lucha no efectiva en contra el dengue, en  el Paraguay, cada día se reportan más
-nuevos casos de infectados por el dengue. La detección de focos de infección en base a casos
-reportados y el combate correctivo realizado actualmente, no resultan efectivos ante la lucha
-contra el dengue. Se podrían obtener mejores resultados, realizando un cambio de enfoque, en el
-combate contra el dengue, de uno correctivo a uno preventivo.
+En Paraguay anualmente se reportan miles de casos de infección por dengue, algunos de ellos con
+derivación fatal. La detección de focos de infección basados en indices tradicionales y casos
+reportados son considerados como correctivos. Es imperativo, por parte de las autoriadades
+sanitarias, el uso de nuevas técnicas para la vigilancia entomológica, con un enfoque preventivo.
 
 \section{Propuesta de esta tesis y Objetivos}
-En este trabajo se propone la construcción de una herramienta que permita realizar estudios
-epidemiológicos de forma cartográfica, especializada para el particular caso del dengue. Se
-pretende constituir un modelo que permita predecir los focos de riesgo del dengue, con la ayuda de
-un sistema de información geográfica. Para determinar las posibles zonas de riesgo, se debe
-construir un algoritmo que permita simular el comportamiento de un mosquito o de un conjunto de
-mosquitos de acuerdo a las variables de la región y tener en cuenta sus patrones migratorios.
+
+En este trabajo se propone un modelo y se presenta una herramienta que permita realizar estudios
+epidemiológicos de forma cartográfica, especializada para el particular caso del dengue. Para ello
+se utilizan métodos de abundancia poblacional distribuidos geográficamente y técnicas de
+interpolación espacial para la determinación de focos de riesgo. Además se provee de un simulador
+del comportamiento del vector, que es sometido a las variaciones climáticas de acuerdo a las
+características de la región, con el fin de generar información que pueda ser útil a la hora de
+aplicar y definir las medidas preventivas correspondientes.
 
 El objetivo principal es diseñar un modelo y construir una herramienta que permita analizar la
 extensión del vector del dengue y estudiar su posible relación con un potencial foco de riesgo, de
 forma a realizar una predicción de posibles focos y ayudar a realizar una lucha preventiva contra
-la enfermedad. Donde el modelo resultante se pueda aplicar a cualquier región o área de estudio y
+la enfermedad. Donde, el modelo resultante sea a cualquier región o área de estudio y
 que ayude a las autoridades pertinentes para toma de decisiones en la lucha contra el dengue.
 
 \section{Organización del trabajo}
-El trabajo está organizado como sigue: el capítulo 2 introduce a los sistemas de información
-geográfica, la representación de datos geoespaciales y los métodos de interpolación como
-herramienta para análisis espacial. En el capítulo 3 se presenta al aedes aegypti el principal
+El trabajo está organizado como sigue: en el capítulo 2 se presenta al aedes aegypti el principal
 transmisor del dengue, sus características biológicas y los métodos de muestreo de la abundancia
-pobacional del vector. Estos capítulos representan el estado del arte de este trabajo.
+pobacional del vector. El capítulo 3 introduce a los sistemas de información geográfica, la
+representación de datos geoespaciales y los métodos de interpolación como herramienta para
+análisis espacial. Estos capítulos representan el estado del arte de este trabajo.
 
 El capítulo 4 se presenta el modelo matemático propuesto para la identificación de focos de
 infestación y la simulación del proceso evolutivo del ciclo de vida del vector. En el capítulo 5
