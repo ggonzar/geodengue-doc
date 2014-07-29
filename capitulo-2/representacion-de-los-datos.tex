@@ -2,13 +2,13 @@
 \label{sec:cap2-tecnicas-graficas-representacion}
 Los objetos del mundo real se pueden describir mediante los fenómenos discretos y continuos, donde las variables y objetos se muestrean y organizan para lograr una representación adecuada. En un
 SIG existen básicamente dos modelos lógicos que se conocen como formato raster y formato vectorial
-y que dan lugar a los dos grandes tipos de capas de información espacial \citep{fAlonsoSig2006}.
+y que dan lugar a los dos grandes tipos de capas de información espacial \cite{fAlonsoSig2006}.
 
 \subsection{Formato raster}
 El formato raster se centra en las propiedades del espacio más que en la precisión de la
 localización. Divide el espacio en un conjunto regular de celdas, donde cada una contiene un
 número que puede ser el identificador de un objeto o del valor de una variable
-\citep{fAlonsoSig2006}. Se trata de un modelo de datos muy adecuado para la representación de
+\cite{fAlonsoSig2006}. Se trata de un modelo de datos muy adecuado para la representación de
 variables continuas en el espacio.
 
 Los datos raster se encuentran definidas como una grilla con un número determinado de filas y
@@ -35,7 +35,7 @@ imagen resultante.
         \num\putindeepbox[7pt]{\includegraphics[width=0.4\textwidth]{capitulo-2/graphics/raster-baja-resolucion.png}} &
         \num\putindeepbox[7pt]{\includegraphics[width=0.4\textwidth]{capitulo-2/graphics/raster-alta-resolucion.png}} \\
     \end{tabular}
-    \caption{\label{fig:sig-raster-resolucion} Curvas de nivel rasterizadas con tamaño de celda demasiado grande y con un tamaño adecuado (Tomado de \citet{fAlonsoSig2006}).}
+    \caption{\label{fig:sig-raster-resolucion} Curvas de nivel rasterizadas con tamaño de celda demasiado grande y con un tamaño adecuado (Tomado de \cite{fAlonsoSig2006}).}
 \end{minipage}
 \end{figure}
 
@@ -44,10 +44,10 @@ Los datos vectoriales, se caracterizan por la precisión de localización de los
 geográficos en el espacio, donde los fenómenos a representar son discretos, con límites bien
 definidos. Generalmente se considera que el formato vectorial es más adecuado para la
 representación de entidades o variables cualitativas y el formato raster para representar
-superficies\citep{fAlonsoSig2006}.
+superficies\cite{fAlonsoSig2006}.
 
 Los diferentes objetos, vectoriales, se encuentran representados como puntos, lineas o polígonos
-\citep{fAlonsoSig2006}. De tal forma que para modelar digitalmente las entidades del mundo real se
+\cite{fAlonsoSig2006}. De tal forma que para modelar digitalmente las entidades del mundo real se
 utilizan estos tres elementos geométricos.
 
 \begin{figure}
@@ -73,16 +73,16 @@ utilizan estos tres elementos geométricos.
 
 El debate acerca de la conveniencia de uno u otro modelo debe basarse en el tipo de estudio o
 enfoque que se quiera hacer, pero también del software y fuentes de datos disponibles
-\citep{fAlonsoSig2006}.
+\cite{fAlonsoSig2006}.
 
 El formato raster se considera el más adecuado para representar eficientemente las superficies.
 Estas solo pueden representarse vectorialmente mediante modelos híbridos que no resultan adecuados
 para la realización de posteriores análisis ya que todas las operaciones que permite el modelo
-ráster resultaran mucho más lentas con el modelo vectorial \citep{fAlonsoSig2006}.
+ráster resultaran mucho más lentas con el modelo vectorial \cite{fAlonsoSig2006}.
 Tradicionalmente se ha considerado que para la representación de los objetos resulta más eficiente
 la utilización de un formato vectorial ya que la estructura de los datos es compacta y almacena
 los datos sólo de los elementos digitalizados por lo que requiere menos memoria para su
-almacenamiento y tratamiento \citep{fAlonsoSig2006}. Los gráficos vectoriales, se caracterizan por
+almacenamiento y tratamiento \cite{fAlonsoSig2006}. Los gráficos vectoriales, se caracterizan por
 no perder la definición a media que se aumenta la escala para la visualización.
 
 
@@ -111,4 +111,4 @@ puede compensarse mediante diversos sistemas de compresión.
 Hoy en día se pueden codificar las formas en un modelo vectorial y los procesos con un modelo
 ráster, para ello se requieren herramientas eficaces de paso de un formato al otro. Resulta
 sencillo, finalmente, la visualización simultánea de datos en los dos formatos gracias a la
-capacidad gráfica actual \citet{fAlonsoSig2006}.
+capacidad gráfica actual \cite{fAlonsoSig2006}.
