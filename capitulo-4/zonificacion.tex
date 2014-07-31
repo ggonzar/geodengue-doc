@@ -39,15 +39,24 @@ infestación correspondiente a la abundacia de larvas por litro que se pueden ob
 \end{table}
 
 En la \tabref{tab:cap4-puntaje-zona} se puden observar los rangos definidos para cada tipo de
-zona, en donde $u(x,y)$ es la densidad relativa en un radio, $r$ , donde el valor de la densidad
-realtiva es calculado mediante la ecuación \eqref{eq:interpolacion-idw}. Las límites para las
-zonas fueron determinados clasificando los valores, de las hembras reproductivas en, grupos
-múltiplos de cinco. No se estableció  un límite superior para las zonas óptimas debido a que los
-valores mayores a el mínimo establecido, 70 larvas por litro, pertenecen a la misma categoría.
+zona, en donde $u(x,y)$ es la densidad relativa, en un radio, $r$. El valor de $u(x,y)$ es
+estimado, a partir de los valores conocidos de los puntos de control, mediante el método de
+interpolación definido por ecuación \eqref{eq:interpolacion-idw} (\figref{fig:cap4-zonficiacion}).
+Los límites para las zonas fueron determinados clasificando los valores, de las hembras
+reproductivas en, grupos múltiplos de cinco. No se estableció un límite superior para las zonas
+óptimas debido a que los valores mayores a el mínimo establecido, 70 larvas por litro, pertenecen
+a la misma categoría.
 
-El tamaño del radio,$r$, es un parametro ajustable del modelo, mientras más grande sea el tamaño
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{capitulo-4/graphics/zonificacion.png}
+\caption{\label{fig:cap4-zonficiacion} Relación entre el radio $r$, el valor de $u(x,y)$ a estimar y los valores conocidos.}
+\end{figure}
+
+El tamaño del radio, $r$, es un parametro ajustable del modelo, mientras más grande sea el tamaño
 del radio, más puntos serán incluidos para el cálculo, lo que gerará que las zonas tiendan a ser
-similares. Para el calculo de las hembras adultas y reproductivas para la clasificación de las zonas se tuvieron en cuenta que, solo el $50$ \% de las larvas observadas son hembras
+similares. Para el calculo de las hembras adultas y reproductivas para la clasificación de las
+zonas se tuvieron en cuenta que, solo el $50$ \% de las larvas observadas son hembras
 \cite{otero2006stochastic, manrique1998desarrollo}, la temperatura media utilizada es de 25
 \textcelsius \cite{website:mspbsHistoria2014}, la mortalidad díaria natural bajo optimas
 condiciones,a 25 \textcelsius, es de 0,01 según \eqref{eq:mortalidad-natural-larvas}, la tasa de

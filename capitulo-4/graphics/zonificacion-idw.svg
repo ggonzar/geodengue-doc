@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   inkscape:export-filename="/home/mbaez/Proyectos/github/geodengue-doc/capitulo-4/graphics/zonificacion.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="zonificacion-idw.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="316.92655"
+     inkscape:cy="549.22111"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 476.79202,483.6463 a 114.14724,112.12693 0 1 1 -228.29448,0 114.14724,112.12693 0 1 1 228.29448,0 z"
+       sodipodi:ry="112.12693"
+       sodipodi:rx="114.14724"
+       sodipodi:cy="483.6463"
+       sodipodi:cx="362.64478"
+       id="path3005"
+       style="fill:none;fill-opacity:1;stroke:#5d6160;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1,1;stroke-dashoffset:0"
+       sodipodi:type="arc"
+       transform="matrix(2,0,0,2,-362.64478,-483.6463)" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="362.93219"
+       y="469.78589"
+       id="text3777"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mbaez/Proyectos/github/geodengue-doc/capitulo-4/graphics/zonificacion.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3779"
+         x="329.08893"
+         y="469.78589"
+         style="font-size:22px;font-style:italic;-inkscape-font-specification:Sans Italic;text-anchor:middle;text-align:center">u(x, y)</tspan><tspan
+         sodipodi:role="line"
+         x="329.08893"
+         y="497.28589"
+         style="font-size:22px;font-style:italic;-inkscape-font-specification:Sans Italic;text-anchor:middle;text-align:center"
+         id="tspan3855">+</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.993;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:0.993,0.993;stroke-dashoffset:0"
+       d="m 326.03012,484.63276 -191.68322,2.02708 0,0 1.98635,0 0,0"
+       id="path3785"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="230.75639"
+       y="480.53461"
+       id="text3787"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3789"
+         x="230.75639"
+         y="480.53461"
+         style="font-size:22px;font-style:italic;-inkscape-font-specification:Sans Italic">r</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="242.83609"
+       y="348.48892"
+       id="text3760"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="242.83609"
+         y="348.48892"
+         style="font-size:22px;text-align:center;text-anchor:middle"
+         id="tspan3764">+<tspan
+   style="font-size:22px;baseline-shift:super;font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3768">u1</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="329.76877"
+       y="415.65414"
+       id="text3760-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="329.76877"
+         y="415.65414"
+         style="font-size:22px;text-align:center;text-anchor:middle"
+         id="tspan3764-8">+<tspan
+   style="font-size:22px;baseline-shift:super;font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3768-9">u2</tspan></tspan><tspan
+         sodipodi:role="line"
+         x="329.76877"
+         y="443.15414"
+         style="font-size:22px;text-align:center;text-anchor:middle"
+         id="tspan3827" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="489.83478"
+       y="361.11099"
+       id="text3760-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="489.83478"
+         y="361.11099"
+         style="font-size:22px;text-align:center;text-anchor:middle"
+         id="tspan3764-7">+<tspan
+   style="font-size:22px;font-style:italic;baseline-shift:super;-inkscape-font-specification:Sans Italic"
+   id="tspan3768-1">u3</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="295.83478"
+       y="661.11096"
+       id="text3760-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="295.83478"
+         y="661.11096"
+         style="font-size:22px;text-align:center;text-anchor:middle"
+         id="tspan3764-1">+<tspan
+   style="font-size:22px;baseline-shift:super;font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3768-2">u5</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="435.83478"
+       y="561.11096"
+       id="text3760-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="435.83478"
+         y="561.11096"
+         style="font-size:22px;text-align:center;text-anchor:middle"
+         id="tspan3764-9">+<tspan
+   style="font-size:22px;baseline-shift:super;font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3768-8">u4</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="161.48239"
+       y="707.79126"
+       id="text3760-6-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="161.48239"
+         y="707.79126"
+         style="font-size:22px;text-align:center;text-anchor:middle"
+         id="tspan3900">+<tspan
+   style="font-size:22px;font-style:italic;baseline-shift:super;-inkscape-font-specification:Sans Italic"
+   id="tspan3768-2-6">u6</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="76.100212"
+       y="489.13928"
+       id="text3760-6-3-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="76.100212"
+         y="489.13928"
+         style="font-size:22px;text-align:center;text-anchor:middle"
+         id="tspan3900-7">+<tspan
+   style="font-size:22px;font-style:italic;baseline-shift:super;-inkscape-font-specification:Sans Italic"
+   id="tspan3768-2-6-0">u7</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="631.29736"
+       y="332.42062"
+       id="text3760-6-3-3-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="631.29736"
+         y="332.42062"
+         style="font-size:22px;text-align:center;text-anchor:middle"
+         id="tspan3900-7-8">+<tspan
+   style="font-size:22px;font-style:italic;baseline-shift:super;-inkscape-font-specification:Sans Italic"
+   id="tspan3768-2-6-0-9">u8</tspan></tspan></text>
+  </g>
+</svg>

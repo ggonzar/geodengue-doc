@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   inkscape:export-filename="/home/mbaez/Proyectos/github/geodengue-doc/capitulo-4/graphics/rango-vuelo.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="rango-vuelo.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="272.16413"
+     inkscape:cy="596.08541"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="arc"
+       style="fill:none;fill-opacity:1;stroke:#5d6160;stroke-width:2;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2,4;stroke-dashoffset:0"
+       id="path2985"
+       sodipodi:cx="362.64478"
+       sodipodi:cy="483.6463"
+       sodipodi:rx="114.14724"
+       sodipodi:ry="112.12693"
+       d="m 476.79202,483.6463 a 114.14724,112.12693 0 1 1 -228.29448,0 114.14724,112.12693 0 1 1 228.29448,0 z" />
+    <path
+       d="m 476.79202,483.6463 a 114.14724,112.12693 0 1 1 -228.29448,0 114.14724,112.12693 0 1 1 228.29448,0 z"
+       sodipodi:ry="112.12693"
+       sodipodi:rx="114.14724"
+       sodipodi:cy="483.6463"
+       sodipodi:cx="362.64478"
+       id="path3005"
+       style="fill:none;fill-opacity:1;stroke:#5d6160;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1,1;stroke-dashoffset:0"
+       sodipodi:type="arc"
+       transform="matrix(2,0,0,2,-362.64478,-483.6463)" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="399.23184"
+       y="491.21445"
+       id="text3777"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="399.23184"
+         y="491.21445"
+         style="font-size:22px;text-align:center;text-anchor:middle"
+         id="tspan3760">+<tspan
+   style="font-size:22px;font-style:italic;baseline-shift:super;-inkscape-font-specification:Sans Italic"
+   id="tspan3764">u(x, y)</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.00342464px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 363.594,372.54013 0,101.70832"
+       id="path3783"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.04773855px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 353.57158,484.66002 -219.19742,1.97256 0,0 2.27147,0 0,0"
+       id="path3785"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="170.75639"
+       y="480.53461"
+       id="text3787"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3789"
+         x="170.75639"
+         y="480.53461"
+         style="font-size:22px">3 km</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-451.19086"
+       y="358.26483"
+       id="text3787-6"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3789-7"
+         x="-451.19086"
+         y="358.26483"
+         style="font-size:22px">100 m</tspan></text>
+  </g>
+</svg>
