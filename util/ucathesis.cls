@@ -33,7 +33,7 @@
 
 \ExecuteOptions{final,oneside,openright,fmstyle,black}
 \ProcessOptions
-\LoadClass[letterpaper,onecolumn,openright,12pt]{report}[1996/10/31]
+\LoadClass[a4paper,onecolumn,openright,12pt]{report}[1996/10/31]
 
 % load babel using spanish %
 \RequirePackage[spanish,activeacute]{babel}
