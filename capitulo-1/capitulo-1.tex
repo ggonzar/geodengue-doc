@@ -7,14 +7,15 @@ planificar y evaluar las acciones a realizar para disminuir las poblaciones de m
 
 En este capítulo se presentan los antecedentes y la importancia de este trabajo, así como las
 propuestas que se realizan con el fin de apoyar la lucha preventiva contra el dengue. Conceptos de
-la ecología del vector, métodos de prevención y sistemas de información geográficos son puntos
+la ecología del vector\footnote{Se le llama vector a un mecanismo, generalmente un organismo, que
+transmite un agente infeccioso o infestante desde los individuos afectados a otros que aún no
+portan ese agente}, métodos de prevención y sistemas de información geográficos son puntos
 vitales de este trabajo por lo que son introducidos brevemente en este capítulo. No obstante, en
 capítulos siguientes, se tratarán todos estos temas detalladamente.
 
 \section{Justificación y Antecedentes}
 El Aedes aegypti es el principal vector del dengue en América, y afecta a más de 2,500 millones
-de personas viven en zonas en riesgo \cite{world2009dengue, gustavo2006dengue}. Actualmente es
-considerada un problema grave para la salud pública a nivel mundial
+de personas viven en zonas en riesgo \cite{world2009dengue, gustavo2006dengue}. Actualmente la enfermedad es considerada un problema grave para la salud pública a nivel mundial
 \cite{dengueUruguayCap1, world2009dengue, DIBO2005}, siendo catalogada como ejemplo de una
 enfermedad que puede constituir una emergencia de salud pública de interés internacional con
 implicaciones para la seguridad sanitaria \cite{dengueUruguayCap1, world2009dengue}, debido a la
@@ -24,7 +25,7 @@ fronteras \cite{world2009dengue}.
 El Paraguay desde el año 2009 es considerado un país endémico, cuyo clima, subtropical, favorece
 la aparición y desarrollo del dengue. Las autoridades sanitarias nacionales llevan a cabo
 acciones para la vigilancia entomológica y de control vectorial para la disminución de las
-poblaciones de mosquitos mediante control químico y el control mecánico. Donde la vigilancia entomológica es realizada con el fin monitorear la densidad vectorial en zonas endémicas y no
+poblaciones de mosquitos mediante control químico y el control mecánico, donde la vigilancia entomológica es realizada con el fin monitorear la densidad vectorial en zonas endémicas y no
 endémicas, mediante técnicas basadas en utilización de indices tradicionales. Actualmente existen
 numerosos métodos e indicadores más prácticos, eficientes y económicos para determinar las
 poblaciones de Aedes aegypti \cite{cenaprece2013}, como larvitrampas y ovitrampas.
@@ -32,16 +33,16 @@ poblaciones de Aedes aegypti \cite{cenaprece2013}, como larvitrampas y ovitrampa
 Las metodologías de vigilancia entomológica basadas en el uso de larvitrampas y ovitrampas
 permiten generar información regionalizada sobre el estado y la distribución de la población del
 vector. El análisis de la distribución espacial del Aedes aegypti, en los sistemas de información
-georefernciada, permite a las autoridades sanitarias una mejor definición, planificación y
-evaluación de las acciones a realizar para disminuir las poblaciones del vector en las regiones
-con alta densidad vectorial.
+geográfica, permite a las autoridades sanitarias una mejor definición, planificación y evaluación
+de las acciones a realizar para disminuir las poblaciones del vector en las regiones con alta
+densidad vectorial.
 
 Los sistemas de información geográfica se encuentran definidos como una integración organizada de
 hardware, software, datos geográficos y personal, diseñado para capturar, almacenar, manipular,
 analizar y visualizar en todas sus formas la información geográficamente referenciada con el fin
 de resolver problemas complejos de planificación y gestión \citep{lopezMarcos2007}.
 
-Las autoridades sanitarias, en sus tareas de vigilancia en Salud Pública, tienen en los sistemas
+Las autoridades sanitarias, en sus tareas de vigilancia en salud pública, tienen en los sistemas
 de información geográfica una herramienta fundamental para conocer cómo se extiende una
 enfermedad, estudiar su posible relación con un potencial foco de riesgo, o localizar un brote
 epidémico \cite{vgomesAegis2001}.
@@ -51,8 +52,7 @@ derivación fatal. La detección de focos de infección basados en indices tradi
 reportados son considerados como correctivos. Es imperativo, por parte de las autoriadades
 sanitarias, el uso de nuevas técnicas para la vigilancia entomológica, con un enfoque preventivo.
 
-\section{Propuesta de esta tesis y Objetivos}
-
+\section{Propuesta y Objetivos}
 En este trabajo se propone un modelo y se presenta una herramienta que permita realizar estudios
 epidemiológicos de forma cartográfica, especializada para el particular caso del dengue. Para ello
 se utilizan métodos de abundancia poblacional distribuidos geográficamente y técnicas de
@@ -61,11 +61,24 @@ del comportamiento del vector, que es sometido a las variaciones climáticas de 
 características de la región, con el fin de generar información que pueda ser útil a la hora de
 aplicar y definir las medidas preventivas correspondientes.
 
-El objetivo principal es diseñar un modelo y construir una herramienta que permita analizar la
-extensión del vector del dengue y estudiar su posible relación con un potencial foco de riesgo, de
-forma a realizar una predicción de posibles focos y ayudar a realizar una lucha preventiva contra
-la enfermedad. Donde, el modelo resultante sea a cualquier región o área de estudio y
-que ayude a las autoridades pertinentes para toma de decisiones en la lucha contra el dengue.
+\subsection{Objetivo General}
+Diseñar un modelo que permita analizar la extensión del vector del dengue y estudiar su posible
+relación con un potencial foco de riesgo, de forma a realizar una predicción de posibles focos de
+riesgo.
+
+\subsection{Objetivos Específicos}
+
+\begin{itemize}
+
+\item Analizar nuevos métodos de muestreo de la abundancia poblacional del vector, con el fin de apoyar la lucha preventiva contra la enfermedad.
+
+\item Generar información relevante que pueda ayudar a las autoridades pertinentes para toma de decisiones en la lucha contra el dengue.
+
+\item Diseñar el modelo de forma paramétrica, para que sea aplicable a cualquier región o área de estudio.
+
+\item Implementar, un sistema computacional mediante el cual se puedan procesar y presentar los resultados obtenidos, en un sistema de información geográfica.
+
+\end{itemize}
 
 \section{Organización del trabajo}
 El trabajo está organizado como sigue: en el capítulo 2 se presenta al aedes aegypti el principal
@@ -80,4 +93,4 @@ se presenta la implementación computacional denominada GeoDengue, sus requerimi
 arquitectura y las herramientas y tecnologías utilizadas para su implementación.
 
 En el capítulo 6 se presenta los resultados experimentales obtenidos. Finalmente el capítulo 7
-presenta las conclusiones de este trabajo y los  posibles trabajos futuros derivados de esta tesis.
+presenta las conclusiones de este trabajo y los posibles trabajos futuros derivados de esta trabajo final de grado.
