@@ -1,19 +1,10 @@
 %!TEX root = ../tesis.tex
-\section{Identificación de focos de infestación}
+\subsection{Identificación de focos de infestación del dengue}
 \label{sec:cap4-identificacion-focos}
-
-El análisis de la distribución espacial y temporal de las poblaciones del vector, puede llegar a
-jugar un papel importante en la planificación y evaluación de medidas orientadas a la disminución
-de las poblaciones del vector y en consecuencia, reducir los casos de dengue
-\cite{dengueUruguayCap1, cenaprece2013,nino2008uso}. Los SIG constituyen una herramienta esencial
-para el análisis de la distribución espacial de las poblaciones
-\cite{vgomesAegis2001,petric2012surveillance}, permitiendo obtener mejores resultados en
-combinación con las metodologías de vigilancia entomológica y medicas\cite{petric2012surveillance}.
-
 Las metodologías de vigilancia entomológica basadas en la distribución geográfica de larvitrampas
 u ovitrampas, como las presentadas en
 \cite{NINO2011,petric2012surveillance, journal.pone.0054167,nino2008uso}, permiten generar
-información regionalizada sobre la abundancia poblacional del vector \cite{NINO2011}. Los datos
+información regionalizada sobre la abundancia poblacional del vector. Los datos
 sobre los mosquitos atrapados deben mantenerse para crear un registro histórico de las especies de
 mosquitos que se encuentran en asociación con diferentes hábitats y patógenos para permitir la
 detección temprana de las adaptaciones \cite{petric2012surveillance}.
@@ -25,8 +16,14 @@ regionalizada que, mediante técnicas de interpolación espacial, permiten obten
 interpolación donde se puede apreciar los niveles de infestación del vector, y el riesgo
 correspondiente a la abundacia de mosqutios observada en el área de estudio \cite{NINO2011, nino2008uso, journal.pone.0054167, albierispatial}. El hecho de contar con esta información
 regionalizada permitirá a las autoridades pertinentes definir y planificar mejor las medidas de
-prevención y control a realizarce para reducir los niveles de infestación en las zonas criticas
+prevención y control a realizarse para reducir los niveles de infestación en las zonas criticas
 \cite{NINO2011, nino2008uso, petric2012surveillance}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{capitulo-2/graphics/distribucion-puntos-control.png}
+\caption{\label{fig:sig-distribucion-puntos-control}Ejemplo de disposición de larvitrampas (azul) y abundancia de larvas (rojo) (Tomado de \cite{NINO2011}).}
+\end{figure}
 
 La selección del método de interpolación se realizó teniendo en cuenta el factor humano en la
 distribución de los puntos de control. En \cite{villatoro2007comparacion} se realiza una
@@ -37,6 +34,12 @@ entonces el Kriging deja de ser una opción y comparativamente el IDW se perfila
 \cite{villatoro2007comparacion}. El método seleccionado finalmente fue el IDW, debido que la
 distribución del los puntos de control no será perfecta, inclusive, en algunas localidades la
 distribución no será de forma uniforme.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{capitulo-2/graphics/puntos-control-interpolacion.png}
+\caption{\label{fig:sig-puntos-control-interpolacion}Ejemplo de mapa de interpolación resultantes (Tomado de \cite{NINO2011}).}
+\end{figure}
 
 Los mapas de interpolación resultantes, indican, con mayor detalle que los índices aédicos
 tradicionales, los lugares específicos donde sería necesario tomar medidas de prevención y
