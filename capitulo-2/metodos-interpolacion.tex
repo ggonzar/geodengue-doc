@@ -1,28 +1,26 @@
-\section{Métodos de interpolación}
+\section{Métodos de interpolación espacial}
 \label{sec:cap2-metodos-interpolacion}
 La interpolación espacial, consiste en la utilización de puntos con valores conocidos, también
 denominados puntos de control, para estimar el valor de una variable en lugares donde se
 desconoce. Donde la estimación de los valores que alcanza una variable $Z$ en un conjunto de
 puntos definidos por un par de coordenadas $(X,Y)$, partiendo de los valores de $Z$ medidos en
-una muestra de puntos situados en el mismo área de estudio \citep{fAlonsoSig2006}.
-
+una muestra de puntos situados en la misma área de estudio\cite{fAlonsoSig2006}.
 
 Todos los métodos de interpolación se basan en la presunción lógica de que cuanto más cercanos
 están dos puntos sobre la superficie terrestre, los valores de cualquier variable cuantitativa que
 midamos en ellos serán más parecidos, para expresarlo más técnicamente, las variables espaciales
-muestran autocorrelación espacial \citep{fAlonsoSig2006}.
+muestran autocorrelación espacial\cite{fAlonsoSig2006}.
 
 El resultado de la interpolación espacial depende de un algoritmo computacional o una ecuación
 matemática en la cual se emplean los datos de los puntos de control\cite{NINO2011}.
-
 
 \subsection {Red de Triángulos Irregulares}
 Las Redes Irregulares de Triángulos o TIN (por sus siglas en inglés Triangulated Irregular Network)
 , se generan a partir de valores puntuales tratando de conseguir triángulos que maximicen la
 relación área/perímetro, el conjunto de todos los triángulos forma un objeto geométrico
-denominado conjunto convexo \citet{fAlonsoSig2006}.
+denominado conjunto convexo\cite{fAlonsoSig2006}.
 
-\begin{figure}[H]
+\begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{capitulo-2/graphics/TIN-cPachecoMDE2003.png}
 \caption{\label{fig:sig-tin}Red de Triángulos Irregulares (Tomado de \cite{cPachecoMDE2003}).}
@@ -31,17 +29,17 @@ denominado conjunto convexo \citet{fAlonsoSig2006}.
 TIN utiliza los puntos de entrada para construir una red de triángulos según el criterio de Delauny
 \footnote{El criterio de Delauny genera, tanto como le es posible, triángulos pequeños y
 equiláteros y es ley ser utilizado para crear objetos TIN}: en cada triángulo, el círculo que pasa
-a través de los tres vértices no encierra ningún otro punto de entrada \citep{cPachecoMDE2003}.
+a través de los tres vértices no encierra ningún otro punto de entrada\cite{cPachecoMDE2003}.
 
 \subsection{Ponderación de la inversa de la distancia}
-Ponderación de la inversa de la distancia o IDW (por sus siglas en inglés Inverse distance
-weighting), estima los puntos del modelo realizando una asignación de pesos a los datos del
+Ponderación de la inversa de la distancia o IDW (por sus siglas en inglés Inverse Distance
+Weighting), estima los puntos del modelo realizando una asignación de pesos a los datos del
 entorno en función inversa a la distancia que los separa del punto en cuestión. De esta forma,
 la influencia del valor observado $u_{i}$, sobre el valor estimado $u$, disminuye a medida que
 incrementa la distancia entre ambos.
 
 
-\begin{figure}[H]
+\begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{capitulo-2/graphics/idw-distancia.jpg}
 \caption{\label{fig:sig-idw-distancia} Cálculo de la distancia entre el punto a estimar,$u(x)$ , y los valores conocidos $u_{i}$.}
@@ -67,7 +65,7 @@ es el exponente de ponderación. La elección del exponente de ponderación, $p$
 contribución de los puntos circundantes al punto a interpolar, cuanto mayor es $p$, más
 contribuyen los puntos próximos (\figref{fig:sig-idw-parametros}).
 
-\begin{figure}[H]
+\begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{capitulo-2/graphics/idw-parametros.png}
 \caption{\label{fig:sig-idw-parametros} Nivel de influencia de distintos valores de $p$ en
@@ -98,8 +96,8 @@ regionalizada.
  u(x) = \sum_{i=1}^{N} \lambda{i}(X) * u_{i}
 \end{equation}
 
-Donde $\lambda{i}(x)$ es el peso asignado al valor observado de $u_{i}$ y se puede calcular
-resloviendo la siguiente ecuación :
+Donde $\lambda{i}(X)$ es el peso asignado al valor observado de $u_{i}$ y se puede calcular
+resolviendo la siguiente ecuación :
 
 \begin{equation}\label{eq:interpolacion-peso-kriging}
 \sum_{i=1}^{N} \lambda{i}  * \gamma[d(X_{i}, X_{j})] + m = \gamma[d(X_{0}, X_{i})]
