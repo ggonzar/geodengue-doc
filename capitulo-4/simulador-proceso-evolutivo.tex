@@ -1,6 +1,6 @@
 \section{Simulador del proceso evolutivo}
 \label{sec:cap4-simulador-proceso-evolutivo}
-La simulación del prorceso evolutivo del mosquito del aedes aegypti requiere, principalmente los
+La simulación del proceso evolutivo del mosquito Aedes aegypti requiere, principalmente los
 puntos de control pertenecientes el área de estudio y los datos climatológios del correspondientes
 a dicha área. El proceso evolutivo consta de varios pasos, el desarrollo, la mortalidad,
 la ovipostura y dispersión de los individuos de la población.
@@ -12,9 +12,9 @@ utilizada para el estudio.
 La población de estudio, $\vec{m}$, se encuentra compuesta por un conjunto $m_{j}(x,y)$ que representan a los individuos, $h_{j}(x,y)$, $l_{j}(x,y)$, $p_{j}(x,y)$, $am_{j}(x,y)$,
 $an_{j}(x,y)$ y $ap_{j}(x,y)$ que corresponden a las poblaciones de $H(x,y)$, $L(x,y)$, $P(x,y)$,
 $AM(x,y)$, $AN(x,y)$ y $AP(x,y)$ respectivamente. Todos los individuos,$m_{j}(x,y)$, que se
-encuenten en una misma $(x, y)$ pertenencen a una misma colonia.
+encenten en una misma $(x, y)$ pertenecen a una misma colonia.
 
-El periodo de estudio, $\vec{k}$, se ecuentra conformado por un conjuto de temperaturas $k_{i}$
+El periodo de estudio, $\vec{k}$, se encuentra conformado por un conjunto de temperaturas $k_{i}$
 que representan las temperaturas diarias.
 
 \begin{algorithm}
@@ -50,7 +50,7 @@ El \algref{alg:simulador-evolutivo}, describe al simulador como un proceso itera
 es simular los efectos de cada $k_{i}$ para cada individuo $m_{j}$ que pertenezca a la población.
 
 El proceso $desarrollar(m_{j}, k_{i})$, es el proceso por el cual se calculan las tasas de
-desarrollo correspondientes para cada $m_{j}$ . Estas son obtenidas medidante el modelo de
+desarrollo correspondientes para cada $m_{j}$ . Estas son obtenidas mediante el modelo de
 \cite{sharpe1977reaction} presentado en la \secref{subsec:cap4-tasas de desarrollo}.
 
 El desarrollo en las etapas inmaduras ($H(x,y)$, $L(x,y)$ y $P(x,y)$) es realizado con el fin de
@@ -63,7 +63,7 @@ El proceso $regular(m_{j}, k_{i})$ como principal objetivo, determinar la cantid
 que deben ser eliminados de la población, debido a la mortalidad diaria y seleccionar los
 candidatos para dicha eliminación. Como se mencionó anteriormente, en la
 \secref{subsec:cap4-mortalidad}, la tasa de mortalidad diaria depende del estado en el que
-encuentre el inidividuo. La selección de canidatos para la eliminación se realiza de forma
+encuentre el individuo. La selección de candidatos para la eliminación se realiza de forma
 aleatoria para los individuos que provenientes de una misma colonia $(x, y)$.
 
 El proceso $esta\_maduro(m_{j}, k_{i})$ se encarga de validar que individuo haya completado su

@@ -1,11 +1,11 @@
 \subsection{Sitios de reproducción}
 \label{subsec:cap4-sitios de reproduccion}
-Sea $BS$ el número de sitios de reproducción agrupados como una solo para una zona. La variable
-ambiental, $BS$ ,determina el tamaño de la población de equilibrio en el modelo determinista
-\cite{otero2006stochastic}. Las diferentes condiciones ambientales deben ser
+Sea $BS$ el número de sitios de reproducción agrupados como uno solo para una determinada zona. La
+variable ambiental, $BS$ ,determina el tamaño de la población de equilibrio en el modelo
+determinista \cite{otero2006stochastic}. Las diferentes condiciones ambientales deben ser
 representadas por diferentes valores del parámetro de $BS$ \cite{otero2006stochastic}.
 
-Se considera a $BS(x,y)$ como el valor de $BS$, asociado a $(x,y)$, partiendo de las hipotesis
+Se considera a $BS(x,y)$ como el valor de $BS$, asociado a $(x,y)$, partiendo de las hipótesis
 realizadas en la \secref{subsec:cap4-zonificacion} podemos considerar que el valor de $BS(x,y)$ se
 encuentra influenciado por $u(x,y)$, de ese modo a medida que $u(x,y)$ varíe, lo debe hacer el
 valor de $BS(x,y)$. Para el cálculo de $BS$ relativo a $(x,y)$ se utiliza el método interpolador
@@ -26,8 +26,9 @@ donde $l_j(u(x,y))$ son los llamados polinomios de Lagrange, que se calculan de 
     l_{i}(u(x,y)) = \prod_{j \neq i} \cfrac{u(x,y) - u_{j}}{u_{i} - u_{j}}
 \end{equation}
 
-Consideramos un polinomio de grado 3, con los parámetros $u_0$, $u_1$ y $u_2$ igual a $19$, $51$ y
-$70$, correspondientes a zonas del tipo pésima, regular y óptima. Los valores, $bs_{min}$,
-$bs_{med}$ y $bs_{max}$ respectivamente, estos son parámetros configurables del modelo
-donde $bs_{min}$ representa el menor $BS$ observado, $bs_{max}$ representa el mayor $BS$ observado
-y  $bs_{med}$ es el valor medio existente entre $bs_{max}$ y $bs_{min}$.
+Consideramos un polinomio de tercer grado, con los parámetros $u_0$, $u_1$ y $u_2$ igual a $19$,
+$51$ y $70$, correspondientes a zonas del tipo \textit{Pésima}, \textit{Regular} y \textit{Óptima}.
+Los valores, $bs_{min}$, $bs_{med}$ y $bs_{max}$ respectivamente, estos son parámetros
+configurables del modelo donde $bs_{min}$ representa el menor $BS$ observado, $bs_{max}$
+representa el mayor $BS$ observado y  $bs_{med}$ es el valor medio existente entre $bs_{max}$ y
+$bs_{min}$.

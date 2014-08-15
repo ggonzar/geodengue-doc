@@ -30,8 +30,10 @@ $1/\text{días}$, independiente de la temperatura \cite{otero2006stochastic}.
 Donde $M_{H(x,y)}$ es la cantidad de huevos que deben ser eliminados de la población $H(x,y)$.
 
 \subsubsection{Mortalidad de larvas}
-La mortalidad de las larvas, según \cite{otero2006stochastic}, se encuentra dividida en dos contribuciones. La primera contribución representa la mortalidad natural bajo óptimas condiciones
-y se encuentra influneciada únicamente de la temperatura \cite{otero2006stochastic}. Esta tasa se encuentra definida por :
+La mortalidad de las larvas, según \cite{otero2006stochastic}, se encuentra dividida en dos
+contribuciones. La primera contribución representa la mortalidad natural bajo óptimas condiciones
+y se encuentra influenciada únicamente de la temperatura \cite{otero2006stochastic}. Esta tasa se
+encuentra definida por :
 
 \begin{equation}
 \label{eq:mortalidad-natural-larvas}
@@ -40,10 +42,11 @@ y se encuentra influneciada únicamente de la temperatura \cite{otero2006stochas
 \end{array}
 \end{equation}
 
-La segunda contribución es la mortadiad denso dependiente de las larvas \cite{otero2006stochastic}.
-Este mecanismo de regulación puede estar realacionado con procesos concurrentes, como las
+La segunda contribución es la mortalidad denso dependiente de las larvas \cite{otero2006stochastic}
+. Este mecanismo de regulación puede estar relacionado con procesos concurrentes, como las
 limitaciones de los alimentos, las interacciones químicas, presencia de depredadores
-especializados en el sitio de reproducción y mucho más \cite{otero2006stochastic}. Esta se encuentra definida por :
+especializados en el sitio de reproducción y mucho más \cite{otero2006stochastic}. Esta se
+encuentra definida por :
 
 \begin{equation}
   \alpha (x,y) = \alpha _{0}/BS(x,y)
@@ -63,10 +66,11 @@ dependiente, la mortalidad de las larvas queda definida como :
 Donde $M_{L(x,y)}$ es la cantidad de larvas que deben ser eliminadas de la población $L(x,y)$.
 
 \subsubsection{Mortalidad de las pupas}
-La tasa de mortalidad de las pupas se encuentra definida como una función influneciada únicamente
+La tasa de mortalidad de las pupas se encuentra definida como una función influenciada únicamente
 de la temperatura \cite{otero2006stochastic}.
 
 \begin{equation}
+\label{eq:mortalidad-natural-pupas}
  \begin{array}{l l}
     mp(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg) &\quad  \forall k, 278 K \geq k \geq 303 K\\
 \end{array}
