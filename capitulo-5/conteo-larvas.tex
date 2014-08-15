@@ -1,5 +1,5 @@
 \subsection{Conteo de larvas}
-Con el muestreo se busca estimar la abundancia poblacional del Aedes Aegypti en una región, donde,
+Con el muestreo se busca estimar la abundancia poblacional del Aedes aegypti en una región, donde,
 como parte de proceso de recolección de los datos se debe realizar un conteo para determinar la
 cantidad de lavas asociadas a cada punto de control que pertenezca a la muestra. De forma que el
 conteo de larva se torna un trabajo tedioso.
@@ -18,49 +18,50 @@ utilizadas directamente, estas son sometidas a un preprocesamiento con el fin de
 variaciones en intensidad debidas al ruido, por deficiencias en la iluminación o la obtención de
 imágenes de bajo contraste \citep{santillan2008deteccion}.
 
-\begin{figure}
-\begin{minipage}{\textwidth}
-    \begin{tabular}{c c }
-        \initbox
-        \num\putindeepbox[7pt]{\includegraphics[width=0.4\textwidth]{capitulo-5/graphics/bandeja-muestra.jpg}} &
-        \num\putindeepbox[7pt]{\includegraphics[width=0.4\textwidth]{capitulo-5/graphics/larvas-dengue.jpg}} \\
-    \end{tabular}
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+            \includegraphics[width=\textwidth]{capitulo-5/graphics/bandeja-muestra.jpg}
+            \caption{Bandeja de muestra vacía, sin larvas.}
+    \end{subfigure}
+    ~~~~
+    \begin{subfigure}[b]{0.4\textwidth}
+            \includegraphics[width=\textwidth]{capitulo-5/graphics/larvas-dengue.jpg}
+            \caption{Bandeja con larvas correspondientes al un punto de control.}
 
+    \end{subfigure}
     \caption{\label{fig:cap5-conteo-pdi-bandejas} Bandejas de plástico utilizadas como contenedor
     de larvas.}
-
-    \footnotetext[1]{Bandeja de muestra vacía, sin larvas.}
-    \footnotetext[2]{Bandeja con larvas correspondientes al un punto de control.}
-\end{minipage}
 \end{figure}
+
 
 Existen diferentes métodos para el análisis de imágenes que nos permiten realizar el conteo de
 larvas teniendo en cuenta las características de las larvas. Presentaremos el método y las técnicas
 utilizadas para la realizar el conteo de forma trivial, pero dista mucho de ser trivial y un
 análisis más profundo escapa al alcance de este proyecto.
 
-El método seleccionado para realizar el conteo fue el de Otsu, ya que no requiere supervición
+El método seleccionado para realizar el conteo fue el de Otsu, ya que no requiere supervisión
 humana ni información previa de la imagen antes de su procesamiento \cite{santillan2008deteccion}.
 Este método se emplea cuando hay una clara diferencia entre los objetos a extraer respecto del
-fondo de la escena \citep{santillan2008deteccion}. Con la finalidad resaltar las características
+fondo de la escena \citep{santillan2008deteccion}. Con la finalidad de resaltar las características
 de las larvas, estas deben depositarse en una bandeja de plástico de color blanco para
 posteriormente realizar la captura (\figref{fig:cap5-conteo-pdi-bandejas}), con esto se consigue
 un contraste entre el fondo las larvas observadas.
 
-\begin{figure}
-\begin{minipage}{\textwidth}
-    \begin{tabular}{c c }
-        \initbox
-        \num\putindeepbox[7pt]{\includegraphics[width=0.4\textwidth]{capitulo-5/graphics/larvas-original.png}} &
-        \num\putindeepbox[7pt]{\includegraphics[width=0.4\textwidth]{capitulo-5/graphics/larvas-otsu.png}} \\
-    \end{tabular}
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+            \includegraphics[width=\textwidth]{capitulo-5/graphics/larvas-original.png}
+            \caption{Imagen original antes de la transformación.}
+    \end{subfigure}
+    ~~~~
+    \begin{subfigure}[b]{0.4\textwidth}
+            \includegraphics[width=\textwidth]{capitulo-5/graphics/larvas-otsu.png}
+            \caption{Imagen luego de la umbralización de Otsu.}
 
-    \caption{\label{fig:cap5-larvas-otsu} Transformación de la una imagen mediante el método de
+    \end{subfigure}
+    \caption{\label{fig:cap5-larvas-otsu} Transformación de una imagen mediante el método de
     Otsu.}
-
-    \footnotetext[1]{Imagen original.}
-    \footnotetext[2]{Imagen luego de la umbralización de Otsu.}
-\end{minipage}
 \end{figure}
 
 La imagen se transforma a escala de grises, se ajusta el histograma para mejorar su contraste y se
