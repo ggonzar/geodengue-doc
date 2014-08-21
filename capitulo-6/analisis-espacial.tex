@@ -35,7 +35,12 @@ riesgo definidos según la \tabref{tab:cap4-puntaje-zona}.
 La distribución geográfica, dispersión y niveles de infestación de las poblaciones de Aedes aegypti
 son presentadas como mapas de interpolación, donde para la interpolación espacial fueron
 seleccionados los individuos pertenecientes a las poblaciones correspondientes a un día del
-periodo de simulación.
+periodo de simulación. Para el análisis espacial fueron seleccionadas los datos obtenidos mediante
+la simulación del proceso evolutivo a 6 temperaturas constantes(15 a 34 \textcelsius). Los días
+del periodo de simulación, utilizados para generar los mapas de interpolación, fueron
+seleccionados teniendo en cuenta el crecimiento y decrecimiento de la población observado en
+la \figref{fig:desarrollo-poblacion-all} con el fin de resaltar los eventos más relevantes de cada
+población.
 
 \begin{figure}[!htbp]
     \centering
@@ -98,7 +103,6 @@ simulación.
             \includegraphics[width=\textwidth]{capitulo-6/graphics/raster/temp-15-2.png}
             \caption{\label{fig:niveles-infestacion-15-b}Día número 3 de simulación.}
     \end{subfigure}
-
     \begin{subfigure}[b]{0.45\textwidth}
             \includegraphics[width=\textwidth]{capitulo-6/graphics/raster/temp-15-7.png}
             \caption{\label{fig:niveles-infestacion-15-c}Día número 8 de simulación.}
@@ -108,10 +112,8 @@ simulación.
             \includegraphics[width=\textwidth]{capitulo-6/graphics/raster/temp-15-9.png}
             \caption{\label{fig:niveles-infestacion-15-d}Día número 10 de simulación.}
     \end{subfigure}
-
     \caption{\label{fig:niveles-infestacion-15} Mapas de interpolación de la población correspondientes a los días 1, 3, 8 y 10 de simulación a 15 \textcelsius.}
 \end{figure}
-
 
 En la \figref{fig:desarrollo-poblacion-20}, se puede observar el comportamiento de la población a
 20 \textcelsius, en donde la población de individuos en sus etapas inmaduras va decreciendo hasta
@@ -134,7 +136,6 @@ y el tamaño de la población para los días 36 y 39 del periodo de simulación,
 cuenta con una población de mayor tamaño que el día 36, pero en este último se observan mayores
 niveles de infestación. Esto se debe a que los mapas de interpolación dependen de la distribución
 geográfica de los individuos de la población y la concentración de los mismos en $(x,y)$.
-
 
 \begin{figure}[!htbp]
     \centering
