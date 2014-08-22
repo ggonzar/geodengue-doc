@@ -1,15 +1,14 @@
 \section{Modelos de simulación de la ecología del vector}
 \label{sec:cap4-modelo-simulacion}
-
 La comunidad académica internacional reconoce que, el comportamiento, las tasas de desarrollo, la
 mortalidad y la dispersión geográfica de los vectores transmisores del dengue, se encuentran
 influenciados por las variaciones climáticas y del medio que los rodea.
 
-La distribución geográfica de puntos de control, permite generar información regionalizada sobre
-el estado de las poblaciones del vector \cite{NINO2011}. Donde esta información puede ser
-combinada con información ambiental, demográfica o epidemiológica, con el fin de obtener modelos
-detallados que tengan la capacidad de monitorear, simular el comportamiento del vector y en
-consecuencia, predecir una posible epidemia del dengue.
+La distribución geográfica de larvitrampas, consideradas como puntos de control, permiten generar
+información regionalizada sobre el estado de las poblaciones del vector \cite{NINO2011}. Donde esta
+información puede ser combinada con información ambiental, demográfica o epidemiológica, con el
+fin de obtener modelos detallados que tengan la capacidad de monitorear, simular el comportamiento
+del vector y en consecuencia, predecir una posible epidemia del dengue.
 
 Una primera aproximación, a un simulador del proceso evolutivo del vector, puede ser adquirida
 mediante el diseño de modelos matemáticos que integren los múltiples factores de riesgo, obtenidos
@@ -24,7 +23,7 @@ brindaría una importante capacidad de anticipación para la prevención de even
 significativas alteraciones en la salud y, en casos serios, la muerte de muchos pacientes en
 nuestro medio.
 
-La propuesta de modelo de simulación, presentada en esta sección, consiste en un conjunto de
+La propuesta del modelo de simulación, presentada en esta sección, consiste en un conjunto de
 submodelos que buscan estimar la tasa de desarrollo, mortalidad, reproducción y dispersión del
 vector del dengue ante las variaciones climáticas a las que es sometido, con el fin de generar
 información suficiente para contribuir con la detección temprana de posibles brotes
@@ -50,8 +49,8 @@ de hembras nulíparas, ovipostura de hembras paridas y dispersión de los adulto
 Según \cite{otero2006stochastic} los eventos se producen a tasas que dependen no sólo de valores
 de la población, sino también de la temperatura, que a su vez es una función de tiempo, por lo
 tanto, la dependencia de la temperatura introduce una dependencia del tiempo en las tasas de
-eventos. La evolución es modelada como un proceso interativo diario, en donde la ocurrencia de los
-eventos mencionados anteriormente estan sujetos a las temperaturas $k_{i}$ reportadas diariamente
+eventos. La evolución es modelada como un proceso iterativo diario, en donde la ocurrencia de los
+eventos mencionados anteriormente están sujetos a las temperaturas $k_{i}$ reportadas diariamente
 en un periodo de tiempo $\vec{k}$.
 
 \input{capitulo-4/zonificacion.tex}
