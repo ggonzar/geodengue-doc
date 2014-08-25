@@ -1,22 +1,17 @@
+
 \section{Descripción funcional}
 En esta sección presentamos los requerimientos del sistema, geográfico-sanitario, y el
 comportamiento que debe adoptar con el fin de cumplir sus finalidades y objetivos. Se encuentra
-dividido en procesos básicos (\figref{fig:cap-5-interaccion-procesos}) que tienen como finalidad,
-la gestión de datos de entrada, la simulación del proceso evolutivo y el análisis de los datos.
+dividido en procesos básicos que tienen como finalidad, la gestión de datos de entrada, la
+simulación del proceso evolutivo y el análisis de los datos.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.8\textwidth]{capitulo-5/graphics/interaccion-modulos.png}
-\caption{\label{fig:cap-5-interaccion-procesos}Interacción de procesos básicos del sistema.}
-\end{figure}
-
-La gestión de datos de entrada es la encargada de procesar la información obtenida de los puntos
-de control, mediante el muestreo y el conteo de larvas, y registrarlos en la base de datos del
-sistema.
+La gestión de datos de entrada es la encargada de procesar la información obtenida a partir de los
+puntos de control, mediante el conteo de larvas, y registrarlos en la base de datos del sistema,
+donde los datos se encuentran agrupados por áreas de muestreo.
 
 El simulador del proceso evolutivo es el encargado de, a partir de la información obtenida de los
 puntos de control, simular los efectos de las variaciones climáticas en el desarrollo, mortalidad
-y dispersión del vector. Donde, los efectos son registrados en la base de datos del sistema.
+y dispersión del vector, donde, los efectos son registrados en la base de datos del sistema.
 
 El proceso de análisis de datos es el encargado de procesar la información, generada por los
 puntos de control y el simulador del proceso evolutivo, y presentarlos en de forma clara para que
