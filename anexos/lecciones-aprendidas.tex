@@ -1,0 +1,87 @@
+\chapter{Lecciones aprendidas}
+Durante el periodo de investigación y desarrollo de este proyecto se analizaron varias
+alternativas, para llegar al diseño y construcción de un simulador del proceso evolutivo de la
+ecología del Aedes aegypti.
+
+\section{Primeros pasos y enfoques adoptados}
+Uno de los primeros enfoques adoptados, con el fin diseñar un modelo que permita predecir focos de
+dengue, se encontraba orientado a recolectar un conjunto de variables para su posterior análisis,
+con el fin de encontrar la relación de las mismas con un posible foco de dengue. Entre las
+variables básicas, con las que se debían contar para llevar al cabo el análisis se encontraban :
+
+\begin{itemize}
+    \item \textit{Registros de casos de dengue} : consiste en historial de los casos reportados, confirmados, sospechosos, y fatales de dengue registrados.
+
+    \item \textit{Datos climatológicos} : historial de datos climatológicos del Paraguay.
+\end{itemize}
+
+Se pretendía utilizar técnicas de regresión lineal, para buscar una relación entre las variaciones
+climáticas y los casos de dengue, para su posterior presentación en un SIG. Dado que el contexto
+en el cual se deseaba analizar los datos era el de un SIG, se reemplazó la regresión lineal por la
+regresión ponderada geográficamente que resultaba más adecuada para el estudio.
+
+Teniendo en cuenta que las autoridades sanitarias del Paraguay no cuentan con datos computables,
+geográficamente, relacionados con a casos de dengue que permitan realizar los análisis
+estadísticos y espaciales correspondientes, se tuvo que optar por otro enfoque que permita
+realizar el análisis.
+
+Un segundo enfoque, consistió en reemplazar el registro de casos de dengue por un conjunto de
+variables que permitan caracterizar una zona como más o menos riesgosa. Entre estas variables
+tenemos:
+
+\begin{itemize}
+    \item \textit{Índices de infestación} : Correspondiente a un historial de los índices de infestación observados. Actualmente, las autoridades sanitarias los utilizan para asociar un nivel de riesgo a una zona.
+
+    \item \textit{Patios baldíos} : Registro de patios baldíos correspondientes al Paraguay. Estos son considerados como uno de los mayores criaderos de dengue, ya que normalmente se caracterizan por encontrase en estado de abandono y en algunos casos cumplen la función de vertederos informales.
+
+    \item \textit{Aglomeración de personas} : Registro de lugares con grandes aglomeración de personas como el mercado, estadios, universidades, escuelas etc. Se consideró esta variable atendiendo que las hembras del Aedes aegypti son atraídas por el olor del dióxido de carbono que exhalan los seres humanos. De modo que los lugares con gran aglomeración de personas generan mayor cantidad de dióxido de carbono, y por ende resultan más atractivas para las hembras del Aedes aegypti.
+\end{itemize}
+
+
+Nuevamente hay que tener en cuenta que no se cuentan con datos computables, geográficamente, que
+permitan realizar el análisis.
+
+\section{Problemática y limitaciones}
+
+El principal problema con los primero enfoques, mencionados anteriormente, es que no existen datos
+computables para realizar el análisis. Por lo que para realizar un análisis válido, de forma a
+determinar la relación existente entre las variables, se debe realizar un trabajo previo para
+la recolección de los datos.
+
+Para la recolección de datos, primeramente, se deben diseñar e implementar las herramientas
+correspondientes, así como las metodologías para la migración de los datos existentes y las
+políticas de utilización de dichas herramientas. Esto implica un trabajo institucional con un alto
+costo y cuya ejecución podría llevar un tiempo considerable. Se considera que dicho requerimiento
+previo es una limitante para la realización de un análisis válido.
+
+
+\section{Selección del enfoque final}
+La selección del enfoque final, parte de la necesidad de contar con nuevas metodologías que
+permitan generar información para el análisis sin la necesidad de grandes requerimientos previos
+para realizar estimaciones válidas.
+
+Las autoridades sanitarias, del Paraguay, llevan a cabo acciones para la vigilancia entomológica,
+con el fin monitorear la densidad vectorial en zonas endémicas y no endémicas, mediante técnicas
+basadas en utilización de indices tradicionales, donde estas son consideradas como una pobre
+indicación de la producción de mosquitos adultos, debido a que no reflejan la asociación que
+existe entre las densidades de mosquitos y tipo de recipientes presentes, con los riesgos de
+transmisión de dengue, además no se puede medir la productividad del recipiente y en consecuencia
+se proporciona poca o nula información de aquellas viviendas en las que existe un mayor riesgo de
+presencia de mosquitos. Actualmente existen numerosos métodos e indicadores más prácticos,
+eficientes y económicos para determinar las poblaciones de Aedes aegypti, como larvitrampas y
+ovitrampas.
+
+Los métodos de muestreo, como larvitrampas y ovitrampas, permiten obtener información regionalizada
+correspondiente a un área determinada, donde esta información, puede ser combinada con información
+ambiental, demográfica o epidemiológica, con el fin de obtener modelos detallados que tengan la
+capacidad de monitorear, simular el comportamiento del vector y en consecuencia, predecir una
+posible epidemia del dengue.
+
+Teniendo en cuenta que la utilización de las larvitrampas u ovitrampas, no cuenta con mayores
+requisitos, más que su construcción, instalación y revisión, se optó por utilizarlas como punto
+de partida para el enfoque final. La información obtenida es utilizada como entrada para
+modelos térmicos que permiten calcular la tasa de desarrollo y mortalidad del Aedes aegypti en sus
+etapas de desarrollo (huevo, larva, pupa y adulto). Esta información combinada con datos
+climatológicos permite simular el ciclo de vida del vector, mediante el cálculo de las tasas de
+desarrollo y mortalidad, motivo por el cual se optó por la construcción de un simulador del
+proceso de la ecología del Aedes aegypti.
