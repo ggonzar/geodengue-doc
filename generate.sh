@@ -33,6 +33,16 @@ build(){
 if [ -n "$1" ] && [ "$1" = "clean" ]
 then
     clean
+
+elif [ -n "$1" ] && [ "$1" = "paper" ]
+then
+    cd paper
+    NAME=geodengue_conf
+    echo $NAME
+    clean
+    build
+    clean
+
 elif [ -n "$1" ]
 then
     NAME=$1
@@ -41,6 +51,7 @@ then
     build
     clean
 else
+    cd book
     clean
     build
     clean
