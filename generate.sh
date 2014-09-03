@@ -18,8 +18,12 @@ clean(){
     find . -type f -name "*.fdb_latexmk" -exec rm -f {} \;
     find . -type f -name "*.orig" -exec rm -f {} \;
     find . -type f -name "*.loa" -exec rm -f {} \;
-    #~ rm *.log *.bbl *.blg *.bcf *.run.xml *.lof *.lot *.toc e *.fdb_latexmk *.orig *.loa
+    find . -type f -name "*.snm" -exec rm -f {} \;
+    find . -type f -name "*.nav" -exec rm -f {} \;
+    find . -type f -name "*.out" -exec rm -f {} \;
 }
+
+
 #~ Funcion que costruye
 build(){
     pdflatex $NAME
@@ -38,6 +42,15 @@ elif [ -n "$1" ] && [ "$1" = "paper" ]
 then
     cd paper
     NAME=geodengue_conf
+    echo $NAME
+    clean
+    build
+    clean
+
+elif [ -n "$1" ] && [ "$1" = "ppt" ]
+then
+    cd presentacion
+    NAME=presentacion
     echo $NAME
     clean
     build
