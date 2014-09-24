@@ -20,7 +20,7 @@ Donde $round(n)$ es la función redondea, $n$, al entero más cercano. Para $n >
 no entera de $n$ queda acumulada para la siguiente iteración.
 
 \subsubsection{Mortalidad de huevos}
-La tasa de mortalidad de los huevos se encuentra definida como una constante, $me = 0.01$,
+La tasa de mortalidad de los huevos se encuentra definida como una constante, $me = 0,01$,
 $1/\text{días}$, independiente de la temperatura \cite{otero2006stochastic}.
 
 \begin{equation}
@@ -78,17 +78,17 @@ de la temperatura \cite{otero2006stochastic}.
 
 Además de la mortalidad diaria en la fase de pupa, existe una importante mortalidad adicional
 asociada con la emergencia sin éxito de adultos, solo el 83\%  de las pupas alcanzan la maduración
-y emergerán como mosquitos adultos, por lo tanto, el factor de supervivencia es de $ef=0.83$
+y emergerán como mosquitos adultos, por lo tanto, el factor de supervivencia es de $ef=0,83$
 \cite{otero2006stochastic}.
 
 \begin{equation}
-    M_{P(x,y)}(k) = \rho(P(x,y) * (mp + (1 - ef) * R(k)))
+    M_{P(x,y)}(k) = \rho(P(x,y) * (mp(k) + (1 - ef) * R(k)))
 \end{equation}
 
 Donde $M_{P(x,y)}$ es la cantidad de pupas que deben ser eliminadas de la población $P(x,y)$.
 
 \subsubsection{Mortalidad de adultos}
-La tasa de mortalidad de los adultos se encuentra definida como una constante, $ma = 0.09$,
+La tasa de mortalidad de los adultos se encuentra definida como una constante, $ma = 0,09$,
 $1/\text{días}$, independiente de la temperatura \cite{otero2006stochastic}.
 
 \begin{equation}
