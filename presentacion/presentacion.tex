@@ -17,7 +17,6 @@
 %*****************************************************************************%
 %   Paquetes principales                                                      %
 %*****************************************************************************%
-\usepackage{caption}
 \usepackage{amssymb, amsmath}
 \usepackage{amsthm}
 \usepackage{amsfonts}
@@ -30,13 +29,15 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{graphicx}
-\usepackage{subfig}
+%\usepackage{subfig}
 \usepackage{caption}
+\usepackage{subcaption}
 \usepackage{multimedia}
 \usepackage{verbatim} % comentarios
 \usepackage{pdfpages}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{textcomp}
 
 %Para determinar la fecha actual
 \newcommand{\monthname}{\ifcase\month\or Enero\or Febrero\or
@@ -59,8 +60,8 @@
 \end{frame}
 
 \include{./introduccion/introduccion}
-\include{./propuesta/propuesta}
 \include{./propuesta/objetivos}
+\include{./propuesta/modelo-propuesto}
 \include{./resultados/resultados}
 \include{./conclusion/conclusion}
 \include{./conclusion/trabajos-futuros}
