@@ -1,6 +1,6 @@
 %---------------------------0-----------------------------------
 
-\begin{frame}[c]{Geodengue}
+\begin{frame}[c]{GeoDengue}
   \begin{center}
       \includegraphics[width=\textwidth]{./graphics/propuesta.png}
   \end{center}
@@ -16,24 +16,9 @@
       \item Revisión de los puntos de control.
       \item Generación de la población inicial a partir de los puntos de control.
       \item Obtener datos climáticos para el periodo de simulación.
+      \item Conteo de larvas mediante Proceso Digital de imágenes.
     \end{itemize}
   \end{center}
-\end{frame}
-%-----------------------------3---------------------------------
-
-\begin{frame}[c]{Preparación de datos de entrada. Conteo de larvas mediante PDI.}
-Utilizar procesamiento digital de imágenes para agilizar el conteo de larvas obtenidas de las larvitrampas.
-    \begin{figure}
-      \begin{subfigure}[b]{0.4\textwidth}
-          \includegraphics[width=\textwidth]{../book/capitulo-5/graphics/larvas-original.png}
-          \caption{Imagen original antes de la transformación.}
-      \end{subfigure}
-      ~~~~
-      \begin{subfigure}[b]{0.4\textwidth}
-          \includegraphics[width=\textwidth]{../book/capitulo-5/graphics/larvas-otsu.png}
-          \caption{Imagen luego de la umbralización de Otsu.}
-      \end{subfigure}
-    \end{figure}
 \end{frame}
 
 %---------------------------4-----------------------------------
@@ -62,15 +47,119 @@ Utilizar procesamiento digital de imágenes para agilizar el conteo de larvas ob
     \item El cálculo de las tasas de desarrollo se realiza mediante el modelo no lineal de Sharpe y DeMichele.
 
     \item El modelo debe ajustarse con los datos biológicos disponibles.
-    \item El modelo puede utilizarse para calcular tasas de desarrollo a cualquier temperatura.
+    \item Una vez configurado, puede utilizarse para calcular tasas de desarrollo a cualquier temperatura.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Simulación del proceso evolutivo. Tasas de desarrollo}
+\begin{center}
+    \begin{equation} \label{eq:schoolfield}
+       R(k)  = R(298K) *\cfrac{ \cfrac{k}{298K} *
+        exp \Bigg[
+                \cfrac{\Delta H_{A}}{R} \bigg(\cfrac{1}{298K} - \cfrac{1}{k}\bigg)
+            \Bigg]}
+        {1 + exp\Bigg[\cfrac{\Delta H_{H}}{R} \bigg(\cfrac{1}{T_{1/2}}- \cfrac{1}{k}\bigg)\Bigg] }
+    \end{equation}
+\end{center}
+Donde :
+ \begin{itemize}
+    \item $R(k)$ : Tasa de desarrollo media ($dias^{-1}$).
+    \item $\Delta H_{A}$ y $\Delta H_{H}$ : son entalpías termodinámicas características del organismo.
+    \item $T_{1/2}$ es la temperatura cuando la mitad de la enzima se desactiva.
+    \item $R$ : es la constante universal de los gases.
+    \item $k$ : Temperatura en Kelvin.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Simulación del proceso evolutivo. Tasas de Mortalidad}
+  \begin{itemize}
+    \item Huevos, es definida como una constante.
+    \item Larvas, expresada como una función, influenciada por la mortalidad bajo óptimas condiciones y la mortalidad denso dependiente.
+    \item Pupas, expresada como una función influenciada por la mortalidad bajo óptimas condiciones.
+    \item Adultos, es definida como una constante.
   \end{itemize}
 \end{frame}
 
 
 \begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad}
-
+  Mortalidad de los huevos :
+  \begin{center}
+      \begin{equation}
+          M_{H(x,y)} = me * H(x,y)
+      \end{equation}
+  \end{center}
+  Donde :
+    \begin{itemize}
+      \item $me$ : Tasa de mortalidad diaria igual a $0,01$ \ $1/\text{días}$.
+      \item $H(x, y)$ : Cantidad de huevos observados en $(x,y)$.
+      \item $M_{H(x,y)}$ : Cantidad de huevos a eliminar.
+    \end{itemize}
 \end{frame}
 
+
+\begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
+ Mortalidad bajo optimas condiciones de las larvas y pupas :
+\begin{center}
+  \begin{equation}
+  \label{eq:mortalidad-natural-larvas}
+      mo(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg)
+  \end{equation}
+\end{center}
+Donde :
+  \begin{itemize}
+    \item $k$ : Temperatura en Kelvin.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
+Mortalidad de las larvas :
+  \begin{center}
+      \begin{equation}
+      M_{L(x,y)}(k) = mo(k) * L(x,y) + \bigg(\frac{\alpha _{0}}{BS(x,y)}\bigg) * L(x,y) *(L(x,y) - 1)
+    \end{equation}
+  \end{center}
+  Donde:
+ \begin{itemize}
+      \item $k$ : Temperatura en Kelvin.
+      \item $L(x, y)$ : Cantidad de larvas observadas en $(x,y)$.
+      \item $\alpha _{0}$ : Capacidad de carga de un solo lugar de reproducción.
+      \item $BS(x,y)$ : Es el número de sitios de reproducción en $(x,y)$ .
+      \item $M_{L(x,y)}$ : Cantidad de larvas a eliminar.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
+Mortalidad de las pupas :
+\begin{center}
+  \begin{equation}
+      M_{P(x,y)}(k) = P(x,y) * (mo(k) + (1 - ef) * R(k))
+  \end{equation}
+\end{center}
+Donde :
+  \begin{itemize}
+    \item $k$ : Temperatura en Kelvin.
+    \item $ef$ : el factor de supervivencia es de $0,83$.
+    \item $P(x, y)$ : Cantidad de pupas observadas en $(x,y)$.
+    \item $M_{P(x,y)}$ : Cantidad de pupas a eliminar.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
+  Mortalidad de adultos :
+  \begin{center}
+    \begin{equation}
+        M_{A(x,y)} = ma * A(x,y)
+    \end{equation}
+  \end{center}
+  Donde:
+    \begin{itemize}
+      \item $ma$ : Tasa de mortalidad diaria igual a $0,09$ \ $1/\text{días}$.
+      \item $A(x, y)$ : Cantidad de adultos observados en $(x,y)$.
+      \item $M_{A(x,y)}$ : Cantidad de adultos a eliminar.
+    \end{itemize}
+\end{frame}
 
 \begin{frame}[c]{Simulación del proceso evolutivo. Ciclo gonotrófico y Ovipostura.}
   \begin{center}
