@@ -1,13 +1,9 @@
-%---------------------------0-----------------------------------
-
 \begin{frame}[c]{GeoDengue}
   \begin{center}
       \includegraphics[width=\textwidth]{./graphics/propuesta.png}
   \end{center}
 \end{frame}
 
-
-%----------------------------2----------------------------------
 \begin{frame}[c]{Preparación de datos de entrada}
   \begin{center}
     \begin{itemize}
@@ -21,22 +17,26 @@
   \end{center}
 \end{frame}
 
-%---------------------------4-----------------------------------
-
-\begin{frame}[c]{Simulación del proceso evolutivo. Ciclo de vida del vector.}
+\begin{frame}[c]{Simulación del proceso evolutivo}
   \begin{center}
-      \includegraphics[width=7.8cm]{./graphics/ciclo-de-vida.jpg}
+    \includegraphics[height=7.5cm]{./graphics/algoritmo-propuesto.png}
   \end{center}
 \end{frame}
 
-
-\begin{frame}[c]{Eventos que influyen en el ciclo de vida del vector.}
-  \begin{itemize}
-    \item Tasas de desarrollo para la eclosión de huevos, larvas, pupas y el ciclo gonotrófico de las hembras adultas.
-    \item Mortalidad de huevos, larvas, pupas y mosquitos adultos.
-    \item Dispersión de adultos.
-    \item Ovipostura de hembras adultas nulíperas y paridas.
-  \end{itemize}
+\begin{frame}[c]{Simulación del proceso evolutivo. Ciclo de vida del vector.}
+    \begin{columns}[t]
+        \begin{column}[T]{7cm}
+            \includegraphics[width=7.5cm]{./graphics/ciclo-de-vida.jpg}
+        \end{column}
+        \begin{column}[T]{3cm}
+          \begin{itemize}
+            \item Desarrollo.
+            \item Mortalidad.
+            \item Dispersión.
+            \item Ovipostura.
+          \end{itemize}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}[c]{Simulación del proceso evolutivo. Tasas de desarrollo}
@@ -46,31 +46,30 @@
 
     \item El cálculo de las tasas de desarrollo se realiza mediante el modelo no lineal de Sharpe y DeMichele.
 
-    \item El modelo debe ajustarse con los datos biológicos disponibles.
+    \item El modelo de Sharpe y DeMichele debe ajustarse con los datos biológicos disponibles.
     \item Una vez configurado, puede utilizarse para calcular tasas de desarrollo a cualquier temperatura.
   \end{itemize}
 \end{frame}
 
 \begin{frame}[c]{Simulación del proceso evolutivo. Tasas de desarrollo}
-\begin{center}
-    \begin{equation} \label{eq:schoolfield}
-       R(k)  = R(298K) *\cfrac{ \cfrac{k}{298K} *
-        exp \Bigg[
-                \cfrac{\Delta H_{A}}{R} \bigg(\cfrac{1}{298K} - \cfrac{1}{k}\bigg)
-            \Bigg]}
-        {1 + exp\Bigg[\cfrac{\Delta H_{H}}{R} \bigg(\cfrac{1}{T_{1/2}}- \cfrac{1}{k}\bigg)\Bigg] }
-    \end{equation}
-\end{center}
-Donde :
- \begin{itemize}
-    \item $R(k)$ : Tasa de desarrollo media ($dias^{-1}$).
-    \item $\Delta H_{A}$ y $\Delta H_{H}$ : son entalpías termodinámicas características del organismo.
-    \item $T_{1/2}$ es la temperatura cuando la mitad de la enzima se desactiva.
-    \item $R$ : es la constante universal de los gases.
-    \item $k$ : Temperatura en Kelvin.
-    \end{itemize}
+  \begin{center}
+      \begin{equation} \label{eq:schoolfield}
+         R(k)  = R(298K) *\cfrac{ \cfrac{k}{298K} *
+          exp \Bigg[
+                  \cfrac{\Delta H_{A}}{R} \bigg(\cfrac{1}{298K} - \cfrac{1}{k}\bigg)
+              \Bigg]}
+          {1 + exp\Bigg[\cfrac{\Delta H_{H}}{R} \bigg(\cfrac{1}{T_{1/2}}- \cfrac{1}{k}\bigg)\Bigg] }
+      \end{equation}
+  \end{center}
+  Donde :
+   \begin{itemize}
+      \item $R(k)$ : Tasa de desarrollo media ($dias^{-1}$).
+      \item $\Delta H_{A}$ y $\Delta H_{H}$ : son entalpías termodinámicas características del organismo.
+      \item $T_{1/2}$ es la temperatura cuando la mitad de la enzima se desactiva.
+      \item $R$ : es la constante universal de los gases.
+      \item $k$ : Temperatura en Kelvin.
+      \end{itemize}
 \end{frame}
-
 
 \begin{frame}[c]{Simulación del proceso evolutivo. Tasas de Mortalidad}
   \begin{itemize}
@@ -80,7 +79,6 @@ Donde :
     \item Adultos, es definida como una constante.
   \end{itemize}
 \end{frame}
-
 
 \begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad}
   Mortalidad de los huevos :
@@ -97,23 +95,22 @@ Donde :
     \end{itemize}
 \end{frame}
 
-
 \begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
- Mortalidad bajo optimas condiciones de las larvas y pupas :
-\begin{center}
-  \begin{equation}
-  \label{eq:mortalidad-natural-larvas}
-      mo(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg)
-  \end{equation}
-\end{center}
-Donde :
-  \begin{itemize}
-    \item $k$ : Temperatura en Kelvin.
-  \end{itemize}
+  Mortalidad bajo optimas condiciones de las larvas y pupas :
+  \begin{center}
+    \begin{equation}
+    \label{eq:mortalidad-natural-larvas}
+        mo(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg)
+    \end{equation}
+  \end{center}
+  Donde :
+    \begin{itemize}
+      \item $k$ : Temperatura en Kelvin.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
-Mortalidad de las larvas :
+  Mortalidad de las larvas :
   \begin{center}
       \begin{equation}
       M_{L(x,y)}(k) = mo(k) * L(x,y) + \bigg(\frac{\alpha _{0}}{BS(x,y)}\bigg) * L(x,y) *(L(x,y) - 1)
@@ -129,21 +126,20 @@ Mortalidad de las larvas :
     \end{itemize}
 \end{frame}
 
-
 \begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
-Mortalidad de las pupas :
-\begin{center}
-  \begin{equation}
-      M_{P(x,y)}(k) = P(x,y) * (mo(k) + (1 - ef) * R(k))
-  \end{equation}
-\end{center}
-Donde :
-  \begin{itemize}
-    \item $k$ : Temperatura en Kelvin.
-    \item $ef$ : el factor de supervivencia es de $0,83$.
-    \item $P(x, y)$ : Cantidad de pupas observadas en $(x,y)$.
-    \item $M_{P(x,y)}$ : Cantidad de pupas a eliminar.
-  \end{itemize}
+  Mortalidad de las pupas :
+  \begin{center}
+    \begin{equation}
+        M_{P(x,y)}(k) = P(x,y) * (mo(k) + (1 - ef) * R(k))
+    \end{equation}
+  \end{center}
+  Donde :
+    \begin{itemize}
+      \item $k$ : Temperatura en Kelvin.
+      \item $ef$ : el factor de supervivencia es de $0,83$.
+      \item $P(x, y)$ : Cantidad de pupas observadas en $(x,y)$.
+      \item $M_{P(x,y)}$ : Cantidad de pupas a eliminar.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
@@ -173,15 +169,6 @@ Donde :
   \end{center}
 \end{frame}
 
-
-\begin{frame}[c]{Simulación del proceso evolutivo}
-  \begin{center}
-    \includegraphics[height=7.5cm]{./graphics/algoritmo-propuesto.png}
-  \end{center}
-\end{frame}
-
-%--------------------------5------------------------------------
-
 \begin{frame}[c]{Clasificación de los niveles de infestación.}
   \begin{table}
     \begin{minipage}{\textwidth}
@@ -208,7 +195,6 @@ Donde :
   \end{table}
 \end{frame}
 
-
 \begin{frame}[t]{Clasificación de los niveles de infestación.}
   Consideraciones para la clasificación de los niveles de infestación:
   \begin{itemize}
@@ -220,14 +206,11 @@ Donde :
   \end{itemize}
 \end{frame}
 
-
 \begin{frame}[c]{Análisis y presentación de los resultados}
   \begin{center}
       \includegraphics[width=\textwidth]{./graphics/identificacion-focos.png}
   \end{center}
 \end{frame}
-
-%--------------------------6------------------------------------
 
 \begin{frame}[t]{Análisis y presentación de los resultados}
   \begin{center}
@@ -241,4 +224,3 @@ Donde :
       \end{itemize}
   \end{center}
 \end{frame}
-
