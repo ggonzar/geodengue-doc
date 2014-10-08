@@ -1,35 +1,57 @@
 \chapter{Conclusiones}
-En este trabajo presentó el diseño e implementación de un modelo predictivo para identificar focos
-de infestación del vector del dengue, sustentado en métodos de muestreo para la determinación de la
-abundancia poblacional, con el fin de apoyar a la lucha preventiva de esta enfermedad.
+Durante el periodo de investigación y desarrollo de este proyecto se analizaron varias
+alternativas y enfoques para adoptar el enfoque final seleccionado para este trabajo final de grado. La principal limitante fue el hecho que las autoridades sanitarias del Paraguay no cuentan con
+datos computables que permitan a las comunidades científicas y académicas llevar a cabo actividades de investigación y análisis. El dengue es un problema que afecta a miles de paraguayos cada año, por lo que se deberían invertir en programas de investigación que involucren a las comunidades científicas y académicas.
 
+%(1) Diseñar un modelo que permita analizar la extensión del vector del dengue y estudiar su posible relación con un potencial foco de riesgo, de forma a realizar una predicción de posibles focos de riesgo.
+En este trabajo presentó el diseño e implementación de un modelo predictivo para identificar focos
+de infestación del, Aedes aegypti principal vector del dengue, sustentado en métodos de muestreo
+para la determinación de la abundancia poblacional, modelos matemáticos para simular el ciclo de
+vida del vector en un sistema de información geográfica, con el fin de apoyar a la lucha
+preventiva de esta enfermedad.
+
+%(1) Analizar nuevos métodos de muestreo de la abundancia poblacional del vector, con el fin de apoyar la lucha preventiva contra la enfermedad.
+Los dispositivos para la determinación de la abundancia poblacional, como las larvitrampas, son
+ampliamente utilizadas para obtener información sobre los patrones de actividad espacial y
+estacional de ovipostura, y reconocer condiciones climáticas favorables para la eclosión y
+desarrollo larvario. Esta información, debido a sus características, es combinada con información
+climatológica con el fin de simular el comportamiento del vector y en consecuencia, predecir una
+posible epidemia del dengue.
+
+%(2) Diseñar un modelo e implementar un sistema computacional mediante el cual se puedan procesar y presentar los resultados obtenidos, en un sistema de información geográfica.
 El diseño e implementación del modelo como un simulador del proceso evolutivo del vector en el
 contexto de un sistema de información geográfica, permite realizar análisis complejos de la
 realidad espacial rápidamente, generando información regionalizada para determinar los niveles de
-infestación correspondientes al área de estudio. Contar con esta información regionalizada,
-asociada con niveles de infestación permitirá a las autoridades sanitarias definir y planificar
-las medidas de control, prevención y logística a realizar con con el fin de disminuir los niveles
-de infestación en una región.
+infestación correspondientes al área de estudio.
 
+%(3)Diseñar el modelo de forma paramétrica y escalable, para que sea aplicable y extensible a cualquier región o área de estudio.
 El simulador de proceso evolutivo se encuentra compuesto por modelos, ampliamente respaldados por
-por el material bibliográfico en
-\cite{sharpe1977reaction, focks1993dynamic, schoolfield1981non, otero2006stochastic, rueda1990temperature}, utilizados para el cálculo de las tasas de desarrollo y mortalidad de las
-distintas etapas de desarrollo del ciclo de vida del vector. Se considera al modelo resultante
-como genérico, debido a que sus parámetros pueden ser ajustados para aplicarlos en cualquier
-región o área de estudio.
+el material bibliográfico, en \cite{sharpe1977reaction, focks1993dynamic, schoolfield1981non, otero2006stochastic, rueda1990temperature}, que son utilizados para el cálculo de las tasas de
+desarrollo y mortalidad de las distintas etapas de desarrollo del ciclo de vida del vector. Se
+considera al modelo resultante como genérico, debido a que sus parámetros pueden ser
+ajustados para aplicarlos en cualquier región o área de estudio, y extensible, teniendo en cuenta que puede ser modificado para incluir nuevas variables y procesos.
 
+%(5) Sobre los resultados obtenidos.
 La configuración del simulador del proceso evolutivo requiere de parámetros asociados con las
 características biológicas y datos ecológicos correspondientes al área de estudio, por lo que para
 su aplicación, estos parámetros de configuración deben ser validados por expertos en el área
 mediante trabajos de campo. No obstante, utilizando valores tomados del material bibliográfico de
 apoyo, se pudo observar un buen comportamiento de los resultados obtenidos mediante el simulador
-del proceso evolutivo, solo presentan pequeñas variaciones en comparación con los valores
+del proceso evolutivo. Solo presentan pequeñas variaciones en comparación con los valores
 observados por expertos en laboratorio en condiciones controladas. Las variaciones observadas
 pueden ser causadas por los distintos rasgos característicos de las cepas de mosquitos, utilizadas
 en los estudios de referencia, que permiten una mayor o menor tolerancia a ciertas condiciones.
 
+%(4)Generar información relevante que pueda ayudar a las autoridades pertinentes para toma de decisiones en la lucha contra el dengue.
+La información generada por el simulador del proceso evolutivo del Aedes aegypti, asociada con
+niveles de infestación permitirá a las autoridades sanitarias definir y planificar, de forma más
+efectiva, las medidas de control, prevención y logística a realizar con con el fin de disminuir
+los niveles de infestación en una región.
 
 \chapter{Trabajos Futuros}
+Una de las principales características del modelo propuesto y la herramienta desarrollada es su
+escalabilidad, lo que permite una gran variedad de trabajos futuros para su extensión. En este capítulo se presenta algunos de los trabajos futuros identificados.
+
 Como trabajo futuro podría considerarse la extensión del modelo para incluir otras variables
 con el fin de analizar su relación y el impacto de las mismas con las zonas de riesgo. Se podrían
 incluir variables como: casos reportados de dengue, posibles zonas de riesgo(cementerios, patios
