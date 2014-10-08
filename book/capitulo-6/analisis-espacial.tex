@@ -1,5 +1,4 @@
 \section {Análisis espacial de los resultados}
-
 Los datos obtenidos mediante el simulador del proceso evolutivo, contienen información que nos
 permiten analizarlos en el contexto de un SIG, para identificar los focos de infestación mediante
 técnicas de interpolación espacial.
@@ -19,10 +18,10 @@ riesgo definidos según la \tabref{tab:cap4-puntaje-zona}.
          Niveles de  & Color & Mínimo$^a$ & Máximo$^a$ \\
          infestación & identificador & $u(x,y)$   & $u(x,y)$  \\
         \hline
-        \hline\\
+        \hline
         Muy bajo  & \cellcolor{muybajo}& 0  & 19 \\
         Bajo    & \cellcolor{bajo}& 20 & 35 \\
-        Normal & \cellcolor{normal}& 36 & 51 \\
+        Medio & \cellcolor{normal}& 36 & 51 \\
         Alto   & \cellcolor{alto}& 52 & 69 \\
         Muy Alto & \cellcolor{muyalto} & 70 & --$^b$\\
     \end{tabular}
@@ -80,7 +79,7 @@ población.
 
 En la \figref{fig:desarrollo-poblacion-all}, se pueden observar el comportamiento de las
 poblaciones a 6 temperaturas constantes (15-34 \textcelsius). En general, para todos los casos, la
-población inicial sufre un decrecimiento causada por la mortalidad diaria de los individuos a
+población inicial sufre un decrecimiento, causada por la mortalidad diaria de los individuos a
 temperaturas entre 15 y 34 \textcelsius, y por la emergencia de adultos a temperaturas entre 20 y
 34 \textcelsius. La aparición de adultos implica que la población de individuos en etapas
 inmaduras (huevos, larvas y pupas), llegaron a completar su ciclo de desarrollo para dar lugar a
@@ -99,8 +98,7 @@ tienden a disminuir su duración, causando que el intervalo entre oviposturas di
 consecuencia el tamaño de la población de individuos en etapas inmaduras aumenta rápidamente.
 
 Todas las poblaciones, sometidas a temperaturas que permitieron la aparición de adultos,
-experimentaron una dispersión hacia el noreste debido a que la dirección del viento utilizada era
-de sureste.
+experimentaron una dispersión en dirección al noreste debido a que la dirección del viento utilizada era del suroeste.
 %Tendencia de dispersión causada porque la dirección del viento es suroeste
 
 %Solo las hembras adultas se muestran que representa el 50\% de la población
@@ -154,7 +152,7 @@ que las etapas inmaduras del mosquito son etapas acuáticas.
 %Población a 20 C
 En la \figref{fig:desarrollo-poblacion-20}, se puede observar el comportamiento de la población a
 20 \textcelsius, en donde la población de individuos en sus etapas inmaduras va decreciendo hasta
-desaparecer temporalmente el día 28, no así la población de adultos. En la
+desaparecer temporalmente el día 29, no así la población de adultos. En la
 \figref{fig:niveles-infestacion-20-b}, se puede observar que no existen mosquitos en sus etapas
 inmaduras, para generar un mapa de interpolación del área, sin embargo se pueden observar la
 distribución geográfica de las hembras adultas. Desde el día 21, en la
@@ -171,7 +169,7 @@ población de mosquitos que alcanza su máximo valor en el día 39.
     ~~
     \begin{subfigure}[b]{0.45\textwidth}
             \includegraphics[width=\textwidth]{capitulo-6/graphics/raster/temp-20-28.png}
-            \caption{\label{fig:niveles-infestacion-20-b}Día número 28 de simulación.}
+            \caption{\label{fig:niveles-infestacion-20-b}Día número 29 de simulación.}
     \end{subfigure}
 
     \begin{subfigure}[b]{0.45\textwidth}
@@ -188,7 +186,7 @@ población de mosquitos que alcanza su máximo valor en el día 39.
 \end{figure}
 
 En la \figref{fig:niveles-infestacion-20} se puede apreciar los niveles de infestación para los
-días 1, 28, 36 y 38 del periodo de simulación. Además se observa el desplazamiento de los focos de
+días 1, 29, 36 y 38 del periodo de simulación. Además se observa el desplazamiento de los focos de
 infestación, causado por la dispersión de los adultos, que pasan de su estado inicial
 (\figref{fig:niveles-infestacion-20-a}), a generar nuevos focos
 (\figref{fig:niveles-infestacion-20-c} y \figref{fig:niveles-infestacion-20-d}). Cabe resaltar
@@ -201,7 +199,7 @@ niveles de infestación. Esto se debe a que los mapas de interpolación dependen
 geográfica de los individuos de la población y la concentración de los mismos en $(x,y)$.
 
 A 20 \textcelsius se observa el desplazamiento de los focos de infestación en dirección al
-noreste, debido a que la dirección del viento utilizada es igual al sureste y los mosquitos
+noreste, debido a que la dirección del viento utilizada es igual al suroeste y los mosquitos
 adultos tienden a volar en dirección contraria al viento. Este desplazamiento se puede observar en
 las figuras \figref{fig:niveles-infestacion-20-a}, \figref{fig:niveles-infestacion-20-c} y
 \figref{fig:niveles-infestacion-20-d}.
@@ -213,7 +211,7 @@ En la \figref{fig:desarrollo-poblacion-24}, se puede observar el comportamiento 
 desaparecer temporalmente el día 17. A partir del día 12, en la
 \figref{fig:desarrollo-poblacion-24}, pueden observarse los primeros mosquitos adultos, donde a
 partir del día 19 las hembras adultas, comienzan oviponer, generando la reaparición de la
-población de mosquitos, alcanzando 2 picos importantes en día 27 y 50.
+población de mosquitos, alcanzando 2 picos importantes los días 27 y 50.
 
 \begin{figure}[!htbp]
     \centering
@@ -247,7 +245,7 @@ distribución geográfica de las hembras adultas.
 En la \figref{fig:niveles-infestacion-24} se puede observar los niveles de infestación para los
 días 1, 17, 27 y 50 del periodo de simulación. En general, se observa el desplazamiento de los
 focos de infestación en dirección al noreste, debido a que la dirección del viento utilizada es
-igual al sureste y los mosquitos adultos tienden a volar en dirección contraria al viento. Este
+igual al suroeste y los mosquitos adultos tienden a volar en dirección contraria al viento. Este
 desplazamiento se puede observar en las figuras
  \figref{fig:niveles-infestacion-24-a}, \figref{fig:niveles-infestacion-24-c} y
 \figref{fig:niveles-infestacion-24-d}.
@@ -259,7 +257,7 @@ En la \figref{fig:desarrollo-poblacion-27}, se puede observar el comportamiento 
 alcanzar un total de 8 individuos en etapas inmaduras en el día 13. A partir del día 10, en la
 \figref{fig:desarrollo-poblacion-27}, pueden observarse los primeros mosquitos adultos, donde a
 partir del día 14 las hembras adultas, comienzan oviponer, generando un crecimiento de la
-población de mosquitos, alcanzando 2 picos importantes en día 24 y 50.
+población de mosquitos, alcanzando 2 picos importantes en los días 24 y 50.
 
 \begin{figure}[!htbp]
     \centering
@@ -294,7 +292,7 @@ por la mortalidad diaria, sino también por la aparición de mosquitos adultos p
 En la \figref{fig:niveles-infestacion-27} se puede observar los niveles de infestación
 para los días 1, 12, 22 y 50 del periodo de simulación. En general, se observa el
 desplazamiento de los focos de infestación en dirección al noreste, debido a que la dirección del
-viento utilizada es igual al sureste y los mosquitos adultos tienden a volar en dirección
+viento utilizada es igual al suroeste y los mosquitos adultos tienden a volar en dirección
 contraria al viento. Este desplazamiento se puede observar en las figuras
 \figref{fig:niveles-infestacion-27-a},\figref{fig:niveles-infestacion-27-b},
 \figref{fig:niveles-infestacion-27-c} y \figref{fig:niveles-infestacion-27-d}.
@@ -341,7 +339,7 @@ por la mortalidad diaria, sino también por la aparición de mosquitos adultos p
 En la \figref{fig:niveles-infestacion-30} se puede apreciar los niveles de infestación
 para los días 1, 10, 21 y 35 del periodo de simulación. En general, se observa el
 desplazamiento de los focos de infestación en dirección al noreste, debido a que la dirección del
-viento utilizada es igual al sureste y los mosquitos adultos tienden a volar en dirección
+viento utilizada es igual al suroeste y los mosquitos adultos tienden a volar en dirección
 contraria al viento. Este desplazamiento se puede observar en las figuras
 \figref{fig:niveles-infestacion-30-a},\figref{fig:niveles-infestacion-30-b},
 \figref{fig:niveles-infestacion-30-c} y \figref{fig:niveles-infestacion-30-d}.
@@ -353,7 +351,7 @@ En la \figref{fig:desarrollo-poblacion-34}, se puede observar el comportamiento 
 alcanzar un total de 49 individuos en etapas inmaduras en el día 11. A partir del día 9, en la
 \figref{fig:desarrollo-poblacion-34}, pueden observarse los primeros mosquitos adultos, donde a
 partir del día 12 las hembras adultas, comienzan oviponer, generando un crecimiento de la
-población de mosquitos, alcanzando 2 picos importantes en día 21 y 50.
+población de mosquitos, alcanzando 2 picos importantes en los días 21 y 50.
 
 \begin{figure}[!htbp]
     \centering
@@ -389,7 +387,7 @@ culminación de el ciclo de desarrollo de los mosquitos en etapas inmaduras.
 En la \figref{fig:niveles-infestacion-34} se puede apreciar los niveles de infestación
 para los días 1, 11, 21 y 43  del periodo de simulación. En general, se observa el
 desplazamiento de los focos de infestación en dirección al noreste, debido a que la dirección del
-viento utilizada es igual al sureste y los mosquitos adultos tienden a volar en dirección
+viento utilizada es igual al suroeste y los mosquitos adultos tienden a volar en dirección
 contraria al viento. Este desplazamiento se puede observar en las figuras
 \figref{fig:niveles-infestacion-34-a},\figref{fig:niveles-infestacion-34-b},
 \figref{fig:niveles-infestacion-34-c} y \figref{fig:niveles-infestacion-34-d}.

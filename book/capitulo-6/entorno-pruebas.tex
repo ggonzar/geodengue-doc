@@ -1,8 +1,18 @@
 \section{Descripción general del entorno de pruebas}
 En esta sección se presentan las parámetros adoptados para la configuración del entorno de
-pruebas, que se encuentra dividido en : características de la población inicial, periodo y datos
-climatológicos, parámetros de simulador del proceso evolutivo, y por ultimo, el hardware y sistema
-operativo utilizados.
+pruebas, que se encuentra dividido en : el hardware y sistema operativo utilizados, las
+características de la población inicial, periodo y datos climatológicos, y por ultimo los
+parámetros de simulador del proceso evolutivo.
+
+\subsection{Hardware y sistema operativo utilizados}
+El hardware y el sistema operativo utilizados para realizar las pruebas, tienen las siguientes
+características :
+\begin{itemize}
+    \item Procesador : Intel Core i5-2430M
+    \item CPU : 2.40GHz × 4
+    \item Memoria : 8 GB
+    \item Sistema operativo : Ubuntu 13.10 x 64
+\end{itemize}
 
 \subsection{Características de la población inicial}
 La cantidad de puntos de control, utilizadas para las pruebas, fue seleccionada aleatoriamente,
@@ -21,7 +31,7 @@ un total de 1.146 larvas para los 25 puntos de control.
             \hline\\
             Identificador& Cantidad$^a$& Longitud$^b$ & Latitud$^b$\\
             \hline
-            \hline \\
+            \hline
             198 & 40 & -57,5865364153283 & -25,3133547921686 \\
             211 & 50 & -57,5855064470667 & -25,3227427549151 \\
             209 & 10 & -57,5789833147425 & -25,3173893777233 \\
@@ -93,7 +103,7 @@ $247,5^{\circ}$.
 Los parámetros del simulador del proceso evolutivo, en su mayoría son calculados con datos
 biológicos correspondientes al área de estudio. Obtener dichos datos requieren minuciosos estudios
 de campo que escapan del alcance de este trabajo. Finalmente se optó por utilizar configuraciones
-provenientes del material bibliográfico disponible que utilizado para el diseño y desarrollo del
+provenientes del material bibliográfico disponible utilizado para el diseño y desarrollo del
 modelo encargado de realizar la simulación de la ecología del vector.
 
 El tamaño del radio, $r$, fue configurado en $200$ metros, para el cálculo de la densidad relativa
@@ -119,7 +129,7 @@ desarrollo pupal, y de \cite{otero2006stochastic} para la eclosión de huevos, c
         \hline \\
         Ciclo de desarrollo    & $R(298K)$ & $\Delta H_{A}$ & $\Delta H_{H}$ & $\Delta T_{1/2}$  \\
         \hline
-        \hline\\
+        \hline
         Eclosión de los huevos$^a$ & 0,24000 & 10798,00 &  100000,00  & 14184,000\\
         Desarrollo larvario$^b$    & 0,20429 & 36072,78 &   59147,51  &   301,560\\
         Desarrollo pupal$^b$       & 0,74423 & 19246,42 &    5954,35  &   302,687\\
@@ -136,14 +146,3 @@ Las configuraciones adoptadas de
 \cite{otero2006stochastic,otero2008stochastic,rueda1990temperature}, resultan válidas para las
 pruebas, sin embargo pueden requerir una revisión general con el fin de realizar los ajustes
 correspondientes teniendo en cuenta los datos ecológicos del área de estudio.
-
-\subsection{Hardware y sistema operativo utilizados}
-El hardware y el sistema operativo utilizados para realizar las pruebas, tienen las siguientes
-características :
-\begin{itemize}
-\item Procesador : Intel Core i5-2430M
-\item CPU : 2.40GHz × 4
-\item Memoria : 8 GB
-\item Sistema operativo : Ubuntu 13.10 x 64
-\end{itemize}
-

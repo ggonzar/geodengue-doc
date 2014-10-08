@@ -5,7 +5,7 @@ indica la proximidad de que estos alcancen el siguiente estado de su etapa de de
 
 Sea $R(k_{i})$ la tasa de desarrollo (ver ecuación \eqref{eq:schoolfield}) de un individuo para
 una temperatura de $k_{i}$ Kelvin en un instante $i$, se considera que ha alcanzado su máximo nivel
-de madurez y se encuentra listo para pasar al siguiente estado de su cuando :
+de madurez y se encuentra listo para pasar al siguiente estado de su etapa de desarrollo cuando :
 
 \begin{equation}
 \label{eq:condicion-cambio-estado}
@@ -13,19 +13,16 @@ de madurez y se encuentra listo para pasar al siguiente estado de su cuando :
 \end{equation}
 
 Donde $N$ es la cantidad de días que le toma al individuo pasar de un estado a otro. Para $R(k)$ se
-se aplican los parámetros correspondientes al estado actual del individuo. De forma extendida,
-para que un individuo,
+aplican los parámetros correspondientes al estado actual del individuo. De forma extendida,
+para que un individuo :
 
-\begin{description}[style=multiline,leftmargin=1.5cm]
-\item[$h(x,y)$], perteneciente a $H(x,y)$ pase a ser una larva, $l(x,y)$, que forma
-parte de $L(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
+\begin{itemize}
+\item $h(x,y)$, perteneciente a $H(x,y)$ pase a ser una larva, $l(x,y)$, que forma parte de $L(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
 
-\item[$l(x,y)$], perteneciente a $L(x,y)$ pase a ser una pupa, $p(x,y)$, que forma
-parte de $P(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
+\item $l(x,y)$, perteneciente a $L(x,y)$ pase a ser una pupa, $p(x,y)$, que forma parte de $P(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
 
-\item[$p(x,y)$], perteneciente a $P(x,y)$ pase a ser un adulto, $a(x,y)$, que forma
-parte de $A(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
-\end{description}
+\item $p(x,y)$, perteneciente a $P(x,y)$ pase a ser un adulto, $a(x,y)$, que forma parte de $A(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
+\end{itemize}
 
 
 

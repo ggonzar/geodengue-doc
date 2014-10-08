@@ -2,9 +2,9 @@
 \label{sec:cap2-metodos-interpolacion}
 La interpolación espacial, consiste en la utilización de puntos con valores conocidos, también
 denominados puntos de control, para estimar el valor de una variable en lugares donde se
-desconoce. Donde la estimación de los valores que alcanza una variable $Z$ en un conjunto de
-puntos definidos por un par de coordenadas $(X,Y)$, partiendo de los valores de $Z$ medidos en
-una muestra de puntos situados en la misma área de estudio\cite{fAlonsoSig2006}.
+desconoce. Es decir, la estimación del valor de una variable $Z_{0}$, ubicada en las coordenadas
+$(X_{0}, Y_{0})$, se encuentra influenciada por los valores de $Z_{i}$ medidos correspondientes a
+los puntos conocidos situados en el área de estudio.
 
 Todos los métodos de interpolación se basan en la presunción lógica de que cuanto más cercanos
 están dos puntos sobre la superficie terrestre, los valores de cualquier variable cuantitativa que
@@ -14,7 +14,7 @@ muestran autocorrelación espacial\cite{fAlonsoSig2006}.
 El resultado de la interpolación espacial depende de un algoritmo computacional o una ecuación
 matemática en la cual se emplean los datos de los puntos de control\cite{NINO2011}.
 
-\subsection {Red de Triángulos Irregulares}
+\subsection {Redes Irregulares de Triángulos}
 Las Redes Irregulares de Triángulos o TIN (por sus siglas en inglés Triangulated Irregular Network)
 , se generan a partir de valores puntuales tratando de conseguir triángulos que maximicen la
 relación área/perímetro, el conjunto de todos los triángulos forma un objeto geométrico
@@ -32,7 +32,7 @@ equiláteros y es ley ser utilizado para crear objetos TIN}: en cada triángulo,
 a través de los tres vértices no encierra ningún otro punto de entrada\cite{cPachecoMDE2003}.
 
 \subsection{Ponderación de la inversa de la distancia}
-Ponderación de la inversa de la distancia o IDW (por sus siglas en inglés Inverse Distance
+La ponderación de la inversa de la distancia o IDW (por sus siglas en inglés Inverse Distance
 Weighting), estima los puntos del modelo realizando una asignación de pesos a los datos del
 entorno en función inversa a la distancia que los separa del punto en cuestión. De esta forma,
 la influencia del valor observado $u_{i}$, sobre el valor estimado $u$, disminuye a medida que
