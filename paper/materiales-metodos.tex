@@ -1,4 +1,5 @@
-\section{Modelo propuesto}
+%\section{Materiales y métodos}
+\section{Modelos de simulación de la ecología del vector}
 Los métodos de muestreo, como larvitrampas y ovitrampas resultan eficientes y económicos para
 determinar determinar la distribución espacial y temporal de Aedes aegypti y otros mosquitos
 \cite{dengueUruguayCap1, cenaprece2013}. La distribución geográfica de larvitrampas, consideradas
@@ -8,296 +9,32 @@ información ambiental, demográfica o epidemiológica, con el fin de obtener mo
 tengan la capacidad de monitorear, simular el comportamiento del vector y en consecuencia,
 predecir una posible epidemia del dengue.
 
+\subsection{Modelo matemático del ciclo de vida}
 El modelo considera un espacio bi-dimensional, con un sistema de coordenadas geográficas $(x,y)$,
 para expresar todas las posiciones sobre el plano, correspondientes a la longitud y latitud. Si
 consideramos a $m_{i}$ como a un individuo que se encuentra en una etapa del ciclo de vida del
 Aedes aegypti, correspondiente a una población de mosquitos, entonces, $m_{i}(x,y)$ representa a
 $m_{i}$ en las coordenadas geográficas $(x,y)$.
 
+Se consideran seis poblaciones diferentes: los huevos $H(x,y)$, larvas $L(x,y)$, pupas $P(x,y)$,
+machos adultos $AM(x,y)$, hembras adultas nulíparas\footnote{Hembras que no han ovipuesto.}
+$AN(x,y)$ y hembras adultas paridas\footnote{Hembras que han ovipuesto al menos una vez.} $AP(x,y)$. En algunos procesos se utiliza $A(x, y)$ para representar a toda la población de adultos,
+$AM(x,y)$, $AN(x,y)$ y $AP(x,y)$ correspondientes a $(x, y)$.El modelo considera que todas las poblaciones cuentan con una cantidad entera de individuos.
+
 La evolución de las poblaciones, se ven afectadas por los siguientes eventos: muerte de huevos,
 eclosión de huevos, muerte de larvas, emergencia de pupas, muerte de pupas, emergencia de adultos,
-muerte de adultos, ovipostura de hembras nulíparas\footnote{Hembras que no han ovipuesto.},
-ovipostura de hembras paridas\footnote{Hembras que han ovipuesto al menos una vez.} y dispersión
-de los adultos (machos y hembras). Según \cite{otero2006stochastic} los eventos se producen a
+muerte de adultos, ovipostura de hembras nulíparas, ovipostura de hembras paridas y dispersión
+de los adultos (machos y hembras). Según \cite{otero2006stochastic}, los eventos se producen a
 tasas que dependen no sólo de valores de la población, sino también de la temperatura, que a su
 vez es una función de tiempo, por lo tanto, la dependencia de la temperatura introduce una
 dependencia del tiempo en las tasas de eventos.
 
-\subsection{Tasas de desarrollo}
-En el modelo se cuenta con 4 tasas de desarrollos correspondientes a : la eclosión de huevos,
-emergencia a pupas, emergencia a adultos y el ciclo gonotrófico. Estos valores son obtenidos
-mediante el modelo no lineal de Sharpe y DeMichele, presentado en \cite{sharpe1977reaction}, para
-procesos poiquilotermos\footnote{La poiquilotermia o ectotermia es un término aplicado a ciertos
-animales con temperatura corporal variable}, donde el proceso de maduración es controlado por
-una enzima que actúa en un rango de temperatura determinado, la enzima se desactiva a las bajas
-temperaturas, y altas. Schoolfield presentó, en \cite{schoolfield1981non}, un versión simplificada
-del modelo de Sharpe y DeMichele con inhibición de altas temperaturas, con una única alta
-temperatura de desactivación.
 
-\begin{equation} \label{eq:schoolfield}
-   R(k)  = R(298K) *\cfrac{ \cfrac{k}{298K} *
-    exp \Bigg[
-            \cfrac{\Delta H_{A}}{R} \bigg(\cfrac{1}{298K} - \cfrac{1}{k}\bigg)
-        \Bigg]}
-    {1 + exp\Bigg[\cfrac{\Delta H_{H}}{R} \bigg(\cfrac{1}{T_{1/2}}- \cfrac{1}{k}\bigg)\Bigg] }
-\end{equation}
+\input{./materiales-metodos/zonificacion.tex}
+\input{./materiales-metodos/tasas-desarrollo.tex}
+\input{./materiales-metodos/mortalidad.tex}
+\input{./materiales-metodos/sitios-reproduccion.tex}
+\input{./materiales-metodos/ovipostura.tex}
+\input{./materiales-metodos/dispersion.tex}
+\input{./materiales-metodos/simulacion.tex}
 
-Donde $R(k)$ representa la tasa de desarrollo media ($dias^{-1}$) para una temperatura $K$,en la
-escala de Kelvin; $T_{1/2}$ es la temperatura cuando la mitad de la enzima se desactiva, debido a
-la alta temperatura, mientras que $H_{A}$, $H_{H}$ y $H_{L}$ son entalpías termodinámicas
-características del organismo, y $R$, igual $1,987202$ $cal/K.mol$, es la constante universal de
-los gases. Los parámetros $R(298K)$, $H_{A}$, $T_{1/2}$, y $H_{H}$ son estimados mediante la
-de regresión no lineal de Wagner, presentado en \cite{wagner1984modeling}. Según
-\cite{otero2006stochastic}, el modelo simplificado de Schoolfield, es lo suficientemente
-flexible para el ajuste de los datos biológicos disponibles. Los parámetros deben calcularse para
-cada etapa de desarrollo, una vez determinados, la ecuación puede utilizarse para calcular tasas
-de desarrollo a cualquier temperatura \cite{rueda1990temperature}.
-
-\subsection{Zonificación}
-\label{subsec:cap4-zonificacion}
-Cada entorno puede contar con factores que lo hagan más o menos apto para el desarrollo,
-mortalidad, alimentación, dispersión, y reproducción de individuos. Con el fin de
-simplificar ciertos aspectos muy específicos que se encuentran fuera del alcance de este trabajo,
-se realizan ciertas hipótesis generales, justificadas para este caso de aplicación, pero puede
-requerir una revisión en caso general. Estas hipótesis son, los valores observados en un
-conjunto de puntos de control, pertenecientes a una zona, permiten la caracterización de dicha
-zona como más o menos apta para desarrollo, mortalidad, alimentación, dispersión, y reproducción de
-individuos. También consideramos que el tamaño de la zona, y por ende la cantidad de puntos de
-control que pertenecen a ella, influye en la caracterización de las zonas.
-
-Para determinar el tipo de zona de un individuo $m_{i}$ ubicado en $(x,y)$, primero se estima la
-densidad relativa de larvas, para $m_{i}(x,y)$, utilizando interpolación espacial y posteriormente
-se la clasifica utilizando una escala. Si consideramos a $u(x,y)$ el valor interpolado para
-$m_{i}(x,y)$, entonces la densidad relativa de larvas de $m_{i}(x,y)$ es igual a $u(x,y)$.
-
-La forma general de encontrar un valor interpolado $u$ en un punto $(x,y)$ basado en un conjunto de
-muestras $u_i = u (x_i)$ para $i = 0,1, ..., N$ utilizando IDW, es una función de interpolación:
-
-\begin{equation}\label{eq:interpolacion-idw}
- u(x,y) = \sum_{i=1}^{N} w_i(X) * u_{i}
-\end{equation}
-
-Donde :
-\begin{equation}
-w_i(X) =  \dfrac{d(X, X_i)^{-p}}{\sum_{j=1}^{N} d(X, X_i)^{-p}}
-\end{equation}
-
-Siendo $d(X, X_i)$ una función que determina la distancia existente entre $X$ y $X_{i}$, donde $p$
-es el exponente de ponderación.  El valor estimado de $u(x,y)$ es utilizado para clasificar la
-zona como \textit{Pésima}, \textit{Mala}, \textit{Regular}, \textit{Buena} u \textit{Óptima} con
-influencia positiva el desarrollo, alimentación, dispersión, y reproducción de individuos y
-negativamente para la mortalidad.
-
-\begin{table}[!hptb]
-\begin{threeparttable}
-    \begin{minipage}[b]{0.5\textwidth}
-    \caption{\label{tab:cap4-puntaje-zona} Escala de clasificación de las zonas de acuerdo a la densidad relativa de larvas.}
-    \footnotesize
-    \begin{tabular}{l c c c c}
-        \hline \\
-                     & Mínimo\tnote{a} & Máximo\tnote{a} & Hembras     & Hembras \\
-        Tipo de zona & $u(x,y)$   & $u(x,y)$   & Adultas\tnote{b} & Reproductivas \tnote{c}\\
-        \hline
-        \hline\\
-        Pésima  & 0  & 19 & 8  & 5 \\
-        Mala    & 20 & 35 & 15 & 10\\
-        Regular & 36 & 51 & 22 & 15\\
-        Buena   & 52 & 69 & 30 & 20\\
-        Óptima  & 70 & --\tnote{d} & --\tnote{d} & --\tnote{d}\\
-        \hline
-    \end{tabular}
-    \begin{tablenotes}[flushleft]\footnotesize
-    \item[a]{Rango mínimo y máximo de $u(x,y)$ permitido para el tipo de zona.}
-    \item[b]{Cantidad máxima de hembras adultas, al final del periodo de desarrollo.}
-    \item[c]{Cantidad de hembras adultas con capacidad de oviponer.}
-    \item[d]{No se estableció un límite superior para las zonas óptimas. }
-    \end{tablenotes}
-    \end{minipage}
-    \end{threeparttable}
-\end{table}
-
-En la \tabref{tab:cap4-puntaje-zona} se pueden observar los rangos definidos para cada tipo de
-zona, en donde $u$ es la densidad relativa de larvas en las coordenadas $(x,y)$. Los límites para
-las zonas fueron determinados clasificando los valores, de las hembras reproductivas en, grupos
-múltiplos de cinco. No se estableció un límite superior para las zonas óptimas debido a que los
-valores mayores a el mínimo establecido, 70 larvas por dispositivo, pertenecen a la misma categoría
-
-\subsection{Mortalidad}
-\label{subsec:cap4-mortalidad}
-La mortalidad de los individuos depende de la etapa del ciclo de desarrollo en el que se encuentren
-los individuos de una población.
-
-\subsubsection{Mortalidad de huevos}
-La tasa de mortalidad de los huevos se encuentra definida como una constante, $me = 0.01$,
-$1/\text{días}$, independiente de la temperatura \cite{otero2006stochastic}.
-
-\begin{equation}
-    M_{H(x,y)} = me * H(x,y)
-\end{equation}
-
-Donde $M_{H(x,y)}$ es la cantidad de huevos que deben ser eliminados de la población $H(x,y)$.
-
-\subsubsection{Mortalidad de larvas}
-La mortalidad de las larvas, según \cite{otero2006stochastic}, se encuentra dividida en dos
-contribuciones. La primera contribución representa la mortalidad natural bajo óptimas condiciones
-y se encuentra influenciada únicamente de la temperatura \cite{otero2006stochastic}. Esta tasa se
-encuentra definida por :
-
-\begin{equation}
-\label{eq:mortalidad-natural-larvas}
-    ml(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg)
-\end{equation}
-
-La segunda contribución es la mortalidad denso dependiente de las larvas \cite{otero2006stochastic}
-. Este mecanismo de regulación puede estar relacionado con procesos concurrentes, como las
-limitaciones de los alimentos, las interacciones químicas, presencia de depredadores
-especializados en el sitio de reproducción y mucho más \cite{otero2006stochastic}. Esta se
-encuentra definida por :
-
-\begin{equation}
-  \alpha (x,y) = \alpha _{0}/BS(x,y)
-\end{equation}
-
-Donde $\alpha _{0}$ está asociado a la capacidad de carga de un solo lugar de reproducción y
-$BS(x,y)$ es el número de sitios de reproducción en $(x,y)$. El valor de $\alpha _{0}$ puede
-ajustado a los valores observados en la región que se está simulando. Se considera que el valor de
-$BS(x,y)$ se encuentra influenciado por $u(x,y)$, de ese modo a medida que $u(x,y)$ varíe, lo debe
-hacer el valor de $BS(x,y)$. Para el cálculo de $BS$ relativo a $(x,y)$ se utiliza el método
-interpolador de Lagrange.
-
-\begin{equation}
-\label{eq:sitios-reproduccion-x-y}
-    bs(u(x,y)) = \sum_{i=0}^{n} bs_{i} * l_{i}(u(x,y))
-\end{equation}
-
-donde $l_j(u(x,y))$ son los llamados polinomios de Lagrange, que se calculan de este modo:
-
-\begin{equation}
-\label{eq:sitios-reproduccion-x-y}
-    l_{i}(u(x,y)) = \prod_{j \neq i} \cfrac{u(x,y) - u_{j}}{u_{i} - u_{j}}
-\end{equation}
-
-Consideramos un polinomio de tercer grado, con los parámetros $u_0$, $u_1$ y $u_2$ igual a $19$,
-$51$ y $70$, correspondientes a zonas del tipo \textit{Pésima}, \textit{Regular} y \textit{Óptima}.
-Los valores, $bs_{min}$, $bs_{med}$ y $bs_{max}$ respectivamente, estos son parámetros
-configurables del modelo donde $bs_{min}$ representa el menor $BS$ observado, $bs_{max}$
-representa el mayor $BS$ observado y $bs_{med}$ es el valor medio existente entre $bs_{max}$ y
-$bs_{min}$.
-
-Tomando ambas contribuciones, la mortalidad natural bajo óptimas condiciones y la denso
-dependiente, la mortalidad de las larvas queda definida como :
-\begin{equation}
-    M_{L(x,y)}(k) = ml(k) * L(x,y) + \alpha (x,y) * L(x,y) * (L(x,y) - 1)
-\end{equation}
-
-Donde $M_{L(x,y)}$ es la cantidad de larvas que deben ser eliminadas de la población $L(x,y)$.
-
-\subsubsection{Mortalidad de las pupas}
-La tasa de mortalidad de las pupas se encuentra definida como una función influenciada únicamente
-de la temperatura \cite{otero2006stochastic}.
-
-\begin{equation}
-\label{eq:mortalidad-natural-pupas}
-    mp(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg)
-\end{equation}
-
-Además de la mortalidad diaria en la fase de pupa, existe una importante mortalidad adicional
-asociada con la emergencia sin éxito de adultos, solo el 83 \%  de las pupas alcanzan la maduración
-y emergerán como mosquitos adultos, por lo tanto, el factor de supervivencia es de $ef = 0.83$
-\cite{otero2006stochastic}.
-
-\begin{equation}
-    M_{P(x,y)}(k) = P(x,y) * (mp + (1 - ef) * R(k))
-\end{equation}
-
-Donde $M_{P(x,y)}$ es la cantidad de pupas que deben ser eliminadas de la población $P(x,y)$.
-
-\subsubsection{Mortalidad de adultos}
-La tasa de mortalidad de los adultos se encuentra definida como una constante, $ma = 0.09$,
-$1/\text{días}$, independiente de la temperatura \cite{otero2006stochastic}.
-
-\begin{equation}
-    M_{A(x,y)} = ma * A(x,y)
-\end{equation}
-
-Donde $M_{A(x,y)}$ es la cantidad de adultos que deben ser eliminados de la población $A(x,y)$.
-
-\subsection{Madurez y cambio de estado}
-La madurez de los individuos pertenecientes a las poblaciones de $H(x,y)$, $L(x,y)$ y $P(x,y)$
-indica la proximidad de que estos alcancen el siguiente estado de su etapa de desarrollo. Sea
-$R(k_{i})$ la tasa de desarrollo de un individuo para una temperatura de $k_{i}$ Kelvin en un
-instante $i$, se considera que ha alcanzado su máximo nivel de madurez y se encuentra listo para
-pasar al siguiente estado de su cuando $\sum_{i=0}^{N} R(k_{i}) \geq 1$ , en donde $N$ es la
-cantidad de días que le toma al individuo pasar de un estado a otro. Para $R(k)$ se se aplican los
-parámetros correspondientes al estado actual del individuo.
-
-\subsection{Ciclo gonotrófico y Ovipostura}
-El ciclo gonotrófico de los mosquitos es el nombre que se le adjudicó al período que existe desde
-que el mosquito realiza una alimentación sanguínea - ovipostura - hasta una nueva alimentación.
-Como se mencionó anteriormente, la tasa de desarrollo del ciclo gonotrófico puede estimarse
-mediante la versión simplificada del modelo de Sharpe y DeMichele \cite{sharpe1977reaction},
-propuesta por Schoolfield en \cite{schoolfield1981non}.
-
-Sea $R(k_{i})$ la tasa de desarrollo del ciclo gonotrófico de una hembra (nulípara o parida), para
-una temperatura de $k_{i}$ Kelvin en un instante $i$, se considera que un día es de ovipostura si
-se cumple $\sum_{i=0}^{N} R(k_{i}) \geq 1$, en donde $N$ es la duración en días del ciclo
-gonotrófico de la hembra adulta. Para $R(k)$ se aplican los parámetros correspondientes a hembras
-nulíparas y paridas de acuerdo al estado de la hembra. En \cite{edman1987host} se observó que
-hembras nulíparas de Aedes aegypti poseen un proceso de digestión más lento en las hembras paridas
-y por ende el ciclo gonotrófico de las mismas tiende a ser más largo. La cantidad de huevos en
-cada oviposición, luego de las alimentaciones sanguíneas correspondientes, varía entre 30 y 100
-unidades \cite{luevano1993ciclo, beltran2001bionomia,cabezas2005dengue}.
-
-\subsection{Vuelo y dispersión}
-El Aedes aegypti es un mosquito doméstico que generalmente esta confinado a las casas donde se
-cría \cite{luevano1993ciclo}, tiende a permanecer físicamente en donde emergió, siempre y cuando
-no exista algún factor que la perturbe o no disponga de huéspedes, sitios de reposo y de postura
-\cite{ThironIzcazaJ2003}. Por lo general, el mosquito, no sobrepasa los 50 a 100 metros durante su
-vida \cite{cabezas2005dengue}. En caso de no contar con sitios adecuados de ovipostura y
-disponibilidad de alimento tienden a dispersarme una mayor distancia, hasta tres kilómetros, en
-busca de mejores condiciones \cite{ThironIzcazaJ2003}. Los mosquitos tienen la particularidad de
-volar en sentido contrario a la dirección al viento \cite{ThironIzcazaJ2003,web-site:speedAnimals}
-y a una velocidad máxima de 2 kilómetros por hora \cite{web-site:speedAnimals,kaufmann2004flight}.
-
-Partiendo de las hipótesis realizadas en la podemos considerar que la dispersión se encuentra
-influenciada por el valor de $u(x,y)$, de ese modo a medida que $u(x,y)$ varíe, la dispersión debe
-ajustarse a su tipo de zona. De forma simplificada definimos que la dispersión de un adulto que se
-encuentre en zonas del tipo \textit{Regular}, \textit{Buena} u \textit{Óptima} se encuentra entre
-0 y 100 metros de vuelo. Para las hembras adultas, que pertenezcan a zonas del tipo \textit{Mala}
-o \textit{Pésima} se tiene una dispersión entre 100 a 3.000 metros de vuelo, de este modo, las
-hembras adultas que se encuentren en zonas menos aptas tenderán a desplazarse en busca de mejores
-condiciones.
-
-\subsection{Simulación del proceso evolutivo}
-La simulación del proceso evolutivo del mosquito del Aedes aegypti, es el encargado de simular los
-efectos temperatura en el ciclo de vida del mosquito. Estos efectos pueden desencadenar en una
-serie de eventos en el individuo como : eclosión de huevos, mortalidad de larvas, emergencia de
-pupas, muerte de pupas, emergencia de adultos, muerte de adultos, ovipostura y dispersión de los
-adultos.
-
-La población inicial es obtenida mediante la cantidad de larvas observadas en los puntos de
-control que corresponden a la muestra utilizada para el estudio. Por cada larva observada, en un
-punto de control ubicado en las coordenadas geográficas, $(x, y)$, se inicializa un individuo con
-las mismas coordenadas del punto de control de origen.
-
-El simulador del proceso evolutivo, que es considerado como un proceso iterativo, el proceso
-inicia tomando como parámetros de entrada la población inicial, y el periodo de simulación,
-representado por $T$. El proceso se ejecutará siempre y cuando se cumplan las siguientes
-condiciones : el periodo de simulación, $T$, no haya finalizado y que la población cuente con
-individuos para su procesamiento. En el caso de que no se cumplan algunas de las condiciones
-mencionadas anteriormente, el proceso de simulación finalizará.
-
-El desarrollo de los individuos se encarga de calcular las tasas de desarrollo correspondientes
-para cada etapa de su ciclo de vida , con el fin de estimar su desarrollo considerando las
-condiciones climáticas. El cambio de estado es consecuencia de la finalización de la etapa de
-desarrollo del individuo, donde el individuo ya está listo para pasar a la siguiente etapa de su
-ciclo de desarrollo.
-
-La regulación de la población es la encargada de calcular las tasas de mortalidad diaria,
-correspondientes a cada etapa del ciclo de desarrollo del individuo, con el fin de reducir el
-tamaño de la población debido a la mortalidad diaria de los individuos.
-
-Si el individuo en cuestión corresponde a una hembra adulta inseminada, entonces esta se encuentra
-en fase reproductiva. La postura de huevos se realiza respetando la tasa de desarrollo del ciclo
-gonotrófico de las hembras . Si la hembra adulta ovipone, los huevos son añadidos a la población
-como individuos en un estado inicial de \textit{HUEVO}.

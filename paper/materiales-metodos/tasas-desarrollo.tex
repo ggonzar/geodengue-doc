@@ -1,0 +1,22 @@
+\subsection{Tasas de desarrollo}
+Se consideran 5 tasas de desarrollo correspondiente a : la eclosión de huevos,
+emergencia a pupas, emergencia a adultos, el ciclo gonotrófico de hembras nulíperas y el ciclo gonotrófico de hembras paridas. Las tasas de desarrollo son calculadas mediante la versión simplificada del modelo de Sharpe y DeMichele, presentado en \cite{sharpe1977reaction},
+con inhibición de altas temperaturas de Schoolfield.
+
+\begin{equation} \label{eq:schoolfield}
+   R(k)  = R(298K) *\cfrac{ \cfrac{k}{298K} *
+    exp \Bigg[
+            \cfrac{\Delta H_{A}}{R} \bigg(\cfrac{1}{298K} - \cfrac{1}{k}\bigg)
+        \Bigg]}
+    {1 + exp\Bigg[\cfrac{\Delta H_{H}}{R} \bigg(\cfrac{1}{T_{1/2}}- \cfrac{1}{k}\bigg)\Bigg] }
+\end{equation}
+
+Donde $R(k)$ representa la tasa de desarrollo media ($dias^{-1}$) para una temperatura $K$,en la
+escala de Kelvin; $T_{1/2}$ es la temperatura cuando la mitad de la enzima se desactiva, debido a
+la alta temperatura, mientras que $\Delta H_{A}$ y $\Delta H_{H}$  son entalpías termodinámicas características del organismo, y $R$ es la constante universal de los gases, igual a
+$1,987202$ $cal/K.mol$. Los parámetros $R(298K)$, $\Delta H_{A}$, $T_{1/2}$, y $\Delta H_{H}$ son estimados mediante la de regresión no lineal de Wagner, presentado en \cite{wagner1984modeling}.
+Según \cite{otero2006stochastic}, el modelo simplificado de Schoolfield, es lo suficientemente
+flexible para el ajuste de los datos biológicos disponibles. Los parámetros deben calcularse para
+cada etapa de desarrollo, una vez determinados, la ecuación puede utilizarse para calcular tasas
+de desarrollo a cualquier temperatura \cite{rueda1990temperature}.
+
