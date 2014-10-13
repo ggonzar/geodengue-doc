@@ -1,33 +1,113 @@
 
 \section{Simulación del proceso evolutivo}
 La simulación del proceso evolutivo es el encargado de simular los efectos de las variaciones
-climáticas y el entorno en el ciclo de vida del Aedes aegypti.
+climáticas y del entorno en el ciclo de vida del Aedes aegypti.
 
-El simulador del proceso evolutivo, es considerado como un proceso iterativo que inicia tomando
-como parámetros de entrada la población inicial, y los datos climatológicos correspondientes al
-periodo de simulación seleccionado. La población inicial es obtenida mediante la cantidad de
-larvas observadas en los puntos de control que corresponden a la muestra utilizada para el estudio.
-Por cada larva observada, en un punto de control ubicado en las coordenadas geográficas, $(x, y)$,
-se inicializa un individuo con las mismas coordenadas del punto de control de origen.
+El Algoritmo \ref{alg:simulador-evolutivo}, describe al simulador como un proceso iterativo cuyo
+objetivo es simular los efectos de cada $k_{i}$ para cada individuo $m_{j}$ que pertenezca a la
+población.
 
-\begin{figure}[!t]
-    \centering
-    \includegraphics[width=0.45\textwidth]{../book/capitulo-5/graphics/algoritmo-evolutivo.png}
-    \caption{\label{fig:algoritmo-evolutivo}Algoritmo del simulador del proceso evolutivo.}
-\end{figure}
+La población de estudio, $\vec{m}$, se encuentra compuesta por un conjunto $m_{j}(x,y)$ que
+representan a los individuos, $h_{j}(x,y)$, $l_{j}(x,y)$, $p_{j}(x,y)$, $am_{j}(x,y)$,
+$an_{j}(x,y)$ y $ap_{j}(x,y)$ que corresponden a las poblaciones de $H(x,y)$, $L(x,y)$, $P(x,y)$,
+$AM(x,y)$, $AN(x,y)$ y $AP(x,y)$ respectivamente. Todos los individuos,$m_{j}(x,y)$, que se
+encenten en una misma $(x, y)$ pertenecen a una misma colonia. La población inicial es obtenida
+mediante la cantidad de larvas observadas en los puntos de control que corresponden a la muestra
+utilizada para el estudio. Por cada larva observada, en un punto de control ubicado en las
+coordenadas geográficas, $(x, y)$, se inicializa un individuo, $m_{i}$ con las mismas coordenadas
+, $(x, y)$, del punto de control de origen.
 
-En la \figref{fig:algoritmo-evolutivo} se presenta el algoritmo del proceso evolutivo, donde el
-periodo de simulación se encuentra representado por $T$.  El desarrollo de los individuos se
-encarga de calcular las tasas de desarrollo correspondientes para cada etapa de su ciclo de vida,
-con el fin de estimar su desarrollo considerando las condiciones climáticas. El cambio de estado
-es consecuencia de la finalización de la etapa de desarrollo del individuo, donde el individuo ya
-está listo para pasar a la siguiente etapa de su ciclo de desarrollo.
+El periodo de estudio, $\vec{k}$, se encuentra conformado por un conjunto de temperaturas $k_{i}$
+que representan las temperaturas diarias.
 
-La regulación de la población es la encargada de calcular las tasas de mortalidad diaria,
-correspondientes a cada etapa del ciclo de desarrollo del individuo, con el fin de reducir el
-tamaño de la población debido a la mortalidad diaria de los individuos.
+\begin{algorithm}
+\caption{Simulación del proceso evolutivo \label{alg:simulador-evolutivo}}
+\begin{algorithmic}[1]
+    \Require $\vec{k}\neq \emptyset \land \vec{m} \neq \emptyset$
+    \Ensure $\vec{m'}$
+    \ForAll{$k{i} \in \vec{k}$ }
+        \State $\vec{huevos} \Leftarrow \emptyset$
+        \ForAll{$m_{j}(x, y) \in \vec{m}$}
+            \State $desarrollar(m_{j}(x, y), k_{i})$
+            \If{$regular(m_{j}(x, y), k_{i})$}
+                \State \Comment{Se elimina $m_{j}$ si es un candidato.}
+                \State $m_{j}(x, y) \Leftarrow \varnothing $
+            \ElsIf{$esta\_maduro(m_{j}(x, y), k_{i})$}
+                \State $ cambiar\_estado(m_{j}(x, y)) $
+            \ElsIf{$se\_reproduce(m_{j}(x, y), k_{i})$}
+                \State $\vec{huevos} \Leftarrow \vec{huevos} + oviponer(m_{j}(x, y))$
+            \EndIf
+        \EndFor
 
-Si el individuo en cuestión corresponde a una hembra adulta inseminada, entonces esta se encuentra
-en fase reproductiva. La postura de huevos se realiza respetando la tasa de desarrollo del ciclo
-gonotrófico de las hembras. Si la hembra adulta ovipone, los huevos son añadidos a la población
-como individuos en un estado inicial de \textit{HUEVO}.
+        \If{$\vec{huevos} \neq \emptyset$}
+            \State \Comment{Si ovipone se extiende la población}
+            \State $\vec{m} \Leftarrow  \vec{m} + \vec{huevos}$
+        \EndIf
+    \EndFor \\
+    \Return $\vec{m}$
+\end{algorithmic}
+\end{algorithm}
+
+
+El proceso $desarrollar(m_{j}, k_{i})$, es el proceso por el cual se calculan las tasas de
+desarrollo correspondientes para cada $m_{j}$ . Estas son obtenidas mediante el modelo de
+\cite{sharpe1977reaction} presentado en la \secref{subsec:cap4-tasas de desarrollo}.
+
+El desarrollo en las etapas inmaduras ($H(x,y)$, $L(x,y)$ y $P(x,y)$) es realizado con el fin de
+simular los efectos de $k_{i}$ en la maduración de $m_{j}$. Sin embargo para los adultos ($AN(x,y)$
+y $AP(x,y)$), es realizado con el fin de simular los efectos de $k_{i}$ en la duración del ciclo
+gonotrófico de $m_{j}$ y la dispersión del vector, presentada en la
+\secref{subsec:cap4-vuelo-dispersion}.
+
+El proceso $regular(m_{j}, k_{i})$ como principal objetivo, determinar la cantidad de individuos
+que deben ser eliminados de la población, debido a la mortalidad diaria y seleccionar los
+candidatos para dicha eliminación. Como se mencionó anteriormente, en la
+\secref{subsec:cap4-mortalidad}, la tasa de mortalidad diaria depende del estado en el que
+encuentre el individuo. La selección de candidatos para la eliminación se realiza de forma
+aleatoria para los individuos que provenientes de una misma colonia $(x, y)$.
+
+El proceso $esta\_maduro(m_{j}, k_{i})$ se encarga de validar que se cumpla el individuo finalice
+su etapa de desarrollo. Sea $R(k_{i})$ la tasa de desarrollo de un individuo para una temperatura
+de $k_{i}$ Kelvin en un instante $i$, se considera que ha alcanzado su máximo nivel de madurez y
+se encuentra listo para pasar al siguiente estado de su etapa de desarrollo cuando se cumple :
+
+\begin{equation}
+\label{eq:condicion-cambio-estado}
+    \sum_{i=0}^{N} R(k_{i}) \geq 1
+\end{equation}
+
+Donde $N$ es la cantidad de días que le toma al individuo pasar de un estado a otro. Una vez
+completo su desarrollo se procede a realizar el cambio de estado mediante el proceso
+$cambiar\_estado(m_{j})$. El cambio de estado consiste en modificar las caracteristicas un
+individuo, $m_{i}(x,y)$ para que inicie la nueva etapa de su ciclo de desarrollo. De forma
+extendida tenemos:
+
+\begin{itemize}
+\item Para que un huevo, $h(x,y)$, perteneciente a $H(x,y)$ pase a ser una larva, $l(x,y)$, que forma parte de $L(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
+
+\item Para que una larva, $l(x,y)$, perteneciente a $L(x,y)$ pase a ser una pupa, $p(x,y)$, que forma parte de $P(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
+
+\item Para que una pupa, $p(x,y)$, perteneciente a $P(x,y)$ pase a ser un adulto, $a(x,y)$, que forma parte de $A(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
+\end{itemize}
+
+
+El proceso $se\_reproduce(m_{j}, k_{i})$, que solo es válido para hembras adultas se encarga de
+validar $m_{j}$ haya completado su ciclo gonotrófico, una vez finalizado debe generar una tanda de
+huevos mediante $oviponer(m_{j})$. La duración del ciclo gonotrófico y la oviposutra fue presentado
+anteriormente en la \secref{subsec:cap4-ciclo-gontrofico-ovipostura}.
+
+% En la \figref{fig:algoritmo-evolutivo} se presenta el algoritmo del proceso evolutivo, donde el
+% periodo de simulación se encuentra representado por $T$.  El desarrollo de los individuos se
+% encarga de calcular las tasas de desarrollo correspondientes para cada etapa de su ciclo de vida,
+% con el fin de estimar su desarrollo considerando las condiciones climáticas. El cambio de estado
+% es consecuencia de la finalización de la etapa de desarrollo del individuo, donde el individuo ya
+% está listo para pasar a la siguiente etapa de su ciclo de desarrollo.
+
+% La regulación de la población es la encargada de calcular las tasas de mortalidad diaria,
+% correspondientes a cada etapa del ciclo de desarrollo del individuo, con el fin de reducir el
+% tamaño de la población debido a la mortalidad diaria de los individuos.
+
+% Si el individuo en cuestión corresponde a una hembra adulta inseminada, entonces esta se encuentra
+% en fase reproductiva. La postura de huevos se realiza respetando la tasa de desarrollo del ciclo
+% gonotrófico de las hembras. Si la hembra adulta ovipone, los huevos son añadidos a la población
+% como individuos en un estado inicial de \textit{HUEVO}.
