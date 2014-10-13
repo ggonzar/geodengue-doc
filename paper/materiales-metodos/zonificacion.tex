@@ -8,7 +8,7 @@ requerir una revisión en caso general. Estas hipótesis son:
 \begin{itemize}
     \item Los valores observados en un conjunto de puntos de control, pertenecientes a una zona, permiten la caracterización de dicha zona como más o menos apta para desarrollo, mortalidad, alimentación, dispersión, y reproducción de individuos.
 
-    \item También se considera que el tamaño de la zona, y por ende la cantidad de puntos de control que pertenecen a ella, influye en la caracterización de las zonas.
+    \item Se considera que el tamaño de la zona, y por ende la cantidad de puntos de control que pertenecen a ella, influye en la caracterización de las zonas.
 \end{itemize}
 
 Para determinar el tipo de zona de un individuo $m_{i}$ ubicado en $(x,y)$, primero se estima la
@@ -17,21 +17,51 @@ utilizado para clasificar la zona como \textit{Pésima}, \textit{Mala}, \textit{
 \textit{Buena} u \textit{Óptima} con influencia positiva el desarrollo, alimentación, dispersión,
 y reproducción de individuos y negativamente para la mortalidad.
 
-Para definir la escala de clasificación de las zonas, en base a $u(x, y)$, se debe estimar la
-cantidad de hembras adultas repoducitvas, es decir hembras con capacidad de transmitir la
-enfermedad y generar descendencia. Se considera que una mayor o menor cantidad de hembras
-reproductivas, en una zona, implica una mejor o peor adapatación a las condiciones de la zona. Para estimar la cantidad de hembras adultas reproductivas en base a $u(x, y)$ hay que tener en cuenta :
+Para definir la escala de clasificación de las zonas (Ver \tabref{tab:cap4-puntaje-zona}), en base
+a $u(x, y)$, se debe estimar la cantidad de hembras adultas reproductivas, es decir hembras con
+capacidad de transmitir la enfermedad y generar descendencia. Se considera que una mayor o menor
+cantidad de hembras reproductivas, en una zona, implica una mejor o peor adaptación a las
+condiciones de la zona. Para estimar la cantidad de hembras adultas reproductivas en base a
+$u(x, y)$ , se consideraron los siguientes puntos :
 
 \begin{itemize}
-    \item Solo el $50$ \% de las larvas observadas son hembras \cite{otero2006stochastic, manrique1998desarrollo}.
+    \item El $50$ \% de las larvas observadas son hembras \cite{otero2006stochastic, manrique1998desarrollo}.
     \item La temperatura media anual es de 25 \textcelsius \cite{website:mspbsHistoria2014}.
     \item La tasa mortalidad diaria natural de las larvas y pupas bajo optimas condiciones, a 25 \textcelsius, es igual a $0,01056\ \text{días}^{-1}$, según las ecuaciones \eqref{eq:mortalidad-natural-larvas} y \eqref{eq:mortalidad-natural-pupas} respectivamente.
-    \item La tasa de desarrollo, a 25 \textcelsius, de la larva hasta su emergencia a adulto es de $11,57$ días \cite{rueda1990temperature}.
+    \item El desarrollo, a 25 \textcelsius, de la larva hasta su emergencia a adulto es de $11,57$ días \cite{rueda1990temperature}.
     \item El $32,10$ \% de las hembras adultas no oviponen \cite{osoriopontificia}.
 \end{itemize}
 
 Estas consideraciones ayudan a simplificar la deteminación de las hembras adultas con capacidad
 reproductiva a paritr de $u(x,y)$.
+
+\begin{table}[!hptb]
+\begin{threeparttable}
+    \begin{minipage}[b]{0.5\textwidth}
+    \caption{\label{tab:cap4-puntaje-zona} Escala de clasificación de las zonas de acuerdo a la densidad relativa de larvas.}
+    \footnotesize
+    \begin{tabular}{l c c c c}
+        \hline \\
+                     & Mínimo\tnote{a} & Máximo\tnote{a} & Hembras     & Hembras \\
+        Tipo de zona & $u(x,y)$   & $u(x,y)$   & Adultas\tnote{b} & Reproductivas \tnote{c}\\
+        \hline
+        \hline
+        Pésima  & 0  & 19 & 8  & 5 \\
+        Mala    & 20 & 35 & 15 & 10\\
+        Regular & 36 & 51 & 22 & 15\\
+        Buena   & 52 & 69 & 30 & 20\\
+        Óptima  & 70 & --\tnote{d} & --\tnote{d} & --\tnote{d}\\
+        \hline
+    \end{tabular}
+    \begin{tablenotes}[flushleft]\footnotesize
+    \item[a]{Rango mínimo y máximo de $u(x,y)$ permitido para el tipo de zona.}
+    \item[b]{Cantidad máxima de hembras adultas, al final del periodo de desarrollo.}
+    \item[c]{Cantidad de hembras adultas con capacidad de oviponer.}
+    \item[d]{No se estableció un límite superior para las zonas óptimas. }
+    \end{tablenotes}
+    \end{minipage}
+    \end{threeparttable}
+\end{table}
 
 Con la finalidad de utilizar un mismo criterio de clasificación para todos los individuos, se
 define una escala única para este caso de estudio. Los valores de dicha escala son agrupados por
