@@ -5,13 +5,15 @@ simulación y los datos climatológicos, y por ultimo los parámetros de simulad
 evolutivo.
 
 Para las pruebas se generaron aleatoriamente 25 puntos de control que fueron distribuidos
-geográficamente de forma aleatoria y no uniforme en un área de total de $3,028 km^{2}$. En los 25 puntos de control fueron distribuidos un total de 1.146 individuos en un estado inicial de larvas.
+geográficamente de forma aleatoria y no uniforme en un área de total de $3,028 km^{2}$
+(Ver \label{fig:distribucion-puntos}). En los 25 puntos de control fueron distribuidos un total de
+1.146 individuos en un estado inicial de larvas.
 
-% \begin{figure}[!t]
-%     \centering
-%     \includegraphics[width=0.45\textwidth]{../book/capitulo-6/graphics/extension-poblacion.png}
-%     \caption{\label{fig:distribucion-puntos}Distribución geográfica de los 25 puntos de control.}
-% \end{figure}
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../book/capitulo-6/graphics/extension-poblacion.png}
+    \caption{\label{fig:distribucion-puntos}Distribución geográfica de los 25 puntos de control.}
+\end{figure}
 
 El periodo de simulación utilizado fue igual a 50 días con 10 temperaturas constantes :
 15\textcelsius , 18\textcelsius , 20\textcelsius , 22\textcelsius , 24\textcelsius , 25\textcelsius
@@ -61,7 +63,7 @@ gonotrófico y dieron lugar la ovipostura.
 \caption{\label{fig:poblacion-all}Análisis del comportamiento de la población de mosquitos en relación al tiempo a 10 temperaturas constantes (15-34 \textcelsius)}
 \end{figure}
 
-En la \figref{fig:poblacion-all} se puede apreciar el crecimiento y decrecimiento de la población
+En la \figref{fig:poblacion-all} se pueden apreciar el crecimiento y decrecimiento de la población
 a diferentes temperaturas, en donde se pudo observar que a medida que la temperatura aumenta, las
 tasas de desarrollo son menores, motivo por el cual las poblaciones de individuos en etapas
 inmaduras, sometidos a temperaturas más elevadas, tienden a disminuir su tamaño rápidamente debido
@@ -74,7 +76,7 @@ inmaduras aumenta rápidamente.
     \centering
     \begin{subfigure}[b]{0.225\textwidth}
         \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-24-0.png}
-        \caption{ Población población inicial.}
+        \caption{\label{fig:poblacion-mapas-a}Población población inicial.}
     \end{subfigure}
     ~~~~
     \begin{subfigure}[b]{0.225\textwidth}
@@ -105,10 +107,11 @@ inmaduras aumenta rápidamente.
 \end{figure}
 
 En la \figref{fig:poblacion-mapas-all} se puede apreciar los mapas de interpolación de las
-poblaciones en un su estado inicial y final del periodo de simulación. El estado inicial es el
-mismo para todas las temperaturas. Comparando el estado inicial y los estados finales se puede
-observar que existe una dispersión de los focos en dirección al noreste debido a que la dirección
-del viento utilizada, para las pruebas, era del suroeste. Este patrón de dispersión se podrá
-observar en todas las poblaciones que fueron sometidas a temperaturas que permitan la generación
-de hembras adultas. La dispersión de los focos de infestación es consecuencia de la dispersión y
-ovipostura de las hembras adultas emergentes de la población.
+poblaciones en un su estado inicial y final del periodo de simulación. El estado inicial
+(\figref{fig:poblacion-mapas-a}) es el mismo para todas las temperaturas. Comparando el estado
+inicial y los estados finales se puede observar que existe una dispersión de los focos en
+dirección al noreste debido a que la dirección del viento utilizada, para las pruebas, era del
+suroeste. Este patrón de dispersión se podrá observar en todas las poblaciones que fueron
+sometidas a temperaturas que permitan la generación de hembras adultas. La dispersión de los focos
+de infestación es consecuencia de la dispersión y ovipostura de las hembras adultas emergentes de
+la población.
