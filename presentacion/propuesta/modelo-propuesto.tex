@@ -1,57 +1,141 @@
-\begin{frame}[c]{GeoDengue}
+\begin{frame}[t]{Modelos de simulación de la ecología del vector.}
   \begin{center}
-      \includegraphics[width=\textwidth]{./graphics/propuesta.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}[c]{Preparación de datos de entrada}
-  \begin{center}
-    \begin{itemize}
-      \item Selección del área de estudio.
-      \item Distribución geográfica de los puntos de control.
-      \item Revisión de los puntos de control.
-      \item Generación de la población inicial a partir de los puntos de control.
-      \item Obtener datos climáticos para el periodo de simulación.
-      \item Conteo de larvas mediante Proceso Digital de imágenes.
-    \end{itemize}
-  \end{center}
-\end{frame}
-
-\begin{frame}[c]{Simulación del proceso evolutivo}
-  \begin{center}
-    \includegraphics[height=7.5cm]{./graphics/algoritmo-propuesto.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}[c]{Simulación del proceso evolutivo. Ciclo de vida del vector.}
-    \begin{columns}[t]
-        \begin{column}[T]{7cm}
-            \includegraphics[width=7.5cm]{./graphics/ciclo-de-vida.jpg}
+   \begin{columns}[T]
+        \begin{column}[T]{5.5cm}
+             \includegraphics[width=5.7cm]{./graphics/larvitrmpas-clima.png}
         \end{column}
-        \begin{column}[T]{3cm}
+        \begin{column}[T]{5.5cm}
           \begin{itemize}
-            \item Desarrollo.
-            \item Mortalidad.
+          \item Larvitrampas como puntos de control.
+          \item Influencia de las variaciones climáticas.
+          \item Combinar información.
+          \item Simular el comportamiento del vector.
+          \item Detección temprana.
+          \end{itemize}
+        \end{column}
+    \end{columns}
+  \end{center}
+\end{frame}
+
+\begin{frame}[t]{Modelos de simulación de la ecología del vector.\\\textit{Modelo matemático del ciclo de vida.}}
+  \begin{center}
+   \begin{columns}[t]
+        \begin{column}[T]{7cm}
+            \includegraphics[width=7cm]{./graphics/ciclo-de-vida.jpg}
+        \end{column}
+        \begin{column}[T]{4cm}
+          \begin{itemize}
+            \item Tasas de desarrollo.
+            \item Tasas de mortalidad.
             \item Dispersión.
+            \item Ciclo gonotrófico.
             \item Ovipostura.
           \end{itemize}
         \end{column}
     \end{columns}
+  \end{center}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. Tasas de desarrollo}
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Modelo matemático del ciclo de vida.}}
+  \begin{center}
+   \begin{columns}[T]
+        \begin{column}[T]{6cm}
+            \includegraphics[width=6cm]{./graphics/modelado-poblacion.png}
+        \end{column}
+        \begin{column}[T]{5.5cm}
+          \begin{itemize}
+            \item $H(x, y)$ : Huevos.
+            \item $L(x, y)$ : Larvas.
+            \item $P(x, y)$ : Pupas.
+            \item $AM(x, y)$ : Adultos machos.
+            \item $AN(x, y)$ : Hembras nulíperas.
+            \item $AP(x, y)$ : Hembras paridas.
+          \end{itemize}
+        \end{column}
+    \end{columns}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
+  \begin{center}
+    Cada entorno puede contar con factores que lo hagan más o menos apta para el desarrollo, mortalidad, alimentación, dispersión y reproducción de individuos.
+  \end{center}
+\end{frame}
+
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
+  \begin{center}
+   \begin{columns}[T]
+        \begin{column}[T]{4cm}
+            \includegraphics[width=4.5cm]{../book/capitulo-4/graphics/zonificacion.png}
+        \end{column}
+        \begin{column}[T]{7cm}
+          \begin{itemize}
+          \item Los puntos de control permiten caracterizar la zona como más o menos apta.
+          \item Interpolación espacial para determinar la cantidad de individuos en $(x, y)$.
+          \item Definir una escala de clasificación.
+          \end{itemize}
+        \end{column}
+    \end{columns}
+  \end{center}
+\end{frame}
+
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
+  Consideraciones para la clasificación de las zonas:
   \begin{itemize}
-
-    \item Las tasas dependen no sólo de valores de la población, sino también de la temperatura lo que introduce una dependencia del tiempo.
-
-    \item El cálculo de las tasas de desarrollo se realiza mediante el modelo no lineal de Sharpe y DeMichele.
-
-    \item El modelo de Sharpe y DeMichele debe ajustarse con los datos biológicos disponibles.
-    \item Una vez configurado, puede utilizarse para calcular tasas de desarrollo a cualquier temperatura.
+      \item El $50$ \% de las larvas observadas son hembras.
+      \item La temperatura media anual es de 25 \textcelsius.
+      \item La tasa mortalidad diaria natural de las larvas y pupas bajo optimas condiciones, a 25 \textcelsius, es igual a $0,01056\ \text{días}^{-1}$ respectivamente.
+      \item El desarrollo, a 25 \textcelsius, de la larva hasta su emergencia a adulto es de $11,57$ días.
+      \item El $32,10$ \% de las hembras adultas no oviponen.
   \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. Tasas de desarrollo}
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
+  \begin{table}
+        \begin{minipage}{\textwidth}
+            \caption{\label{tab:cap4-puntaje-zona} Escala de clasificación de las zonas.}
+            \begin{tabular}{l c c c c}
+                \hline
+                             & Mínimo$^a$ & Máximo$^a$ & Hembras     & Hembras$^c$ \\
+                Tipo de zona & $u(x,y)$   & $u(x,y)$   & Adultas$^b$ & Reproductivas$^c$ \\
+                \hline
+                \hline
+                Pésima  & 0  & 19 & 8  & 5 \\
+                Mala    & 20 & 35 & 15 & 10\\
+                Regular & 36 & 51 & 22 & 15\\
+                Buena   & 52 & 69 & 30 & 20\\
+                Óptima  & 70 & --$^d$ & --$^d$ & --$^d$
+            \end{tabular}
+            \footnotetext[1]{Rango mínimo y máximo de $u(x,y)$ permitido para el tipo de zona.}
+            \footnotetext[2]{Cantidad máxima de hembras adultas, al final del periodo de desarrollo.}
+            \footnotetext[3]{Cantidad de hembras adultas con capacidad de oviponer.}
+            \footnotetext[4]{No se estableció un límite superior para las zonas óptimas. }
+        \end{minipage}
+    \end{table}
+\end{frame}
+
+%Tasas de desarrollo.
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Tasas de desarrollo.}}
+  \begin{center}
+   \begin{columns}[T]
+        \begin{column}[T]{6.5cm}
+            \includegraphics[width=7cm]{./graphics/tasas-desarrollo.png}
+        \end{column}
+        \begin{column}[T]{5cm}
+          \begin{enumerate}
+            \item Eclosión de huevos.
+            \item Emergencia de pupas.
+            \item Emergencia de adultos.
+            \item Ciclo gonotrófico para hembras nulíperas.
+            \item Ciclo gonotrófico para hembras paridas.
+          \end{enumerate}
+        \end{column}
+    \end{columns}
+  \end{center}
+\end{frame}
+
+\begin{frame}[t]{Modelos de simulación de la ecología del vector.\\\textit{Tasas de desarrollo.}}
   \begin{center}
       \begin{equation} \label{eq:schoolfield}
          R(k)  = R(298K) *\cfrac{ \cfrac{k}{298K} *
@@ -61,27 +145,28 @@
           {1 + exp\Bigg[\cfrac{\Delta H_{H}}{R} \bigg(\cfrac{1}{T_{1/2}}- \cfrac{1}{k}\bigg)\Bigg] }
       \end{equation}
   \end{center}
-  Donde :
    \begin{itemize}
       \item $R(k)$ : Tasa de desarrollo media ($dias^{-1}$).
       \item $\Delta H_{A}$ y $\Delta H_{H}$ : son entalpías termodinámicas características del organismo.
       \item $T_{1/2}$ es la temperatura cuando la mitad de la enzima se desactiva.
       \item $R$ : es la constante universal de los gases.
       \item $k$ : Temperatura en Kelvin.
-      \end{itemize}
+    \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. Tasas de Mortalidad}
+
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Tasas de Mortalidad.}}
   \begin{itemize}
-    \item Huevos, es definida como una constante.
-    \item Larvas, expresada como una función, influenciada por la mortalidad bajo óptimas condiciones y la mortalidad denso dependiente.
-    \item Pupas, expresada como una función influenciada por la mortalidad bajo óptimas condiciones.
-    \item Adultos, es definida como una constante.
+      \item Simular la reducción de la población por la mortalidad.
+      \item La mortalidad depende de la etapa del ciclo de desarrollo.
+      \item Las poblaciones cuentan con una cantidad entera de individuos.
+      \item Determinar la cantidad de individuos que deben ser eliminados de la población.
+      \item La cantidad de individuos a eliminar debe ser entera.
   \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad}
-  Mortalidad de los huevos :
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de los huevos.}}
+  % poseen una gran resistencia
   \begin{center}
       \begin{equation}
           M_{H(x,y)} = me * H(x,y)
@@ -89,13 +174,13 @@
   \end{center}
   Donde :
     \begin{itemize}
-      \item $me$ : Tasa de mortalidad diaria igual a $0,01$ \ $1/\text{días}$.
+      \item $me$ : Tasa de mortalidad diaria igual a $0,01\  \text{días}^{-1}$.
       \item $H(x, y)$ : Cantidad de huevos observados en $(x,y)$.
       \item $M_{H(x,y)}$ : Cantidad de huevos a eliminar.
     \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
+\begin{frame}[c]{Simulación del proceso evolutivo. \\\textit{Mortalidad bajo optimas condiciones.}}
   Mortalidad bajo optimas condiciones de las larvas y pupas :
   \begin{center}
     \begin{equation}
@@ -109,8 +194,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
-  Mortalidad de las larvas :
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de larvas.}}
   \begin{center}
       \begin{equation}
       M_{L(x,y)}(k) = mo(k) * L(x,y) + \bigg(\frac{\alpha _{0}}{BS(x,y)}\bigg) * L(x,y) *(L(x,y) - 1)
@@ -126,8 +210,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
-  Mortalidad de las pupas :
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de las pupas.}}
   \begin{center}
     \begin{equation}
         M_{P(x,y)}(k) = P(x,y) * (mo(k) + (1 - ef) * R(k))
@@ -142,8 +225,10 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. Mortalidad.}
-  Mortalidad de adultos :
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de adultos.}}
+ % 10% diario, 50% semanal, 95% a final del primer mes.
+  % Es constante, a pesar de su alta mortalidad, si la población
+  % es lo sifucientemente grande, puede llegar a causar una epidemia
   \begin{center}
     \begin{equation}
         M_{A(x,y)} = ma * A(x,y)
@@ -157,70 +242,22 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. Ciclo gonotrófico y Ovipostura.}
+
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Ciclo gonotrófico y Ovipostura.}}
   \begin{center}
       \includegraphics[width=\textwidth]{./graphics/cliclo-gonotrofico-tiempo.jpg}
   \end{center}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. Dispersión.}
+\begin{frame}[t]{Modelos de simulación de la ecología del vector.\\\textit{Dispersión.}}
   \begin{center}
-    \includegraphics[width=8.5cm]{./graphics/dispersion.jpg}
+    \includegraphics[width=7.5cm]{./graphics/dispersion.jpg}
   \end{center}
 \end{frame}
 
-\begin{frame}[c]{Clasificación de los niveles de infestación.}
-  \begin{table}
-    \begin{minipage}{\textwidth}
-    \begin{center}
-    \caption{\label{tab:cap4-puntaje-zona} Escala de clasificación de los niveles de infestación teniendo en cuenta la cantidad de larvas.}
-      \begin{tabular}{l c c c c}
-          \hline
-                       &          &           & Hembras     & Hembras \\
-          Tipo de zona &Mínimo$^a$& Máximo$^a$& Adultas$^b$ & Reproductivas $^c$\\
-          \hline
-          \hline
-          Muy baja  & 0  & 19 & 8  & 5 \\
-          Baja    & 20 & 35 & 15 & 10\\
-          Normal & 36 & 51 & 22 & 15\\
-          Alta   & 52 & 69 & 30 & 20\\
-          Muy alta  & 70 & --$^d$  & --$^d$  & --$^d$ \\
-      \end{tabular}
-      \footnotetext[1]{Rango mínimo y máximo permitido el nivel.}
-      \footnotetext[2]{Cantidad máxima de hembras adultas, al final del periodo de desarrollo.}
-      \footnotetext[3]{Cantidad de hembras adultas con capacidad de oviponer.}
-      \footnotetext[4]{No se estableció un límite superior para las niveles muy altos. }
-      \end{center}
-    \end{minipage}
-  \end{table}
-\end{frame}
-
-\begin{frame}[t]{Clasificación de los niveles de infestación.}
-  Consideraciones para la clasificación de los niveles de infestación:
-  \begin{itemize}
-      \item Solo el $50$ \% de las larvas observadas son hembras.
-      \item La temperatura media anual es de 25 \textcelsius.
-      \item La tasa mortalidad diaria natural de las larvas y pupas bajo optimas condiciones, a 25 \textcelsius, es igual a $0,01056$ 1/días respectivamente.
-      \item La tasa de desarrollo, a 25 \textcelsius, de la larva hasta su emergencia a adulto es de $11,57$ días.
-      \item El $32,10$ \% de las hembras adultas no oviponen.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[c]{Análisis y presentación de los resultados}
+\begin{frame}[c]{Simulación del proceso evolutivo}
   \begin{center}
-      \includegraphics[width=\textwidth]{./graphics/identificacion-focos.png}
+    \includegraphics[height=7.5cm]{./graphics/algoritmo-propuesto.png}
   \end{center}
 \end{frame}
 
-\begin{frame}[t]{Análisis y presentación de los resultados}
-  \begin{center}
-      \begin{itemize}
-        \item Tasa promedio de desarrollo.
-        \item Tasa promedio de mortalidad diaria.
-        \item Cantidad promedio de huevos.
-        \item Dispersión media.
-        \item Cartografía del vector.
-        \item Mapas de interpolación.
-      \end{itemize}
-  \end{center}
-\end{frame}
