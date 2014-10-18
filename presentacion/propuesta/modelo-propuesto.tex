@@ -1,16 +1,18 @@
+
 \begin{frame}[t]{Modelos de simulación de la ecología del vector.}
   \begin{center}
    \begin{columns}[T]
-        \begin{column}[T]{5.5cm}
-             \includegraphics[width=5.7cm]{./graphics/larvitrmpas-clima.png}
+        \begin{column}[T]{4cm}
+             \includegraphics[width=4.5cm]{./graphics/larvitrmpas-clima.png}
         \end{column}
-        \begin{column}[T]{5.5cm}
+        \begin{column}[T]{7cm}
           \begin{itemize}
           \item Larvitrampas como puntos de control.
+          \item Conteo de larvas mediante PDI.
           \item Influencia de las variaciones climáticas.
-          \item Combinar información.
+          \item Combinar información regionalizada, meteorológica y geográfica.
           \item Simular el comportamiento del vector.
-          \item Detección temprana.
+          \item Detección temprana de posibles focos y en consecuencia una posible epidemia.
           \end{itemize}
         \end{column}
     \end{columns}
@@ -58,20 +60,28 @@
 
 
 \begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
+
   \begin{center}
-    Cada entorno puede contar con factores que lo hagan más o menos apta para el desarrollo, mortalidad, alimentación, dispersión y reproducción de individuos.
+   \begin{columns}[T]
+        \begin{column}[T]{4cm}
+              \includegraphics[width=\textwidth]{./graphics/zonificacion-intro.png}
+        \end{column}
+        \begin{column}[T]{6cm}
+          \textit{\\Cada entorno puede contar con factores que lo hagan más o menos apta para el desarrollo, mortalidad, alimentación, dispersión y reproducción de individuos.}
+        \end{column}
+    \end{columns}
   \end{center}
 \end{frame}
 
 \begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
   \begin{center}
    \begin{columns}[T]
-        \begin{column}[T]{4cm}
-            \includegraphics[width=4.5cm]{../book/capitulo-4/graphics/zonificacion.png}
+        \begin{column}[T]{5cm}
+            \includegraphics[width=5.5cm]{./graphics/zonificacion.png}
         \end{column}
-        \begin{column}[T]{7cm}
+        \begin{column}[T]{6cm}
           \begin{itemize}
-          \item Los puntos de control permiten caracterizar la zona como más o menos apta.
+          \item Los puntos de control permiten caracterizar la zona como más o menos apta para el desarrollo, mortalidad, alimentación, dispersión y reproducción.
           \item Interpolación espacial para determinar la cantidad de individuos en $(x, y)$.
           \item Definir una escala de clasificación.
           \end{itemize}
@@ -79,6 +89,30 @@
     \end{columns}
   \end{center}
 \end{frame}
+
+
+\begin{frame}[t]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación (Interpolación Espacial).}}
+  \begin{center}
+   \begin{columns}[T]
+        \begin{column}[T]{3.5cm}
+            \includegraphics[width=4cm]{./graphics/interpolacion-ej.png}
+        \end{column}
+        \begin{column}[T]{7cm}
+        \begin{equation}\label{eq:interpolacion-idw}
+         u(X) = \sum_{i=1}^{N} w_i(X) * u_{i}
+        \end{equation}
+        Donde :
+        \begin{equation}
+        w_i(X) =  \dfrac{d(X, X_i)^{-p}}{\sum_{j=1}^{N} d(X, X_i)^{-p}}
+        \end{equation}
+        \end{column}
+    \end{columns}
+  \end{center}
+    \text{Ejemplo:}
+    $u(x,y) = w_1(x,y) * 49 + w_2(x,y) * 20 + w_3(x,y) * 55 + w_4(x,y) * 16 $
+\end{frame}
+
+
 
 \begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
   Consideraciones para la clasificación de las zonas:
@@ -91,14 +125,18 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
+\begin{frame}[t]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
+
   \begin{table}
         \begin{minipage}{\textwidth}
-            \caption{\label{tab:cap4-puntaje-zona} Escala de clasificación de las zonas.}
+          \centering
+          \scriptsize
+            \caption{\label{tab:cap4-puntaje-zona} Escala de clasificación de las zonas
+            para el desarrollo, alimentación, dispersión y reproducción.}
             \begin{tabular}{l c c c c}
                 \hline
-                             & Mínimo$^a$ & Máximo$^a$ & Hembras     & Hembras$^c$ \\
-                Tipo de zona & $u(x,y)$   & $u(x,y)$   & Adultas$^b$ & Reproductivas$^c$ \\
+                             & Mínimo$^a$ & Máximo$^a$ & Hembras$^b$ & Hembras$^c$ \\
+                Tipo de zona & $u(x,y)$   & $u(x,y)$   & Adultas     & Reproductivas \\
                 \hline
                 \hline
                 Pésima  & 0  & 19 & 8  & 5 \\
@@ -107,10 +145,10 @@
                 Buena   & 52 & 69 & 30 & 20\\
                 Óptima  & 70 & --$^d$ & --$^d$ & --$^d$
             \end{tabular}
-            \footnotetext[1]{Rango mínimo y máximo de $u(x,y)$ permitido para el tipo de zona.}
-            \footnotetext[2]{Cantidad máxima de hembras adultas, al final del periodo de desarrollo.}
-            \footnotetext[3]{Cantidad de hembras adultas con capacidad de oviponer.}
-            \footnotetext[4]{No se estableció un límite superior para las zonas óptimas. }
+            \footnotetext[1]{\scriptsize Rango mínimo y máximo de $u(x,y)$ permitido para el tipo de zona.}
+            \footnotetext[2]{\scriptsize Cantidad máxima de hembras adultas, al final del periodo de desarrollo.}
+            \footnotetext[3]{\scriptsize Cantidad de hembras adultas con capacidad de oviponer.}
+            \footnotetext[4]{\scriptsize No se estableció un límite superior para las zonas óptimas. }
         \end{minipage}
     \end{table}
 \end{frame}
@@ -135,7 +173,8 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[t]{Modelos de simulación de la ecología del vector.\\\textit{Tasas de desarrollo.}}
+\begin{frame}[t]{Modelos de simulación de la ecología del vector.\\\textit{Tasas de desarrollo
+ (Sharpe y DeMichele, 1977).}}
   \begin{center}
       \begin{equation} \label{eq:schoolfield}
          R(k)  = R(298K) *\cfrac{ \cfrac{k}{298K} *
@@ -165,7 +204,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de los huevos.}}
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de los huevos(Otero et al., 2006).}}
   % poseen una gran resistencia
   \begin{center}
       \begin{equation}
@@ -180,8 +219,8 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Simulación del proceso evolutivo. \\\textit{Mortalidad bajo optimas condiciones.}}
-  Mortalidad bajo optimas condiciones de las larvas y pupas :
+\begin{frame}[c]{Simulación del proceso evolutivo. \\\textit{Mortalidad bajo óptimas condiciones.}}
+  Mortalidad bajo óptimas condiciones de las larvas y pupas (Otero et al., 2006) :
   \begin{center}
     \begin{equation}
     \label{eq:mortalidad-natural-larvas}
@@ -194,7 +233,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de larvas.}}
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de larvas (Otero et al., 2006).}}
   \begin{center}
       \begin{equation}
       M_{L(x,y)}(k) = mo(k) * L(x,y) + \bigg(\frac{\alpha _{0}}{BS(x,y)}\bigg) * L(x,y) *(L(x,y) - 1)
@@ -210,7 +249,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de las pupas.}}
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de las pupas (Otero et al., 2006).}}
   \begin{center}
     \begin{equation}
         M_{P(x,y)}(k) = P(x,y) * (mo(k) + (1 - ef) * R(k))
@@ -225,7 +264,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de adultos.}}
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de adultos (Otero et al., 2006).}}
  % 10% diario, 50% semanal, 95% a final del primer mes.
   % Es constante, a pesar de su alta mortalidad, si la población
   % es lo sifucientemente grande, puede llegar a causar una epidemia
@@ -245,7 +284,7 @@
 
 \begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Ciclo gonotrófico y Ovipostura.}}
   \begin{center}
-      \includegraphics[width=\textwidth]{./graphics/cliclo-gonotrofico-tiempo.jpg}
+      \includegraphics[width=9.5cm]{./graphics/cliclo-gonotrofico-tiempo.jpg}
   \end{center}
 \end{frame}
 
