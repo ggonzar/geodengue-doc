@@ -33,6 +33,11 @@ build(){
     evince $NAME.pdf&
 }
 
+#~ Funcion que costruye el ppt
+build_ppt(){
+    pdflatex $NAME
+    evince $NAME.pdf&
+}
 
 if [ -n "$1" ] && [ "$1" = "clean" ]
 then
@@ -53,7 +58,7 @@ then
     NAME=presentacion
     echo $NAME
     clean
-    build
+    build_ppt
     clean
 
 elif [ -n "$1" ]
