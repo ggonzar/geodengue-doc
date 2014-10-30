@@ -12,6 +12,10 @@ sudo apt-get install biblatex
 sudo apt-get install texlive-science
 sudo apt-get install texlive-latex-extra
 sudo apt-get install texlive-fonts-extra
+sudo apt-get install texlive-lang-spanish
+sudo apt-get install texlive-fonts-recommended
+sudo apt-get install biber
+sudo apt-get install texlive-bibtex-extra
 ```
 #Estructura del libro
 ##Capítulo 1. Introducción.

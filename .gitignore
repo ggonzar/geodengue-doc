@@ -13,5 +13,6 @@
 *.loa
 *.gz
 *.tks
+/recursos/*
 /tesis-blx.bib
 /capitulo-4/inhibicion-eclosion.tex
