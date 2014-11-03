@@ -1,11 +1,12 @@
 %----------------------1----------------------------------------
 \begin{frame}[t]{Resultados y discusión.\\\textit{Entorno de pruebas.}}
 \begin{itemize}
+	\item Comparar las tasas de desarrollo obtenidas con los resultados obtenidos por expertos en laboratorio.
+	\item Analizar el comportamiento de la disperción de la población.
     \item Los parámetros de configuración fueron tomados del material bibliográfico de apoyo.
-    \item Se generaron aleatoriamente 1.146 larvas para 25 puntos de control.
     \item El periodo de simulación fue de 50 días, a temperatura constante.
     \item La dirección del viento seleccionada fue la suroeste.
-    \item Comparar las tasas de desarrollo obtenidas con los resultados obtenidos por expertos en laboratorio.
+    \item Se generaron aleatoriamente 1.146 larvas para 25 puntos de control.
     \end{itemize}
 \end{frame}
 
@@ -15,6 +16,11 @@
     \end{center}
 \end{frame}
 %--------------------------2------------------------------------
+\begin{frame}[t]{Resultados y discusión.\\\textit{Tasas de desarrollo.}}
+Los resultados obtenidos, fueron comparados con los valores observados por Beserra, Eduardo B. et al (2006) en : 
+\\\text{}
+\\\textit{Biologia e exigências térmicas de Aedes aegypti (L.) (Diptera: Culicidae) provenientes de quatro regiões bioclimáticas da Paraíba.}
+\end{frame}
 
 \begin{frame}[t]{Resultados y discusión.\\\textit{Tasas de desarrollo de los huevos.}}
     \includegraphics[width=\textwidth]{./graphics/huevos-desarrollo-single.png}
@@ -52,15 +58,56 @@
 \end{center}
 \end{frame}
 
-\begin{frame}[t]{Resultados y discusión.\\\textit{Crecimiento de la población de adultos.}}
+\begin{frame}[t]{Resultados y discusión.\\\textit{Crecimiento de la población en etapas inmaduras.}}
+\begin{center}
+\begin{figure}
+     \includegraphics[width=9.3cm]{./graphics/poblacion-inmadura-p1.png}
+     \caption{Del día 1 al 25.}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}[t]{Resultados y discusión.\\\textit{Crecimiento de la población en etapas inmaduras.}}
+\begin{center}
+\begin{figure}
+    \includegraphics[width=9.3cm]{./graphics/poblacion-inmadura-p2.png}
+    \caption{Del día 26 al 50.}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}[t]{Resultados y discusión.\\\textit{Crecimiento de la población de hembras adultas.}}
 \begin{center}
     \includegraphics[width=9.3cm]{../paper/graphics/evolucion-poblacion-adultos.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[t]{Resultados y discusión.\\\textit{Focos de infestación}}
+\begin{frame}[t]{Resultados y discusión.\\\textit{Crecimiento de la población de hembras adultas.}}
 \begin{center}
+\begin{figure}
+    \includegraphics[width=9.3cm]{./graphics/poblacion-adulto-p1.png}
+    \caption{Del día 1 al 25.}
+\end{figure}
+\end{center}
+\end{frame}
 
+\begin{frame}[t]{Resultados y discusión.\\\textit{Crecimiento de la población de hembras adultas.}}
+\begin{figure}
+    \includegraphics[width=9.3cm]{./graphics/poblacion-adulto-p2.png}
+    \caption{Del día 26 al 50.}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}[t]{Resultados y discusión.\\\textit{Focos de infestación.}}
+\begin{center}
+    \includegraphics[width=11cm]{./graphics/identificacion-focos.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[t]{Resultados y discusión.\\\textit{Focos de infestación.}}
+\begin{center}
 \begin{table}[!hptb]
     \begin{minipage}{\textwidth}
     \scriptsize
@@ -85,47 +132,11 @@
 \end{frame}
 
 %--------------------------2------------------------------------
-
-\begin{frame}[t]{Resultados y discusión.\\\textit{Mapas de interpolación a 20 \textcelsius.}}
-    \begin{figure}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-20-0.png}
-        \caption{ Primer día de simulación.}
-    \end{subfigure}
-    ~~~~
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-20-38.png}
-        \caption{Día número 50 de simulación.}
-    \end{subfigure}
-    \end{figure}
-\end{frame}
-
-\begin{frame}[t]{Resultados y discusión.\\\textit{Mapas de interpolación a 24 \textcelsius.}}
-    \begin{figure}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=4.5cm]{../book/capitulo-6/graphics/raster/temp-24-0.png}
-        \caption{ Primer día de simulación.}
-    \end{subfigure}
-    ~~~~
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=4.5cm]{../book/capitulo-6/graphics/raster/temp-24-49.png}
-        \caption{Día número 50 de simulación.}
-    \end{subfigure}
-    \end{figure}
-\end{frame}
-
-\begin{frame}[t]{Resultados y discusión.\\\textit{Mapas de interpolación a 27 \textcelsius.}}
-    \begin{figure}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-27-0.png}
-        \caption{ Primer día de simulación.}
-    \end{subfigure}
-    ~~~~
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-27-49.png}
-        \caption{Día número 50 de simulación}
-    \end{subfigure}
-    \end{figure}
+\begin{frame}[t]{Resultados y discusión.\\\textit{Análisis espacial de la población.}}
+\begin{itemize}
+	\item Mapas de interpolación para la identificación del los focos de infestación.
+	\item Cartografía de las hembras del vector.
+\end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Resultados y discusión.\\\textit{Mapas de interpolación a 30 \textcelsius.}}
@@ -136,22 +147,22 @@
     \end{subfigure}
     ~~~~
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-30-35.png}
-        \caption{Día número 50 de simulación.}
+        \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-30-9.png}
+        \caption{Día número 10 de simulación.}
     \end{subfigure}
     \end{figure}
 \end{frame}
 
 
-\begin{frame}[t]{Resultados y discusión.\\\textit{Mapas de interpolación a 34 \textcelsius.}}
+\begin{frame}[t]{Resultados y discusión.\\\textit{Mapas de interpolación a 30 \textcelsius.}}
     \begin{figure}
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-34-0.png}
-        \caption{ Primer día de simulación.}
+        \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-30-20.png}
+        \caption{Día número 21 de simulación.}
     \end{subfigure}
     ~~~~
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-34-42.png}
+        \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-30-35.png}
         \caption{Día número 50 de simulación.}
     \end{subfigure}
     \end{figure}

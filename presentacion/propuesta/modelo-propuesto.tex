@@ -8,11 +8,11 @@
         \begin{column}[T]{7cm}
           \begin{itemize}
           \item Larvitrampas como puntos de control.
-          \item Conteo de larvas mediante PDI.
-          \item Influencia de las variaciones climáticas.
           \item Combinar información regionalizada, meteorológica y geográfica.
+          \item Influencia de las variaciones climáticas.
           \item Simular el comportamiento del vector.
           \item Detección temprana de posibles focos y en consecuencia una posible epidemia.
+          \item Conteo de larvas mediante PDI.
           \end{itemize}
         \end{column}
     \end{columns}
@@ -82,8 +82,8 @@
         \begin{column}[T]{6cm}
           \begin{itemize}
           \item Los puntos de control permiten caracterizar la zona como más o menos apta para el desarrollo, mortalidad, alimentación, dispersión y reproducción.
-          \item Interpolación espacial para determinar la cantidad de individuos en $(x, y)$.
-          \item Definir una escala de clasificación.
+          \item La población inicial se encuentra compuesta por larvas.
+          \item Interpolación espacial para determinar la cantidad de larvas en $(x, y)$.
           \end{itemize}
         \end{column}
     \end{columns}
@@ -99,11 +99,11 @@
         \end{column}
         \begin{column}[T]{7cm}
         \begin{equation}\label{eq:interpolacion-idw}
-         u(X) = \sum_{i=1}^{N} w_i(X) * u_{i}
+         u(x,y) = \sum_{i=1}^{N} w_i(x,y) * u_{i}
         \end{equation}
         Donde :
         \begin{equation}
-        w_i(X) =  \dfrac{d(X, X_i)^{-p}}{\sum_{j=1}^{N} d(X, X_i)^{-p}}
+        w_i(X) =  \dfrac{d((x,y), (x_i,y_i))^{-p}}{\sum_{j=1}^{N} d((x,y), (x_j,y_j))^{-p}}
         \end{equation}
         \end{column}
     \end{columns}
@@ -113,6 +113,22 @@
 \end{frame}
 
 
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
+  \begin{center}
+   \begin{columns}[T]
+        \begin{column}[T]{5cm}
+			\includegraphics[width=\textwidth]{./graphics/zonificacion-intro.png}
+        \end{column}
+        \begin{column}[T]{6cm}
+          \begin{itemize}
+          \item Definir una escala de clasificación de las zonas.
+          \item Establcer una relación entre la cantidad de larvas y el tipo de zona.
+          \item Determinar el riesgo asociado a la cantidad de larvas.
+          \end{itemize}
+        \end{column}
+    \end{columns}
+  \end{center}
+\end{frame}
 
 \begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
   Consideraciones para la clasificación de las zonas:
@@ -196,10 +212,15 @@
 
 \begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Tasas de Mortalidad.}}
   \begin{itemize}
-      \item Simular la reducción de la población por la mortalidad.
-      \item La mortalidad depende de la etapa del ciclo de desarrollo.
-      \item Las poblaciones cuentan con una cantidad entera de individuos.
       \item Determinar la cantidad de individuos que deben ser eliminados de la población.
+      \item Simular la reducción de la población por la mortalidad.
+      \item La mortalidad depende de la etapa del ciclo de desarrollo:
+      \begin{itemize}
+		  \item Mortalidad de huevos $H(x, y)$.
+		  \item Mortalidad de larvas $L(x,y)$.
+		  \item Mortalidad de pupas $P(x,y)$.
+		  \item Mortalidad de adultos $A(x,y)$.
+      \end{itemize}
       \item La cantidad de individuos a eliminar debe ser entera.
   \end{itemize}
 \end{frame}
@@ -222,12 +243,14 @@
 \end{frame}
 }
 
-\begin{frame}[c]{Simulación del proceso evolutivo. \\\textit{Mortalidad bajo óptimas condiciones.}}
-  Mortalidad bajo óptimas condiciones de las larvas y pupas (Otero et al., 2006) :
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{./graphics/larva.png}}
+\begin{frame}[c]{Simulación del proceso evolutivo. \\\textit{Mortalidad de larvas (Otero et al., 2006)}}
+  Mortalidad bajo óptimas condiciones de las larvas:
   \begin{center}
     \begin{equation}
     \label{eq:mortalidad-natural-larvas}
-        mo(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg)
+        ml(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg)
     \end{equation}
   \end{center}
   Donde :
@@ -236,12 +259,10 @@
     \end{itemize}
 \end{frame}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{./graphics/larva.png}}
 \begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de larvas (Otero et al., 2006).}}
   \begin{center}
       \begin{equation}
-      M_{L(x,y)}(k) = mo(k) * L(x,y) + \bigg(\frac{\alpha _{0}}{BS(x,y)}\bigg) * L(x,y) *(L(x,y) - 1)
+      M_{L(x,y)}(k) = ml(k) * L(x,y) + \bigg(\frac{\alpha _{0}}{BS(x,y)}\bigg) * L(x,y) *(L(x,y) - 1)
     \end{equation}
   \end{center}
   Donde:
@@ -258,16 +279,32 @@
 
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{./graphics/pupas.png}}
-\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de las pupas (Otero et al., 2006).}}
+
+\begin{frame}[c]{Simulación del proceso evolutivo. \\\textit{Mortalidad de las pupas (Otero et al., 2006)}}
+  Mortalidad bajo óptimas condiciones de la pupa:
   \begin{center}
     \begin{equation}
-        M_{P(x,y)}(k) = P(x,y) * (mo(k) + (1 - ef) * R(k))
+    \label{eq:mortalidad-natural-pupas}
+        mp(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg)
     \end{equation}
   \end{center}
   Donde :
     \begin{itemize}
       \item $k$ : Temperatura en Kelvin.
-      \item $ef$ : el factor de supervivencia es de $0,83$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de las pupas (Otero et al., 2006).}}
+  \begin{center}
+    \begin{equation}
+        M_{P(x,y)}(k) = P(x,y) * (mp(k) + (1 - ef) * R(k))
+    \end{equation}
+  \end{center}
+  Donde :
+    \begin{itemize}
+      \item $k$ : Temperatura en Kelvin.
+      \item $ef$ : El factor de supervivencia es de $0,83$.
+      \item $R(k)$ : La tasa de desarrollo de la pupa.
       \item $P(x, y)$ : Cantidad de pupas observadas en $(x,y)$.
       \item $M_{P(x,y)}$ : Cantidad de pupas a eliminar.
     \end{itemize}
