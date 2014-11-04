@@ -2,7 +2,7 @@
 \begin{frame}[t]{Resultados y discusión.\\\textit{Entorno de pruebas.}}
 \begin{itemize}
 	\item Comparar las tasas de desarrollo obtenidas con los resultados obtenidos por expertos en laboratorio.
-	\item Analizar el comportamiento de la disperción de la población.
+	\item Analizar el comportamiento de la dispersión de la población.
     \item Los parámetros de configuración fueron tomados del material bibliográfico de apoyo.
     \item El periodo de simulación fue de 50 días, a temperatura constante.
     \item La dirección del viento seleccionada fue la suroeste.
@@ -17,7 +17,7 @@
 \end{frame}
 %--------------------------2------------------------------------
 \begin{frame}[t]{Resultados y discusión.\\\textit{Tasas de desarrollo.}}
-Los resultados obtenidos, fueron comparados con los valores observados por Beserra, Eduardo B. et al (2006) en : 
+Los resultados obtenidos, fueron comparados con los valores observados en laboratorio, por Beserra, Eduardo B. et al (2006) en :
 \\\text{}
 \\\textit{Biologia e exigências térmicas de Aedes aegypti (L.) (Diptera: Culicidae) provenientes de quatro regiões bioclimáticas da Paraíba.}
 \end{frame}
@@ -98,52 +98,23 @@ Los resultados obtenidos, fueron comparados con los valores observados por Beser
 \end{figure}
 \end{frame}
 
-
-
-\begin{frame}[t]{Resultados y discusión.\\\textit{Focos de infestación.}}
+\begin{frame}[t]{Resultados y discusión.\\\textit{Análisis espacial de la población.}}
 \begin{center}
     \includegraphics[width=11cm]{./graphics/identificacion-focos.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[t]{Resultados y discusión.\\\textit{Focos de infestación.}}
+\begin{frame}[t]{Resultados y discusión.\\\textit{Mapas de interpolación a 30 \textcelsius.}}
 \begin{center}
-\begin{table}[!hptb]
-    \begin{minipage}{\textwidth}
-    \scriptsize
-    \centering
-    \caption{\label{tab:niveles-riesgo-zonas} Clasificación de los niveles de infestación de acuerdo al tipo de zona.}
-    \begin{tabular}{l l c c c}
-        \hline\\
-         Niveles de infestación & Tipo de zona & Mínimo $u(x,y)$$^a$ & Máximo $u(x,y)$$^a$ \\
-        \hline
-        \hline
-        Muy bajo & Pésima  & 0  & 19 \\
-        Bajo     & Mala    & 20 & 35 \\
-        Medio    & Regular & 36 & 51 \\
-        Alto     & Buena   & 52 & 69 \\
-        Muy Alto & Óptima  & 70 & --$^b$\\
-    \end{tabular}
-    \footnotetext[1]{\scriptsize Rango mínimo y máximo de $u(x,y)$ permitido para el tipo de zona.}
-    \footnotetext[2]{\scriptsize No se estableció un límite superior para este nivel. }
-    \end{minipage}
-\end{table}
+    \includegraphics[width=5cm]{./graphics/raster-dispersion.png}
 \end{center}
-\end{frame}
-
-%--------------------------2------------------------------------
-\begin{frame}[t]{Resultados y discusión.\\\textit{Análisis espacial de la población.}}
-\begin{itemize}
-	\item Mapas de interpolación para la identificación del los focos de infestación.
-	\item Cartografía de las hembras del vector.
-\end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Resultados y discusión.\\\textit{Mapas de interpolación a 30 \textcelsius.}}
     \begin{figure}
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-30-0.png}
-        \caption{ Primer día de simulación.}
+        \caption{Primer día de simulación.}
     \end{subfigure}
     ~~~~
     \begin{subfigure}[b]{0.45\textwidth}
@@ -163,6 +134,20 @@ Los resultados obtenidos, fueron comparados con los valores observados por Beser
     ~~~~
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{../book/capitulo-6/graphics/raster/temp-30-35.png}
+        \caption{Día número 50 de simulación.}
+    \end{subfigure}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[t]{Resultados y discusión.\\\textit{Mapas de interpolación a 30 \textcelsius.}}
+    \begin{figure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{./graphics/raster-dispersion.png}
+        \caption{Primer día de simulación.}
+    \end{subfigure}
+    ~~~~
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{./graphics/raster-dispersion-final.png}
         \caption{Día número 50 de simulación.}
     \end{subfigure}
     \end{figure}

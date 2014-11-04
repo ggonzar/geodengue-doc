@@ -64,10 +64,10 @@
   \begin{center}
    \begin{columns}[T]
         \begin{column}[T]{4cm}
-              \includegraphics[width=\textwidth]{./graphics/zonificacion-intro.png}
+              \includegraphics[width=\textwidth]{../book/capitulo-5/graphics/cartografia-vector.png}
         \end{column}
         \begin{column}[T]{6cm}
-          \textit{\\Cada entorno puede contar con factores que lo hagan más o menos apta para el desarrollo, mortalidad, alimentación, dispersión y reproducción de individuos.}
+          \textit{\\Cada entorno puede contar con factores que lo hagan más o menos apto para el desarrollo, mortalidad, alimentación, dispersión y reproducción de individuos.}
         \end{column}
     \end{columns}
   \end{center}
@@ -91,28 +91,6 @@
 \end{frame}
 
 
-\begin{frame}[t]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación (Interpolación Espacial).}}
-  \begin{center}
-   \begin{columns}[T]
-        \begin{column}[T]{3.5cm}
-            \includegraphics[width=4cm]{./graphics/interpolacion-ej.png}
-        \end{column}
-        \begin{column}[T]{7cm}
-        \begin{equation}\label{eq:interpolacion-idw}
-         u(x,y) = \sum_{i=1}^{N} w_i(x,y) * u_{i}
-        \end{equation}
-        Donde :
-        \begin{equation}
-        w_i(X) =  \dfrac{d((x,y), (x_i,y_i))^{-p}}{\sum_{j=1}^{N} d((x,y), (x_j,y_j))^{-p}}
-        \end{equation}
-        \end{column}
-    \end{columns}
-  \end{center}
-    \text{Ejemplo:}
-    $u(x,y) = w_1(x,y) * 49 + w_2(x,y) * 20 + w_3(x,y) * 55 + w_4(x,y) * 16 $
-\end{frame}
-
-
 \begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Zonificación.}}
   \begin{center}
    \begin{columns}[T]
@@ -122,8 +100,9 @@
         \begin{column}[T]{6cm}
           \begin{itemize}
           \item Definir una escala de clasificación de las zonas.
-          \item Establcer una relación entre la cantidad de larvas y el tipo de zona.
+          \item Establecer una relación entre la cantidad de larvas y el tipo de zona.
           \item Determinar el riesgo asociado a la cantidad de larvas.
+          \item Estimar la cantidad de hembras con capacidad reproductiva, a partir de la cantidad de larvas.
           \end{itemize}
         \end{column}
     \end{columns}
@@ -149,22 +128,21 @@
           \scriptsize
             \caption{\label{tab:cap4-puntaje-zona} Escala de clasificación de las zonas
             para el desarrollo, alimentación, dispersión y reproducción.}
-            \begin{tabular}{l c c c c}
+            \begin{tabular}{l l c c c}
                 \hline
-                             & Mínimo$^a$ & Máximo$^a$ & Hembras$^b$ & Hembras$^c$ \\
-                Tipo de zona & $u(x,y)$   & $u(x,y)$   & Adultas     & Reproductivas \\
+                             & Niveles de & Mínimo$^a$ & Máximo$^a$  & Hembras$^b$ \\
+                Tipo de zona & infestación & $u(x,y)$   & $u(x,y)$   & Reproductivas \\
                 \hline
                 \hline
-                Pésima  & 0  & 19 & 8  & 5 \\
-                Mala    & 20 & 35 & 15 & 10\\
-                Regular & 36 & 51 & 22 & 15\\
-                Buena   & 52 & 69 & 30 & 20\\
-                Óptima  & 70 & --$^d$ & --$^d$ & --$^d$
+                Pésima  & Muy bajo & 0  & 19 & 5 \\
+                Mala    & Bajo     &20  & 35 & 10\\
+                Regular & Medio    &36  & 51 & 15\\
+                Buena   & Alto     &52  & 69 & 20\\
+                Óptima  & Muy alto &70  & --$^c$ & --$^c$
             \end{tabular}
             \footnotetext[1]{\scriptsize Rango mínimo y máximo de $u(x,y)$ permitido para el tipo de zona.}
-            \footnotetext[2]{\scriptsize Cantidad máxima de hembras adultas, al final del periodo de desarrollo.}
-            \footnotetext[3]{\scriptsize Cantidad de hembras adultas con capacidad de oviponer.}
-            \footnotetext[4]{\scriptsize No se estableció un límite superior para las zonas óptimas. }
+            \footnotetext[2]{\scriptsize Cantidad de hembras adultas con capacidad de oviponer.}
+            \footnotetext[3]{\scriptsize No se estableció un límite superior para las zonas óptimas. }
         \end{minipage}
     \end{table}
 \end{frame}
@@ -225,112 +203,16 @@
   \end{itemize}
 \end{frame}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{./graphics/huevos.png}}
-\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de los huevos(Otero et al., 2006).}}
-  % poseen una gran resistencia
-  \begin{center}
-      \begin{equation}
-          M_{H(x,y)} = me * H(x,y)
-      \end{equation}
-  \end{center}
-  Donde :
-    \begin{itemize}
-      \item $me$ : Tasa de mortalidad diaria igual a $0,01\  \text{días}^{-1}$.
-      \item $H(x, y)$ : Cantidad de huevos observados en $(x,y)$.
-      \item $M_{H(x,y)}$ : Cantidad de huevos a eliminar.
-    \end{itemize}
-\end{frame}
-}
+\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Tasas de Mortalidad. (Otero et al., 2006)}}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{./graphics/larva.png}}
-\begin{frame}[c]{Simulación del proceso evolutivo. \\\textit{Mortalidad de larvas (Otero et al., 2006)}}
-  Mortalidad bajo óptimas condiciones de las larvas:
-  \begin{center}
-    \begin{equation}
-    \label{eq:mortalidad-natural-larvas}
-        ml(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg)
-    \end{equation}
-  \end{center}
-  Donde :
-    \begin{itemize}
-      \item $k$ : Temperatura en Kelvin.
-    \end{itemize}
+  \begin{itemize}
+      \item La mortalidad de los huevos es constante.
+      \item La mortalidad de las larvas se encuentra influenciada por la mortalidad bajo óptimas condiciones y la mortalidad dependiente de la densidad.
+      \item La mortalidad de las pupas se encuentra influenciada por la mortalidad bajo óptimas condiciones y la mortalidad durante la emergencia a adultos.
+      \item La mortalidad de los adultos es constante.
+  \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de larvas (Otero et al., 2006).}}
-  \begin{center}
-      \begin{equation}
-      M_{L(x,y)}(k) = ml(k) * L(x,y) + \bigg(\frac{\alpha _{0}}{BS(x,y)}\bigg) * L(x,y) *(L(x,y) - 1)
-    \end{equation}
-  \end{center}
-  Donde:
- \begin{itemize}
-      \item $k$ : Temperatura en Kelvin.
-      \item $L(x, y)$ : Cantidad de larvas observadas en $(x,y)$.
-      \item $\alpha _{0}$ : Capacidad de carga de un solo lugar de reproducción.
-      \item $BS(x,y)$ : Es el número de sitios de reproducción en $(x,y)$ .
-      \item $M_{L(x,y)}$ : Cantidad de larvas a eliminar.
-    \end{itemize}
-\end{frame}
-}
-
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{./graphics/pupas.png}}
-
-\begin{frame}[c]{Simulación del proceso evolutivo. \\\textit{Mortalidad de las pupas (Otero et al., 2006)}}
-  Mortalidad bajo óptimas condiciones de la pupa:
-  \begin{center}
-    \begin{equation}
-    \label{eq:mortalidad-natural-pupas}
-        mp(k) = 0.01 + 0.9725 * exp\bigg( \frac{-(k - 278)}{2.7035}\bigg)
-    \end{equation}
-  \end{center}
-  Donde :
-    \begin{itemize}
-      \item $k$ : Temperatura en Kelvin.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de las pupas (Otero et al., 2006).}}
-  \begin{center}
-    \begin{equation}
-        M_{P(x,y)}(k) = P(x,y) * (mp(k) + (1 - ef) * R(k))
-    \end{equation}
-  \end{center}
-  Donde :
-    \begin{itemize}
-      \item $k$ : Temperatura en Kelvin.
-      \item $ef$ : El factor de supervivencia es de $0,83$.
-      \item $R(k)$ : La tasa de desarrollo de la pupa.
-      \item $P(x, y)$ : Cantidad de pupas observadas en $(x,y)$.
-      \item $M_{P(x,y)}$ : Cantidad de pupas a eliminar.
-    \end{itemize}
-\end{frame}
-}
-
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{./graphics/adulto.png}}
-\begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de adultos (Otero et al., 2006).}}
- % 10% diario, 50% semanal, 95% a final del primer mes.
-  % Es constante, a pesar de su alta mortalidad, si la población
-  % es lo sifucientemente grande, puede llegar a causar una epidemia
-  \begin{center}
-    \begin{equation}
-        M_{A(x,y)} = ma * A(x,y)
-    \end{equation}
-  \end{center}
-  Donde:
-    \begin{itemize}
-      \item $ma$ : Tasa de mortalidad diaria igual a $0,09$ \ $1/\text{días}$.
-      \item $A(x, y)$ : Cantidad de adultos observados en $(x,y)$.
-      \item $M_{A(x,y)}$ : Cantidad de adultos a eliminar.
-    \end{itemize}
-\end{frame}
-}
 
 \begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Ciclo gonotrófico y Ovipostura.}}
   \begin{center}
