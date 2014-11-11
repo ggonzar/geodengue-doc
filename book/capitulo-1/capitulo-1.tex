@@ -3,7 +3,7 @@
 El dengue es una enfermedad viral transmitida por el mosquito del Aedes aegypti, en donde la
 prevención y el control de esta enfermedad requiere de nuevas técnicas de vigilancia. El análisis
 de la distribución espacial del Aedes aegypti cumple un papel importante a la hora de definir,
-planificar y evaluar las acciones a realizar para disminuir las poblaciones de mosquitos.
+planificar y evaluar las acciones a realizar con el fin de disminuir las poblaciones de mosquitos.
 
 En este capítulo se presentan los antecedentes y la importancia de este trabajo, así como las
 propuestas que se realizan con el fin de apoyar la lucha preventiva contra el dengue. Conceptos de
@@ -22,20 +22,20 @@ implicaciones para la seguridad sanitaria \cite{dengueUruguayCap1, world2009deng
 necesidad de interrumpir la infección y la rápida propagación de la epidemia más allá de las
 fronteras \cite{world2009dengue}.
 
-El Paraguay desde el año 2009 es considerado un país endémico, cuyo clima, subtropical, favorece
-la aparición y desarrollo del dengue. Las autoridades sanitarias nacionales llevan a cabo
-acciones para la vigilancia entomológica y de control vectorial para la disminución de las
-poblaciones de mosquitos mediante control químico y el control mecánico, donde la vigilancia
-entomológica es realizada con el fin monitorear la densidad vectorial en zonas endémicas y no
-endémicas, mediante técnicas basadas en utilización de indices tradicionales. Actualmente existen
-numerosos métodos e indicadores más prácticos, eficientes y económicos para determinar las
-poblaciones de Aedes aegypti \cite{cenaprece2013}, como larvitrampas y ovitrampas.
+El Paraguay desde el año 2009 es considerado un país endémico\cite{planControlMspbs2014}, cuyo
+clima, subtropical, favorece la aparición y desarrollo del dengue. Las autoridades sanitarias
+nacionales llevan a cabo acciones para la vigilancia entomológica y de control vectorial para la
+disminución de las poblaciones de mosquitos, mediante control químico y el control mecánico, donde
+la vigilancia entomológica es realizada con el fin monitorear la densidad vectorial en zonas
+endémicas y no endémicas, mediante técnicas basadas en utilización de índices tradicionales.
+Actualmente existen numerosos métodos e indicadores más prácticos, eficientes y económicos para
+determinar las poblaciones de Aedes aegypti \cite{cenaprece2013}, como larvitrampas y ovitrampas.
 
 Las autoridades sanitarias del Paraguay no cuentan con datos computables, geográficamente,
 relacionados con a casos reportados, confirmados, sospechosos y fatales de dengue que permitan
 realizar análisis estadísticos y espaciales, como regresiones geográficamente ponderadas para
 determinar la relación existente entre los casos de dengue y variables como : datos
-climatológicos, criaderos de mosquitos, e indices de infestación larvaria. Para realizar este
+climatológicos, criaderos de mosquitos, e índices de infestación larvaria. Para realizar este
 trabajo de análisis, primero se deben diseñar y desarrollar las plataformas para el registro de la
 información, definir las políticas y metodologías de actualización y migración de los
 datos, para posteriormente realizar un análisis. Esto implica un trabajo institucional con un
@@ -61,8 +61,8 @@ enfermedad, estudiar su posible relación con un potencial foco de riesgo, o loc
 epidémico \cite{vgomesAegis2001}.
 
 En Paraguay anualmente se reportan miles de casos de infección por dengue, algunos de ellos con
-derivación fatal. La detección de focos de infección basados en indices tradicionales y casos
-reportados son considerados como correctivos. Es imperativo, por parte de las autoriadades
+derivación fatal. La detección de focos de infección basados en índices tradicionales y casos
+reportados son considerados como correctivos. Es imperativo, por parte de las autoridades
 sanitarias, el uso de nuevas técnicas para la vigilancia entomológica, con un enfoque preventivo.
 
 \section{Propuesta y Objetivos}
@@ -70,9 +70,9 @@ En este trabajo se propone un modelo y se presenta una herramienta que permita r
 epidemiológicos de forma cartográfica, especializada para el particular caso del dengue. Para ello
 se utilizan métodos de abundancia poblacional distribuidos geográficamente y técnicas de
 interpolación espacial para la determinación de focos de riesgo. Además se provee de un simulador
-del comportamiento del vector, que es sometido a las variaciones climáticas de acuerdo a las
-características de la región, con el fin de generar información que pueda ser útil a la hora de
-aplicar y definir las medidas preventivas correspondientes.
+del comportamiento del Aedes aegypti, donde este es sometido a las variaciones climáticas de
+acuerdo a las características de la región, con el fin de generar información que pueda ser útil a
+la hora de aplicar y definir las medidas preventivas correspondientes.
 
 \subsection{Objetivo General}
 Diseñar un modelo que permita analizar la extensión del vector del dengue y estudiar su posible
@@ -87,24 +87,24 @@ riesgo.
 
 \item Diseñar un modelo e implementar un sistema computacional mediante el cual se puedan procesar y presentar los resultados obtenidos, en un sistema de información geográfica.
 
-\item Diseñar el modelo de forma paramétrica y escalable, para que sea aplicable y extensible a cualquier región o área de estudio.
+\item Diseñar el modelo de forma paramétrica, extensible y escalable, para que sea aplicable y extensible a cualquier región o área de estudio.
 
 \item Generar información relevante que pueda ayudar a las autoridades pertinentes para toma de decisiones en la lucha contra el dengue.
 
 \end{itemize}
 
 \section{Organización del trabajo}
-El trabajo está organizado como sigue: en el capítulo 2 se presenta al Aedes aegypti el principal
+El trabajo está organizado como sigue: en el Capítulo 2 se presenta al Aedes aegypti el principal
 transmisor del dengue, sus características biológicas y los métodos de muestreo de la abundancia
-pobacional del vector. El capítulo 3 introduce a los sistemas de información geográfica, la
+poblacional del vector. El Capítulo 3 introduce a los sistemas de información geográfica, la
 representación de datos geoespaciales y los métodos de interpolación como herramienta para
 análisis espacial. Estos capítulos representan el estado del arte de este trabajo.
 
-El capítulo 4 se presenta el modelo matemático propuesto para la identificación de focos de
-infestación y la simulación del proceso evolutivo del ciclo de vida del vector. En el capítulo 5
+El Capítulo 4 se presenta el modelo matemático propuesto para la identificación de focos de
+infestación y la simulación del proceso evolutivo del ciclo de vida del vector. En el Capítulo 5
 se presenta la implementación computacional denominada GeoDengue, sus requerimientos, diseño y
-arquitectura y las herramientas y tecnologías utilizadas para su implementación.
+arquitectura, las herramientas y tecnologías utilizadas para su desarrollo.
 
-En el capítulo 6 se presentan los resultados experimentales obtenidos. En el capítulo 7
-presentan las conclusiones de este trabajo y finalmente en el capítulo 8 se exponen los posibles
+En el Capítulo 6 se presentan los resultados experimentales obtenidos. En el Capítulo 7
+presentan las conclusiones de este trabajo y finalmente en el Capítulo 8 se exponen los posibles
 trabajos futuros derivados de esta trabajo final de grado.
