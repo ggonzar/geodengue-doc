@@ -10,29 +10,30 @@ requerir una revisión en caso general. Estas hipótesis son :
     \item Se considera que el tamaño de la zona, y por ende la cantidad de puntos de control que pertenecen a ella, influye en la caracterización de las zonas.
 \end{enumerate}
 
-La zonificación surge ante la necesidad de dividir el espacio de estudio de una forma más granular,
-para identificar a los individuos que pertenecen a zonas aptas y los que no. Los puntos de control
-distribuidos en un área de estudio permiten estimar los niveles de riesgo e infestación
-correspondiente a la abundancia de larvas observadas.
+La zonificación surge ante la necesidad de identificar a los individuos que pertenecen a zonas que
+presentan características más o menos favorables para desarrollo, mortalidad, alimentación,
+dispersión, y reproducción de individuos. Los puntos de control distribuidos en un área geográfica
+de estudio permiten estimar los niveles de riesgo e infestación correspondiente a la abundancia de
+larvas observadas.
 
-Para determinar el tipo de zona de un individuo $m_{i}$ ubicado en $(x,y)$, primero se estima la
-densidad relativa de larvas, para $m_{i}(x,y)$, utilizando interpolación espacial y posteriormente
-se la clasifica utilizando una escala. Si consideramos a $u(x,y)$ el valor interpolado para
-$m_{i}(x,y)$, entonces la densidad relativa de larvas de $m_{i}(x,y)$ es igual a $u(x,y)$. La
-cantidad de larvas observadas en los puntos de control, pertenecientes a la zona de $m_{i}(x,y)$,
+Para determinar el tipo de zona de un individuo $m_{i}$ ubicado en $(x, y)$, primero se estima la
+densidad relativa de larvas, para $m_{i}(x, y)$, utilizando interpolación espacial y posteriormente
+se la clasifica utilizando una escala. Si consideramos a $u(x, y)$ el valor interpolado para
+$m_{i}(x, y)$, entonces la densidad relativa de larvas de $m_{i}(x, y)$ es igual a $u(x, y)$. La
+cantidad de larvas observadas en los puntos de control, pertenecientes a la zona de $m_{i}(x, y)$,
 corresponden a los valores conocidos utilizados para la interpolación espacial, donde el tamaño de
-la zona de $m(x,y)$ se encuentra determinado por $r$, que representa el radio una circunferencia
-que tiene como centro a $(x,y)$. El tamaño de $r$, es un parámetro ajustable del modelo, mientras
+la zona de $m(x, y)$ se encuentra determinado por $r$, que representa el radio una circunferencia
+que tiene como centro a $(x, y)$. El tamaño de $r$, es un parámetro ajustable del modelo, mientras
 más grande sea el tamaño de $r$, más puntos de control serán considerados para el cálculo de
-$u(x,y)$. Por ejemplo en la \figref{fig:cap4-zonficiacion} podemos observar que existen 8 puntos
+$u(x, y)$. Por ejemplo en la \figref{fig:cap4-zonficiacion} podemos observar que existen 8 puntos
 de control, cuyos valores son conocidos y se encuentran representados por
-$[u_{1}, u_{2}, \dots ,u_{8}]$, de los cuales para estimar el valor de $u(x,y)$ con un radio de
+$[u_{1}, u_{2}, \dots ,u_{8}]$, de los cuales para estimar el valor de $u(x, y)$ con un radio de
 tamaño igual a $r$, solo serán considerados $[u_{1}, u_{2},\dots,u_{5}]$.
 
 \begin{figure}[!hptb]
 \centering
 \includegraphics[width=0.6\textwidth]{capitulo-4/graphics/zonificacion.png}
-\caption{\label{fig:cap4-zonficiacion} Relación entre el radio $r$, el valor de $u(x,y)$ a estimar y los valores conocidos.}
+\caption{\label{fig:cap4-zonficiacion} Relación entre el radio $r$, el valor de $u(x, y)$ a estimar y los valores conocidos.}
 \end{figure}
 
 El valor estimado de $u(x,y)$ es utilizado para clasificar la zona como \textit{Pésima},
@@ -43,9 +44,9 @@ individuos, se define una escala única para este caso de estudio. Los valores d
 agrupados por la capacidad de generar hembras adultas que eventualmente puedan llegar a oviponer.
 
 Para definir la escala de clasificación de las zonas, en base a $u(x, y)$, se debe estimar la
-cantidad de hembras adultas repoducitvas, es decir, la cantidad hembras con capacidad de
+cantidad de hembras adultas reproductivas, es decir, la cantidad hembras con capacidad de
 transmitir la enfermedad y generar descendencia. Se considera que una mayor o menor cantidad de
-hembras reproductivas, en una zona, implica una mejor o peor adapatación a las condiciones de la zona. Considerando que $u(x,y)$ representa densidad relativa de larvas y que la escala a utilizar
+hembras reproductivas, en una zona, implica una mejor o peor adaptación a las condiciones de la zona. Considerando que $u(x, y)$ representa densidad relativa de larvas y que la escala a utilizar
 para su clasificación se basa en su etapa adulta, se debe realizar una transición de los estados
 larva a pupa y de pupa a adulto. Esta transición entre estados es necesaria para poder estimar la
 cantidad de hembras adultas con capacidad reproductiva. Para realizar los cálculos
@@ -61,7 +62,7 @@ correspondientes hay que tener en cuenta las siguientes consideraciones :
 
 Estas consideraciones ayudan a simplificar la simulación de la transición de estados pasando de
 larva a pupa y de pupa a adulto, con el fin de construir la escala de clasificación. Los valores
-de cantidad de hembras con capacidad de oviponer, finalmente obtenidas a partir de $u(x,y)$ son
+de cantidad de hembras con capacidad de oviponer, finalmente obtenidas a partir de $u(x, y)$ son
 calculadas para un entorno óptimo.
 
 \begin{table}[!hptb]
@@ -72,7 +73,7 @@ calculadas para un entorno óptimo.
         \begin{tabular}{p{3cm} c c c c}
             \hline \\
                          & Mínimo$^a$ & Máximo$^a$ & Hembras     & Hembras$^c$ \\
-            Tipo de zona & $u(x,y)$   & $u(x,y)$   & Adultas$^b$ & Reproductivas$^c$ \\
+            Tipo de zona & $u(x, y)$   & $u(x, y)$   & Adultas$^b$ & Reproductivas$^c$ \\
             \hline
             \hline
             Pésima  & 0  & 19 & 8  & 5 \\
@@ -81,7 +82,7 @@ calculadas para un entorno óptimo.
             Buena   & 52 & 69 & 30 & 20\\
             Óptima  & 70 & --$^d$ & --$^d$ & --$^d$\\
         \end{tabular}
-        \footnotetext[1]{Rango mínimo y máximo de $u(x,y)$ permitido para el tipo de zona.}
+        \footnotetext[1]{Rango mínimo y máximo de $u(x, y)$ permitido para el tipo de zona.}
         \footnotetext[2]{Cantidad máxima de hembras adultas, al final del periodo de desarrollo.}
         \footnotetext[3]{Cantidad de hembras adultas con capacidad de oviponer.}
         \footnotetext[4]{No se estableció un límite superior para las zonas óptimas. }
@@ -91,7 +92,7 @@ calculadas para un entorno óptimo.
 \end{table}
 
 En la \tabref{tab:cap4-puntaje-zona} se pueden observar los rangos definidos para cada tipo de
-zona, en donde $u$ es la densidad relativa de larvas en las coordenadas $(x,y)$. Los límites para
+zona, en donde $u$ es la densidad relativa de larvas en las coordenadas $(x, y)$. Los límites para
 las zonas fueron determinados clasificando los valores, de las hembras reproductivas en, grupos
 múltiplos de cinco. No se estableció un límite superior para las zonas óptimas debido a que los
 valores mayores a el mínimo establecido, 70 larvas por dispositivo, pertenecen a la misma categoría.
