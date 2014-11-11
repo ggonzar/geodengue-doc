@@ -7,15 +7,15 @@ El Algoritmo \ref{alg:simulador-evolutivo}, describe al simulador como un proces
 objetivo es simular los efectos de cada $k_{i}$ para cada individuo $m_{j}$ que pertenezca a la
 población.
 
-La población de estudio, $\vec{m}$, se encuentra compuesta por un conjunto $m_{j}(x,y)$ que
-representan a los individuos, $h_{j}(x,y)$, $l_{j}(x,y)$, $p_{j}(x,y)$, $am_{j}(x,y)$,
-$an_{j}(x,y)$ y $ap_{j}(x,y)$ que corresponden a las poblaciones de $H(x,y)$, $L(x,y)$, $P(x,y)$,
-$AM(x,y)$, $AN(x,y)$ y $AP(x,y)$ respectivamente. Todos los individuos,$m_{j}(x,y)$, que se
-encenten en una misma $(x, y)$ pertenecen a una misma colonia. La población inicial es obtenida
-mediante la cantidad de larvas observadas en los puntos de control que corresponden a la muestra
-utilizada para el estudio. Por cada larva observada, en un punto de control ubicado en las
-coordenadas geográficas, $(x, y)$, se inicializa un individuo, $m_{i}$ con las mismas coordenadas
-, $(x, y)$, del punto de control de origen.
+La población de estudio, $\vec{m}$, se encuentra compuesta por un conjunto $m_{j}(x, y)$ que
+representan a los individuos, $h_{j}(x, y)$, $l_{j}(x, y)$, $p_{j}(x, y)$, $am_{j}(x, y)$,
+$an_{j}(x, y)$ y $ap_{j}(x, y)$ que corresponden a las poblaciones de $H(x,y)$, $L(x,y)$, $P(x,y)$,
+$AM(x, y)$, $AN(x, y)$ y $AP(x, y)$ respectivamente. Todos los individuos,$m_{j}(x, y)$, que se
+encuentren en una misma unidad geográfica $(x, y)$ pertenecen a una misma colonia. La población
+inicial es obtenida mediante la cantidad de larvas observadas en los puntos de control que
+corresponden a la muestra utilizada para el estudio. Por cada larva observada, en un punto de
+control ubicado en las coordenadas geográficas, $(x, y)$, se inicializa un individuo, $m_{i}$ con
+las mismas coordenadas, $(x, y)$, del punto de control de origen.
 
 El periodo de estudio, $\vec{k}$, se encuentra conformado por un conjunto de temperaturas $k_{i}$
 que representan las temperaturas diarias.
@@ -53,9 +53,9 @@ El proceso $desarrollar(m_{j}, k_{i})$, es el proceso por el cual se calculan la
 desarrollo correspondientes para cada $m_{j}$ . Estas son obtenidas mediante el modelo de
 \cite{sharpe1977reaction} presentado en la \secref{subsec:cap4-tasas de desarrollo}.
 
-El desarrollo en las etapas inmaduras ($H(x,y)$, $L(x,y)$ y $P(x,y)$) es realizado con el fin de
-simular los efectos de $k_{i}$ en la maduración de $m_{j}$. Sin embargo para los adultos ($AN(x,y)$
-y $AP(x,y)$), es realizado con el fin de simular los efectos de $k_{i}$ en la duración del ciclo
+El desarrollo en las etapas inmaduras ($H(x, y)$, $L(x, y)$ y $P(x, y)$) es realizado con el fin de
+simular los efectos de $k_{i}$ en la maduración de $m_{j}$. Sin embargo para los adultos ($AN(x, y)$
+y $AP(x, y)$), es realizado con el fin de simular los efectos de $k_{i}$ en la duración del ciclo
 gonotrófico de $m_{j}$ y la dispersión del vector, presentada en la
 \secref{subsec:cap4-vuelo-dispersion}.
 
@@ -78,16 +78,16 @@ se encuentra listo para pasar al siguiente estado de su etapa de desarrollo cuan
 
 Donde $N$ es la cantidad de días que le toma al individuo pasar de un estado a otro. Una vez
 completo su desarrollo se procede a realizar el cambio de estado mediante el proceso
-$cambiar\_estado(m_{j})$. El cambio de estado consiste en modificar las caracteristicas un
-individuo, $m_{i}(x,y)$ para que inicie la nueva etapa de su ciclo de desarrollo. De forma
+$cambiar\_estado(m_{j})$. El cambio de estado consiste en modificar las características un
+individuo, $m_{i}(x, y)$ para que inicie la nueva etapa de su ciclo de desarrollo. De forma
 extendida tenemos:
 
 \begin{itemize}
-\item Para que un huevo, $h(x,y)$, perteneciente a $H(x,y)$ pase a ser una larva, $l(x,y)$, que forma parte de $L(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
+\item Para que un huevo, $h(x,y)$, perteneciente a $H(x,y)$ pase a ser una larva, $l(x, y)$, que forma parte de $L(x, y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
 
-\item Para que una larva, $l(x,y)$, perteneciente a $L(x,y)$ pase a ser una pupa, $p(x,y)$, que forma parte de $P(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
+\item Para que una larva, $l(x,y)$, perteneciente a $L(x,y)$ pase a ser una pupa, $p(x, y)$, que forma parte de $P(x, y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
 
-\item Para que una pupa, $p(x,y)$, perteneciente a $P(x,y)$ pase a ser un adulto, $a(x,y)$, que forma parte de $A(x,y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
+\item Para que una pupa, $p(x,y)$, perteneciente a $P(x,y)$ pase a ser un adulto, $a(x, y)$, que forma parte de $A(x, y)$ debe cumplirse \eqref{eq:condicion-cambio-estado}.
 \end{itemize}
 
 
@@ -96,18 +96,3 @@ validar $m_{j}$ haya completado su ciclo gonotrófico, una vez finalizado debe g
 huevos mediante $oviponer(m_{j})$. La duración del ciclo gonotrófico y la oviposutra fue presentado
 anteriormente en la \secref{subsec:cap4-ciclo-gontrofico-ovipostura}.
 
-% En la \figref{fig:algoritmo-evolutivo} se presenta el algoritmo del proceso evolutivo, donde el
-% periodo de simulación se encuentra representado por $T$.  El desarrollo de los individuos se
-% encarga de calcular las tasas de desarrollo correspondientes para cada etapa de su ciclo de vida,
-% con el fin de estimar su desarrollo considerando las condiciones climáticas. El cambio de estado
-% es consecuencia de la finalización de la etapa de desarrollo del individuo, donde el individuo ya
-% está listo para pasar a la siguiente etapa de su ciclo de desarrollo.
-
-% La regulación de la población es la encargada de calcular las tasas de mortalidad diaria,
-% correspondientes a cada etapa del ciclo de desarrollo del individuo, con el fin de reducir el
-% tamaño de la población debido a la mortalidad diaria de los individuos.
-
-% Si el individuo en cuestión corresponde a una hembra adulta inseminada, entonces esta se encuentra
-% en fase reproductiva. La postura de huevos se realiza respetando la tasa de desarrollo del ciclo
-% gonotrófico de las hembras. Si la hembra adulta ovipone, los huevos son añadidos a la población
-% como individuos en un estado inicial de \textit{HUEVO}.
