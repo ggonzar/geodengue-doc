@@ -1,5 +1,5 @@
 \subsection{Simulación del proceso evolutivo}
-La simulación del proceso evolutivo del mosquito del Aedes aegypti, presentado previamente en la
+La simulación del proceso evolutivo del mosquito Aedes aegypti, presentado previamente en la
 \secref{sec:cap4-simulador-proceso-evolutivo}, es el encargado de simular los efectos temperatura
 en el ciclo de vida del mosquito.
 
@@ -7,12 +7,6 @@ La población inicial es obtenida mediante la cantidad de larvas observadas en l
 control que corresponden a la muestra utilizada para el estudio. Por cada larva observada,
 en un punto de control ubicado en las coordenadas geográficas, $(x, y)$, se inicializa un individuo
 con las mismas coordenadas del punto de control de origen.
-
-\begin{figure}[!htpb]
-\centering
-\includegraphics[width=1\textwidth]{capitulo-5/graphics/algoritmo-evolutivo.png}
-\caption{\label{fig:cap-5-alg-evolutivo} Algoritmo del simulador del proceso evolutivo.}
-\end{figure}
 
 En la \figref{fig:cap-5-alg-evolutivo}, se presenta el algoritmo del simulador del proceso
 evolutivo, que es considerado como un proceso iterativo. El simulador inicia tomando como
@@ -28,6 +22,11 @@ para cada etapa de su ciclo de vida (Ver \secref{subsec:cap4-tasas de desarrollo
 estado es consecuencia de la finalización de la etapa de desarrollo del individuo, donde el
 individuo ya está listo para pasar a la siguiente etapa de su ciclo de desarrollo.
 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{capitulo-5/graphics/algoritmo-evolutivo.png}
+\caption{\label{fig:cap-5-alg-evolutivo} Algoritmo del simulador del proceso evolutivo.}
+\end{figure}
 
 La regulación de la población es la encargada de calcular las tasas de mortalidad diaria,
 correspondientes a cada etapa del ciclo de desarrollo del individuo (Ver

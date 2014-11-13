@@ -24,7 +24,7 @@ La tasa de mortalidad de los huevos se encuentra definida como una constante,
 $me = 0,01\ \text{días}^{-1}$, independiente de la temperatura \cite{otero2006stochastic}.
 
 \begin{equation}
-    M_{H(x,y)} = \rho(me * H(x,y))
+    M_{H(x,y)} = me * H(x,y)
 \end{equation}
 
 Donde $M_{H(x,y)}$ es la cantidad de huevos que deben ser eliminados de la población $H(x,y)$.
@@ -60,7 +60,7 @@ valores observados en el área de estudio.
 Tomando ambas contribuciones, la mortalidad natural bajo óptimas condiciones y la denso
 dependiente, la mortalidad de las larvas queda definida como :
 \begin{equation}
-    M_{L(x,y)}(k) = \rho(ml(k) * L(x,y) + \alpha (x,y) * L(x,y) *(L(x,y) - 1))
+    M_{L(x,y)}(k) = ml(k) * L(x,y) + \alpha (x,y) * L(x,y) *(L(x,y) - 1)
 \end{equation}
 
 Donde $M_{L(x,y)}$ es la cantidad de larvas que deben ser eliminadas de la población $L(x,y)$.
@@ -82,7 +82,7 @@ y emergerán como mosquitos adultos, por lo tanto, el factor de supervivencia es
 \cite{otero2006stochastic}.
 
 \begin{equation}
-    M_{P(x,y)}(k) = \rho(P(x,y) * (mp(k) + (1 - ef) * R(k)))
+    M_{P(x,y)}(k) = P(x,y) * (mp(k) + (1 - ef) * R(k))
 \end{equation}
 
 Donde $M_{P(x,y)}$ es la cantidad de pupas que deben ser eliminadas de la población $P(x,y)$.
@@ -92,7 +92,7 @@ La tasa de mortalidad de los adultos se encuentra definida como una constante,
 $ma = 0,09\ \text{días}^{-1}$, independiente de la temperatura \cite{otero2006stochastic}.
 
 \begin{equation}
-    M_{A(x,y)} = \rho(ma * A(x,y))
+    M_{A(x,y)} = ma * A(x,y)
 \end{equation}
 
 Donde $M_{A(x,y)}$ es la cantidad de adultos que deben ser eliminados de la población $A(x,y)$.

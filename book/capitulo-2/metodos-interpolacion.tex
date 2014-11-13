@@ -42,15 +42,14 @@ incrementa la distancia entre ambos.
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{capitulo-2/graphics/idw-distancia.jpg}
-\caption{\label{fig:sig-idw-distancia} Cálculo de la distancia entre el punto a estimar,$u(x)$ , y los valores conocidos $u_{i}$.}
+\caption{\label{fig:sig-idw-distancia} Cálculo de la distancia entre el punto a estimar, $u(X)$ , y los valores conocidos $u_{i}$.}
 
 \end{figure}
 
-La forma general de encontrar un valor interpolado $u$ en un punto $x$ basado en un conjunto de
-muestras $u_i = u (x_i)$ para $i = 0,1, ..., N$ utilizando IDW es una función de interpolación:
+La forma general de encontrar un valor interpolado $u$ en un punto $X$, descrito por las coordenadas $(x, y)$, basado en un conjunto de muestras $u_i = u (X_i)$ para $i = 0,1, ..., N$ utilizando IDW es una función de interpolación:
 
 \begin{equation}\label{eq:interpolacion-idw}
- u(x) = \sum_{i=1}^{N} w_i(X) * u_{i}
+ u(X) = \sum_{i=1}^{N} w_i(X) * u_{i}
 \end{equation}
 
 Donde :
@@ -93,7 +92,7 @@ con la diferencia básica es que asume que la altitud puede definirse como una v
 regionalizada.
 
 \begin{equation}\label{eq:interpolacion-kriging}
- u(x) = \sum_{i=1}^{N} \lambda{i}(X) * u_{i}
+ u(X) = \sum_{i=1}^{N} \lambda{i}(X) * u_{i}
 \end{equation}
 
 Donde $\lambda{i}(X)$ es el peso asignado al valor observado de $u_{i}$ y se puede calcular

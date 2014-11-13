@@ -22,11 +22,11 @@ se la clasifica utilizando una escala. Si consideramos a $u(x, y)$ el valor inte
 $m_{i}(x, y)$, entonces la densidad relativa de larvas de $m_{i}(x, y)$ es igual a $u(x, y)$. La
 cantidad de larvas observadas en los puntos de control, pertenecientes a la zona de $m_{i}(x, y)$,
 corresponden a los valores conocidos utilizados para la interpolación espacial, donde el tamaño de
-la zona de $m(x, y)$ se encuentra determinado por $r$, que representa el radio una circunferencia
-que tiene como centro a $(x, y)$. El tamaño de $r$, es un parámetro ajustable del modelo, mientras
-más grande sea el tamaño de $r$, más puntos de control serán considerados para el cálculo de
-$u(x, y)$. Por ejemplo en la \figref{fig:cap4-zonficiacion} podemos observar que existen 8 puntos
-de control, cuyos valores son conocidos y se encuentran representados por
+la zona de $m(x, y)$ se encuentra determinado por $r$, que representa el radio de una
+circunferencia que tiene como centro a $(x, y)$. El tamaño de $r$, es un parámetro ajustable del
+modelo, mientras más grande sea el tamaño de $r$, más puntos de control serán considerados para el
+cálculo de $u(x, y)$. Por ejemplo en la \figref{fig:cap4-zonficiacion} podemos observar que
+existen 8 puntos de control, cuyos valores son conocidos y se encuentran representados por
 $[u_{1}, u_{2}, \dots ,u_{8}]$, de los cuales para estimar el valor de $u(x, y)$ con un radio de
 tamaño igual a $r$, solo serán considerados $[u_{1}, u_{2},\dots,u_{5}]$.
 
@@ -46,7 +46,8 @@ agrupados por la capacidad de generar hembras adultas que eventualmente puedan l
 Para definir la escala de clasificación de las zonas, en base a $u(x, y)$, se debe estimar la
 cantidad de hembras adultas reproductivas, es decir, la cantidad hembras con capacidad de
 transmitir la enfermedad y generar descendencia. Se considera que una mayor o menor cantidad de
-hembras reproductivas, en una zona, implica una mejor o peor adaptación a las condiciones de la zona. Considerando que $u(x, y)$ representa densidad relativa de larvas y que la escala a utilizar
+hembras reproductivas, en una zona, implica una mejor o peor adaptación a las condiciones de la
+zona. Considerando que $u(x, y)$ representa densidad relativa de larvas y que la escala a utilizar
 para su clasificación se basa en su etapa adulta, se debe realizar una transición de los estados
 larva a pupa y de pupa a adulto. Esta transición entre estados es necesaria para poder estimar la
 cantidad de hembras adultas con capacidad reproductiva. Para realizar los cálculos
@@ -72,8 +73,8 @@ calculadas para un entorno óptimo.
         \caption{\label{tab:cap4-puntaje-zona} Escala de clasificación de las zonas de acuerdo a la densidad relativa de larvas.}
         \begin{tabular}{p{3cm} c c c c}
             \hline \\
-                         & Mínimo$^a$ & Máximo$^a$ & Hembras     & Hembras$^c$ \\
-            Tipo de zona & $u(x, y)$   & $u(x, y)$   & Adultas$^b$ & Reproductivas$^c$ \\
+                         & Mínimo$^a$ & Máximo$^a$ & Hembras $^b$ & Hembras$^c$ \\
+            Tipo de zona & $u(x, y)$   & $u(x, y)$   & Adultas & Reproductivas \\
             \hline
             \hline
             Pésima  & 0  & 19 & 8  & 5 \\

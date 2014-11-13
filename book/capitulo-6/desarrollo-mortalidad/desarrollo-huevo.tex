@@ -16,7 +16,6 @@ cepas de Aedes aegypti, provenientes de diferentes poblaciones, a 5 temperaturas
         \begin{tabular}{p{4cm} c c c c c c }
             \hline \\
             Población    &18 \textcelsius & 22 \textcelsius & 26 \textcelsius & 30 \textcelsius & 34 \textcelsius & Media General\\
-
             \hline
             \hline
             Boqueirão            & 9,3 $^{b}$  & 6,5  & 3,9  & 3,3  & 3,5  & 4,3  \\
@@ -94,6 +93,15 @@ los porcentajes de mortalidad obtenidos a 9 temperaturas constantes. En general 
 $1,64$ \% de mortalidad diaria, $98,36$ \% de supervivencia y un error del $0,64$ \% en
 comparación al $1$\% esperado.
 
+Los errores obtenidos se originan durante el redondeo realizado al aplicar la tasa de mortalidad
+diaria en cada colonia, debido a que el modelo, a la hora de calcular la cantidad de huevos a ser
+eliminados de la colonia a la que pertenecen, solo permite eliminar a un número entero de huevos.
+Por ejemplo, si contamos con un grupo 10 de colonias cada una con 63 huevos, un total de 630 huevos
+. Aplicando la tasa de mortalidad $0,01$ en cada colonia se obtiene un total de $0,63$, aplicando
+el operador de redondeo, definido por la ecuación \eqref{eq:operador-redondeo}, es $1$ huevo por
+colonia. Al eliminar un huevo por colonia, en total se eliminarán 10 huevos en comparación al $6,3$
+ que se obtendría al eliminar $0,63$ huevos por colonia. En la tabla
+ \tabref{tab:mortalidad-huevo-error} se presentan los resultados del análisis realizado.
 \begin{table}[!htbp]
     \centering
     \begin{minipage}{\textwidth}
@@ -124,16 +132,6 @@ comparación al $1$\% esperado.
         \footnotetext[4]{Tasa de supervivencia porcentual obtenida.}
     \end{minipage}
 \end{table}
-
-Los errores obtenidos se originan durante el redondeo realizado al aplicar la tasa de mortalidad
-diaria en cada colonia, debido a que el modelo, a la hora de calcular la cantidad de huevos a ser
-eliminados de la colonia a la que pertenecen, solo permite eliminar a un número entero de huevos.
-Por ejemplo, si contamos con un grupo 10 de colonias cada una con 63 huevos, un total de 630 huevos
-. Aplicando la tasa de mortalidad $0,01$ en cada colonia se obtiene un total de $0,63$, aplicando
-el operador de redondeo, definido por la ecuación \eqref{eq:operador-redondeo}, es $1$ huevo por
-colonia. Al eliminar un huevo por colonia, en total se eliminarán 10 huevos en comparación al $6,3$
- que se obtendría al eliminar $0,63$ huevos por colonia. En la tabla
- \tabref{tab:mortalidad-huevo-error} se presentan los resultados del análisis realizado.
 
 \begin{table}
     \begin{minipage}{\textwidth}
