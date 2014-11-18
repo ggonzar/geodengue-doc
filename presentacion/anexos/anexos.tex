@@ -13,10 +13,26 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[c]{Strack tecnológico.}
-\includegraphics[width=\textwidth]{../book/capitulo-5/graphics/stack-tecnologias.png}
+\begin{frame}[c]{Ritmo reproductivo básico}
+      El ritmo básico de reproducción de una infección es el número promedio de casos nuevos que genera un caso dado lo largo de un período infeccioso.
+  \begin{center}
+      \begin{equation}
+      \begin{array}{l l}
+        R_{o} = \beta * N / \gamma & \quad \text{Si $R_{o} > 1$ $\implies$ Hay epidemia.}\\
+      \end{array}
+      \end{equation}
+  \end{center}
+  Donde :
+    \begin{itemize}
+      \item $\beta$ : Tasa de infección.
+      \item $1/\gamma$ : Extensión del periodo infeccioso.
+      \item $N$ : La población total (Susceptible + Infectada + Recuperada).
+    \end{itemize}
 \end{frame}
 
+\begin{frame}[c]{Stack tecnológico.}
+\includegraphics[width=\textwidth]{../book/capitulo-5/graphics/stack-tecnologias.png}
+\end{frame}
 
 \begin{frame}[c]{Conteo de larvas con PDI.}
     \begin{figure}
@@ -67,6 +83,16 @@
     $u(x,y) = w_1(x,y) * 49 + w_2(x,y) * 20 + w_3(x,y) * 55 + w_4(x,y) * 16 $
 \end{frame}
 
+\begin{frame}[c]{Interpolación Espacial (Villatoro et al., 2007).}
+  \begin{center}
+     \begin{itemize}
+     \item Kriging fue más preciso y eficiente que el IDW, aunque la diferencia entre ambos métodos no fue muy amplia.
+
+    \item Cuando el distanciamiento, es muy grande, los variogramas no son posibles de obtener, entonces el Kriging deja de ser una opción y comparativamente el IDW se perfila como el mejor.
+
+    \end{itemize}
+  \end{center}
+\end{frame}
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{./graphics/huevos.png}}
 \begin{frame}[c]{Modelos de simulación de la ecología del vector.\\\textit{Mortalidad de los huevos(Otero et al., 2006).}}
